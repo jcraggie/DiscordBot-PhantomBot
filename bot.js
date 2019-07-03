@@ -16,7 +16,8 @@ client.on("message", (message) => {
   } else
   if (message.content.startsWith(prefix + "foo")) {
     message.channel.send("bar!");
-  }
+  } else
+	  message.channel.send("invalid command.");
 });
 
  
