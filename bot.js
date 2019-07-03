@@ -5,11 +5,11 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
  
-client.on('message', message => {
-    if (message.content === 'ping') {
-       message.reply('pong');
-       }
-});
+//client.on('message', message => {
+//    if (message.content === 'ping') {
+//       message.reply('pong');
+//       }
+//});
 
 client.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
