@@ -1,16 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- 
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
- 
+
 // Set the prefix
-const prefix = ",";
+const prefix = ".";
 client.on("message", (message) => {
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
- 
+
   if (message.content.startsWith(prefix + "ping")) {
     message.channel.send("pong!");
   } else
@@ -20,6 +20,6 @@ client.on("message", (message) => {
 	  message.channel.send("invalid command.");
 });
 
- 
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN); //BOT_TOKEN is the Client Secret
