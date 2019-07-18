@@ -6,8 +6,7 @@ var commands = [
   ["ping","Ping pong!"],
   ["console","send the text to the console."]
 ];
-console.log(commands);
-console.log(commands.length);
+
 
 
 
@@ -36,6 +35,11 @@ client.on("message", (message) => {
   if (input.startsWith(prefix + "console")) {
       console.log(message.content);
       return;
+  }
+  if (input.startsWith(prefix + "test")) {
+    console.log(commands);
+    console.log(commands.length);
+    message.channel.send("Test done.");
   }
 	  message.channel.send("invalid command.");
   }
