@@ -7,21 +7,27 @@ client.on('ready', () => {
 
 // Set the prefix
 const prefix = ".";
+
+
 client.on("message", (message) => {
+  var input = '';
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
+  else input = message.content.toLowerCase()
 
-  if (message.content.startsWith(prefix + "ping")) {
-    message.channel.send("pong!");
-  } else
-  if (message.content.startsWith(prefix + "foo")) {
-    message.channel.send("bar!");
-  } else
-  if (message.content.startsWith(prefix + "console")) {
-    console.log(message.content);
+  if (input.startsWith(prefix + "ping")) {
+      message.channel.send("pong!");
+      message.reply('Pong...');
+  }
+  if (input.startsWith(prefix + "foo")) {
+      message.channel.send("bar!");
+  }
+  if (input.startsWith(prefix + "console")) {
+      console.log(message.content);
   } else 
 	  message.channel.send("invalid command.");
-});
+  }
+);
 
 
 // THIS  MUST  BE  THIS  WAY
