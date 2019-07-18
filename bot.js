@@ -37,9 +37,10 @@ client.on("message", (message) => {
       return;
   }
   if (input.startsWith(prefix + "test")) {
-    console.log(commands);
-    console.log(commands.length);
+    message.channel.send(commands);
+    message.channel.send(commands.length);
     message.channel.send("Test done.");
+    return;
   }
 	  message.channel.send("invalid command.");
   }
