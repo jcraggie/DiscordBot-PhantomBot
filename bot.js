@@ -1,6 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+var commands = [
+  ["help","This is it!"],
+  ["ping","Ping pong!"],
+  ["console","send the text to the console."]
+];
+console.log(commands);
+console.log(commands.length);
+
+
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
