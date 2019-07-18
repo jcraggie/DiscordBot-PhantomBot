@@ -42,6 +42,21 @@ client.on("message", (message) => {
     message.channel.send("Test done.");
     return;
   }
+  if (input.startsWith(prefix + "help")) {
+    const embed = new Discord.RichEmbed()
+    .setTitle("Command List:")
+    .setAuthor(client.user.username,client.user.avatarURL)
+    .setColor(0xac30f1)
+    .setDescription("All commands are preceded by " + prefix)
+    .setFooter("Made by jcrAggie")
+    .setThumbnail (message.author.avatarURL)
+    .setTimestamp()
+    for (var x = 0; x < commands.length; x++) {
+      embed.addField(commands[x][0],commands[x][1])
+    }
+    message.channel.send({embed});
+    return;
+  }
 	  message.channel.send("invalid command.");
   }
 );
