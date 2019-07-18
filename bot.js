@@ -13,18 +13,20 @@ client.on("message", (message) => {
   var input = '';
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
-  else input = message.content.toLowerCase()
+  else input = message.content.toLowerCase();
 
   if (input.startsWith(prefix + "ping")) {
       message.channel.send("pong!");
-      message.reply('Pong...');
+      return;
   }
   if (input.startsWith(prefix + "foo")) {
       message.channel.send("bar!");
+      return;
   }
   if (input.startsWith(prefix + "console")) {
       console.log(message.content);
-  } else 
+      return;
+  }
 	  message.channel.send("invalid command.");
   }
 );
