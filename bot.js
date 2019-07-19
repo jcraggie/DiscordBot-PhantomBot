@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const ApiSwgohHelp = require('api-swgoh-help');
+const swapi = new ApiSwgohHelp({
+  "username":process.env.SWGOH_HELP_USERNAME,
+  "password":process.env.SWGOH_HELP_PASSWORD
+});
+
+
+
 
 var commands = [
   ["help","This is it!"],
