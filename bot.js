@@ -3,20 +3,20 @@ const client = new Discord.Client();
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN); //BOT_TOKEN is the Client Secret
 
-/*
+
 const ApiSwgohHelp = require('api-swgoh-help');
 const swapi = new ApiSwgohHelp({
   "username":process.env.SWGOH_HELP_USERNAME,
   "password":process.env.SWGOH_HELP_PASSWORD
 });
-*/
 
-/*
+
+
 (async() =>{
       var acquiredToken = await swapi.connect();
     }
 )();
-*/
+
 
 
 
