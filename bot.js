@@ -80,7 +80,7 @@ client.on("message", (message) => {
 
     //clear chat
     if (input.startsWith(prefix+"clearchat")) {
-      if(!message.member.roles.some(r=>["Admin"].includes(r.name))) {
+      if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         return;
       }
