@@ -76,6 +76,7 @@ client.on("message", (message) => {
     }
     message.channel.send({embed});
     return;
+  }
 
     //clear chat
     if (input.startsWith(prefix+"clearchat")) {
@@ -95,7 +96,7 @@ client.on("message", (message) => {
     }
   }
 	  message.channel.send("invalid command.");
-  }
+  
 
 
 
