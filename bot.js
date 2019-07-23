@@ -90,12 +90,13 @@ client.on("message", (message) => {
         var num = res[1];
         if (num == undefined)
           num = 100;
-        message.channel.send('Num to delete is ' + num);
+        //message.channel.send('Num to delete is ' + num);
 
         console.log(message.author.username+" is clearing messages in: "+message.channel.guild)
         message.channel.bulkDelete(num)
         .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
         .catch(console.error);
+        return;
       }
     } 
     message.channel.send("invalid command.");
