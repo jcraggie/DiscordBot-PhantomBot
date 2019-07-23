@@ -80,8 +80,8 @@ client.on("message", (message) => {
 
     //clear chat
     if (input.startsWith(prefix+"clearchat")) {
-      if(!msg.member.roles.some(r=>["Admin"].includes(r.name))) {
-        msg.reply("Sorry, you don't have permissions to use this!");
+      if(!message.member.roles.some(r=>["Admin"].includes(r.name))) {
+        message.reply("Sorry, you don't have permissions to use this!");
         return;
       }
       else {
@@ -90,10 +90,10 @@ client.on("message", (message) => {
         var num = res[1];
         if (num == undefined)
           num = 100;
-        msg.channel.send('Num to delete is ' + num);
+        message.channel.send('Num to delete is ' + num);
 
-        console.log(msg.author.username+" is clearing messages in: "+msg.channel.guild)
-        msg.channel.bulkDelete(num)
+        console.log(message.author.username+" is clearing messages in: "+message.channel.guild)
+        message.channel.bulkDelete(num)
         .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
         .catch(console.error);
       }
