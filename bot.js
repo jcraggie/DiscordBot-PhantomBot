@@ -76,9 +76,30 @@ client.on("message", (message) => {
     }
     message.channel.send({embed});
     return;
+
+    //clear chat
+    if (input.startsWith(prefix+"clearchat")) {
+      if(!msg.member.roles.some(r=>["Admin"].includes(r.name)))
+        msg.reply("Sorry, you don't have permissions to use this!");
+      else {
+        var res = input.split(" ");
+      
+        var num=res[1];
+        if (num==undefined)
+          num=100;
+          console.log(msg.author.username+" is clearing messages in: "+msg.channel.guild)
+          msg.channel.bulkDelete(num)
+          .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
+          .catch(console.error);
+      }
+    }
   }
 	  message.channel.send("invalid command.");
   }
+
+
+
+//END OF COMMANDS  
 );
 
 
