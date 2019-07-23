@@ -24,7 +24,8 @@ const swapi = new ApiSwgohHelp({
 var commands = [
   ["help","This is it!"],
   ["ping","Ping pong!"],
-  ["console","send the text to the console."]
+  ["console","send the text to the console."],
+  ["clearchat","clear chat from current channel. **admin**"]
 ];
 
 
