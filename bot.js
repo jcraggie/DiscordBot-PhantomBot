@@ -80,7 +80,7 @@ client.on("message", (message) => {
   }
 
     //clearchat
-    if (input.startsWith(prefix+"clearchat")) {
+    if (input.startsWith(prefix + "clearchat")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         return;
@@ -101,12 +101,12 @@ client.on("message", (message) => {
       }
     } // end of clearchat
 
-    if (input.startsWith(prefix+"listMembers")) {
-      message.channel.send("inside .listMembers");
+    if (input.startsWith(prefix + "listMemb")) {
+      message.channel.send("inside .listMemb");
       const list = client.guilds.get("Guild ID"); 
       list.members.forEach(member => console.log(member.user.nickname)); 
       return;
-    } // end of listMembers
+    } // end of listMemb
     
     // END OF SPECIFIC COMMANDS 
     message.channel.send("invalid command.");
