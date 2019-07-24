@@ -107,7 +107,7 @@ client.on("message", (message) => {
     if (input.startsWith(prefix + "listmembers")) {
       message.channel.send("inside .listmembers");
       const list = client.guilds.get("116902168698683398"); 
-      list.members.forEach(member => console.log(member.use.name + " is named " + member.user.nickname)); 
+      list.members.forEach(member => console.log(member.user.name + " is named " + member.user.nickname)); 
       return;
     } // end of listmembers
     
