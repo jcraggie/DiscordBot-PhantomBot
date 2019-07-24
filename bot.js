@@ -101,7 +101,7 @@ client.on("message", (message) => {
       }
     } // end of clearchat
 
-    if (input.startsWith(prefix + "listMembers")) {
+    if (input.startsWith(prefix+"listMembers")) {
       const list = client.guilds.get("Guild ID"); 
       list.members.forEach(member => console.log(member.user.nickname)); 
       return;
