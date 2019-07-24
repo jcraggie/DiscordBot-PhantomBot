@@ -25,7 +25,7 @@ var commands = [
   ["help","This is it!"],
   ["ping","Ping pong!"],
   ["console","send the text to the console."],
-  ["clearchat","clear chat from current channel. **admin**"]
+  ["clearchat","clear chat from current channel."]
 ];
 
 
@@ -79,7 +79,7 @@ client.on("message", (message) => {
     return;
   }
 
-    //clear chat
+    //clearchat
     if (input.startsWith(prefix+"clearchat")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
@@ -99,7 +99,15 @@ client.on("message", (message) => {
         .catch(console.error);
         return;
       }
-    } 
+    } // end of clearchat
+
+    if (input.startsWith(prefix + "listMembers")) {
+      const list = client.guilds.get("Guild ID"); 
+      list.members.forEach(member => console.log(member.user.nickname)); 
+      return;
+    } // end of listMembers
+    
+    // END OF SPECIFIC COMMANDS 
     message.channel.send("invalid command.");
   }
 	 
