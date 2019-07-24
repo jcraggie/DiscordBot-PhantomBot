@@ -45,6 +45,8 @@ client.on("message", (message) => {
   if (!message.content.startsWith(prefix)) return;
   else input = message.content.toLowerCase();
 
+  
+
   if (input.startsWith(prefix + "ping")) {
       message.channel.send("pong!");
       return;
@@ -101,12 +103,13 @@ client.on("message", (message) => {
       }
     } // end of clearchat
 
-    if (input.startsWith(prefix + "listMemb")) {
-      message.channel.send("inside .listMemb");
+
+    if (input.startsWith(prefix + "listmembers")) {
+      message.channel.send("inside .listmembers");
       const list = client.guilds.get("Guild ID"); 
       list.members.forEach(member => console.log(member.user.nickname)); 
       return;
-    } // end of listMemb
+    } // end of listmembers
     
     // END OF SPECIFIC COMMANDS 
     message.channel.send("invalid command.");
