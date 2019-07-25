@@ -140,7 +140,8 @@ client.on("message", (message) => {
     if (input.startsWith(prefix + "CREATECHANNEL")) {
       console.log(message.author.username+" ran CREATECHANNEL in channel: " + message.channel.name + " in server: " + message.channel.guild);
       var server = message.guild;
-      var name = message.author.username;
+      var res = input.split(" ");
+      var name = res[1];
 
       server.createChannel(name,"text");
 
