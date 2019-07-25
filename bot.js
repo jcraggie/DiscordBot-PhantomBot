@@ -153,7 +153,7 @@ client.on("message", (message) => {
       server.createChannel("new section","category");
 
       server.createChannel(name,"text")
-      .then(cahnnel => {
+      .then(channel => {
         let category = server.channels.find(c => c.name == "new section" && c.type == "category");
         if (!category) throw new Error ("Category channel does not exist");
         channel.setParent(category.id);
