@@ -98,6 +98,7 @@ client.on("message", (message) => {
     if (input.startsWith(prefix + "CLEARCHAT")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
+        console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
       }
       else {
@@ -138,6 +139,12 @@ client.on("message", (message) => {
 
     // create channel - TESTING
     if (input.startsWith(prefix + "CREATECHANNEL")) {
+      if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
+        message.reply("Sorry, you don't have permissions to use this!");
+        console.log(message.author.username+" attempted to run CREATECHANNEL without permission in: " + message.channel.name + " in server: " + message.channel.guild);
+        return;
+      }
+
       console.log(message.author.username+" ran CREATECHANNEL in channel: " + message.channel.name + " in server: " + message.channel.guild);
       var server = message.guild;
       var res = input.split(" ");
