@@ -150,7 +150,19 @@ client.on("message", (message) => {
       var res = input.split(" ");
       var name = res[1];
 
-      server.createChannel(name,"text");
+      server.createChannel("new section","category");
+
+      server.createChannel(name,"text")
+      .then(cahnnel => {
+        let category = server.channels.find(c => c.name == "new section" && c.type == "category");
+        if (!category) throw new Error ("Category channel does not exist");
+        channel.setParent(category.id);
+      }).catch(console.error);
+
+      
+
+      
+      
 
       //guild.createChannel("test-channel-from-bot","text");
       return;
