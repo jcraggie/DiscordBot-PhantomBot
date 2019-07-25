@@ -26,7 +26,8 @@ var commands = [
   // ["ping","Ping pong!"],
   ["PING","returns time to ping"],
   ["CONSOLE","send the text to the console."],
-  ["CLEARCHAT","clear chat from current channel."]
+  ["CLEARCHAT","clear chat from current channel."],
+  ["CREATEGUILD","creates a new guild section w/ channels."]
   
 ];
 
@@ -137,15 +138,15 @@ client.on("message", (message) => {
       return;
     } // end of listmembers
 
-    // create channel - TESTING
-    if (input.startsWith(prefix + "CREATECHANNEL")) {
+    // create guild - TESTING
+    if (input.startsWith(prefix + "CREATEGUILD")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
-        console.log(message.author.username+" attempted to run CREATECHANNEL without permission in: " + message.channel.name + " in server: " + message.channel.guild);
+        console.log(message.author.username+" attempted to run CREATEGUILD without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
       }
 
-      console.log(message.author.username+" ran CREATECHANNEL in channel: " + message.channel.name + " in server: " + message.channel.guild);
+      console.log(message.author.username+" ran CREATEGUILD in channel: " + message.channel.name + " in server: " + message.channel.guild);
       let channelname =[
         "lounge",
         "officers",
@@ -156,13 +157,13 @@ client.on("message", (message) => {
         "rules"
       ];
 
-      var server = message.guild;
+      var server = message.guild; // server
       var res = input.split(" ");
-      var name = res[1];
+      var name = res[1]; // need to allow for spaces in names This is the name of the new guild/category to make
 
       server.createChannel(name,"category");
 
-      channelname.forEach(chname => {server.createChannel(chname,"text")
+      channelname.forEach(chName => {server.createChannel(chName,"text")
       .then(channel => {
         let category = server.channels.find(c => c.name == name && c.type == "category");
         if (!category) throw new Error ("Category channel does not exist");
@@ -187,7 +188,7 @@ client.on("message", (message) => {
       //guild.createChannel("test-channel-from-bot","text");
       return;
 
-    } // end createchannel
+    } // end CREATEGUILD
     
     // END OF SPECIFIC COMMANDS 
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
