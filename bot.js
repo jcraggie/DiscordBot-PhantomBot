@@ -146,19 +146,39 @@ client.on("message", (message) => {
       }
 
       console.log(message.author.username+" ran CREATECHANNEL in channel: " + message.channel.name + " in server: " + message.channel.guild);
+      let channelname =[
+        "lounge",
+        "officers",
+        "tb",
+        "tw",
+        "600-warnings",
+        "leave-of-absense",
+        "rules"
+      ];
+
       var server = message.guild;
       var res = input.split(" ");
       var name = res[1];
 
-      server.createChannel("new section","category");
+      server.createChannel(name,"category");
 
-      server.createChannel(name,"text")
+      channelname.forEach(chname => {server.createChannel(chname,"text")
       .then(channel => {
-        let category = server.channels.find(c => c.name == "new section" && c.type == "category");
+        let category = server.channels.find(c => c.name == name && c.type == "category");
         if (!category) throw new Error ("Category channel does not exist");
         channel.setParent(category.id);
       }).catch(console.error);
+    });
 
+
+      /*
+      server.createChannel("lounge","text")
+      .then(channel => {
+        let category = server.channels.find(c => c.name == name && c.type == "category");
+        if (!category) throw new Error ("Category channel does not exist");
+        channel.setParent(category.id);
+      }).catch(console.error);
+      */
       
 
       
