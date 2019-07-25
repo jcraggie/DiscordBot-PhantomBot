@@ -159,7 +159,8 @@ client.on("message", (message) => {
 
       var server = message.guild; // server
       var res = input.split(" ");
-      var name = res[1]; // need to allow for spaces in names This is the name of the new guild/category to make
+      res.shift();
+      var name = res.join(" "); // need to allow for spaces in names This is the name of the new guild/category to make
 
       server.createChannel(name,"category");
 
