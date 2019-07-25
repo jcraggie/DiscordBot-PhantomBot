@@ -27,7 +27,8 @@ var commands = [
   ["PING","returns time to ping"],
   ["CONSOLE","send the text to the console."],
   ["CLEARCHAT","clear chat from current channel."],
-  ["CREATEGUILD","creates a new guild section w/ channels."]
+  ["CREATEGUILD","creates a new guild section w/ channels."],
+  ["DELETEGUILD","deletes a guild's channels"]
   
 ];
 
@@ -188,13 +189,15 @@ client.on("message", (message) => {
       var res = input.split(" "); // splits the input into an array of words
       var categoryID = res[1]; // the ID of the parent category
 
+      // begin deleting all channels having a parent ID of categoryID
       message.guild.channels.forEach(channel => {
         if(channel.parentID == categoryID) {
           console.log("Category ID: " + categoryID + " found channnel");
           channel.delete();
         }
-      }) // end forEach
-      message.guild.channels.get(categoryID).delete()
+      }) // end forEach - done deleting all channels within a category
+
+      message.guild.channels.get(categoryID).delete(); // deletes the guild's section/category
 
 
       return;
