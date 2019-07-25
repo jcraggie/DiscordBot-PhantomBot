@@ -129,12 +129,20 @@ client.on("message", (message) => {
 
     // listmembers
     if (input.startsWith(prefix + "LISTMEMBERS")) {
-      console.log(message.author.username+" ran LISTMEMBERS in channel: " + message.channel.name + " in server: " + message.channel.guild)
+      console.log(message.author.username+" ran LISTMEMBERS in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("DEBUGGING inside .LISTMEMBERS routine.");
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
       list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
       return;
     } // end of listmembers
+
+    // create channel - TESTING
+    if (input.startsWith(prefix + "CREATECHANNEL")) {
+      console.log(message.author.username+" ran CREATECHANNEL in channel: " + message.channel.name + " in server: " + message.channel.guild);
+
+      guild.createChannel("test-channel-from-bot","text");
+
+    } // end createchannel
     
     // END OF SPECIFIC COMMANDS 
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
