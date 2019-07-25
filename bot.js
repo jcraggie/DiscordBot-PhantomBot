@@ -22,11 +22,11 @@ const swapi = new ApiSwgohHelp({
 
 
 var commands = [
-  ["help","This is it!"],
+  ["HELP","This is it!"],
   // ["ping","Ping pong!"],
-  ["ping","returns time to ping"],
-  ["console","send the text to the console."],
-  ["clearchat","clear chat from current channel."]
+  ["PING","returns time to ping"],
+  ["CONSOLE","send the text to the console."],
+  ["CLEARCHAT","clear chat from current channel."]
   
 ];
 
@@ -45,7 +45,7 @@ client.on("message", (message) => {
   var input = '';
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
-  else input = message.content.toLowerCase();
+  else input = message.content.toUpperCase(); // convert command to uppercase
 
   
   /*
@@ -55,19 +55,21 @@ client.on("message", (message) => {
   }
   */
 
-  if (input.startsWith(prefix + "foo")) {
+  if (input.startsWith(prefix + "FOO")) {
+    console.log(message.author.username+" ran FOO in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("bar!");
       return;
   } // end foo
 
   // console
-  if (input.startsWith(prefix + "console")) {
+  if (input.startsWith(prefix + "CONSOLE")) {
       console.log(message.content);
       return;
   } // end console
 
   // test
-  if (input.startsWith(prefix + "test")) {
+  if (input.startsWith(prefix + "TEST")) {
+    console.log(message.author.username+" ran TEST in channel: " + message.channel.name + " in server: " + message.channel.guild);
     message.channel.send(commands);
     message.channel.send(commands.length);
     message.channel.send("Test done.");
@@ -75,7 +77,8 @@ client.on("message", (message) => {
   } // end test
 
   // help
-  if (input.startsWith(prefix + "help")) {
+  if (input.startsWith(prefix + "HELP")) {
+    console.log(message.author.username+" ran HELP in channel: " + message.channel.name + " in server: " + message.channel.guild)
     const embed = new Discord.RichEmbed()
     .setTitle("Command List:")
     .setAuthor(client.user.username,client.user.avatarURL)
@@ -92,7 +95,7 @@ client.on("message", (message) => {
   } // end help
 
     //clearchat
-    if (input.startsWith(prefix + "clearchat")) {
+    if (input.startsWith(prefix + "CLEARCHAT")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         return;
@@ -105,7 +108,7 @@ client.on("message", (message) => {
           num = 100;
         //message.channel.send('Num to delete is ' + num);
 
-        console.log(message.author.username+" is clearing messages in channel: " + message.channel.name + message.channel.guild)
+        console.log(message.author.username+" ran CLEARCHAT in channel: " + message.channel.name + " in server: " + message.channel.guild);
         message.channel.bulkDelete(num)
         .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
         .catch(console.error);
@@ -115,7 +118,8 @@ client.on("message", (message) => {
 
 
     // ping
-    if(input.startsWith(prefix + "ping")){ 
+    if(input.startsWith(prefix + "PING")){ 
+      console.log(message.author.username+" ran PING in channel: " + message.channel.name + " in server: " + message.channel.guild);
 			message.channel.send("Pinging ...") // Placeholder for pinging ... 
 			.then((msg) => { // Resolve promise
 				msg.edit("Ping: " + (Date.now() - msg.createdTimestamp)) // Edits message with current timestamp minus timestamp of message
@@ -124,15 +128,17 @@ client.on("message", (message) => {
 		} // end ping
 
     // listmembers
-    if (input.startsWith(prefix + "listmembers")) {
-      message.channel.send("inside .listmembers");
+    if (input.startsWith(prefix + "LISTMEMBERS")) {
+      console.log(message.author.username+" ran LISTMEMBERS in channel: " + message.channel.name + " in server: " + message.channel.guild)
+      message.channel.send("DEBUGGING inside .LISTMEMBERS routine.");
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
       list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
       return;
     } // end of listmembers
     
     // END OF SPECIFIC COMMANDS 
-    message.channel.send("invalid command.");
+    console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
+    message.channel.send("INVALID COMMAND.");
   }
 	 
   
