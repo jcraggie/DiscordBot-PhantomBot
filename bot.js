@@ -176,6 +176,27 @@ client.on("message", (message) => {
       return;
 
     } // END CREATEGUILD
+
+    // DELETEGUILD START
+    if (input.startsWith(prefix + "DELETEBGUILD")) {
+      if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
+        message.reply("Sorry, you don't have permissions to use this!");
+        console.log(message.author.username+" attempted to run DELETEGUILD without permission in: " + message.channel.name + " in server: " + message.channel.guild);
+        return;
+      }
+      var listedChannels = [];
+      var res = input.split(" "); // splits the input into an array of words
+      var categoryID = res[1]; // the ID of the parent category
+
+      message.guild.channels.forEach(channel => {
+        if(channel.parentID == categoryID) console.log("found channnel");
+
+      }) // end forEach
+
+
+      return;
+
+    } // END DELETEGUILD    
     
     // END OF SPECIFIC COMMANDS 
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
