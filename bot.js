@@ -58,17 +58,23 @@ client.on("message", (message) => {
   if (input.startsWith(prefix + "foo")) {
       message.channel.send("bar!");
       return;
-  }
+  } // end foo
+
+  // console
   if (input.startsWith(prefix + "console")) {
       console.log(message.content);
       return;
-  }
+  } // end console
+  
+  // test
   if (input.startsWith(prefix + "test")) {
     message.channel.send(commands);
     message.channel.send(commands.length);
     message.channel.send("Test done.");
     return;
-  }
+  } // end test
+
+  // help
   if (input.startsWith(prefix + "help")) {
     const embed = new Discord.RichEmbed()
     .setTitle("Command List:")
@@ -83,7 +89,7 @@ client.on("message", (message) => {
     }
     message.channel.send({embed});
     return;
-  }
+  } // end help
 
     //clearchat
     if (input.startsWith(prefix + "clearchat")) {
@@ -107,14 +113,17 @@ client.on("message", (message) => {
       }
     } // end of clearchat
 
+
+    // pingtime
     if(input.startsWith(prefix + "pingtime")){ 
 			message.channel.send("Pinging ...") // Placeholder for pinging ... 
 			.then((msg) => { // Resolve promise
 				msg.edit("Ping: " + (Date.now() - msg.createdTimestamp)) // Edits message with current timestamp minus timestamp of message
-			});
-		}
+      });
+      return;
+		} // end pingtime
 
-
+    // listmembers
     if (input.startsWith(prefix + "listmembers")) {
       message.channel.send("inside .listmembers");
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
