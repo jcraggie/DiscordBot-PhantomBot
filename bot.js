@@ -24,8 +24,10 @@ const swapi = new ApiSwgohHelp({
 var commands = [
   ["help","This is it!"],
   ["ping","Ping pong!"],
+  ["pingtime","returns time to ping"],
   ["console","send the text to the console."],
-  ["clearchat","clear chat from current channel."]
+  ["clearchat","clear chat from current channel."],
+  [" "," "] // blank line before footer
 ];
 
 
@@ -102,6 +104,13 @@ client.on("message", (message) => {
         return;
       }
     } // end of clearchat
+
+    if(input.startsWith(prefix + "pingtime"){ 
+			message.channel.send("Pinging ...") // Placeholder for pinging ... 
+			.then((msg) => { // Resolve promise
+				msg.edit("Ping: " + (Date.now() - msg.createdTimestamp)) // Edits message with current timestamp minus timestamp of message
+			});
+		}
 
 
     if (input.startsWith(prefix + "listmembers")) {
