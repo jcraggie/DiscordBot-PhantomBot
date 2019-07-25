@@ -23,8 +23,8 @@ const swapi = new ApiSwgohHelp({
 
 var commands = [
   ["help","This is it!"],
-  //["ping","Ping pong!"],
-  ["pingtime","returns time to ping"],
+  // ["ping","Ping pong!"],
+  ["ping","returns time to ping"],
   ["console","send the text to the console."],
   ["clearchat","clear chat from current channel."]
   
@@ -65,7 +65,7 @@ client.on("message", (message) => {
       console.log(message.content);
       return;
   } // end console
-  
+
   // test
   if (input.startsWith(prefix + "test")) {
     message.channel.send(commands);
@@ -105,7 +105,7 @@ client.on("message", (message) => {
           num = 100;
         //message.channel.send('Num to delete is ' + num);
 
-        console.log(message.author.username+" is clearing messages in: "+message.channel.guild)
+        console.log(message.author.username+" is clearing messages in channel: " + message.channel.name + message.channel.guild)
         message.channel.bulkDelete(num)
         .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
         .catch(console.error);
@@ -114,14 +114,14 @@ client.on("message", (message) => {
     } // end of clearchat
 
 
-    // pingtime
-    if(input.startsWith(prefix + "pingtime")){ 
+    // ping
+    if(input.startsWith(prefix + "ping")){ 
 			message.channel.send("Pinging ...") // Placeholder for pinging ... 
 			.then((msg) => { // Resolve promise
 				msg.edit("Ping: " + (Date.now() - msg.createdTimestamp)) // Edits message with current timestamp minus timestamp of message
       });
       return;
-		} // end pingtime
+		} // end ping
 
     // listmembers
     if (input.startsWith(prefix + "listmembers")) {
