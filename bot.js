@@ -189,8 +189,10 @@ client.on("message", (message) => {
       var categoryID = res[1]; // the ID of the parent category
 
       message.guild.channels.forEach(channel => {
-        if(channel.parentID == categoryID) console.log("Category ID: " + categoryID + " found channnel");
-
+        if(channel.parentID == categoryID) {
+          console.log("Category ID: " + categoryID + " found channnel");
+          channel.delete();
+        }
       }) // end forEach
 
 
