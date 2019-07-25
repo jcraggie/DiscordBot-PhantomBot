@@ -23,11 +23,11 @@ const swapi = new ApiSwgohHelp({
 
 var commands = [
   ["help","This is it!"],
-  ["ping","Ping pong!"],
+  //["ping","Ping pong!"],
   ["pingtime","returns time to ping"],
   ["console","send the text to the console."],
-  ["clearchat","clear chat from current channel."],
-  [" "," "] // blank line before footer
+  ["clearchat","clear chat from current channel."]
+  
 ];
 
 
@@ -48,11 +48,13 @@ client.on("message", (message) => {
   else input = message.content.toLowerCase();
 
   
-
+  /*
   if (input.startsWith(prefix + "ping")) {
       message.channel.send("pong!");
       return;
   }
+  */
+
   if (input.startsWith(prefix + "foo")) {
       message.channel.send("bar!");
       return;
