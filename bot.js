@@ -178,7 +178,7 @@ client.on("message", (message) => {
     } // END CREATEGUILD
 
     // DELETEGUILD START
-    if (input.startsWith(prefix + "DELETEBGUILD")) {
+    if (input.startsWith(prefix + "DELETEGUILD")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run DELETEGUILD without permission in: " + message.channel.name + " in server: " + message.channel.guild);
@@ -189,7 +189,7 @@ client.on("message", (message) => {
       var categoryID = res[1]; // the ID of the parent category
 
       message.guild.channels.forEach(channel => {
-        if(channel.parentID == categoryID) console.log("found channnel");
+        if(channel.parentID == categoryID) console.log("Category ID: " + categoryID + " found channnel");
 
       }) // end forEach
 
