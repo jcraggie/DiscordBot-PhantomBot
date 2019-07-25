@@ -194,6 +194,7 @@ client.on("message", (message) => {
           channel.delete();
         }
       }) // end forEach
+      guild.channel.id(categoryID).delete();
 
 
       return;
