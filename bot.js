@@ -62,22 +62,22 @@ client.on("message", (message) => {
       return;
   } // end foo
 
-  // console
+  // CONSOLE START
   if (input.startsWith(prefix + "CONSOLE")) {
       console.log(message.content);
       return;
-  } // end console
+  } // END CONSOLE
 
-  // test
+  // TEST START
   if (input.startsWith(prefix + "TEST")) {
     console.log(message.author.username+" ran TEST in channel: " + message.channel.name + " in server: " + message.channel.guild);
     message.channel.send(commands);
     message.channel.send(commands.length);
     message.channel.send("Test done.");
     return;
-  } // end test
+  } // END TEST
 
-  // help
+  // HELP START
   if (input.startsWith(prefix + "HELP")) {
     console.log(message.author.username+" ran HELP in channel: " + message.channel.name + " in server: " + message.channel.guild)
     const embed = new Discord.RichEmbed()
@@ -93,9 +93,9 @@ client.on("message", (message) => {
     }
     message.channel.send({embed});
     return;
-  } // end help
+  } // END HELP
 
-    //clearchat
+    // CLEARCHAT START
     if (input.startsWith(prefix + "CLEARCHAT")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
@@ -116,10 +116,10 @@ client.on("message", (message) => {
         .catch(console.error);
         return;
       }
-    } // end of clearchat
+    } // END CLEARCHAT
 
 
-    // ping
+    // PING START
     if(input.startsWith(prefix + "PING")){ 
       console.log(message.author.username+" ran PING in channel: " + message.channel.name + " in server: " + message.channel.guild);
 			message.channel.send("Pinging ...") // Placeholder for pinging ... 
@@ -127,18 +127,18 @@ client.on("message", (message) => {
 				msg.edit("Ping: " + (Date.now() - msg.createdTimestamp)) // Edits message with current timestamp minus timestamp of message
       });
       return;
-		} // end ping
+		} // END PING
 
-    // listmembers
+    // LISTMEMBERS START
     if (input.startsWith(prefix + "LISTMEMBERS")) {
       console.log(message.author.username+" ran LISTMEMBERS in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("DEBUGGING inside .LISTMEMBERS routine.");
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
       list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
       return;
-    } // end of listmembers
+    } // END LISTMEMBERS
 
-    // create guild - TESTING
+    // CREATEGUILD START
     if (input.startsWith(prefix + "CREATEGUILD")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
@@ -158,9 +158,9 @@ client.on("message", (message) => {
       ];
 
       var server = message.guild; // server
-      var res = input.split(" ");
-      res.shift();
-      var name = res.join(" "); // need to allow for spaces in names This is the name of the new guild/category to make
+      var res = input.split(" "); // splits the input into an array of words
+      res.shift(); // removes first element (the command) from the array
+      var name = res.join(" "); // turns the rest of the args into a string. This is the name of the new guild/category to make.
 
       server.createChannel(name,"category");
 
@@ -173,23 +173,9 @@ client.on("message", (message) => {
     });
 
 
-      /*
-      server.createChannel("lounge","text")
-      .then(channel => {
-        let category = server.channels.find(c => c.name == name && c.type == "category");
-        if (!category) throw new Error ("Category channel does not exist");
-        channel.setParent(category.id);
-      }).catch(console.error);
-      */
-      
-
-      
-      
-
-      //guild.createChannel("test-channel-from-bot","text");
       return;
 
-    } // end CREATEGUILD
+    } // END CREATEGUILD
     
     // END OF SPECIFIC COMMANDS 
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
