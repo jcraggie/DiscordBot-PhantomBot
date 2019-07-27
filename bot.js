@@ -133,7 +133,7 @@ client.on("message", (message) => {
       console.log(message.author.username+" ran LISTMEMBERS in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("DEBUGGING inside .LISTMEMBERS routine.");
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
-      list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
+      list.members.forEach(member => console.log(member.name + " -> " + member.user.username + " is named " + member.nickname)); 
       return;
     } // END LISTMEMBERS
 
@@ -224,6 +224,10 @@ client.on("message", (message) => {
       console.log(res);
       message.channel.send(res);
 
+      /*
+      const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
+      list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
+      */
 
       return;
     } // END setMember
