@@ -17,10 +17,6 @@ const swapi = new ApiSwgohHelp({
     }
 )();
 
-
-
-
-
 var commands = [
   ["HELP","This is it!"],
   // ["ping","Ping pong!"],
@@ -31,6 +27,7 @@ var commands = [
   ["DELETEGUILD","deletes a guild's channels"]
   
 ];
+
 
 
 
@@ -179,12 +176,16 @@ client.on("message", (message) => {
     } // END CREATEGUILD
 
     // DELETEGUILD START
+    // must get parent/section ID manually. Command is .DELETEGUILD parentID
+    //
     if (input.startsWith(prefix + "DELETEGUILD")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run DELETEGUILD without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
       }
+
+      console.log(message.author.username+" ran DELETEGUILD in channel: " + message.channel.name + " in server: " + message.channel.guild);
       var listedChannels = [];
       var res = input.split(" "); // splits the input into an array of words
       var categoryID = res[1]; // the ID of the parent category
@@ -192,7 +193,7 @@ client.on("message", (message) => {
       // begin deleting all channels having a parent ID of categoryID
       message.guild.channels.forEach(channel => {
         if(channel.parentID == categoryID) {
-          console.log("Category ID: " + categoryID + " found channnel");
+          //console.log("Category ID: " + categoryID + " found channnel");
           channel.delete();
         }
       }) // end forEach - done deleting all channels within a category
@@ -203,6 +204,28 @@ client.on("message", (message) => {
       return;
 
     } // END DELETEGUILD    
+
+    // SETMEMBER BEGIN
+    // format: .SETMEMBER,@jcrAggie,Jason Rogers,{Rebellion}
+    // comma separated arguments
+    if (input.startsWith(prefix + "SETMEMBER")) {
+      if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
+        message.reply("Sorry, you don't have permissions to use this!");
+        console.log(message.author.username+" attempted to run SETMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
+        return;
+      }
+
+      console.log(message.author.username+" ran SETMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
+      var res = input.split(",");
+      var memDiscName = res[1]; // the first arg is the member's discord name
+      var memName = res[2]; // the second arg is the name portion of the nickname
+      var memNick = res[3]; // the third arg is the nickname for the member
+      console.log(res);
+      message.channel.send(res);
+
+
+
+    } // END SETMEMBER
     
     // END OF SPECIFIC COMMANDS 
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
