@@ -44,6 +44,7 @@ client.on("message", (message) => {
   var input = '';
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
+  else if (message.content.startsWith(prefix + "setMember")) input = message.content;
   else input = message.content.toUpperCase(); // convert command to uppercase
 
   
@@ -224,7 +225,7 @@ client.on("message", (message) => {
       message.channel.send(res);
 
 
-
+      return;
     } // END SETMEMBER
     
     // END OF SPECIFIC COMMANDS 
