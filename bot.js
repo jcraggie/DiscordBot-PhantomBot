@@ -206,10 +206,10 @@ client.on("message", (message) => {
 
     } // END DELETEGUILD    
 
-    // SETMEMBER BEGIN
-    // format: .SETMEMBER,@jcrAggie,Jason Rogers,{Rebellion}
+    // setMember BEGIN
+    // format: .setMember,@jcrAggie,Jason Rogers,{Rebellion}
     // comma separated arguments
-    if (input.startsWith(prefix + "SETMEMBER")) {
+    if (input.startsWith(prefix + "setMember")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run SETMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
@@ -226,7 +226,7 @@ client.on("message", (message) => {
 
 
       return;
-    } // END SETMEMBER
+    } // END setMember
     
     // END OF SPECIFIC COMMANDS 
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
