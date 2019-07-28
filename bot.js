@@ -63,7 +63,7 @@ client.on("message", (message) => {
   const command = args.shift().toUpperCase();
   message.channel.send("Command is: " + command);
   message.channel.send("Arguments are: " + args);
-  return;
+  //return;
   }
  /*
  
