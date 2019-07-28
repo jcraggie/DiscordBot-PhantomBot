@@ -49,6 +49,16 @@ const prefix = ".";
 
 client.on("message", (message) => {
   var input = '';
+
+  // testing input methods
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  message.channel.send("Command is: " + command);
+  message.channel.send("Arguments are: " + args);
+  break;
+
+
+
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
   else if (message.content.startsWith(prefix + "setMember")) input = message.content;
