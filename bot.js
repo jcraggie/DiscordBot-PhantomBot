@@ -234,6 +234,12 @@ client.on("message", (message) => {
       const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
 
+      // begin debug output
+      message.channel.send("Name: " + memName);
+      message.channel.send("Guild/role: " + memGuild);
+      message.channel.send("Nickname tag: " + memNewNick);
+      message.channel.send("Officer: " + memOfficer);
+
 
       if (botID.hasPermission("MANAGE_NICKNAMES") && botID.hasPermission("CHANGE_NICKNAME")) {
         //message.channel.send("I have permission.... attempting now....");
