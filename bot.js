@@ -266,7 +266,7 @@ client.on("message", (message) => {
 
       memName.trim();
       memGuild.trim();
-      memOfficer.trim();
+      if (memOfficer) memOfficer.trim();
 
 
       if (botID.hasPermission("MANAGE_NICKNAMES") && botID.hasPermission("CHANGE_NICKNAME")) {
