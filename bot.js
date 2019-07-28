@@ -256,6 +256,8 @@ client.on("message", (message) => {
       var memNewNick = memName + " {" + memGuild + "}"; // adds { } around the guild name
       const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
+
+      message.channel.send("args[0]: " + args[0]);
       message.channel.send("args[1] Discord name: " + memDiscName);
       message.channel.send("args[2] memName: " + memName);
       message.channel.send("args[3] memGuild: " + memGuild);
