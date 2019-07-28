@@ -220,12 +220,14 @@ client.on("message", (message) => {
       var res = input.split(",");
       var memDiscName = res[1]; // the first arg is the member's discord name
       var memName = res[2]; // the second arg is the name portion of the nickname
-      var memNick = res[3]; // the third arg is the nickname for the member
+      var memNGuild = res[3]; // the third arg is the nickname for the member
+      var memNewNick = memName + " " + memNGuild;
       const taggedUser = message.mentions.users.first();
-      console.log(res);
+      console.log(taggedUser);
       //message.channel.send(res);
-
-      taggedUser.setNickname(memName + " " + memNick);
+      message.guild.member(taggedUser).setNickname(memNewNick);
+      //guild.member.setNickname
+      //guild.member.taggedUser.setNickname(memNewNick);
 
       //taggedUser.username = memName;
       //taggedUser.nickname = memNick;
