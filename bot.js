@@ -56,15 +56,14 @@ client.on("message", (message) => {
 
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
-  else {
+ 
   // testing input methods
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  //const args = message.content.slice(prefix.length).trim().split(",");   //does not work
   const command = args.shift().toUpperCase();
   message.channel.send("Command is: " + command);
   message.channel.send("Arguments are: " + args);
   //return;
-  }
+  
  /*
  
   else if (message.content.startsWith(prefix + "setMember")) input = message.content;
