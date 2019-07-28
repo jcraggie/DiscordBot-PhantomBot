@@ -55,7 +55,7 @@ client.on("message", (message) => {
   const command = args.shift().toLowerCase();
   message.channel.send("Command is: " + command);
   message.channel.send("Arguments are: " + args);
-  break;
+  return;
 
 
 
