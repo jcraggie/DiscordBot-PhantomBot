@@ -241,8 +241,10 @@ client.on("message", (message) => {
           if(memGuild == serverRoles[x][0]) {
             roleFound = true;
             var memRoleArray = [serverRoles[x][1]];
+            console.log(memRoleArray);
             if(memOfficer == "officer"){
               memRoleArray = [serverRoles[x][1],serverRoles[x][2]];
+              console.log(memRoleArray);
             } else
             // using setRoles([array,of,roles]) as this clears existing roles and just assigns the ones in the array.
             
