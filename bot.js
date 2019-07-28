@@ -62,7 +62,58 @@ client.on("message", (message) => {
   const command = args.shift().toUpperCase();
   message.channel.send("Command is: " + command);
   message.channel.send("Arguments are: " + args);
-  //return;
+  message.channel.send(" ------------");
+
+
+  //---------------------------------------------------------------------------------------------
+  splitCommandLine(message.content) ;
+
+log( 'argv', process.argv.slice(2) ) ;
+
+function log( n, v ) {
+    console.log( n ) ;
+    console.dir( v ) ;
+    console.log() ;
+}
+
+function splitCommandLine( commandLine ) {
+
+    log( 'commandLine', commandLine ) ;
+
+    //  Find a unique marker for the space character.
+    //  Start with '<SP>' and repeatedly append '@' if necessary to make it unique.
+    var spaceMarker = '<SP>' ;
+    while( commandLine.indexOf( spaceMarker ) > -1 ) spaceMarker += '@' ;
+
+    //  Protect double-quoted strings.
+    //   o  Find strings of non-double-quotes, wrapped in double-quotes.
+    //   o  The final double-quote is optional to allow for an unterminated string.
+    //   o  Replace each double-quoted-string with what's inside the qouble-quotes,
+    //      after each space character has been replaced with the space-marker above.
+    //   o  The outer double-quotes will not be present.
+    var noSpacesInQuotes = commandLine.replace( /"([^"]*)"?/g, ( fullMatch, capture ) => {
+        return capture.replace( / /g, spaceMarker ) ;
+    }) ;
+
+    log( 'noSpacesInQuotes', noSpacesInQuotes ) ;
+
+    //  Now that it is safe to do so, split the command-line at one-or-more spaces.
+    var mangledParamArray = noSpacesInQuotes.split( / +/ ) ;
+
+    log( 'mangledParamArray', mangledParamArray ) ;
+
+    //  Create a new array by restoring spaces from any space-markers.
+    var paramArray = mangledParamArray.map( ( mangledParam ) => {
+        return mangledParam.replace( RegExp( spaceMarker, 'g' ), ' ' ) ;
+    });
+
+    log( 'paramArray', paramArray ) ;
+
+    return paramArray ;
+}
+//--------------------------------------------------------------------------------------------------------------
+
+  return;
   
  /*
  
