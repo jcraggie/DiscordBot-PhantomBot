@@ -28,6 +28,11 @@ var commands = [
   
 ];
 
+var serverRoles = [
+  ["member","418011699698991105"],
+  ["tester","595663414756376600"]
+
+]
 
 
 
@@ -146,7 +151,7 @@ client.on("message", (message) => {
       }
 
       console.log(message.author.username+" ran CREATEGUILD in channel: " + message.channel.name + " in server: " + message.channel.guild);
-      let channelname =[
+      let channelName =[
         "lounge",
         "officers",
         "tb",
@@ -163,7 +168,7 @@ client.on("message", (message) => {
 
       server.createChannel(name,"category");
 
-      channelname.forEach(chName => {server.createChannel(chName,"text")
+      channelName.forEach(chName => {server.createChannel(chName,"text")
       .then(channel => {
         let category = server.channels.find(c => c.name == name && c.type == "category");
         if (!category) throw new Error ("Category channel does not exist");
@@ -220,17 +225,32 @@ client.on("message", (message) => {
       var res = input.split(",");
       var memDiscName = res[1]; // the first arg is the member's discord name
       var memName = res[2]; // the second arg is the name portion of the nickname
-      var memNGuild = res[3]; // the third arg is the nickname for the member
-      var memNewNick = memName + " " + memNGuild;
+      var memGuild = res[3]; // the third arg is the nickname for the member
+      var memNewNick = memName + " {" + memGuild + "}";
       const taggedUser = message.mentions.users.first();
+      const botID = message.guild.member.get("594193472336953365");
 
 
-      if (message.guild.members.get("594193472336953365").hasPermission("MANAGE_NICKNAMES") && message.guild.members.get("594193472336953365").hasPermission("CHANGE_NICKNAME")) {
+      if (botID.hasPermission("MANAGE_NICKNAMES") && botID.hasPermission("CHANGE_NICKNAME")) {
         //message.channel.send("I have permission.... attempting now....");
-        message.guild.members.get(taggedUser.id).setNickname(memNewNick);
-    } else {
-        message.channel.send("I dont have the permissons to change my nickname in this server.");
-    }
+        var roleFound = false;
+        for (var x = 0; x < serverRoles.length; x++) {
+          if(memGuild == serverRoles[x][0]) {
+            roleFound = true;
+            taggedUser.addRole(serverRoles[x][1]);
+            //member.addRole(role).catch(console.error);
+          }
+        }
+        if (roleFound == false) {
+          message.channel.send("That role was not found.");
+          return;
+        } else {
+          message.guild.members.get(taggedUser.id).setNickname(memNewNick);
+          return;
+        }
+      } else {
+          message.channel.send("I dont have the permissons to change my nickname in this server.");
+        }
 
       return;
     } // END setMember
