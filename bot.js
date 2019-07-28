@@ -224,8 +224,11 @@ client.on("message", (message) => {
       const taggedUser = message.mentions.users.first();
       console.log(res);
       //message.channel.send(res);
-      taggedUser.username = memName;
-      taggedUser.nickname = memNick;
+
+      taggedUser.setNickname(memName + " " + memNick);
+
+      //taggedUser.username = memName;
+      //taggedUser.nickname = memNick;
       message.channel.send(taggedUser);
       /*
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
