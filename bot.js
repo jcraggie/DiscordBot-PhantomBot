@@ -257,7 +257,7 @@ client.on("message", (message) => {
             } 
             // using setRoles([array,of,roles]) as this clears existing roles and just assigns the ones in the array.
             
-            message.guild.members.get(taggedUser.id).setRoles([ [serverRoles[x][1]]   ] ); 
+            message.guild.members.get(taggedUser.id).setRoles([ serverRoles[x][1]   ] ); 
 
           }
         }
