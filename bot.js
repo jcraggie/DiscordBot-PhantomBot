@@ -78,7 +78,7 @@ client.on("message", (message) => {
   }
   */
 
-  if (command == "FOO")) {
+  if (command == "FOO") {
     console.log(message.author.username+" ran FOO in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("bar!");
       return;
