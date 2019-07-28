@@ -228,16 +228,18 @@ client.on("message", (message) => {
       var memGuild = res[3]; // the third arg is the nickname for the member
       var memNewNick = memName + " {" + memGuild + "}";
       const taggedUser = message.mentions.users.first();
-      const botID = "594193472336953365";
+      //const botID = "594193472336953365";
+      const botID = message.guild.members.get("594193472336953365");
 
 
-      if (message.guild.members.get("594193472336953365").hasPermission("MANAGE_NICKNAMES") && message.guild.members.get("594193472336953365").hasPermission("CHANGE_NICKNAME")) {
+      if (botID.hasPermission("MANAGE_NICKNAMES") && botID.hasPermission("CHANGE_NICKNAME")) {
         //message.channel.send("I have permission.... attempting now....");
         var roleFound = false;
         for (var x = 0; x < serverRoles.length; x++) {
           if(memGuild == serverRoles[x][0]) {
             roleFound = true;
-            taggedUser.addRole(serverRoles[x][1]);
+            message.guild.members.get(taggedUser.id).addRole(serverRoles[x][1]);
+            //taggedUser.addRole(serverRoles[x][1]);
             //member.addRole(role).catch(console.error);
           }
         }
