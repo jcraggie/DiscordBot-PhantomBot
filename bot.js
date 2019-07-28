@@ -225,11 +225,11 @@ client.on("message", (message) => {
 
       console.log(message.author.username+" ran SETMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
       
-      var res = input.trim().split(",");
+      var res = input.split(",");
       var memDiscName = res[1]; // the first arg is the member's discord name
-      var memName = res[2]; // the second arg is the name portion of the nickname
-      var memGuild = res[3]; // the third arg is the nickname for the member
-      var memOfficer = res[4]; // optional "officer" if this member is an officer
+      var memName = res[2].trim(); // the second arg is the name portion of the nickname
+      var memGuild = res[3].trim(); // the third arg is the nickname for the member
+      var memOfficer = res[4].trim(); // optional "officer" if this member is an officer
       var memNewNick = memName + " {" + memGuild + "}"; // adds { } around the guild name
       const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
