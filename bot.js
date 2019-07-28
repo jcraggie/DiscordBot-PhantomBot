@@ -90,7 +90,7 @@ client.on("message", (message) => {
   } // END CONSOLE
 
   // TEST START
-  if (commanad == "TEST") {
+  if (command == "TEST") {
     console.log(message.author.username+" ran TEST in channel: " + message.channel.name + " in server: " + message.channel.guild);
     message.channel.send(commands);
     message.channel.send(commands.length);
