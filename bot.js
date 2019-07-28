@@ -223,15 +223,17 @@ client.on("message", (message) => {
       var memNGuild = res[3]; // the third arg is the nickname for the member
       var memNewNick = memName + " " + memNGuild;
       const taggedUser = message.mentions.users.first();
+      console.log(memNewNick);
       console.log(taggedUser);
       //message.channel.send(res);
-      message.guild.member(taggedUser).setNickname(memNewNick);
+      //message.guild.member(taggedUser).setNickname(memNewNick);
+      message.guild.members.get(taggedUser.id).setNickname(memNewNick);
       //guild.member.setNickname
       //guild.member.taggedUser.setNickname(memNewNick);
 
       //taggedUser.username = memName;
       //taggedUser.nickname = memNick;
-      message.channel.send(taggedUser);
+      //message.channel.send(taggedUser);
       /*
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
       list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
