@@ -40,6 +40,7 @@ var serverRoles = [
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.channel.get("605087450573963362").send("Online...");
 });
 
 // Set the prefix
