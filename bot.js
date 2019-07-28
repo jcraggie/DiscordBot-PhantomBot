@@ -84,13 +84,13 @@ client.on("message", (message) => {
   } // end foo
 
   // CONSOLE START
-  if (input.startsWith(prefix + "CONSOLE")) {
+  if (command == "CONSOLE") {
       console.log(message.content);
       return;
   } // END CONSOLE
 
   // TEST START
-  if (input.startsWith(prefix + "TEST")) {
+  if (commanad == "TEST") {
     console.log(message.author.username+" ran TEST in channel: " + message.channel.name + " in server: " + message.channel.guild);
     message.channel.send(commands);
     message.channel.send(commands.length);
@@ -99,7 +99,7 @@ client.on("message", (message) => {
   } // END TEST
 
   // HELP START
-  if (input.startsWith(prefix + "HELP")) {
+  if (command == "HELP") {
     console.log(message.author.username+" ran HELP in channel: " + message.channel.name + " in server: " + message.channel.guild)
     const embed = new Discord.RichEmbed()
     .setTitle("Command List:")
@@ -117,7 +117,7 @@ client.on("message", (message) => {
   } // END HELP
 
     // CLEARCHAT START
-    if (input.startsWith(prefix + "CLEARCHAT")) {
+    if (command == "CLEARCHAT") {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
@@ -141,7 +141,7 @@ client.on("message", (message) => {
 
 
     // PING START
-    if(input.startsWith(prefix + "PING")){ 
+    if(command == "PING"){ 
       console.log(message.author.username+" ran PING in channel: " + message.channel.name + " in server: " + message.channel.guild);
 			message.channel.send("Pinging ...") // Placeholder for pinging ... 
 			.then((msg) => { // Resolve promise
@@ -151,7 +151,7 @@ client.on("message", (message) => {
 		} // END PING
 
     // LISTMEMBERS START
-    if (input.startsWith(prefix + "LISTMEMBERS")) {
+    if (command == "LISTMEMBERS") {
       console.log(message.author.username+" ran LISTMEMBERS in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("DEBUGGING inside .LISTMEMBERS routine.");
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
@@ -160,7 +160,7 @@ client.on("message", (message) => {
     } // END LISTMEMBERS
 
     // CREATEGUILD START
-    if (input.startsWith(prefix + "CREATEGUILD")) {
+    if (command == "CREATEGUILD") {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run CREATEGUILD without permission in: " + message.channel.name + " in server: " + message.channel.guild);
@@ -201,7 +201,7 @@ client.on("message", (message) => {
     // DELETEGUILD START
     // must get parent/section ID manually. Command is .DELETEGUILD parentID
     //
-    if (input.startsWith(prefix + "DELETEGUILD")) {
+    if (command == "DELETEGUILD") {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run DELETEGUILD without permission in: " + message.channel.name + " in server: " + message.channel.guild);
@@ -231,7 +231,7 @@ client.on("message", (message) => {
     // setMember BEGIN
     // format: .setMember,@jcrAggie,Jason Rogers,Rebellion,officer (optional)
     // comma separated arguments
-    if (input.startsWith(prefix + "setMember")) {
+    if (command == "SETMEMBER") {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run SETMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
