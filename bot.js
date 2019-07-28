@@ -234,14 +234,6 @@ client.on("message", (message) => {
       const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
 
-      // begin debug output
-      /*
-      message.channel.send("Name: " + memName);
-      message.channel.send("Guild/role: " + memGuild);
-      message.channel.send("Nickname tag: " + memNewNick);
-      message.channel.send("Officer: " + memOfficer);
-      */
-
 
       if (botID.hasPermission("MANAGE_NICKNAMES") && botID.hasPermission("CHANGE_NICKNAME")) {
         //message.channel.send("I have permission.... attempting now....");
@@ -250,10 +242,9 @@ client.on("message", (message) => {
           if(memGuild == serverRoles[x][0]) {
             roleFound = true;
             var memRoleArray = [serverRoles[x][1]];
-            console.log(memRoleArray);
+
             if(memOfficer == "officer"){
               memRoleArray = [  serverRoles[x][1],serverRoles[x][2]  ];
-              console.log(memRoleArray);
             } 
             // using setRoles([array,of,roles]) as this clears existing roles and just assigns the ones in the array.
             
