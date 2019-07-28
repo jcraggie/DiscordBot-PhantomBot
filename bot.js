@@ -60,7 +60,7 @@ client.on("message", (message) => {
   // testing input methods
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   //const args = message.content.slice(prefix.length).trim().split(",");   //does not work
-  const command = args.shift().toLowerCase();
+  const command = args.shift().toUpperCase();
   message.channel.send("Command is: " + command);
   message.channel.send("Arguments are: " + args);
   return;
@@ -78,7 +78,7 @@ client.on("message", (message) => {
   }
   */
 
-  if (input.startsWith(prefix + "FOO")) {
+  if (command == "FOO")) {
     console.log(message.author.username+" ran FOO in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("bar!");
       return;
