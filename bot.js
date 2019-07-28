@@ -238,7 +238,7 @@ client.on("message", (message) => {
         for (var x = 0; x < serverRoles.length; x++) {
           if(memGuild == serverRoles[x][0]) {
             roleFound = true;
-            message.guild.members.get(taggedUser.id).addRoles([ serverRoles[x][1] ] );
+            message.guild.members.get(taggedUser.id).setRoles([ serverRoles[x][1] ] );
             //taggedUser.addRole(serverRoles[x][1]);
             //member.addRole(role).catch(console.error);
           }
