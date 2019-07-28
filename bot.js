@@ -50,20 +50,25 @@ const prefix = ".";
 client.on("message", (message) => {
   var input = '';
 
+
+
+
+
+  // Exit and stop if it's not there
+  if (!message.content.startsWith(prefix)) return;
+  else {
   // testing input methods
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   message.channel.send("Command is: " + command);
   message.channel.send("Arguments are: " + args);
   return;
-
-
-
-  // Exit and stop if it's not there
-  if (!message.content.startsWith(prefix)) return;
+  }
+ /*
+ 
   else if (message.content.startsWith(prefix + "setMember")) input = message.content;
   else input = message.content.toUpperCase(); // convert command to uppercase
-
+*/
   
   /*
   if (input.startsWith(prefix + "ping")) {
