@@ -222,7 +222,7 @@ client.on("message", (message) => {
       }
 
       console.log(message.author.username+" ran SETMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
-      var res = input.split(",");
+      var res = input.split(",").trim();
       var memDiscName = res[1]; // the first arg is the member's discord name
       var memName = res[2]; // the second arg is the name portion of the nickname
       var memGuild = res[3]; // the third arg is the nickname for the member
@@ -238,7 +238,7 @@ client.on("message", (message) => {
         for (var x = 0; x < serverRoles.length; x++) {
           if(memGuild == serverRoles[x][0]) {
             roleFound = true;
-            message.guild.members.get(taggedUser.id).addRole(serverRoles[x][1]);
+            message.guild.members.get(taggedUser.id).addRoles([ serverRoles[x][1] ] );
             //taggedUser.addRole(serverRoles[x][1]);
             //member.addRole(role).catch(console.error);
           }
