@@ -231,8 +231,8 @@ client.on("message", (message) => {
       const botID = "594193472336953365";
 
 
-      if (message.guild.member.get(botID).hasPermission("MANAGE_NICKNAMES") && 
-          message.guild.member.get(botID).hasPermission("CHANGE_NICKNAME")) {
+      if (message.guild.member.get("594193472336953365").hasPermission("MANAGE_NICKNAMES") && 
+          message.guild.member.get("594193472336953365").hasPermission("CHANGE_NICKNAME")) {
         //message.channel.send("I have permission.... attempting now....");
         var roleFound = false;
         for (var x = 0; x < serverRoles.length; x++) {
