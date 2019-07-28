@@ -223,11 +223,20 @@ client.on("message", (message) => {
       var memNGuild = res[3]; // the third arg is the nickname for the member
       var memNewNick = memName + " " + memNGuild;
       const taggedUser = message.mentions.users.first();
-      console.log(memNewNick);
-      console.log(taggedUser);
+      //console.log(memNewNick);
+      //console.log(taggedUser);
       //message.channel.send(res);
       //message.guild.member(taggedUser).setNickname(memNewNick);
-      message.guild.members.get(taggedUser.id).setNickname(memNewNick);
+
+      if (message.guild.members.get("594193472336953365").hasPermission("MANAGE_NICKNAMES") && message.guild.members.get("594193472336953365").hasPermission("CHANGE_NICKNAME")) {
+        message.guild.members.get(taggedUser.id).setNickname(memNewNick);
+    } else {
+        message.channel.sendMessage("I dont have the permissons to change my nickname in this server.");
+    }
+
+
+
+      //message.guild.members.get(taggedUser.id).setNickname(memNewNick);
       //guild.member.setNickname
       //guild.member.taggedUser.setNickname(memNewNick);
 
