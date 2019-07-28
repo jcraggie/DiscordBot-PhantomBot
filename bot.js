@@ -223,32 +223,14 @@ client.on("message", (message) => {
       var memNGuild = res[3]; // the third arg is the nickname for the member
       var memNewNick = memName + " " + memNGuild;
       const taggedUser = message.mentions.users.first();
-      //console.log(memNewNick);
-      //console.log(taggedUser);
-      //message.channel.send(res);
-      //message.guild.member(taggedUser).setNickname(memNewNick);
+
 
       if (message.guild.members.get("594193472336953365").hasPermission("MANAGE_NICKNAMES") && message.guild.members.get("594193472336953365").hasPermission("CHANGE_NICKNAME")) {
-        message.channel.send("I have permission.... attempting now....");
-        message.guild.members.get(taggedUser.id).setNickname(memNewNick)
-                                                .catch(console.error);
+        //message.channel.send("I have permission.... attempting now....");
+        message.guild.members.get(taggedUser.id).setNickname(memNewNick);
     } else {
         message.channel.send("I dont have the permissons to change my nickname in this server.");
     }
-
-
-
-      //message.guild.members.get(taggedUser.id).setNickname(memNewNick);
-      //guild.member.setNickname
-      //guild.member.taggedUser.setNickname(memNewNick);
-
-      //taggedUser.username = memName;
-      //taggedUser.nickname = memNick;
-      //message.channel.send(taggedUser);
-      /*
-      const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
-      list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
-      */
 
       return;
     } // END setMember
