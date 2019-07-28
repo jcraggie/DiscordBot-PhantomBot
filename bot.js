@@ -221,9 +221,12 @@ client.on("message", (message) => {
       var memDiscName = res[1]; // the first arg is the member's discord name
       var memName = res[2]; // the second arg is the name portion of the nickname
       var memNick = res[3]; // the third arg is the nickname for the member
+      const taggedUser = message.mentions.users.first();
       console.log(res);
-      message.channel.send(res);
-
+      //message.channel.send(res);
+      taggedUser.username = memName;
+      taggedUser.nickname = memNick;
+      message.channel.send(taggedUser);
       /*
       const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
       list.members.forEach(member => console.log(member.user.username + " is named " + member.nickname)); 
