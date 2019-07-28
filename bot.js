@@ -232,7 +232,7 @@ client.on("message", (message) => {
 
 
       if (message.guild.member.get(botID).hasPermission("MANAGE_NICKNAMES") && 
-          (message.guild.member.get(botID).hasPermission("CHANGE_NICKNAME")) {
+          message.guild.member.get(botID).hasPermission("CHANGE_NICKNAME")) {
         //message.channel.send("I have permission.... attempting now....");
         var roleFound = false;
         for (var x = 0; x < serverRoles.length; x++) {
