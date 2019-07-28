@@ -28,9 +28,10 @@ var commands = [
   
 ];
 
+// serverRoles is GuildName, GuildMemberRoleID, GuildOfficerRoleID
 var serverRoles = [
-  ["member","418011699698991105"],
-  ["tester","595663414756376600"]
+  ["member","418011699698991105","605084960130334772"],
+  ["tester","595663414756376600","605085107673366538"]
 
 ]
 
@@ -212,7 +213,7 @@ client.on("message", (message) => {
     } // END DELETEGUILD    
 
     // setMember BEGIN
-    // format: .setMember,@jcrAggie,Jason Rogers,Rebellion
+    // format: .setMember,@jcrAggie,Jason Rogers,Rebellion,officer (optional)
     // comma separated arguments
     if (input.startsWith(prefix + "setMember")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
@@ -227,6 +228,7 @@ client.on("message", (message) => {
       var memDiscName = res[1]; // the first arg is the member's discord name
       var memName = res[2]; // the second arg is the name portion of the nickname
       var memGuild = res[3]; // the third arg is the nickname for the member
+      var memOfficer = res[4]; // optional "officer" if this member is an officer
       var memNewNick = memName + " {" + memGuild + "}"; // adds { } around the guild name
       const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
@@ -238,7 +240,13 @@ client.on("message", (message) => {
         for (var x = 0; x < serverRoles.length; x++) {
           if(memGuild == serverRoles[x][0]) {
             roleFound = true;
-            message.guild.members.get(taggedUser.id).setRoles([ serverRoles[x][1] ] );
+            var memRoleArray = [serverRoles[x][1]];
+            if(memOfficer == "officer"){
+              memRoleArray = [serverRoles[x][1],serverRoles[x][2]];
+            } else
+            // using setRoles([array,of,roles]) as this clears existing roles and just assigns the ones in the array.
+            
+            message.guild.members.get(taggedUser.id).setRoles([ memRoleArray ] ); 
 
           }
         }
