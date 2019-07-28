@@ -249,20 +249,20 @@ client.on("message", (message) => {
       console.log(message.author.username+" ran SETMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
       
       //var res = input.split(",");
-      var memDiscName = args[1]; // the first arg is the member's discord name
-      var memName = args[2]; // the second arg is the name portion of the nickname
-      var memGuild = args[3]; // the third arg is the nickname for the member
-      var memOfficer = args[4]; // optional "officer" if this member is an officer
+      var memDiscName = args[0]; // the first arg is the member's discord name
+      var memName = args[1]; // the second arg is the name portion of the nickname
+      var memGuild = args[2]; // the third arg is the nickname for the member
+      var memOfficer = args[3]; // optional "officer" if this member is an officer
       var memNewNick = memName + " {" + memGuild + "}"; // adds { } around the guild name
       const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
 
-      message.channel.send("args[0]: " + args[0]);
-      message.channel.send("args[1] Discord name: " + memDiscName);
-      message.channel.send("args[2] memName: " + memName);
-      message.channel.send("args[3] memGuild: " + memGuild);
-      message.channel.send("args[4] memOfficer: " + memOfficer);
-      return;
+      //message.channel.send("args[0]: " + args[0]);
+      message.channel.send("args[0] Discord name: " + memDiscName);
+      message.channel.send("args[1] memName: " + memName);
+      message.channel.send("args[2] memGuild: " + memGuild);
+      message.channel.send("args[3] memOfficer: " + memOfficer);
+      //return;
 
       memName.trim();
       memGuild.trim();
