@@ -229,10 +229,11 @@ client.on("message", (message) => {
       //message.guild.member(taggedUser).setNickname(memNewNick);
 
       if (message.guild.members.get("594193472336953365").hasPermission("MANAGE_NICKNAMES") && message.guild.members.get("594193472336953365").hasPermission("CHANGE_NICKNAME")) {
-        message.channel.sendMessage("I have permission.... attempting now....");
-        message.guild.members.get(taggedUser.id).setNickname(memNewNick);
+        message.channel.send("I have permission.... attempting now....");
+        message.guild.members.get(taggedUser.id).setNickname(memNewNick)
+                                                .catch(console.error);
     } else {
-        message.channel.sendMessage("I dont have the permissons to change my nickname in this server.");
+        message.channel.send("I dont have the permissons to change my nickname in this server.");
     }
 
 
