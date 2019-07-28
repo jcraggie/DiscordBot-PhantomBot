@@ -225,7 +225,7 @@ client.on("message", (message) => {
 
       console.log(message.author.username+" ran SETMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
       
-      var res = input.split(",");
+      var res = input.trim().split(",");
       var memDiscName = res[1]; // the first arg is the member's discord name
       var memName = res[2]; // the second arg is the name portion of the nickname
       var memGuild = res[3]; // the third arg is the nickname for the member
