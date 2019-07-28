@@ -212,7 +212,7 @@ client.on("message", (message) => {
     } // END DELETEGUILD    
 
     // setMember BEGIN
-    // format: .setMember,@jcrAggie,Jason Rogers,{Rebellion}
+    // format: .setMember,@jcrAggie,Jason Rogers,Rebellion
     // comma separated arguments
     if (input.startsWith(prefix + "setMember")) {
       if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
@@ -222,25 +222,24 @@ client.on("message", (message) => {
       }
 
       console.log(message.author.username+" ran SETMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
+      
       var res = input.split(",");
       var memDiscName = res[1]; // the first arg is the member's discord name
       var memName = res[2]; // the second arg is the name portion of the nickname
       var memGuild = res[3]; // the third arg is the nickname for the member
-      var memNewNick = memName + " {" + memGuild + "}";
-      const taggedUser = message.mentions.users.first();
-      //const botID = "594193472336953365";
+      var memNewNick = memName + " {" + memGuild + "}"; // adds { } around the guild name
+      const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
 
 
       if (botID.hasPermission("MANAGE_NICKNAMES") && botID.hasPermission("CHANGE_NICKNAME")) {
         //message.channel.send("I have permission.... attempting now....");
-        var roleFound = false;
+        var roleFound = false; 
         for (var x = 0; x < serverRoles.length; x++) {
           if(memGuild == serverRoles[x][0]) {
             roleFound = true;
             message.guild.members.get(taggedUser.id).setRoles([ serverRoles[x][1] ] );
-            //taggedUser.addRole(serverRoles[x][1]);
-            //member.addRole(role).catch(console.error);
+
           }
         }
         if (roleFound == false) {
