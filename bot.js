@@ -58,10 +58,10 @@ client.on("message", (message) => {
   if (!message.content.startsWith(prefix)) return;
  
   // testing input methods
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toUpperCase();
-  message.channel.send("Command is: " + command);
-  message.channel.send("Arguments are: " + args);
+  const oldargs = message.content.slice(prefix.length).trim().split(/ +/g);
+  const oldcommand = args.shift().toUpperCase();
+  message.channel.send("Command is: " + oldcommand);
+  message.channel.send("Arguments are: " + oldargs);
   message.channel.send(" ------------");
 
 
