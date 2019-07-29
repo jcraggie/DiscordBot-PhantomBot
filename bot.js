@@ -113,6 +113,13 @@ function splitCommandLine( commandLine ) {
 }
 //--------------------------------------------------------------------------------------------------------------
 
+
+  const args = paramArray;
+  const command = args.shift().toUpperCase();
+  message.channel.send("New Command is: " + command);
+  message.channel.send("New Arguments are: " + args);
+  message.channel.send(" ------------");
+
   return;
   
  /*
