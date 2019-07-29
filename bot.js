@@ -115,7 +115,7 @@ function splitCommandLine( commandLine ) {
 //--------------------------------------------------------------------------------------------------------------
 
 
-  const args = splitCommandLine(message.content);
+  const args = splitCommandLine(message.content.slice(prefix.length));
 
   log( 'argv', process.argv.slice(2) ) ;
 
