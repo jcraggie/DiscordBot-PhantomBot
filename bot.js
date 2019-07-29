@@ -24,7 +24,8 @@ var commands = [
   ["CONSOLE","send the text to the console."],
   ["CLEARCHAT","clear chat from current channel."],
   ["CREATEGUILD","creates a new guild section w/ channels."],
-  ["DELETEGUILD","deletes a guild's channels"]
+  ["DELETEGUILD","deletes a guild's channels"],
+  ["SETMEMBER","sets a new member's nickname and guild"]
   
 ];
 
@@ -35,6 +36,7 @@ var serverRoles = [
 
 ]
 
+const masterUserID = 116901947428044809;
 
 
 
@@ -56,6 +58,12 @@ client.on("message", (message) => {
 
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
+
+  // TEMP REQUIREMENT - ONLY PERMIT MASTER USER TO EXECUTE COMMANDS
+  if(!message.member.id == masterUserID) {
+    message.reply("Sorry, you are not my master!");
+    console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
+    return;
  
   // testing input methods
   const oldargs = message.content.slice(prefix.length).trim().split(/ +/g);
