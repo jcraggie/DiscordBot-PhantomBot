@@ -52,7 +52,8 @@ const prefix = ".";
 client.on("message", (message) => {
   var input = '';
 
-  message.channel.send("Author ID: " + message.author.id);
+  //message.channel.send("Author ID: " + message.author.id);
+  //return;
 
 
 
@@ -63,14 +64,14 @@ client.on("message", (message) => {
   message.channel.send("Author ID: " + message.author.id);
 
   // TEMP REQUIREMENT - ONLY PERMIT MASTER USER TO EXECUTE COMMANDS
-  /*
+  /
   if(!message.author.id == masterUserID) {
     message.reply("Sorry, you are not my master!");
     console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
     return;
-  */
-
   
+
+
   // testing input methods
   const oldargs = message.content.slice(prefix.length).trim().split(/ +/g);
   const oldcommand = oldargs.shift().toUpperCase();
