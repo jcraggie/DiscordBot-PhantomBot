@@ -65,7 +65,7 @@ client.on("message", (message) => {
 
   // TEMP REQUIREMENT - ONLY PERMIT MASTER USER TO EXECUTE COMMANDS
   
-  if(!message.author.id == masterUserID) {
+  if(message.author.id != masterUserID) {
     message.reply("Sorry, you are not my master!");
     console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
     return;
