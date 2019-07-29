@@ -280,6 +280,7 @@ function log( n, v ) {
       var listedChannels = [];
       //var res = input.split(" "); // splits the input into an array of words
       var categoryID = args; // the ID of the parent category
+      message.channel.send("Guild ID should be: " + categoryID);
 
       // begin deleting all channels having a parent ID of categoryID
       message.guild.channels.forEach(channel => {
