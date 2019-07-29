@@ -66,6 +66,7 @@ client.on("message", (message) => {
 
 
   //---------------------------------------------------------------------------------------------
+  /*
   splitCommandLine(message.content) ;
 
 log( 'argv', process.argv.slice(2) ) ;
@@ -75,7 +76,7 @@ function log( n, v ) {
     console.dir( v ) ;
     console.log() ;
 }
-
+*/
 function splitCommandLine( commandLine ) {
 
     log( 'commandLine', commandLine ) ;
@@ -114,7 +115,15 @@ function splitCommandLine( commandLine ) {
 //--------------------------------------------------------------------------------------------------------------
 
 
-  const args = paramArray;
+  const args = splitCommandLine(message.content);
+
+  log( 'argv', process.argv.slice(2) ) ;
+
+function log( n, v ) {
+    console.log( n ) ;
+    console.dir( v ) ;
+    console.log() ;
+}
   const command = args.shift().toUpperCase();
   message.channel.send("New Command is: " + command);
   message.channel.send("New Arguments are: " + args);
