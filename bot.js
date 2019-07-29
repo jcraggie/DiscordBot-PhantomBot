@@ -60,9 +60,9 @@ client.on("message", (message) => {
   // testing input methods
   const oldargs = message.content.slice(prefix.length).trim().split(/ +/g);
   const oldcommand = oldargs.shift().toUpperCase();
-  message.channel.send("Command is: " + oldcommand);
-  message.channel.send("Arguments are: " + oldargs);
-  message.channel.send(" ------------");
+  //message.channel.send("Command is: " + oldcommand);
+  //message.channel.send("Arguments are: " + oldargs);
+  //message.channel.send(" ------------");
 
 
   //---------------------------------------------------------------------------------------------
@@ -120,14 +120,14 @@ function splitCommandLine( commandLine ) {
   log( 'argv', process.argv.slice(2) ) ;
 
 function log( n, v ) {
-    console.log( n ) ;
-    console.dir( v ) ;
-    console.log() ;
+    //console.log( n ) ;
+    //console.dir( v ) ;
+    //console.log() ;
 }
   const command = args.shift().toUpperCase();
-  message.channel.send("New Command is: " + command);
-  message.channel.send("New Arguments are: " + args);
-  message.channel.send(" ------------");
+  //message.channel.send("New Command is: " + command);
+  //message.channel.send("New Arguments are: " + args);
+  //message.channel.send(" ------------");
 
   //return;
   
@@ -325,11 +325,13 @@ function log( n, v ) {
       const botID = message.guild.members.get("594193472336953365");
 
       //message.channel.send("args[0]: " + args[0]);
+      /*
       message.channel.send("args[0] Discord name: " + memDiscName);
       message.channel.send("args[1] memName: " + memName);
       message.channel.send("args[2] memGuild: " + memGuild);
       message.channel.send("args[3] memOfficer: " + memOfficer);
       //return;
+      */
 
       memName.trim();
       memGuild.trim();
