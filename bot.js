@@ -61,7 +61,7 @@ client.on("message", (message) => {
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
 
-  message.channel.send("Author ID: " + message.author.id);
+  //message.channel.send("Author ID: " + message.author.id);
 
   // TEMP REQUIREMENT - ONLY PERMIT MASTER USER TO EXECUTE COMMANDS
   /
