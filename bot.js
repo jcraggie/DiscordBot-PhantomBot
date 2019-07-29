@@ -246,9 +246,10 @@ function log( n, v ) {
       ];
 
       var server = message.guild; // server
-      var res = input.split(" "); // splits the input into an array of words
-      res.shift(); // removes first element (the command) from the array
-      var name = res.join(" "); // turns the rest of the args into a string. This is the name of the new guild/category to make.
+      //var res = input.split(" "); // splits the input into an array of words
+      //res.shift(); // removes first element (the command) from the array
+
+      var name = args.join(" "); // turns the rest of the args into a string. This is the name of the new guild/category to make.
 
       server.createChannel(name,"category");
 
