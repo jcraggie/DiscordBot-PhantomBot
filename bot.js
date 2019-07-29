@@ -129,7 +129,7 @@ function log( n, v ) {
   message.channel.send("New Arguments are: " + args);
   message.channel.send(" ------------");
 
-  return;
+  //return;
   
  /*
  
