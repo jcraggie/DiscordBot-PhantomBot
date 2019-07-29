@@ -278,8 +278,8 @@ function log( n, v ) {
 
       console.log(message.author.username+" ran DELETEGUILD in channel: " + message.channel.name + " in server: " + message.channel.guild);
       var listedChannels = [];
-      var res = input.split(" "); // splits the input into an array of words
-      var categoryID = res[1]; // the ID of the parent category
+      //var res = input.split(" "); // splits the input into an array of words
+      var categoryID = args; // the ID of the parent category
 
       // begin deleting all channels having a parent ID of categoryID
       message.guild.channels.forEach(channel => {
