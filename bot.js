@@ -290,7 +290,7 @@ function log( n, v ) {
         }
       }) // end forEach - done deleting all channels within a category
 
-      message.guild.channels.get(categoryID).delete(); // deletes the guild's section/category
+      //message.guild.channels.get(categoryID).delete(); // deletes the guild's section/category
 
 
       return;
