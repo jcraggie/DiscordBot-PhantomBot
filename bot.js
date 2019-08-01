@@ -385,7 +385,7 @@ function log( n, v ) {
     // format: .setMember,@jcrAggie,Jason Rogers,Rebellion,officer (optional)
     // comma separated arguments
     if (command == "SETMEMBER") {
-      if(!message.member.roles.some(r=>["admin"].includes(r.name))) {
+      if(!message.member.roles.some(r=>["Royal Guards","Admin","admin"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run SETMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
