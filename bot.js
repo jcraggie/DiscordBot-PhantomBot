@@ -336,7 +336,7 @@ function log( n, v ) {
       var inviteUses = args[1];
 
 
-      if (inviteAge == "undefined") inviteAge = 3600;
+      if (inviteAge == "undefined" || inviteAge == "NaN") inviteAge = 3600;
       if (inviteUses == "undefined") inviteUses = 1;
 
 
