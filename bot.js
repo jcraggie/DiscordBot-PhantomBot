@@ -203,7 +203,7 @@ function log( n, v ) {
     .setTitle("Command List:")
     .setAuthor(client.user.username,client.user.avatarURL)
     .setColor(0xac30f1)
-    .setDescription("All commands are preceded by " + prefix)
+    .setDescription("All commands are preceded by '" + prefix + "'")
     .setFooter("Made by jcrAggie")
     .setThumbnail (message.author.avatarURL)
     .setTimestamp()
@@ -438,11 +438,27 @@ function log( n, v ) {
           return;
         } else {
           message.guild.members.get(taggedUser.id).setNickname(memNewNick);
-          return;
+          //return;
         }
       } else {
           message.channel.send("I dont have the permissons to change my nickname in this server.");
         }
+
+        const embed = new Discord.RichEmbed()
+          .setTitle("NEW MEMBER:")
+          .setAuthor(client.user.username,client.user.avatarURL)
+          .setColor(0xac30f1)
+          .setDescription("welcome to PhantomAlliance!")
+          .setFooter("Made by jcrAggie")
+          .setThumbnail (message.author.avatarURL)
+          .setTimestamp()
+        
+        embed.addField("PLAYER NAME:",memNewNick);
+        embed.addField("GUILD",memGuild);
+        embed.addField("OFFICER",memOfficer);
+
+        
+        message.channel.send({embed});
 
       return;
     } // END setMember
