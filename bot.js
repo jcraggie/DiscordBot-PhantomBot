@@ -215,13 +215,13 @@ function log( n, v ) {
 
     // CLEARCHAT START
     if (command == "CLEARCHAT") {
-      if(!message.member.roles.some(r=>["Royal Guards"].includes(r.name)) || !message.member.roles.some(r=>["Admin"].includes(r.name)) ) {
+      /*if(!message.member.roles.some(r=>["Royal Guards"].includes(r.name)) || !message.member.roles.some(r=>["Admin"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
       }
       else {
-        //var res = input.split(" ");
+        //var res = input.split(" ");*/
       
         var num = args[0];
         if (num == undefined)
