@@ -47,7 +47,7 @@ client.on('ready', () => {
 });
 
 // Set the prefix
-const prefix = ".";
+const prefix = "pb.";
 
 
 client.on("message", (message) => {
