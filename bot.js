@@ -327,6 +327,7 @@ function log( n, v ) {
           message.channel.send("https://discord.gg/" + newInvite.code)
           });
 
+return;
 
 
 
