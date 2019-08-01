@@ -319,8 +319,8 @@ function log( n, v ) {
 
 
       var options = {
-        maxAge: 3600,
-        maxUses: 1
+        maxAge: 86400, // 3600 = 1 hr     86400 = 1 day
+        maxUses: 5
       };
       
       var invite = client.channels.get("603208809984294954").createInvite(options).then(function(newInvite){
