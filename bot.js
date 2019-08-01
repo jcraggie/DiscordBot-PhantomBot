@@ -322,8 +322,8 @@ function log( n, v ) {
         maxAge: 3600,
         maxUses: 1
       };
-      if (user != undefined)
-        var invite = rulesChannel.createInvite(options).then(function(newInvite){
+      
+      var invite = rulesChannel.createInvite(options).then(function(newInvite){
           user.send("https://discord.gg/" + newInvite.code)
           });
 
