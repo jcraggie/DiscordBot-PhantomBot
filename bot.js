@@ -453,8 +453,9 @@ function log( n, v ) {
           //.setThumbnail (message.author.avatarURL)
           .setTimestamp()
         
-        embed.addField("PLAYER NAME",memNewNick);
+        embed.addField("PLAYER NAME",memName);
         embed.addField("GUILD",memGuild);
+        embed.addField("NICKNAME",memNewNick);
         //embed.addField("OFFICER",memOfficer);
 
         
