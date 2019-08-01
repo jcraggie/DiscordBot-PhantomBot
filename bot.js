@@ -335,6 +335,7 @@ function log( n, v ) {
       var inviteAge = args[0] * 3600;
       var inviteUses = args[1];
 
+
       if (inviteAge == "undefined") inviteAge = 3600;
       if (inviteUses == "undefined") inviteUses = 1;
 
@@ -343,7 +344,8 @@ function log( n, v ) {
 
       var options = {
         maxAge: inviteAge, // 3600 = 1 hr     86400 = 1 day
-        maxUses: inviteUses
+        maxUses: inviteUses,
+        unique: true
       };
     
       
