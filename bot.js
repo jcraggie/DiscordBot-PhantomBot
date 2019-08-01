@@ -446,14 +446,14 @@ function log( n, v ) {
 
         const embed = new Discord.RichEmbed()
           .setTitle("WELCOME TO THE PHANTOM ALLIANCE!")
-          .setAuthor(client.user.username,client.user.avatarURL)
+          //.setAuthor(client.user.username,client.user.avatarURL)
           .setColor(0xac30f1)
           .setDescription(" ")
           .setFooter("Made by jcrAggie")
           //.setThumbnail (message.author.avatarURL)
           .setTimestamp()
         
-        embed.addField("PLAYER NAME:",memNewNick);
+        embed.addField("PLAYER NAME",memNewNick);
         embed.addField("GUILD",memGuild);
         //embed.addField("OFFICER",memOfficer);
 
