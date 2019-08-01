@@ -221,9 +221,9 @@ function log( n, v ) {
         return;
       }
       else {
-        var res = input.split(" ");
+        //var res = input.split(" ");
       
-        var num = res[1];
+        var num = args[0];
         if (num == undefined)
           num = 100;
         //message.channel.send('Num to delete is ' + num);
