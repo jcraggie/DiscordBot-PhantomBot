@@ -323,8 +323,8 @@ function log( n, v ) {
         maxUses: 1
       };
       
-      var invite = rulesChannel.createInvite(options).then(function(newInvite){
-          user.send("https://discord.gg/" + newInvite.code)
+      var invite = client.channels.get("603208809984294954").createInvite(options).then(function(newInvite){
+          message.channel.send("https://discord.gg/" + newInvite.code)
           });
 
 
