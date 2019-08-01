@@ -313,6 +313,30 @@ function log( n, v ) {
 
     } // END DELETEGUILD    
 
+    // BEGIN invite
+
+    if (command == "INVITE") {
+
+
+      var options = {
+        maxAge: 3600,
+        maxUses: 1
+      };
+      if (user != undefined)
+        var invite = rulesChannel.createInvite(options).then(function(newInvite){
+          user.send("https://discord.gg/" + newInvite.code)
+          });
+
+
+
+
+
+
+
+
+    } // END OF invite
+
+
 
 
 
