@@ -25,7 +25,8 @@ var commands = [
   ["CLEARCHAT","clear chat from current channel."],
   ["CREATEGUILD","creates a new guild section w/ channels."],
   ["DELETEGUILD","deletes a guild's channels"],
-  ["SETMEMBER","sets a new member's nickname and guild"]
+  ["SETMEMBER","sets a new member's nickname and guild"],
+  ["INVITE","create invite. use with days users"]
   
 ];
 
