@@ -316,18 +316,29 @@ function log( n, v ) {
     // BEGIN invite
 
     if (command == "INVITE") {
+      console.log(message.author.username+" ran INVITE in channel: " + message.channel.name + " in server: " + message.channel.guild);
+
+      var inviteAge = args[0];
+      var inviteUses = args[1];
+
+      if (inviateAge == "undefined") inviteAge = 3600;
+      if (inviteUses == "undefined") inviteUses = 1;
+
+
 
 
       var options = {
-        maxAge: 86400, // 3600 = 1 hr     86400 = 1 day
-        maxUses: 5
+        maxAge: inviteAge, // 3600 = 1 hr     86400 = 1 day
+        maxUses: inviteUses
       };
+    
       
       var invite = client.channels.get("603208809984294954").createInvite(options).then(function(newInvite){
-          message.channel.send("https://discord.gg/" + newInvite.code)
+          message.channel.send("https://discord.gg/" + newInvite.code);
+          message.channel.send("Duration (secs): " + inviteAge + "    Uses: " + inviteUses);
           });
 
-return;
+      return;
 
 
 
