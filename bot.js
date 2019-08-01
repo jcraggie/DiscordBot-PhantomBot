@@ -321,7 +321,7 @@ function log( n, v ) {
       var inviteAge = args[0];
       var inviteUses = args[1];
 
-      if (inviateAge == "undefined") inviteAge = 3600;
+      if (inviteAge == "undefined") inviteAge = 3600;
       if (inviteUses == "undefined") inviteUses = 1;
 
 
