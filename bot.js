@@ -318,10 +318,10 @@ function log( n, v ) {
     if (command == "INVITE") {
       console.log(message.author.username+" ran INVITE in channel: " + message.channel.name + " in server: " + message.channel.guild);
 
-      var inviteAge = args[0];
+      var inviteAge = args[0] * 3600;
       var inviteUses = args[1];
 
-      if (inviteAge == "undefined") inviteAge = 3600;
+      if (inviteAge == "undefined") inviteAge = 3600
       if (inviteUses == "undefined") inviteUses = 1;
 
 
@@ -335,7 +335,7 @@ function log( n, v ) {
       
       var invite = client.channels.get("603208809984294954").createInvite(options).then(function(newInvite){
           message.channel.send("https://discord.gg/" + newInvite.code);
-          message.channel.send("Duration (secs): " + inviteAge + "    Uses: " + inviteUses);
+          message.channel.send("Duration: " + inviteAge/3600 + " hrs    Uses: " + inviteUses);
           });
 
       return;
