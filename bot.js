@@ -26,7 +26,8 @@ var commands = [
   ["CREATEGUILD","creates a new guild section w/ channels."],
   ["DELETEGUILD","deletes a guild's channels"],
   ["SETMEMBER","sets a new member's nickname and guild"],
-  ["INVITE","create invite. use with days users"]
+  ["INVITE","create invite. use with days users"],
+  ["RECRUIT","link to recruiting server"]
   
 ];
 
@@ -356,6 +357,7 @@ function log( n, v ) {
           });
 
       return;
+      
 
 
 
@@ -364,6 +366,11 @@ function log( n, v ) {
 
 
     } // END OF invite
+
+    if(command=="RECRUIT") {
+      message.channel.send("https://discord.gg/rUUpTRC");
+      return;
+    }
 
 
 
