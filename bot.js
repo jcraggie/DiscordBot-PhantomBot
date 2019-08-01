@@ -347,7 +347,7 @@ function log( n, v ) {
       };
     
       
-      var invite = client.channels.get("603208809984294954").createInvite(options).then(function(newInvite){
+      var invite = client.channels.get("483433483109138435").createInvite(options).then(function(newInvite){
           message.channel.send("https://discord.gg/" + newInvite.code);
           message.channel.send("Duration: " + inviteAge/3600 + " hrs    Uses: " + inviteUses);
           });
