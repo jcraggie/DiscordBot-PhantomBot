@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
+const fs = require("fs");
 const client = new Discord.Client();
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN); //BOT_TOKEN is the Client Secret
+
 
 
 const ApiSwgohHelp = require('api-swgoh-help');
@@ -151,9 +153,9 @@ function splitCommandLine( commandLine ) {
   log( 'argv', process.argv.slice(2) ) ;
 
 function log( n, v ) {
-    console.log( n ) ;
-    console.dir( v ) ;
-    console.log() ;
+    //console.log( n ) ;
+    //console.dir( v ) ;
+    //console.log() ;
 }
   const command = args.shift().toUpperCase();
   //message.channel.send("New Command is: " + command);
@@ -174,6 +176,15 @@ function log( n, v ) {
       return;
   }
   */
+  // begin fileReadTest
+  if(command == 'FILEREADTEST') {
+    let rawData = fs.readFileSync('testFile.json');
+    let student = JSON.parse(rawData);
+    console.log(student);
+    
+    return;
+  } // END fileReadTest
+
 
   if (command == "FOO") {
     console.log(message.author.username+" ran FOO in channel: " + message.channel.name + " in server: " + message.channel.guild);
@@ -449,13 +460,13 @@ function log( n, v ) {
           //.setAuthor(client.user.username,client.user.avatarURL)
           .setColor(0xac30f1)
           .setDescription(" ")
-          .setFooter("Made by jcrAggie")
+          .setFooter("Bot made by jcrAggie")
           //.setThumbnail (message.author.avatarURL)
           .setTimestamp()
         
         embed.addField("PLAYER NAME",memName);
         embed.addField("GUILD",memGuild);
-        embed.addField("NICKNAME",memNewNick);
+        embed.addField("DISCORD NICKNAME",memNewNick);
         //embed.addField("OFFICER",memOfficer);
 
         
