@@ -178,7 +178,7 @@ function log( n, v ) {
   */
   // begin fileReadTest
   if(command == 'FILEREADTEST') {
-    let rawData = fs.readFileSync('testFile.json');
+    let rawData = fs.readFileSync('fileTest.json');
     let student = JSON.parse(rawData);
     console.log(student);
     
