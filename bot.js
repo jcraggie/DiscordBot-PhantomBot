@@ -395,14 +395,14 @@ function log( n, v ) {
     // NEWMEMBER BEGIN
     // format: .newmember @jcrAggie "Jason Rogers" Rebellion officer (optional)
     // comma separated arguments
-    if (command == "SETMEMBER") {
+    if (command == "NEWMEMBER") {
       if(!message.member.roles.some(r=>["Royal Guards","Admin","admin"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run SETMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
       }
 
-      console.log(message.author.username+" ran SETMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
+      console.log(message.author.username+" ran NEWMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
       
       //var res = input.split(",");
       var memDiscName = args[0]; // the first arg is the member's discord name
