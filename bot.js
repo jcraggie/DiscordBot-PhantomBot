@@ -423,7 +423,9 @@ function log( n, v ) {
       */
 
       if (memDiscName == "help") {
-        message.channel.send("```pb.setmember @discordname 'In-game name' Guildname officer <---optional```");
+        message.channel.send("The usage for pb.newmember is: ");
+        message.channel.send("```pb.newmember @discordname 'In-game name' Guildname officer <---optional```");
+        message.channel.send("where Guildname is Rebellion, Empire, Havoc, Rogue, Order, Uprising");
         return;
       }
 
