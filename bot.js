@@ -215,7 +215,7 @@ function log( n, v ) {
     .setAuthor(client.user.username,client.user.avatarURL)
     .setColor(0xac30f1)
     .setDescription("All commands are preceded by '" + prefix + "'")
-    .setFooter("Made by jcrAggie")
+    .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance")
     .setThumbnail (message.author.avatarURL)
     .setTimestamp()
     for (var x = 0; x < commands.length; x++) {
@@ -402,21 +402,22 @@ function log( n, v ) {
       console.log(message.author.username+" ran NEWMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
       
       if (args[0] == "help") {
+        /*
         message.channel.send("The usage for pb.newmember is: ");
         message.channel.send("```pb.newmember @discordname \"In-game name\" Guildname officer <---optional```");
         message.channel.send("where Guildname = Rebellion, Empire, Havoc, Rogue, Order, Uprising");
         message.channel.send("**NOTE:** The quotation marks are __required__ around the \"In-game name\" above.");
-
+        */
         const embed = new Discord.RichEmbed()
         .setTitle("PHANTOM BOT HELP")
         //.setAuthor(client.user.username,client.user.avatarURL)
         .setColor(0xac30f1)
         .setDescription(" ")
-        .setFooter("Bot made by jcrAggie")
+        .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance")
         //.setThumbnail (message.author.avatarURL)
         .setTimestamp()
       
-      embed.addField("USAGE","`pb.newmember @discordname \"In-game name\" Guildname officer <---optional`");
+      embed.addField("USAGE","`pb.newmember @discordname \"In-game name\" Guildname`");
       embed.addField("WHERE GUILDNAME CAN BE","`Rebellion, Empire, Havoc, Rogue, Order, Uprising`");
       embed.addField("NOTE","The quotation marks are __required__ around the \"In-game name\" above.");
       //embed.addField("OFFICER",memOfficer);
@@ -490,7 +491,7 @@ function log( n, v ) {
           //.setAuthor(client.user.username,client.user.avatarURL)
           .setColor(0xac30f1)
           .setDescription(" ")
-          .setFooter("Bot made by jcrAggie")
+          .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance")
           //.setThumbnail (message.author.avatarURL)
           .setTimestamp()
         
