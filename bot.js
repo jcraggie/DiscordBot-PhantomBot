@@ -218,6 +218,7 @@ function log( n, v ) {
     .setFooter(phantomBotFooter)
     .setThumbnail (message.author.avatarURL)
     .setTimestamp()
+    .addBlankField()
     for (var x = 0; x < commands.length; x++) {
       embed.addField(commands[x][0],commands[x][1])
     }
