@@ -55,7 +55,7 @@ const recruitingServerID = 484508095469584384;
 const phantomAllianceServerID = 483433483109138433;
 const jcrAggieServerID = 116902168698683398;
 
-
+const phantomBotFooter = "**PhantomBot** made by **jcrAggie** for the **PhantomAlliance**";
 
 
 client.on('ready', () => {
@@ -215,7 +215,7 @@ function log( n, v ) {
     .setAuthor(client.user.username,client.user.avatarURL)
     .setColor(0xac30f1)
     .setDescription("All commands are preceded by '" + prefix + "'")
-    .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance")
+    .setFooter(phantomBotFooter)
     .setThumbnail (message.author.avatarURL)
     .setTimestamp()
     for (var x = 0; x < commands.length; x++) {
@@ -413,7 +413,7 @@ function log( n, v ) {
         //.setAuthor(client.user.username,client.user.avatarURL)
         .setColor(0xac30f1)
         .setDescription(" ")
-        .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance")
+        .setFooter(phantomBotFooter)
         //.setThumbnail (message.author.avatarURL)
         .setTimestamp()
       
@@ -491,7 +491,7 @@ function log( n, v ) {
           //.setAuthor(client.user.username,client.user.avatarURL)
           .setColor(0xac30f1)
           .setDescription(" ")
-          .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance")
+          .setFooter(phantomBotFooter)
           //.setThumbnail (message.author.avatarURL)
           .setTimestamp()
         
