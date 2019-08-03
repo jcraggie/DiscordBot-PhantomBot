@@ -215,7 +215,7 @@ function log( n, v ) {
     .setAuthor(client.user.username,client.user.avatarURL)
     .setColor(0xac30f1)
     .setDescription("All commands are preceded by '" + prefix + "'")
-    .setFooter(phantomBotFooter)
+    .setFooter(phantomBotFooter,message.author.avatarURL)
     .setThumbnail (message.author.avatarURL)
     .setTimestamp()
     
@@ -357,12 +357,13 @@ function log( n, v ) {
         //.setAuthor(client.user.username,client.user.avatarURL)
         .setColor(0xac30f1)
         .setDescription(command)
-        .setFooter(phantomBotFooter)
+        .setFooter(phantomBotFooter,message.author.avatarURL)
         //.setThumbnail (message.author.avatarURL)
         .setTimestamp()
       
         embed.addField("USAGE","`pb.invite #hours #uses`");
         embed.addField("EXAMPLE","` pb.invite 3 4 ` results in an invite good for 3 hours and/or 4 uses.");
+        embed.addField("DEFAULT","If used without any parameters, it defaults to `pb.invite 1 1`");
 
         embed.addBlankField();
         message.channel.send({embed});
@@ -432,7 +433,7 @@ function log( n, v ) {
         //.setAuthor(client.user.username,client.user.avatarURL)
         .setColor(0xac30f1)
         .setDescription(command)
-        .setFooter(phantomBotFooter)
+        .setFooter(phantomBotFooter,message.author.avatarURL)
         //.setThumbnail (message.author.avatarURL)
         .setTimestamp()
       
