@@ -346,7 +346,7 @@ function log( n, v ) {
 
       if (args[0] == "help") {
         message.channel.send("The usage for pb.invite is: ");
-        message.channel.send("```pb.invite #hours #uses");
+        message.channel.send("```pb.invite #hours #uses```");
         message.channel.send("Example: ` pb.invite 3 4 ` results in an invite good for 3 hours and/or 4 uses.");
         return;
       }
