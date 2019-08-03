@@ -344,8 +344,22 @@ function log( n, v ) {
     if (command == "INVITE") {
       console.log(message.author.username+" ran INVITE in channel: " + message.channel.name + " in server: " + message.channel.guild);
 
+      if (args[0] == "help") {
+        message.channel.send("The usage for pb.invite is: ");
+        message.channel.send("```pb.invite #hours #uses");
+        message.channel.send("Example: ` pb.invite 3 4 ` results in an invite good for 3 hours and/or 4 uses.");
+        return;
+      }
+
       var inviteAge = args[0] * 3600;
       var inviteUses = args[1];
+
+      if (invit == "help") {
+        message.channel.send("The usage for pb.newmember is: ");
+        message.channel.send("```pb.newmember @discordname \"In-game name\" Guildname officer <---optional```");
+        message.channel.send("where Guildname is Rebellion, Empire, Havoc, Rogue, Order, Uprising");
+        return;
+      }
 
 
       if (inviteAge == undefined || isNaN(inviteAge)) inviteAge = 3600;
