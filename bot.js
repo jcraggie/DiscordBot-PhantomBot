@@ -55,7 +55,7 @@ const recruitingServerID = 484508095469584384;
 const phantomAllianceServerID = 483433483109138433;
 const jcrAggieServerID = 116902168698683398;
 
-const phantomBotFooter = "**PhantomBot** made by **jcrAggie** for the **PhantomAlliance**";
+const phantomBotFooter = "PhantomBot made by jcrAggie for the PhantomAlliance...";
 
 
 client.on('ready', () => {
