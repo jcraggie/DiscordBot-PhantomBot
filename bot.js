@@ -27,7 +27,7 @@ var commands = [
   ["CLEARCHAT","clear chat from current channel."],
   ["CREATEGUILD","creates a new guild section w/ channels."],
   ["DELETEGUILD","deletes a guild's channels"],
-  ["SETMEMBER","sets a new member's nickname and guild"],
+  ["NEWMEMBER","assigns a new member's nickname and guild"],
   ["INVITE","create invite. use with days users"],
   ["RECRUIT","link to recruiting server"]
   
@@ -354,13 +354,6 @@ function log( n, v ) {
       var inviteAge = args[0] * 3600;
       var inviteUses = args[1];
 
-      if (invit == "help") {
-        message.channel.send("The usage for pb.newmember is: ");
-        message.channel.send("```pb.newmember @discordname \"In-game name\" Guildname officer <---optional```");
-        message.channel.send("where Guildname is Rebellion, Empire, Havoc, Rogue, Order, Uprising");
-        return;
-      }
-
 
       if (inviteAge == undefined || isNaN(inviteAge)) inviteAge = 3600;
       if (inviteUses == undefined) inviteUses = 1;
@@ -384,25 +377,15 @@ function log( n, v ) {
       return;
       
 
-
-
-
-
-
-
     } // END OF invite
 
+
+
+    // BEGIN RECRUIT COMMAND
     if(command=="RECRUIT") {
       message.channel.send("https://discord.gg/rUUpTRC");
       return;
-    }
-
-
-
-
-
-
-
+    } // END OF RECRUIT COMMAND
 
 
 
@@ -412,12 +395,19 @@ function log( n, v ) {
     if (command == "NEWMEMBER") {
       if(!message.member.roles.some(r=>["Royal Guards","Admin","admin"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
-        console.log(message.author.username+" attempted to run SETMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
+        console.log(message.author.username+" attempted to run NEWMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
       }
 
       console.log(message.author.username+" ran NEWMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
       
+      if (args[0] == "help") {
+        message.channel.send("The usage for pb.newmember is: ");
+        message.channel.send("```pb.newmember @discordname \"In-game name\" Guildname officer <---optional```");
+        message.channel.send("where Guildname = Rebellion, Empire, Havoc, Rogue, Order, Uprising");
+        return;
+      }
+
       //var res = input.split(",");
       var memDiscName = args[0]; // the first arg is the member's discord name
       var memName = args[1]; // the second arg is the name portion of the nickname
@@ -435,14 +425,6 @@ function log( n, v ) {
       message.channel.send("args[3] memOfficer: " + memOfficer);
       //return;
       */
-
-      if (memDiscName == "help") {
-        message.channel.send("The usage for pb.newmember is: ");
-        message.channel.send("```pb.newmember @discordname \"In-game name\" Guildname officer <---optional```");
-        message.channel.send("where Guildname is Rebellion, Empire, Havoc, Rogue, Order, Uprising");
-        return;
-      }
-
 
       memName.trim();
       memGuild.trim();
@@ -501,12 +483,11 @@ function log( n, v ) {
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
     message.channel.send("INVALID COMMAND.");
   }
-	 
-  
-
-
-
 //END OF COMMANDS  
+
+
+
+
 );
 
 
