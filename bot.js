@@ -215,7 +215,7 @@ function log( n, v ) {
     .setAuthor(client.user.username,client.user.avatarURL)
     .setColor(0xac30f1)
     .setDescription("All commands are preceded by '" + prefix + "'")
-    .setFooter(phantomBotFooter,message.author.avatarURL)
+    .setFooter(phantomBotFooter,client.user.avatarURL)
     .setThumbnail (message.author.avatarURL)
     .setTimestamp()
     
@@ -357,7 +357,7 @@ function log( n, v ) {
         //.setAuthor(client.user.username,client.user.avatarURL)
         .setColor(0xac30f1)
         .setDescription(command)
-        .setFooter(phantomBotFooter,message.author.avatarURL)
+        .setFooter(phantomBotFooter,client.user.avatarURL)
         //.setThumbnail (message.author.avatarURL)
         .setTimestamp()
       
