@@ -405,6 +405,7 @@ function log( n, v ) {
         message.channel.send("The usage for pb.newmember is: ");
         message.channel.send("```pb.newmember @discordname \"In-game name\" Guildname officer <---optional```");
         message.channel.send("where Guildname = Rebellion, Empire, Havoc, Rogue, Order, Uprising");
+        message.channel.send("**NOTE:** The quotation marks are __required__ around the \"In-game name\" above.");
         return;
       }
 
