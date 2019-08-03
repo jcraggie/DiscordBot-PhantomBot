@@ -347,9 +347,26 @@ function log( n, v ) {
       console.log(message.author.username+" ran INVITE in channel: " + message.channel.name + " in server: " + message.channel.guild);
 
       if (args[0] == "help") {
+        /*
         message.channel.send("The usage for pb.invite is: ");
         message.channel.send("```pb.invite #hours #uses```");
         message.channel.send("Example: ` pb.invite 3 4 ` results in an invite good for 3 hours and/or 4 uses.");
+        */
+        const embed = new Discord.RichEmbed()
+        .setTitle("PHANTOM BOT HELP")
+        //.setAuthor(client.user.username,client.user.avatarURL)
+        .setColor(0xac30f1)
+        .setDescription(command)
+        .setFooter(phantomBotFooter)
+        //.setThumbnail (message.author.avatarURL)
+        .setTimestamp()
+      
+        embed.addField("USAGE","`pb.invite #hours #uses`");
+        embed.addField("EXAMPLE","` pb.invite 3 4 ` results in an invite good for 3 hours and/or 4 uses.");
+
+        embed.addBlankField();
+        message.channel.send({embed});
+      
         return;
       }
 
@@ -414,25 +431,18 @@ function log( n, v ) {
         .setTitle("PHANTOM BOT HELP")
         //.setAuthor(client.user.username,client.user.avatarURL)
         .setColor(0xac30f1)
-        .setDescription(" ")
+        .setDescription(command)
         .setFooter(phantomBotFooter)
         //.setThumbnail (message.author.avatarURL)
         .setTimestamp()
       
-      embed.addField("USAGE","`pb.newmember @discordname \"In-game name\" Guildname`");
-      embed.addField("WHERE GUILDNAME CAN BE","`Rebellion, Empire, Havoc, Rogue, Order, Uprising`");
-      embed.addField("NOTE","The quotation marks are __required__ around the \"In-game name\" above.");
-      //embed.addField("OFFICER",memOfficer);
+        embed.addField("USAGE","`pb.newmember @discordname \"In-game name\" Guildname`");
+        embed.addField("WHERE GUILDNAME CAN BE","`Rebellion, Empire, Havoc, Rogue, Order, Uprising`");
+        embed.addField("NOTE","The quotation marks are __required__ around the \"In-game name\" above.");
+        //embed.addField("OFFICER",memOfficer);
 
-      
-      message.channel.send({embed});
-
-
-
-
-
-
-
+        embed.addBlankField();
+        message.channel.send({embed});
 
         return;
       }
@@ -502,7 +512,7 @@ function log( n, v ) {
         embed.addField("DISCORD NICKNAME",memNewNick);
         //embed.addField("OFFICER",memOfficer);
 
-        
+        embed.addBlankField();
         message.channel.send({embed});
 
       return;
