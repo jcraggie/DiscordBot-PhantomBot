@@ -93,9 +93,7 @@ client.on("message", (message) => {
   // testing input methods
   const oldargs = message.content.slice(prefix.length).trim().split(/ +/g);
   const oldcommand = oldargs.shift().toUpperCase();
-  //message.channel.send("Command is: " + oldcommand);
-  //message.channel.send("Arguments are: " + oldargs);
-  //message.channel.send(" ------------");
+
 
 
   //---------------------------------------------------------------------------------------------
@@ -158,24 +156,7 @@ function log( n, v ) {
     //console.log() ;
 }
   const command = args.shift().toUpperCase();
-  //message.channel.send("New Command is: " + command);
-  //message.channel.send("New Arguments are: " + args);
-  //message.channel.send(" ------------");
 
-  //return;
-  
- /*
- 
-  else if (message.content.startsWith(prefix + "setMember")) input = message.content;
-  else input = message.content.toUpperCase(); // convert command to uppercase
-*/
-  
-  /*
-  if (input.startsWith(prefix + "ping")) {
-      message.channel.send("pong!");
-      return;
-  }
-  */
   // begin fileReadTest
   if(command == 'FILEREADTEST') {
     let rawData = fs.readFileSync('fileTest.json');
@@ -290,9 +271,6 @@ function log( n, v ) {
       ];
 
       var server = message.guild; // server
-      //var res = input.split(" "); // splits the input into an array of words
-      //res.shift(); // removes first element (the command) from the array
-
       var name = args.join(" "); // turns the rest of the args into a string. This is the name of the new guild/category to make.
 
       server.createChannel(name,"category");
@@ -347,11 +325,7 @@ function log( n, v ) {
       console.log(message.author.username+" ran INVITE in channel: " + message.channel.name + " in server: " + message.channel.guild);
 
       if (args[0] == "help") {
-        /*
-        message.channel.send("The usage for pb.invite is: ");
-        message.channel.send("```pb.invite #hours #uses```");
-        message.channel.send("Example: ` pb.invite 3 4 ` results in an invite good for 3 hours and/or 4 uses.");
-        */
+
         const embed = new Discord.RichEmbed()
         .setTitle("PHANTOM BOT HELP")
         //.setAuthor(client.user.username,client.user.avatarURL)
@@ -411,7 +385,7 @@ function log( n, v ) {
 
     // NEWMEMBER BEGIN
     // format: .newmember @jcrAggie "Jason Rogers" Rebellion officer (optional)
-    // comma separated arguments
+
     if (command == "NEWMEMBER") {
       if(!message.member.roles.some(r=>["Royal Guards","Admin","admin"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
@@ -422,18 +396,13 @@ function log( n, v ) {
       console.log(message.author.username+" ran NEWMEMBER in channel: " + message.channel.name + " in server: " + message.channel.guild);
       
       if (args[0] == "help") {
-        /*
-        message.channel.send("The usage for pb.newmember is: ");
-        message.channel.send("```pb.newmember @discordname \"In-game name\" Guildname officer <---optional```");
-        message.channel.send("where Guildname = Rebellion, Empire, Havoc, Rogue, Order, Uprising");
-        message.channel.send("**NOTE:** The quotation marks are __required__ around the \"In-game name\" above.");
-        */
+
         const embed = new Discord.RichEmbed()
         .setTitle("PHANTOM BOT HELP")
         //.setAuthor(client.user.username,client.user.avatarURL)
         .setColor(0xac30f1)
         .setDescription(command)
-        .setFooter(phantomBotFooter,message.author.avatarURL)
+        .setFooter(phantomBotFooter,client.user.avatarURL)
         //.setThumbnail (message.author.avatarURL)
         .setTimestamp()
       
@@ -456,15 +425,6 @@ function log( n, v ) {
       var memNewNick = memName + " {" + memGuild + "}"; // adds { } around the guild name
       const taggedUser = message.mentions.users.first(); // returns the user mentioned in the command.
       const botID = message.guild.members.get("594193472336953365");
-
-      //message.channel.send("args[0]: " + args[0]);
-      /*
-      message.channel.send("args[0] Discord name: " + memDiscName);
-      message.channel.send("args[1] memName: " + memName);
-      message.channel.send("args[2] memGuild: " + memGuild);
-      message.channel.send("args[3] memOfficer: " + memOfficer);
-      //return;
-      */
 
       memName.trim();
       memGuild.trim();
