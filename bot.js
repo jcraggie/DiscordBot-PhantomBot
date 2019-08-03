@@ -392,8 +392,8 @@ function log( n, v ) {
 
 
 
-    // setMember BEGIN
-    // format: .setMember,@jcrAggie,Jason Rogers,Rebellion,officer (optional)
+    // NEWMEMBER BEGIN
+    // format: .newmember @jcrAggie "Jason Rogers" Rebellion officer (optional)
     // comma separated arguments
     if (command == "SETMEMBER") {
       if(!message.member.roles.some(r=>["Royal Guards","Admin","admin"].includes(r.name)) ) {
@@ -421,6 +421,12 @@ function log( n, v ) {
       message.channel.send("args[3] memOfficer: " + memOfficer);
       //return;
       */
+
+      if (memDiscName == "help") {
+        message.channel.send("```pb.setmember @discordname 'In-game name' Guildname officer <---optional```");
+        return;
+      }
+
 
       memName.trim();
       memGuild.trim();
@@ -473,7 +479,7 @@ function log( n, v ) {
         message.channel.send({embed});
 
       return;
-    } // END setMember
+    } // END NEWMEMBER
     
     // END OF SPECIFIC COMMANDS 
     console.log(message.author.username+" ran an INVALID COMMAND "+ input + " in " + message.channel.name + " in server: " + message.channel.guild);
