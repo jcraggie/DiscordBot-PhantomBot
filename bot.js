@@ -246,7 +246,7 @@ function log( n, v ) {
     if (command == "LISTMEMBERS") {
       console.log(message.author.username+" ran LISTMEMBERS in channel: " + message.channel.name + " in server: " + message.channel.guild);
       message.channel.send("DEBUGGING inside .LISTMEMBERS routine.");
-      const list = client.guilds.get("116902168698683398"); // jcrAggie Discord server ID
+      const list = client.guilds.get("483433483109138433"); // PhantomAlliance server ID
       list.members.forEach(member => console.log(member.user + " -> " + member.user.username + " is named " + member.nickname)); 
       return;
     } // END LISTMEMBERS
