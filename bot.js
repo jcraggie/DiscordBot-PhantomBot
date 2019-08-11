@@ -372,7 +372,7 @@ function log( n, v ) {
       
       var invite = client.channels.get("483433483109138435").createInvite(options).then(function(newInvite){
           message.channel.send("https://discord.gg/" + newInvite.code);
-          message.channel.send("Duration: " + inviteAge/3600 + " hrs    Uses: " + inviteUses);
+          message.channel.send("**Duration: **" + inviteAge/3600 + " hrs    Uses: " + inviteUses);
           });
 
       return;
@@ -394,7 +394,7 @@ function log( n, v ) {
     // format: .newmember @jcrAggie "Jason Rogers" Rebellion officer (optional)
 
     if (command == "NEWMEMBER") {
-      if(!message.member.roles.some(r=>["Royal Guards","Admin","admin"].includes(r.name)) ) {
+      if(!message.member.roles.some(r=>["Royal Guards","Admin","admin","Recruiter"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run NEWMEMBER without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
