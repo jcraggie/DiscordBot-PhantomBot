@@ -471,7 +471,7 @@ function log( n, v ) {
           //.setAuthor(client.user.username,client.user.avatarURL)
           .setColor(0xac30f1)
           .setDescription(" ")
-          .setFooter(phantomBotFooter)
+          .setFooter(phantomBotFooter,client.user.avatarURL)
           //.setThumbnail (message.author.avatarURL)
           .setTimestamp()
         
