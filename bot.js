@@ -82,13 +82,13 @@ client.on("message", (message) => {
   //message.channel.send("Author ID: " + message.author.id);
 
   // TEMP REQUIREMENT - ONLY PERMIT MASTER USER TO EXECUTE COMMANDS
-  
+  /*
   if(message.author.id != masterUserID && message.author.id != masterUserID2) {
     message.reply("Sorry, you are not my master!");
     console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
     return;
   }
-
+  */
 
   // testing input methods
   const oldargs = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -210,7 +210,7 @@ function log( n, v ) {
 
     // CLEARCHAT START
     if (command == "CLEARCHAT") {
-      if(!message.member.roles.some(r=>["Royal Guards","Admin","admin"].includes(r.name)) ) {
+      if(!message.member.roles.some(r=>["Royal Guards","Admin","admin","Recruiter"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
@@ -322,6 +322,13 @@ function log( n, v ) {
     // BEGIN invite
 
     if (command == "INVITE") {
+      if(!message.member.roles.some(r=>["admin","Admin","Recruiter","Royal Guards"].includes(r.name))) {
+        message.reply("Sorry, you don't have permissions to use this!");
+        console.log(message.author.username+" attempted to run INVITE without permission in: " + message.channel.name + " in server: " + message.channel.guild);
+        return;
+      }
+
+
       console.log(message.author.username+" ran INVITE in channel: " + message.channel.name + " in server: " + message.channel.guild);
 
       if (args[0] == "help") {
