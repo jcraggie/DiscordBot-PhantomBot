@@ -210,7 +210,7 @@ function log( n, v ) {
 
     // CLEARCHAT START
     if (command == "CLEARCHAT") {
-      if(!message.member.roles.some(r=>["Royal Guards","Admin","admin","Recruiter"].includes(r.name)) ) {
+      if(!message.member.roles.some(r=>["Royal Guards","Admin","admin","Recruiter", "Leadership"].includes(r.name)) ) {
         message.reply("Sorry, you don't have permissions to use this!");
         console.log(message.author.username+" attempted to run CLEARCHAT without permission in: " + message.channel.name + " in server: " + message.channel.guild);
         return;
