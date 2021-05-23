@@ -57,6 +57,8 @@ module.exports = (Discord, client, message) =>{
     const phantomBotHelp = new Discord.MessageEmbed()
         .setTitle("PhantomBot Help")
         //.setDescription("**COMMAND: **" + this.description)
+        //.setColor(0xac30f1) // purple
+        .setColor(0x580202) // maroon
         .setTimestamp()
         
         .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.0 beta",client.user.avatarURL());
