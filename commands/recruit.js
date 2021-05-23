@@ -5,7 +5,7 @@ module.exports = {
         if (args[0] == "help"){
             let helpEmbed = phantomBotHelp
             //.setTitle("PHANTOM BOT TEST EMBED")
-            .setColor(0xac30f1)
+            //.setColor(0xac30f1)
             .setDescription("**COMMAND: **" + this.name)
             .addFields(
                 {name: 'DESCRIPTION', value: this.description},

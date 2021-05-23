@@ -4,7 +4,7 @@ module.exports = {
     async execute(client, message, args, Discord, phantomBotHelp) {
         let testEmbed = phantomBotHelp
         //.setTitle("PHANTOM BOT TEST EMBED")
-        .setColor(0xac30f1)
+        //.setColor(0xac30f1)
         .setDescription("**COMMAND: **" + this.description)
         .addFields(
             {name: 'DESCRIPTION', value: this.description},

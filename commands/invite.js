@@ -6,7 +6,7 @@ module.exports = {
             //message.channel.send('HELP for ` -invite ` is not implemented yet. This is the way.');
             let helpEmbed = phantomBotHelp
             //.setTitle("PHANTOM BOT TEST EMBED")
-            .setColor(0x580202)
+            //.setColor(0x580202)
             .setDescription("**COMMAND: **" + this.name)
             .addFields(                
                 {name: 'DESCRIPTION', value: this.description},
