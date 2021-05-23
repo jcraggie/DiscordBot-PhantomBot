@@ -1,3 +1,5 @@
+//preparing to upgrade to code from PhantomBot3
+
 const Discord = require('discord.js');
 const fs = require("fs");
 const client = new Discord.Client();
