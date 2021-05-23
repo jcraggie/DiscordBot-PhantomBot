@@ -4,7 +4,7 @@ module.exports = {
     async execute(client, message, args, Discord, phantomBotHelp) {
         let testEmbed = phantomBotHelp
         
-        .setColor(0xac30f1)
+        .setColor(0x580202)
         .setDescription("**COMMAND PREFIX:**  `pb.`")
         .addFields(
             

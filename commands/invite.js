@@ -6,7 +6,7 @@ module.exports = {
             //message.channel.send('HELP for ` -invite ` is not implemented yet. This is the way.');
             let helpEmbed = phantomBotHelp
             //.setTitle("PHANTOM BOT TEST EMBED")
-            .setColor(0xac30f1)
+            .setColor(0x580202)
             .setDescription("**COMMAND: **" + this.name)
             .addFields(                
                 {name: 'DESCRIPTION', value: this.description},
@@ -36,7 +36,7 @@ module.exports = {
                 unique: true
             };
 
-            
+            // 483433483109138435 is Alliance #landing-zone channel
             var invite = client.channels.cache.get("483433483109138435").createInvite(inviteOptions).then(function(newInvite){
                 message.channel.send("https://discord.gg/" + newInvite.code);
                 message.channel.send("**Duration: ** " + inviteAge/3600 + " hrs    Uses: " + inviteUses);

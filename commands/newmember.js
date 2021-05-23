@@ -28,7 +28,7 @@ module.exports = {
             //var memOfficer = args[3];
             var memNewNick = memName + " {" + memGuild + "}";
             const taggedUser = message.mentions.users.first();
-            const botID = message.guild.members.cache.get("845343252793786418");
+            const botID = message.guild.members.cache.get("594193472336953365");
 
             memName.trim();
             memGuild.trim();

@@ -2,6 +2,8 @@ module.exports = (Discord, client, message) =>{
     const prefix = '-';
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
+    
+    // only jcrAggie can run commands right now
     if(message.author.id !== "116901947428044809") {
         message.channel.send ("Sorry. You are not jcrAggie. **This is the way.**");
         return;
