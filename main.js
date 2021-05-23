@@ -4,8 +4,8 @@ const fs = require('fs');
 
 // const ApiSwgohHelp = require('api-swgoh-help');
 // const swapi = new ApiSwgohHelp({
-//     "username":"jcraggie",
-//     "password":"StarSWGOHHELP6c69!"
+//     "username":" ",
+//     "password":" !"
 // });
 
 
@@ -55,5 +55,5 @@ client.on('message', message =>{
 
 
 // should be the last line in code
-client.login('ODQ1MzQzMjUyNzkzNzg2NDE4.YKflQQ.I0g26xQrgnOuIjJsmKOZ4KNcgCk');
+client.login(process.env.BOT_TOKEN);
 
