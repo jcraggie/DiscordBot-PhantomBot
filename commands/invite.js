@@ -42,7 +42,7 @@ module.exports = {
                 message.channel.send("**Duration: ** " + inviteAge/3600 + " hrs    Uses: " + inviteUses);
 
                 //log the event
-                client.channels.cache.get('605087450573963362').send(message.author.username + " used NEWMEMBER command.");
+                client.channels.cache.get('605087450573963362').send(message.author.username + " used INVITE command.");
             });
 
 
