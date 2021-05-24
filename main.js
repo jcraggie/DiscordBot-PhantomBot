@@ -1,3 +1,5 @@
+// RELEASING AS v3.0.0 release 2021-05-23
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');

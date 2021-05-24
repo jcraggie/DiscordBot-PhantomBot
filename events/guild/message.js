@@ -61,7 +61,7 @@ module.exports = (Discord, client, message) =>{
         .setColor(0x580202) // maroon
         .setTimestamp()
         
-        .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.0 beta",client.user.avatarURL());
+        .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.0.0 ",client.user.avatarURL());
 
     if(command) command.execute(client, message, args, Discord, phantomBotHelp);
 }
