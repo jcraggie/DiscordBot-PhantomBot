@@ -94,6 +94,9 @@ module.exports = {
     
             message.channel.send(newMemberInfo);
 
+            //log the event
+            client.channels.cache.get('605087450573963362').send(message.author.username + " used NEWMEMBER command.");
+
 
 
         } // end else

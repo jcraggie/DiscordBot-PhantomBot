@@ -24,6 +24,9 @@ module.exports = {
         } else
         message.channel.send('https://discord.gg/rUUpTRC');
 
+        //log the event
+        client.channels.cache.get('605087450573963362').send(message.author.username + " used RECRUIT command.");
+
     }
 
 }
