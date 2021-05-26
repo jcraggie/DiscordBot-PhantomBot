@@ -1,45 +1,46 @@
 module.exports = () =>{
     console.log('PhantomBot is online!');
-}
+
 
 // HAVOC TICKET REMINDER 
 // 586379177331261470 Havoc #lounge  
 // 586291147169857556 PhantomHavoc role (members)
-// var CronJob = require('cron').CronJob;
-// var havocTime = '0 30 18 * * *'
-// var pHavTz = 'America/Chicago';
 
-// var cronHavoc = new CronJob('1 * * * * *', function() {
+var CronJob = require('cron').CronJob;
+var havocTime = '0 30 18 * * *'
+var pHavTz = 'America/Chicago';
 
-// console.log('sending Havoc ticket reminder.');
+var cronHavoc = new CronJob(havocTime, function() {
 
-// let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
-// let havocTicketReminder = phantomBotHelp
-// .setTitle('phantomHAVOC 600 TICKET REMINDER!')
-// //.setColor(0xac30f1)
-// .attachFiles(ticketImage)
-// .setImage('attachment://TicketReminder01.png')
-// .setDescription("<@&586291147169857556> Tickets are due in 1 hour!")
-// // .addFields(                
-// //     {name: 'PLAYER NAME', value: memName},
-// //     {name: 'GUILD', value: memGuild},
-// //     {name: 'DISCORD NAME', value: memNewNick}
-    
-// // )
+console.log('sending Havoc ticket reminder.');
 
-// //.setFooter(phantomBotHelp.Footer);
+let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
+
+var globalVar = require('../../global.js');
+let havocTicketReminder = globalVar.phantomBotHelp
+
+        .setTitle('phantomHAVOC 600 TICKET REMINDER!')
+        .attachFiles(ticketImage)
+        .setImage('attachment://TicketReminder01.png')
+        .setDescription("<@&586291147169857556> Tickets are due in 1 hour!")
+
+        //send message to Havoc lounge
+        client.channels.cache.get('586379177331261470').send(havocTicketReminder);
 
 
-// message.channel.send(havocTicketReminder);
+        //log the event to jcrAggie server #phantom-ready channel
+        client.channels.cache.get('605087450573963362').send("Bot issued cronHavoc reminder.");
 
-// //log the event
-// client.channels.cache.get('605087450573963362').send(message.author.username + " used TICKETS command.");
-// console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`); 
+        //log the event to the console
+        console.log('Bot sent cronHavoc'); 
+
+    }, null, true, pHavTz); // central
+
+    cronHavoc.start();
 
 
 
-// client.channels.cache.get('586379177331261470').send("cron every minute from bot. Timezone: "+pHavTz);
 
 
-// }, null, true, pHavTz); // eastern
-// cronHavoc.start();
+}
+

@@ -1,10 +1,11 @@
 module.exports = {
     name: 'embedtest',
     description: "command description goes here",
-    async execute(client, message, args, Discord, phantomBotHelp) {
-        let testEmbed = phantomBotHelp
-        //.setTitle("PHANTOM BOT TEST EMBED")
-        //.setColor(0xac30f1)
+    async execute(client, message, args, Discord) {
+
+        var globalVar = require('../global.js');
+        let testEmbed = globalVar.phantomBotHelp
+        .setTitle("PhantomBot EmbedTest")
         .setDescription("**COMMAND: **" + this.description)
         .addFields(
             {name: 'DESCRIPTION', value: this.description},
@@ -18,9 +19,12 @@ module.exports = {
 
 
         message.channel.send(testEmbed);
+        testEmbed.fields=[] //clear the fields for the next use
 
-        //log the event
+        //log the event to jcrAggie server #phantom-ready channel
         client.channels.cache.get('605087450573963362').send(message.author.username + " used EMBEDTEST command.");
+        
+        //log the event to the console
         console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
 

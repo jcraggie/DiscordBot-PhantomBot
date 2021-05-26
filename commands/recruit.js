@@ -1,33 +1,38 @@
 module.exports = {
     name: 'recruit',
     description: "Pastes a link to the PhantomAlliance recruiting server.",
-    async execute(client, message, args, Discord, phantomBotHelp){
+    async execute(client, message, args, Discord){
         if (args[0] == "help"){
-            let helpEmbed = phantomBotHelp
-            //.setTitle("PHANTOM BOT TEST EMBED")
-            //.setColor(0xac30f1)
+            var globalVar = require('../global.js');
+            let recruitHelpEmbed = globalVar.phantomBotHelp
+            .setTitle("PhantomBot Help")
             .setDescription("**COMMAND: **" + this.name)
             .addFields(
                 {name: 'DESCRIPTION', value: this.description},
                 {name: 'USAGE', value: "`pb.recruit`"},
                 {name: '\u200B', value: '\u200B' }
             )
-    
-            //.setFooter(phantomBotHelp.Footer);
-    
-    
-            message.channel.send(helpEmbed);
 
+            message.channel.send(recruitHelpEmbed);
+            recruitHelpEmbed.fields=[] //clear the fields for the next use
 
-            //message.channel.send('Just type ` -recruit `.   **This is the way.**');
+            //log the event to jcrAggie server #phantom-ready channel
+            client.channels.cache.get('605087450573963362').send(message.author.username + " used RECRUIT HELP command.");
+            
+            //log the event to the console
+            console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
         } else {
-        message.channel.send('https://discord.gg/rUUpTRC');
+            message.channel.send('https://discord.gg/rUUpTRC');
+            
+            //log the event to jcrAggie server #phantom-ready channel
+            client.channels.cache.get('605087450573963362').send(message.author.username + " used RECRUIT command.");
+            
+            //log the event to the console
+            console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
-        //log the event
-        client.channels.cache.get('605087450573963362').send(message.author.username + " used RECRUIT command.");
-        console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
         }
+        
 
     }
 

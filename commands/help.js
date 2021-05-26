@@ -1,10 +1,11 @@
 module.exports = {
     name: 'help',
     description: "PhantomBot Commands",
-    async execute(client, message, args, Discord, phantomBotHelp) {
-        let testEmbed = phantomBotHelp
-        
-        //.setColor(0x580202)
+    async execute(client, message, args, Discord) {
+        var globalVar = require('../global.js');
+        let helpEmbed = globalVar.phantomBotHelp
+        .setTitle("PhantomBot Help")
+        //.setColor(0xac30f1)
         .setDescription("**COMMAND PREFIX:**  `pb.`")
         .addFields(
             
@@ -16,13 +17,19 @@ module.exports = {
 
         //.setFooter(phantomBotHelp.Footer);
 
+        // let guild = client.guilds.cache.get('serverID');
+        // let member = guild.member(message.author);
+        // let nickname = member ? member.displayName : null;
 
-        message.channel.send(testEmbed);
+        
+        message.channel.send(helpEmbed);
+        helpEmbed.fields=[] //clear the fields for the next use
 
-        //log the event
+        //log the event to jcrAggie server #phantom-ready channel
         client.channels.cache.get('605087450573963362').send(message.author.username + " used HELP command.");
+        
+        //log the event to the console
         console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
-
 
 
     }

@@ -1,33 +1,35 @@
 module.exports = {
-    name: 'newmember',
-    description: "Assigns a new member to a guild and updates their nickname",
-    async execute(client, message, args, Discord, phantomBotHelp){
-        if (args[0] == "help"){
-            //message.channel.send('HELP for ` -invite ` is not implemented yet. This is the way.');
-            let helpEmbed = phantomBotHelp
-            //.setTitle("PHANTOM BOT TEST EMBED")
-            //.setColor(0x580202)
-            .setDescription("**COMMAND: **" + this.name)
-            .addFields(                
-                {name: 'DESCRIPTION', value: this.description},
-                {name: 'USAGE', value: "`pb.newmember @discord Guildname In-game-name`"},
-                {name: 'EXAMPLE', value: "`pb.newmember @jcraggie Rebellion Mando Aggie`"}
-                
-            )
-    
-            //.setFooter(phantomBotHelp.Footer);
-    
-    
-            message.channel.send(helpEmbed);
+  name: 'newmember',
+  description: "Assigns a new member to a guild and updates their nickname",
+  async execute(client, message, args, Discord){
+      if (args[0] == "help"){
+          var globalVar = require('../global.js');
+          let newMemberHelpEmbed = globalVar.phantomBotHelp
+          .setTitle("PhantomBot Help")
+          .setDescription("**COMMAND: **" + this.name)
+          .addFields(                
+              {name: 'DESCRIPTION', value: this.description},
+              {name: 'USAGE', value: "`pb.newmember @discord Guildname In-game-name`"},
+              {name: 'EXAMPLE', value: "`pb.newmember @jcraggie Rebellion Mando Aggie`"}
+              
+          )
+
+          message.channel.send(newMemberHelpEmbed);
+          newMemberHelpEmbed.fields=[] //clear the fields for the next use
+
+          //log the event to jcrAggie server #phantom-ready channel
+          client.channels.cache.get('605087450573963362').send(message.author.username + " used NEWMEMBER HELP command.");
+            
+          //log the event to the console
+          console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
 
-        } else {
-            var memDiscName = args[0];
-            var memName = args.slice(2).join(' ');
-            var memGuild = args[1];
-            //var memOfficer = args[3];
-            var memNewNick = memName + " {" + memGuild + "}";
-            const taggedUser = message.mentions.users.first();
+      } else {
+          var memDiscName = args[0];
+          var memName = args.slice(2).join(' ');
+          var memGuild = args[1];
+          var memNewNick = memName + " {" + memGuild + "}";
+          const taggedUser = message.mentions.users.first();
             const botID = message.guild.members.cache.get("594193472336953365");
 
             memName.trim();
@@ -55,13 +57,7 @@ module.exports = {
                   if(memGuild == serverRoles[x][0]) {
                     roleFound = true;
                     var memRoleArray = [serverRoles[x][1]];
-        
-                    // if(memOfficer == "officer"){
-                    //   memRoleArray = [  serverRoles[x][1],serverRoles[x][2]  ];
-                    // } 
-                    // using setRoles([array,of,roles]) as this clears existing roles and just assigns the ones in the array.
-                    
-                    //message.guild.members.cache.get(taggedUser.id).setRoles(memRoleArray); 
+
                     message.guild.members.cache.get(taggedUser.id).roles.add(memRoleArray);
         
                   }
@@ -77,32 +73,32 @@ module.exports = {
                   message.channel.send("I dont have the permissons to change my nickname in this server.");
                 }
 
-                let newMemberInfo = phantomBotHelp
-            //.setTitle("PHANTOM BOT TEST EMBED")
-            .setTitle('WELCOME TO THE PHANTOM ALLIANCE!')
-            //.setColor(0xac30f1)
-            .setDescription(" ")
-            .addFields(                
-                {name: 'PLAYER NAME', value: memName},
-                {name: 'GUILD', value: memGuild},
-                {name: 'DISCORD NAME', value: memNewNick}
+            
+          
+                var globalVar = require('../global.js');
+                let newMemberEmbed = globalVar.phantomBotHelp
+                .setTitle('WELCOME TO THE PHANTOM ALLIANCE!')
+                .setDescription(" ")
+                .addFields(                
+                    {name: 'PLAYER NAME', value: memName},
+                    {name: 'GUILD', value: memGuild},
+                    {name: 'DISCORD NAME', value: memNewNick}
+                )
+
+                message.channel.send(newMemberEmbed);
+                newMemberEmbed.fields=[] //clear the fields for the next use
+            
+                //log the event to jcrAggie server #phantom-ready channel
+                client.channels.cache.get('605087450573963362').send(message.author.username + " used NEWMEMBER command.");
                 
-            )
-    
-            //.setFooter(phantomBotHelp.Footer);
-    
-    
-            message.channel.send(newMemberInfo);
+                //log the event to the console
+                console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);  
 
-            //log the event
-            client.channels.cache.get('605087450573963362').send(message.author.username + " used NEWMEMBER command.");
-            console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
-
-
-
-        } // end else
+              } // end else
         
 
-    }
+    
+            }
+
 
 }

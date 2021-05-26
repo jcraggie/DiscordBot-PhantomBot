@@ -12,9 +12,15 @@ var CronJob = require('cron').CronJob;
 //     "password":" !"
 // });
 
+// 483433483109138433 PhantomAlliance Server ID
+
+// 116902168698683398 jcraggie Server ID
+// 603591430887440395 jcrAggie Server/# testing
+// 605087450573963362 jcrAggie Server/# phantombot-ready
+
+// 586379177331261470 Havoc #lounge
 
 
-//const phantomBotFooter = "PhantomBot made by jcrAggie for the PhantomAlliance.";
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
