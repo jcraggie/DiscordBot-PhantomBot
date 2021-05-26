@@ -4,6 +4,15 @@ module.exports = (Discord, client, message) =>{
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
+    // 116901947428044809 jcraggie ID
+    // 419494570213244939 NOTjcraggie ID
+
+    // only jcraggie and NOTjcraggie can run commands - works
+    // if(message.author.id !== "116901947428044809" && message.author.id !== "419494570213244939") {
+    //     message.channel.send ("Sorry. You are not jcrAggie or NOTjcraggie. **This is the way.**");
+    //     return;
+    // };
+
 
     //only jcrAggie can run commands - works
     // if(message.author.id !== "116901947428044809") {
@@ -11,15 +20,6 @@ module.exports = (Discord, client, message) =>{
     //     return;
     // };
 
-    // does not work
-    // if(message.member.roles.cache.some(r=>["admin","Admin","Recruiter","Royal Guards"].includes(r.name))){
-    //     message.reply("Sorry you don't have permissions to use that command.");
-    //     console.log(message.author.username+" attempted to run a command without permission in channel: "+message.channel.name+" in server: "+message.channel.guild);
-    //     return;
-    // };
-
-    //this works
-    //if(message.member.roles.cache.has('485783034961068042')) message.channel.send ("You are a Royal Guard... proceed");
 
     // this does not works
     var allowedRoles = [

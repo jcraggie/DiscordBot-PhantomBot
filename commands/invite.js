@@ -43,6 +43,7 @@ module.exports = {
 
                 //log the event
                 client.channels.cache.get('605087450573963362').send(message.author.username + " used INVITE command.");
+                console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
             });
 
 

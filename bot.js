@@ -1,4 +1,5 @@
 //preparing to upgrade to code from PhantomBot3
+// this is the original code of the PhantomBot.... no longer used.
 
 const Discord = require('discord.js');
 const fs = require("fs");

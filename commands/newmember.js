@@ -80,7 +80,7 @@ module.exports = {
                 let newMemberInfo = phantomBotHelp
             //.setTitle("PHANTOM BOT TEST EMBED")
             .setTitle('WELCOME TO THE PHANTOM ALLIANCE!')
-            .setColor(0xac30f1)
+            //.setColor(0xac30f1)
             .setDescription(" ")
             .addFields(                
                 {name: 'PLAYER NAME', value: memName},
@@ -96,6 +96,7 @@ module.exports = {
 
             //log the event
             client.channels.cache.get('605087450573963362').send(message.author.username + " used NEWMEMBER command.");
+            console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
 
 
