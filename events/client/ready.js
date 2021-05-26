@@ -42,4 +42,4 @@ client.channels.cache.get('586379177331261470').send("cron every minute from bot
 
 
 }, null, true, pHavTz); // eastern
-cronTest.start();
+cronHavoc.start();
