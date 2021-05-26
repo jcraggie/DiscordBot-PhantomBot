@@ -25,7 +25,8 @@ module.exports = {
             inviteHelpEmbed.fields=[] //clear the fields for the next use
 
             //log the event to jcrAggie server #phantom-ready channel
-            client.channels.cache.get('605087450573963362').send(message.author.username + " used INVITE HELP command.");
+            let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+            client.channels.cache.get('605087450573963362').send(msg);
             
             //log the event to the console
             console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
@@ -52,7 +53,8 @@ module.exports = {
 
 
                 //log the event to jcrAggie server #phantom-ready channel
-                client.channels.cache.get('605087450573963362').send(message.author.username + " used INVITE command.");
+                let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+                client.channels.cache.get('605087450573963362').send(msg);
                 
                 //log the event to the console
                 console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
