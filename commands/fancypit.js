@@ -59,6 +59,7 @@ module.exports = {
                 {name: 'USAGE', value: "`pb.fancypit <1-4>`"},
                 {name: 'EXAMPLE', value: "`pb.fancypit 2` = noticiation for Fancy Pit Phase 2"},
                 {name: 'DEFAULT', value: "`pb.fancypit` results in a generic message: Next phase is open!"},
+                {name: 'NOTE', value: 'Only Rebellion Officers can run this command.'},
                 {name: '\u200B', value: '\u200B' }
             )
     
