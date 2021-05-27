@@ -7,7 +7,7 @@ const phantomBotHelp = new Discord.MessageEmbed()
         .setTitle("PhantomBot Help")
         .setColor(0x580202)
         .setTimestamp()
-        .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.0 beta");
+        .setFooter(footer);
 
 
 exports.phantomBotHelp = phantomBotHelp
@@ -17,7 +17,19 @@ const ticketEmbedTemp01 = new Discord.MessageEmbed()
         .setTitle("PhantomBot Help")
         .setColor(0x580202)
         .setTimestamp()
-        .setFooter("PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.0 beta");
-
+        .setFooter(footer);
 
 exports.ticketEmbedTemp01 = ticketEmbedTemp01
+
+// need to create separate emplate for fancyPitImageImbed
+const fancyPitImageEmbed = new Discord.MessageEmbed()
+        .setTitle("REBELLION FANCY PIT")
+        .setColor(0x580202)
+        .setTimestamp()
+        .setFooter(footer);
+
+
+exports.fancyPitImageEmbed = fancyPitImageEmbed
+
+
+

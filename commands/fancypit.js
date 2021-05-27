@@ -30,9 +30,7 @@ module.exports = {
             
         }
 
-
-
-
+        let globalVar = require('../global.js');
         let fancyPitTitle = "REBELLION FANCY PIT";
         let fancyPitGuildRole = '<@&483620584861859850>';
         let fancyPitDescription = fancyPitGuildRole + ': The next Fancy Pit phase is open!';
@@ -40,83 +38,108 @@ module.exports = {
         let fancyPitTeams = ' ';
         let fancyPitGoalField = 'GOAL %';
         let fancyPitGoalPercentage = ' ';
-        //temp
-        //fancyPitGuildRole = '@ Phantom Rebellion';
-        if (args[0] == "help"){
-            //message.channel.send('HELP for ` -invite ` is not implemented yet. This is the way.');
 
-            var globalVar = require('../global.js');
-            //let fancyPitTitle = "PhantomBot Help";
+        //temp for testing bot only so it will not ping the guild
+        fancyPitGuildRole = '@ Phantom Rebellion';
+        
+        switch(args[0]){
+            case 'help':
             
+                //var globalVar = require('../global.js');
+                let fancyPitHelpEmbed = globalVar.phantomBotHelp
+                .setTitle(fancyPitTitle)
+                .setDescription("**COMMAND: **  " + '`pb.'+this.name+'`')
+                .addFields(                
+                    {name: 'DESCRIPTION', value: this.description},
+                    {name: 'USAGE', value: "`pb.fancypit <1-4>`"},
+                    {name: 'EXAMPLE', value: "`pb.fancypit 2` = noticiation for Fancy Pit Phase 2"},
+                    {name: 'DEFAULT', value: "`pb.fancypit` results in a generic message: Next phase is open!"},
+                    {name: 'NOTE', value: 'Only Rebellion Officers can run this command.'},
+                    {name: '\u200B', value: '\u200B' }
             
+                    ) // end addFields
 
-            let fancyPitHelpEmbed = globalVar.phantomBotHelp
-            
-            .setTitle(fancyPitTitle)
-            .setDescription("**COMMAND: **  " + '`pb.'+this.name+'`')
-            .addFields(                
-                {name: 'DESCRIPTION', value: this.description},
-                {name: 'USAGE', value: "`pb.fancypit <1-4>`"},
-                {name: 'EXAMPLE', value: "`pb.fancypit 2` = noticiation for Fancy Pit Phase 2"},
-                {name: 'DEFAULT', value: "`pb.fancypit` results in a generic message: Next phase is open!"},
-                {name: 'NOTE', value: 'Only Rebellion Officers can run this command.'},
-                {name: '\u200B', value: '\u200B' }
-            )
-    
-            //.setFooter(phantomBotHelp.Footer);
-            
-            
-            
-            message.channel.send(fancyPitHelpEmbed);
-            fancyPitHelpEmbed.fields=[] //clear the fields for the next use
-
-            //log the event to jcrAggie server #phantom-ready channel
-            let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-            client.channels.cache.get('605087450573963362').send(msg);
-            
-            //log the event to the console
-            console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+                    message.channel.send(fancyPitHelpEmbed);
+                    fancyPitHelpEmbed.fields=[] //clear the fields for the next use
 
 
-        } else {
+                    //log the event to jcrAggie server #phantom-ready channel
+                    let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+                    client.channels.cache.get('605087450573963362').send(msg);
             
 
-            if (args[0] == "1"){
+                    //log the event to the console
+                    console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+
+                break; //case help
+            
+            case '1':    
+
                 fancyPitDescription = fancyPitGuildRole + ': Fancy Pit Phase 1 is open!';
                 fancyPitTeams = 'Phase 1 teams';
                 fancyPitGoalPercentage = '4%';
-            } else {
-                if(args[0] == '2'){
-                    fancyPitDescription = fancyPitGuildRole + ': Fancy Pit Phase 2 is open!';
-                    fancyPitTeams = 'Phase 2 teams';
-                    fancyPitGoalPercentage = '4%';
-                } else {
-                    if(args[0] == '3'){
-                        fancyPitDescription = fancyPitGuildRole + ': Fancy Pit Phase 3 is open!';
-                        fancyPitTeams = 'Phase 3 teams';
-                        fancyPitGoalPercentage = '4%';
-                    } else {
-                        if(args[0] == '4'){
-                            fancyPitDescription = fancyPitGuildRole + ': Fancy Pit Phase 4 is open!';
-                            fancyPitTeams = 'Phase 4 teams';
-                            fancyPitGoalPercentage = '4%';
-                        } else {
-                            if(args[0] == undefined){
-                                fancyPitDescription = fancyPitGuildRole + ': The next Fancy Pit phase is open!';
-                                fancyPitTeams = ':thinking: ';
-                                fancyPitGoalPercentage = 'As much as you can! :) ';
-                            } else {
-                                message.channel.send('Sorry that is not valid...');
-                                return;
-                            }
+                break; //case 1
+                
+            case '2':
 
-                        }
-                    }
-                }
+                fancyPitDescription = fancyPitGuildRole + ': Fancy Pit Phase 2 is open!';
+                fancyPitTeams = 'Phase 2 teams';
+                fancyPitGoalPercentage = '4%';
+                break; //case 2
 
-            }
+            case '3':
 
-            var globalVar = require('../global.js');
+                fancyPitDescription = fancyPitGuildRole + ': Fancy Pit Phase 3 is open!';
+                fancyPitTeams = 'Phase 3 teams';
+                fancyPitGoalPercentage = '4%';
+                break; //case 3
+
+            case '4':
+
+                fancyPitDescription = fancyPitGuildRole + ': Fancy Pit Phase 4 is open!';
+                fancyPitTeams = 'Phase 4 teams';
+                fancyPitGoalPercentage = '4%';
+                break; //case 4
+
+            case 'dmg':
+                let fancyPitDmgImg = new Discord.MessageAttachment('./graphics/FancyPit_damage.png');
+                let fancyPitImageEmbed = globalVar.fancyPitImageEmbed
+                .setDescription('Here is the damage by phase')
+                .attachFiles(fancyPitDmgImg)
+                .setImage('attachment://FancyPit_damage.png')
+                .addFields(                
+                    {name: '\u200B', value: '\u200B' }
+                )
+
+                message.channel.send(fancyPitImageEmbed);
+                fancyPitImageEmbed.fields=[] //clear the fields for the next use
+        
+                //log the event to jcrAggie server #phantom-ready channel
+                let msg2 = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+                client.channels.cache.get('605087450573963362').send(msg2);
+
+                //log the event to the console
+                console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+                return;
+                //break;
+
+
+            case undefined:
+
+                fancyPitDescription = fancyPitGuildRole + ': The next Fancy Pit phase is open!';
+                fancyPitTeams = ':thinking: ';
+                fancyPitGoalPercentage = 'As much as you can! :) ';
+                break; //undefined
+
+            default:
+                
+                message.channel.send('Sorry that is not valid...');
+                return;
+                            
+            } //end of switch
+
+
+            //var globalVar = require('../global.js');
             let fancyPitHelpEmbed = globalVar.phantomBotHelp
             .setTitle(fancyPitTitle)
             .setDescription(fancyPitDescription)
@@ -126,30 +149,22 @@ module.exports = {
           
                  {name: '\u200B', value: '\u200B' }
            
-                )
+                ) //end of addFields
             
-                    //.setFooter(phantomBotHelp.Footer);
-                    
-                    
-                    
-           
-                    message.channel.send(fancyPitHelpEmbed);
-                    fancyPitHelpEmbed.fields=[] //clear the fields for the next use
+                message.channel.send(fancyPitHelpEmbed);
+                fancyPitHelpEmbed.fields=[] //clear the fields for the next use
         
-                    //log the event to jcrAggie server #phantom-ready channel
-                    let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-                    client.channels.cache.get('605087450573963362').send(msg);
-                    
-                    //log the event to the console
-                    console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+                //log the event to jcrAggie server #phantom-ready channel
+                let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+                client.channels.cache.get('605087450573963362').send(msg);
 
+                //log the event to the console
+                console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
+            } //end async execute
 
-        } // end elses
-                
-         
+            
+    } //end module exports
     
-        
-    }
-    
-}
+
+
