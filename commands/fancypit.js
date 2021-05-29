@@ -72,7 +72,7 @@ module.exports = {
                     //log the event to the console
                     console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
-                    fancyPitHelpEmbed.delete();
+                    //fancyPitHelpEmbed.delete();
 
                 return; //case help
             
@@ -121,7 +121,7 @@ module.exports = {
                 //log the event to the console
                 console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
                 
-                fancyPitImageEmbed.delete();
+                //fancyPitImageEmbed.delete();
                 return;
 
             case 'next':
@@ -161,7 +161,7 @@ module.exports = {
                 //log the event to the console
                 console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
-                fancyPitHelpEmbed.delete();
+                //fancyPitHelpEmbed.delete();
 
             } //end async execute
 
