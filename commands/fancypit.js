@@ -35,9 +35,9 @@ module.exports = {
         let fancyPitGuildRole = '<@&483620584861859850>';
         let fancyPitDescription = fancyPitGuildRole + ': The next Fancy Pit phase is open!';
         let fancyPitTypicalTeamsField = 'TYPICAL TEAMS';
-        let fancyPitTeams = ' ';
+        let fancyPitTeams = '\u200b';
         let fancyPitGoalField = 'GOAL %';
-        let fancyPitGoalPercentage = ' ';
+        let fancyPitGoalPercentage = '\u200b';
 
         //temp for testing bot only so it will not ping the guild
         fancyPitGuildRole = '@ Phantom Rebellion';
@@ -47,14 +47,15 @@ module.exports = {
             
                 //var globalVar = require('../global.js');
                 let fancyPitHelpEmbed = globalVar.phantomBotHelp
-                .setTitle(fancyPitTitle)
+                .setTitle(fancyPitTitle + "HELP")
                 .setDescription("**COMMAND: **  " + '`pb.'+this.name+'`')
                 .addFields(                
                     {name: 'DESCRIPTION', value: this.description},
-                    {name: 'USAGE', value: "`pb.fancypit <1-4>`"},
-                    {name: 'EXAMPLE', value: "`pb.fancypit 2` = noticiation for Fancy Pit Phase 2"},
+                    {name: 'PHASE #', value: "`pb.fancypit <1-4>`"},
+                    {name: 'EXAMPLE', value: "`pb.fancypit 2` = notification for Fancy Pit Phase 2"},
+                    {name: 'DMG', value: "`pb.fancypit dmg` Displays a chart of damage by phase."},
                     {name: 'DEFAULT', value: "`pb.fancypit` results in a generic message: Next phase is open!"},
-                    {name: 'NOTE', value: 'Only Rebellion Officers can run this command.'},
+                    {name: 'NOTE', value: "Only Rebellion Officers can run this command."},
                     {name: '\u200B', value: '\u200B' }
             
                     ) // end addFields
@@ -71,7 +72,9 @@ module.exports = {
                     //log the event to the console
                     console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
-                break; //case help
+                    fancyPitHelpEmbed.delete();
+
+                return; //case help
             
             case '1':    
 
@@ -107,12 +110,9 @@ module.exports = {
                 .setDescription('Here is the damage by phase')
                 .attachFiles(fancyPitDmgImg)
                 .setImage('attachment://FancyPit_damage.png')
-                .addFields(                
-                    {name: '\u200B', value: '\u200B' }
-                )
 
                 message.channel.send(fancyPitImageEmbed);
-                fancyPitImageEmbed.fields=[] //clear the fields for the next use
+                fancyPitImageEmbed.fields=[]; //clear the fields for the next use
         
                 //log the event to jcrAggie server #phantom-ready channel
                 let msg2 = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
@@ -120,11 +120,11 @@ module.exports = {
 
                 //log the event to the console
                 console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+                
+                fancyPitImageEmbed.delete();
                 return;
-                //break;
 
-
-            case undefined:
+            case 'next':
 
                 fancyPitDescription = fancyPitGuildRole + ': The next Fancy Pit phase is open!';
                 fancyPitTeams = ':thinking: ';
@@ -161,10 +161,11 @@ module.exports = {
                 //log the event to the console
                 console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
+                fancyPitHelpEmbed.delete();
+
             } //end async execute
 
             
     } //end module exports
     
-
 
