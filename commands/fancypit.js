@@ -40,7 +40,7 @@ module.exports = {
         let fancyPitGoalPercentage = '\u200b';
 
         //temp for testing bot only so it will not ping the guild
-        fancyPitGuildRole = '@ Phantom Rebellion';
+        //fancyPitGuildRole = '@ Phantom Rebellion';
         
         switch(args[0]){
             case 'help':
