@@ -26,7 +26,8 @@ module.exports = (Discord, client, message) =>{
         'admin',
         'Admin',
         'Royal Guards',
-        'Recruiter'
+        'Recruiter',
+        'Officer-Rebellion'
 
     ]
 
