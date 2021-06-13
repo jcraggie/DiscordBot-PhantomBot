@@ -1,0 +1,21 @@
+{
+    "guildAllycode": "681711581",
+    "id": "G1428524841",
+    "name": "Phantøm Phøundlings",
+    "desc": "Starter Guild for Phantøm Allianc|DISCORD REQUIRED|come grow learn and have fun",
+    "leader": "jingle",
+    "members": 38,
+    "status": 2,
+    "required": 80,
+    "bannerColor": "bright_orange_brown",
+    "bannerLogo": "guild_icon_mandalorian",
+    "message": "",
+    "gp": 33652740,
+    "raid": {
+      "aat": "HEROIC80",
+      "sith_raid": "HEROIC85",
+      "rancor": "HEROIC80",
+      "rancor_challenge": "DIFF01"
+    },
+    "updated": 1623017626500
+  }

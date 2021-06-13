@@ -1,0 +1,21 @@
+{
+    "guildAllycode": "618277879",
+    "id": "G4160520842",
+    "name": "PhantømRøgue",
+    "desc": "Fully Heroic. U.S. 2800 weekly tickets. Discord. https://discord.gg/acBZa9M",
+    "leader": "RogueLeader",
+    "members": 49,
+    "status": 2,
+    "required": 85,
+    "bannerColor": "gold_purple",
+    "bannerLogo": "guild_icon_seventhfleet",
+    "message": "",
+    "gp": 163153975,
+    "raid": {
+      "rancor": "HEROIC80",
+      "aat": "HEROIC80",
+      "sith_raid": "HEROIC85",
+      "rancor_challenge": "DIFF01"
+    },
+    "updated": 1623017569950
+  }

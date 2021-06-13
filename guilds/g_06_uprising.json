@@ -1,0 +1,21 @@
+{
+    "guildAllycode": "582412773",
+    "id": "G295240225",
+    "name": "Phantøm Uprising",
+    "desc": "Welcome to the last guild you'll join!  Friendly daily players with solid strategy.  2+ mil prefered",
+    "leader": "UprisingLeader",
+    "members": 50,
+    "status": 2,
+    "required": 85,
+    "bannerColor": "red_white",
+    "bannerLogo": "guild_icon_pyke",
+    "message": "",
+    "gp": 194254770,
+    "raid": {
+      "aat": "HEROIC80",
+      "rancor": "HEROIC80",
+      "sith_raid": "HEROIC85",
+      "rancor_challenge": "DIFF01"
+    },
+    "updated": 1623017598753
+  }

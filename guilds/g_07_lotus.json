@@ -1,0 +1,21 @@
+{
+    "guildAllycode": "315585918",
+    "id": "G1625657735",
+    "name": "Phantøm Lotus Society",
+    "desc": "Discord required. ",
+    "leader": "General Allison Organa",
+    "members": 49,
+    "status": 2,
+    "required": 85,
+    "bannerColor": "bright_orange_brown",
+    "bannerLogo": "guild_icon_seventhfleet",
+    "message": "",
+    "gp": 168855708,
+    "raid": {
+      "aat": "HEROIC80",
+      "rancor": "HEROIC80",
+      "sith_raid": "HEROIC85",
+      "rancor_challenge": "DIFF01"
+    },
+    "updated": 1623017613698
+  }

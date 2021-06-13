@@ -1,0 +1,21 @@
+{
+  "guildAllycode": "135718294",
+  "id": "G1743793275",
+  "name": "PhantømRebellion",
+  "desc": "600/day competitive guild. Heavy focus on TB and TW!",
+  "leader": "zibby",
+  "members": 50,
+  "status": 2,
+  "required": 85,
+  "bannerColor": "red_white",
+  "bannerLogo": "guild_icon_mandalorian",
+  "message": "",
+  "gp": 270166818,
+  "raid": {
+    "rancor": "HEROIC80",
+    "aat": "HEROIC80",
+    "sith_raid": "HEROIC85",
+    "rancor_challenge": "DIFF01"
+  },
+  "updated": 1623017515482
+}

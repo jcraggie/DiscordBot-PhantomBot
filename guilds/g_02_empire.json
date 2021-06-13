@@ -1,0 +1,21 @@
+{
+    "guildAllycode": "418877148",
+    "id": "G215542000",
+    "name": "PhantømËmpire",
+    "desc": "600/day. Discord mandatory. 30* DS Geo 39 Wat. 15* LS Geo 7 KAM. Oh did I forget CPit on farm!!",
+    "leader": "Catastrophic",
+    "members": 50,
+    "status": 2,
+    "required": 85,
+    "bannerColor": "green_blue",
+    "bannerLogo": "guild_icon_empire",
+    "message": "",
+    "gp": 240191672,
+    "raid": {
+      "rancor": "HEROIC80",
+      "aat": "HEROIC80",
+      "sith_raid": "HEROIC85",
+      "rancor_challenge": "DIFF01"
+    },
+    "updated": 1623017530866
+  }
