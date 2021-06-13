@@ -37,6 +37,7 @@ module.exports = {
             memGuild.trim();
             //if(memOfficer) memOfficer.trim();
 
+            // role name, guild role ID, guild officer role ID, server ID
             var serverRoles = [
                 ["member", "418011699698991105", "605084960130334772", "116902168698683398"], // jcrAggie server
                 ["tester", "595663414756376600", "605085107673366538", "116902168698683398"], // jcrAggie server
@@ -48,7 +49,8 @@ module.exports = {
                 ["Order", "602674687771934742", "602751440213245972", "483433483109138433"],
                 ["Uprising", "603261421857538049", "603265635207872522", "483433483109138433"],
                 ["Lotus", "777877441061453835", "777878346041524244","483433483109138433"], // lotus added 2020-11-18 by JCR
-                ["Phoundlings", "835533787071774770", "835541163649662976","483433483109138433"] // phoundlings added 2021-05-22 by JCR
+                ["Phoundlings", "835533787071774770", "835541163649662976","483433483109138433"], // phoundlings added 2021-05-22 by JCR
+                ["Hope", "853630990962130975", "853632841920938004","483433483109138433"] // hope added 2021-06-13 by JCR
             ]
 
             if (botID.hasPermission("MANAGE_NICKNAMES") && botID.hasPermission("CHANGE_NICKNAME")) {
