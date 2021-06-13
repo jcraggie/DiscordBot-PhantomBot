@@ -80,11 +80,11 @@ module.exports = {
           
                 var globalVar = require('../global.js');
                 let newMemberEmbed = globalVar.phantomBotHelp
-                .setTitle('WELCOME TO THE PHANTOM ALLIANCE!')
+                .setTitle('WELCOME TO THE PHANTØM ALLIANCE!')
                 .setDescription(" ")
                 .addFields(                
                     {name: 'PLAYER NAME', value: memName},
-                    {name: 'GUILD', value: memGuild},
+                    {name: 'GUILD', value: 'Phantøm ' + memGuild},
                     {name: 'DISCORD NAME', value: memNewNick}
                 )
 
