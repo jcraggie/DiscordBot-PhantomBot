@@ -2,7 +2,7 @@ module.exports = (Discord, client, message) =>{
     const prefix = 'pb.';
 
 
-    if(!message.content.startsWith(prefix) || message.author.bot) return;
+    if(!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
 
     // 116901947428044809 jcraggie ID
     // 419494570213244939 NOTjcraggie ID
