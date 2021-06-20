@@ -14,6 +14,7 @@ module.exports = {
             {name: '`newmember`', value: "assigns a new member to a guild"},
             {name: '`serverstats`', value: 'shows # of members and bots in this server'},
             {name: '`tickets`', value: 'a generic tickets reminder'},
+            {name: '`getguild`', value: 'reads the local guild data file'},
             {name: '\u200B', value: '\u200B' }
         )
 
