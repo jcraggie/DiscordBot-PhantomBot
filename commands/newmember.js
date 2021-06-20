@@ -79,6 +79,7 @@ module.exports = {
                 return;
               } else {
                 message.guild.members.cache.get(taggedUser.id).setNickname(memNewNick);
+                console.log('---NEW NICKNAME: ', memNewNick);
                 //return;
               }
             } else {
