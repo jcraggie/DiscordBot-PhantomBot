@@ -12,6 +12,8 @@ module.exports = {
             {name: '`invite`', value: 'creates temp invite to the Alliance server'},
             {name: '`recruit`', value: 'pastes link to the Recruiting server'},
             {name: '`newmember`', value: "assigns a new member to a guild"},
+            {name: '`serverstats`', value: 'shows # of members and bots in this server'},
+            {name: '`tickets`', value: 'a generic tickets reminder'},
             {name: '\u200B', value: '\u200B' }
         )
 

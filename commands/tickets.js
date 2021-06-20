@@ -33,7 +33,7 @@ module.exports = {
             .setTitle('600 TICKET REMINDER!')
             .attachFiles(ticketImage)
             .setImage('attachment://TicketReminder01.png')
-            .setDescription("Tickets are due in 1 hour!")
+            .setDescription("Your tickets are due soon!")
    
             message.channel.send(ticketsEmbed);
             ticketsEmbed.fields=[] //clear the fields for the next use
