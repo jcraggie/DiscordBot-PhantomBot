@@ -1,4 +1,4 @@
-var footer = 'PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.0.1 ';
+var footer = 'PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.2.0 ';
 exports.footer = footer
 
 const discord_jcrAggie = "116901947428044809";
