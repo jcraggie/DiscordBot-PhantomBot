@@ -1,5 +1,25 @@
 module.exports = () =>{
     console.log('PhantomBot is online!');
+    client.channels.cache.get('605087450573963362').send('PhantomBot is online...');
+
+    // this code works. Just need a job to try it out on.    
+    var CronJob = require('cron').CronJob;
+    // var cronTime = '0 21 22 * * *'
+    // var pRebTz = 'America/New_York';
+    pRebTz = 'America/Chicago';
+    var cronTest = new CronJob('1 * * * * *', function() {
+    
+    console.log('cron 1 min test. Tz: '+pRebTz);
+    client.channels.cache.get('605087450573963362').send("cron every minute from PhantomBot. Timezone: "+pRebTz);
+
+  
+  }, null, true, pRebTz); // eastern
+cronTest.start();
+
+
+
+
+
 
 
 // HAVOC TICKET REMINDER 
