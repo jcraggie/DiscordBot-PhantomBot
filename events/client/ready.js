@@ -1,5 +1,6 @@
-module.exports = () =>{
+module.exports = (Discord,client) =>{
     console.log('PhantomBot is online!');
+    console.log(client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)); // sends # of members
     client.channels.cache.get('605087450573963362').send('PhantomBot is online...');
 
     // this code works. Just need a job to try it out on.    
