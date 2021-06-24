@@ -1,5 +1,6 @@
 module.exports = (Discord, client, message) => {
-    const prefix = "pb.";
+    const globalVar = require('../../global.js');
+    const prefix = globalVar.botPrefix;
 
     if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
 
