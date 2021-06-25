@@ -1,5 +1,6 @@
 {
     "guildAllycode": 924484782,
+    "fileName": "g_03_havoc.json",
     "id": "G1544326544",
     "name": "PhantømHavoc",
     "desc": "Join Havoc! HSTR, DSGEO 29*/30 Wat, LSGEO 13*/1 KAM. Fun and friendly! Discord/600 tix req",
@@ -9,13 +10,13 @@
     "required": 85,
     "bannerColor": "white_red",
     "bannerLogo": "guild_icon_blast",
-    "message": "",
     "gp": 248164691,
     "raid": {
-      "rancor": "HEROIC80",
-      "aat": "HEROIC80",
-      "sith_raid": "HEROIC85",
-      "rancor_challenge": "DIFF01"
+        "rancor": "HEROIC80",
+        "aat": "HEROIC80",
+        "sith_raid": "HEROIC85",
+        "rancor_challenge": "DIFF01"
     },
-    "updated": 1623017555429
-  }
+    "updated": 1623017555429,
+    "updatedText": "NEVER"
+}

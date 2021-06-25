@@ -1,5 +1,6 @@
 {
     "guildAllycode": "315585918",
+    "fileName": "g_07_lotus.json",
     "id": "G1625657735",
     "name": "Phantøm Lotus Society",
     "desc": "Discord required. ",
@@ -9,13 +10,13 @@
     "required": 85,
     "bannerColor": "bright_orange_brown",
     "bannerLogo": "guild_icon_seventhfleet",
-    "message": "",
     "gp": 168855708,
     "raid": {
-      "aat": "HEROIC80",
-      "rancor": "HEROIC80",
-      "sith_raid": "HEROIC85",
-      "rancor_challenge": "DIFF01"
+        "aat": "HEROIC80",
+        "rancor": "HEROIC80",
+        "sith_raid": "HEROIC85",
+        "rancor_challenge": "DIFF01"
     },
-    "updated": 1623017613698
-  }
+    "updated": 1623017613698,
+    "updatedText": "NEVER"
+}

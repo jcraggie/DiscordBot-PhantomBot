@@ -1,5 +1,6 @@
 {
     "guildAllycode": "993689571",
+    "fileName": "g_05_order.json",
     "id": "G1222943911",
     "name": "PhantømØrder",
     "desc": "https://discord.gg/rUUpTRC hit us up on discord. C.pit on farm",
@@ -9,13 +10,13 @@
     "required": 85,
     "bannerColor": "white_red",
     "bannerLogo": "guild_icon_mandalorian",
-    "message": "",
     "gp": 267882335,
     "raid": {
-      "rancor": "HEROIC80",
-      "aat": "HEROIC80",
-      "sith_raid": "HEROIC85",
-      "rancor_challenge": "DIFF01"
+        "rancor": "HEROIC80",
+        "aat": "HEROIC80",
+        "sith_raid": "HEROIC85",
+        "rancor_challenge": "DIFF01"
     },
-    "updated": 1623017583945
-  }
+    "updated": 1623017583945,
+    "updatedText": "NEVER"
+}

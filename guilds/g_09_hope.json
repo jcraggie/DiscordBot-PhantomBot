@@ -1,0 +1,22 @@
+{
+    "guildAllycode": "166494741",
+    "fileName": "g_09_hope.json",
+    "id": "G1428524841",
+    "name": "NEVER",
+    "desc": "NEVER",
+    "leader": "Whitefly",
+    "members": 0,
+    "status": 0,
+    "required": 0,
+    "bannerColor": "NEVER",
+    "bannerLogo": "NEVER",
+    "gp": 0,
+    "raid": {
+        "aat": "NEVER",
+        "sith_raid": "NEVER",
+        "rancor": "NEVER",
+        "rancor_challenge": "NEVER"
+    },
+    "updated": 0,
+    "updatedText": "NEVER"
+}
