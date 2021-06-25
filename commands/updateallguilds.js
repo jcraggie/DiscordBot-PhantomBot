@@ -13,6 +13,8 @@ module.exports = {
         const fs = require('fs');
         const fileUtils = require('../fileHelper.js');
         // const {botToken, swgohHelpUser, swgohHelpPW,swgohHelpID, swgohHelpSecret} = require(`../config`); // for local testing only
+        let swgohHelpID
+        let swgohHelpSecret
         // process.env.BOT_TOKEN
         var acquiredToken = 0;
 
