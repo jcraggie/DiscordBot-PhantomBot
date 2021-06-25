@@ -1,4 +1,4 @@
-const botPrefix = 'ps.';
+const botPrefix = 'pb.';
 exports.botPrefix = botPrefix
 
 var footer = 'PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.2.0 ';
