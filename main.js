@@ -6,11 +6,16 @@ const fs = require('fs');
 
 var CronJob = require('cron').CronJob;
 
-// const ApiSwgohHelp = require('api-swgoh-help');
-// const swapi = new ApiSwgohHelp({
-//     "username":" ",
-//     "password":" !"
-// });
+//135718294 jcrAggie (Rebellion) Allycode
+//418877148 SavageWill (Empire) Allycode
+//924484782 Andosan (Havoc) Allycode
+//618277879 Kal Skirata (Walon-Rogue) Allycode
+//993689571 chewbaccababe (Order) Allycode
+//582412773 vRex (Uprising) Allycode
+//315585918 General Leia Organa (Lotus - in-game name is Ruby Starr Wynn) Allycode
+//681711581 Jingle's alt (Phoundlings) Allycode
+//166494741 Whitefly425 (Hope) Allycode
+
 
 // 483433483109138433 PhantomAlliance Server ID
 
