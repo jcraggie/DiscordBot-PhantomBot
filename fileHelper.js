@@ -68,6 +68,9 @@ function getGuildFileNameByID(guildID) {
         case "G1428524841":
             guildFileName = "g_08_phoundlings.json";
             return guildFileName;
+        case "G142852484":
+            guildFileName = "g_09_hope.json";
+            return guildFileName;
     } //end switch
 } // end getGuildFileName
 

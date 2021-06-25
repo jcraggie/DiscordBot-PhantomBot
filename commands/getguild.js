@@ -73,6 +73,10 @@ module.exports = {
                         console.log('---SWITCH: Phoundlings\' file.');
                         //guildCompleteFileName = guildFilePath + guildFileName;
                         break;
+                    case "G142852484":
+                        guildFileName = "g_09_hope.json";
+                        console.log('---SWITCH: Hope\' file.');
+                        break;
                     default:
                         message.channel.send('Cannot find that guild.');
                         return;
