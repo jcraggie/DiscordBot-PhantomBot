@@ -73,7 +73,7 @@ module.exports = {
                         console.log('---SWITCH: Phoundlings\' file.');
                         //guildCompleteFileName = guildFilePath + guildFileName;
                         break;
-                    case "G142852484":
+                    case "hope":
                         guildFileName = "g_09_hope.json";
                         console.log('---SWITCH: Hope\' file.');
                         break;
