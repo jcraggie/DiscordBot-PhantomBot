@@ -13,15 +13,15 @@ module.exports = {
         //console.log('---COMBINEUPDATE: Using allycodes: ', allyCodes);
         const fs = require('fs');
         const fileUtils = require('../fileHelper.js');
-        const {botToken, swgohHelpUser, swgohHelpPW,swgohHelpID, swgohHelpSecret} = require(`../config`);
+        // const {botToken, swgohHelpUser, swgohHelpPW,swgohHelpID, swgohHelpSecret} = require(`../config`);
         var acquiredToken = 0;
 
         ApiSwgohHelp = require('api-swgoh-help');
         swapi = new ApiSwgohHelp({
             "protocol":"https",
             "host":"api.swgoh.help",
-            "username":swgohHelpUser,
-            "password":swgohHelpPW,
+            "username":process.env.SWGOH_HELP_USERNAME,
+            "password":process.env.SWGOH_HELP_PASSWORD,
             "client_id":swgohHelpID,
             "client_secret":swgohHelpSecret
         });
