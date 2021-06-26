@@ -8,6 +8,9 @@ module.exports = {
     
     async execute(client, message, args, Discord){
 
+        let globalVar = require('../global.js');
+        var fileUtils = require('../fileHelper.js');
+
         // Phantøm Rebellion - role name
 
         var allowedRoles = [
