@@ -15,6 +15,8 @@ module.exports = {
         const fileUtils = require('../fileHelper.js');
         // const {botToken, swgohHelpUser, swgohHelpPW,swgohHelpID, swgohHelpSecret} = require(`../config`);
         var acquiredToken = 0;
+        let swgohHelpID
+        let swgohHelpSecret
 
         ApiSwgohHelp = require('api-swgoh-help');
         swapi = new ApiSwgohHelp({
