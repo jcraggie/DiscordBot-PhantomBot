@@ -43,9 +43,10 @@ function readGuildList() {
 
 
 function getGuildFileNameByID(guildID) {
+    const globalVar = require('./global.js');
     switch (guildID) {
-        case "G1743793275":
-            guildFileName = "g_01_rebellion.json";
+        case globalVar.rebellionInfo.guildID:
+            guildFileName = globalVar.rebellionInfo.guildJSON;
             return guildFileName;
         case "G215542000":
             guildFileName = "g_02_empire.json";
@@ -68,12 +69,60 @@ function getGuildFileNameByID(guildID) {
         case "G1428524841":
             guildFileName = "g_08_phoundlings.json";
             return guildFileName;
-        case "G142852484":
+        case "G3204162424":
             guildFileName = "g_09_hope.json";
             return guildFileName;
     } //end switch
 } // end getGuildFileName
 
+function logToDiscord(client, message, args, Discord) {
+    globalVar = require('./global.js');
+    let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+    client.channels.cache.get(globalVar.discordChannels.log).send(msg);
+
+} // end logToDiscord
+
+function logToDiscordAndConsole(client, message, args, Discord) {
+    globalVar = require('./global.js');
+    let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+    client.channels.cache.get(globalVar.discordChannels.log).send(msg);
+    console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+
+} // end logToDiscordAndConsole
+
+
+function getAllycodeByGuildName(guildName) {
+    const globalVar = require('./global.js');
+    switch (guildName) {
+        case "rebellion":
+            guildAlly = globalVar.rebellionInfo.allyCode;
+            return guildAlly;
+        case "empire":
+            guildAlly = 418877148;
+            return guildAlly;
+        case "havoc":
+            guildAlly = 924484782;
+            return guildAlly;
+        case "rogue":
+            guildAlly = 618277879;
+            return guildAlly;
+        case "G1222943911":
+            guildAlly = 993689571;
+            return guildAlly;
+        case "G295240225":
+            guildAlly = 582412773;
+            return guildAlly;
+        case "G1625657735":
+            guildAlly = 315585918;
+            return guildAlly;
+        case "G1428524841":
+            guildAlly = 681711581;
+            return guildAlly;
+        case "hope":
+            guildAlly = 166494741;
+            return guildAlly;
+    } //end switch
+} // end getAllycodeByGuildName
 
 
 async function getGuildFile(apiGuildData) {
@@ -120,6 +169,8 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
     var numGuilds = 0;
     var totalGuilds = allyCodes.length;
     var apiGuildData = [];
+    console.log('GETNEWDATA FOR NUMBER OF GUILDS: ', totalGuilds);
+    console.log('ALLYCODES: ', allyCodes);
 
 
     for(x; x < totalGuilds;) { // begin for loop
@@ -320,6 +371,9 @@ module.exports = {
     allFilesRead,
     createGuildEmbed,
     mergeNewData,
-    writeGuildFile
+    writeGuildFile,
+    getAllycodeByGuildName,
+    logToDiscord,
+    logToDiscordAndConsole
 
 };

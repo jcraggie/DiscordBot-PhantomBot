@@ -164,5 +164,7 @@ module.exports = {
                 });
             })
         } // end async function combineData
+        //log the event to Discord (jcrAggie server) and the console
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
     }//end async execute
 }//end module.exports

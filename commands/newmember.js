@@ -21,12 +21,8 @@ module.exports = {
       if (args[0] == "help"){
           sendNewMemberHelp();
 
-          //log the event to jcrAggie server #phantom-ready channel
-          let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-          client.channels.cache.get('605087450573963362').send(msg);
-          
-          //log the event to the console
-          console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
+          //log the event to Discord (jcrAggie server) and the console
+          fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
       } else {
           var memDiscName = args[0];
@@ -101,12 +97,8 @@ module.exports = {
               message.channel.send(newMemberEmbed);
               newMemberEmbed.fields=[] //clear the fields for the next use
           
-              //log the event to jcrAggie server #phantom-ready channel
-              let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-              client.channels.cache.get('605087450573963362').send(msg);
-              
-              //log the event to the console
-              console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);  
+              //log the event to Discord (jcrAggie server) and the console
+                fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
             } // end else
       

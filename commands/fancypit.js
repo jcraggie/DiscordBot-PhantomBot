@@ -64,15 +64,8 @@ module.exports = {
                     fancyPitHelpEmbed.fields=[] //clear the fields for the next use
 
 
-                    //log the event to jcrAggie server #phantom-ready channel
-                    let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-                    client.channels.cache.get('605087450573963362').send(msg);
-            
-
-                    //log the event to the console
-                    console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
-
-                    //fancyPitHelpEmbed.delete();
+                    //log the event to Discord (jcrAggie server) and the console
+                    fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
                 return; //case help
             
@@ -114,14 +107,8 @@ module.exports = {
                 message.channel.send(fancyPitImageEmbed);
                 fancyPitImageEmbed.fields=[]; //clear the fields for the next use
         
-                //log the event to jcrAggie server #phantom-ready channel
-                let msg2 = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-                client.channels.cache.get('605087450573963362').send(msg2);
-
-                //log the event to the console
-                console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
-                
-                //fancyPitImageEmbed.delete();
+                //log the event to Discord (jcrAggie server) and the console
+                fileUtils.logToDiscordAndConsole(client, message, args, Discord);
                 return;
 
             case 'next':
@@ -154,14 +141,8 @@ module.exports = {
                 message.channel.send(fancyPitHelpEmbed);
                 fancyPitHelpEmbed.fields=[] //clear the fields for the next use
         
-                //log the event to jcrAggie server #phantom-ready channel
-                let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-                client.channels.cache.get('605087450573963362').send(msg);
-
-                //log the event to the console
-                console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
-
-                //fancyPitHelpEmbed.delete();
+                //log the event to Discord (jcrAggie server) and the console
+                fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
             } //end async execute
 
