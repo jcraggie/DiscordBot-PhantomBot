@@ -20,7 +20,7 @@ module.exports = (Discord,client) =>{
         let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
 
         var globalVar = require('../../global.js');
-        let havocTicketReminder = globalVar.phantomBotHelp
+        let havocTicketReminder = globalVar.ticketEmbedTemp01
 
                 .setTitle('phantomHAVOC 600 TICKET REMINDER!')
                 .attachFiles(ticketImage)
@@ -54,7 +54,7 @@ module.exports = (Discord,client) =>{
             let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
             
             var globalVar = require('../../global.js');
-            let rogueTicketReminder = globalVar.phantomBotHelp
+            let rogueTicketReminder = globalVar.ticketEmbedTemp01
             
                     .setTitle('phantomROGUE 600 TICKET REMINDER!')
                     .attachFiles(ticketImage)
