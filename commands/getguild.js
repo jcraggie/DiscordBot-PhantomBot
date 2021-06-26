@@ -4,6 +4,7 @@ module.exports = {
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         function sendGetGuildHelp() {
             var globalVar = require('../global.js');
+            var fileUtils = require('../fileHelper.js');
             let getguildHelp = globalVar.phantomBotHelp
             .setTitle("PhantomBot Help")
             .setDescription("**COMMAND: **" + '`' + module.exports.name + '`')

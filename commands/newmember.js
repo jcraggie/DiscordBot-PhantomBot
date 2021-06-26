@@ -4,6 +4,7 @@ module.exports = {
   async execute(client, message, args, Discord){
      function sendNewMemberHelp() {
         var globalVar = require('../global.js');
+        var fileUtils = require('../fileHelper.js');
         let newMemberHelpEmbed = globalVar.phantomBotHelp
         .setTitle("PhantomBot Help")
         .setDescription("**COMMAND: **" + '`' + module.exports.name + '`')

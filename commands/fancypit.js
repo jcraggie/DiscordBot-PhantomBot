@@ -31,6 +31,7 @@ module.exports = {
         }
 
         let globalVar = require('../global.js');
+        var fileUtils = require('../fileHelper.js');
         let fancyPitTitle = "REBELLION FANCY PIT";
         let fancyPitGuildRole = '<@&483620584861859850>';
         let fancyPitDescription = fancyPitGuildRole + ': The next Fancy Pit phase is open!';

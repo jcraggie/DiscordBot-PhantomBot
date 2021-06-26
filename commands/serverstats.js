@@ -6,6 +6,7 @@ module.exports = {
         let isTesting = true;
 
         let globalVar = require('../global.js');
+        var fileUtils = require('../fileHelper.js');
 
         if(isRestricted) {
             if(message.author.id !== globalVar.discord_jcrAggie && message.author.id !== globalVar.discord_jcraggie93) {

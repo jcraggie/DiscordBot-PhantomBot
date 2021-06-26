@@ -6,6 +6,7 @@ module.exports = {
             //message.channel.send('HELP for ` -invite ` is not implemented yet. This is the way.');
 
             var globalVar = require('../global.js');
+            var fileUtils = require('../fileHelper.js');
             let inviteHelpEmbed = globalVar.phantomBotHelp
             .setTitle("PhantomBot Help")
             .setDescription("**COMMAND: **" + this.name)
