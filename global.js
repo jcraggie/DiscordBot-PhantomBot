@@ -1,4 +1,4 @@
-const botPrefix = '3--';
+const botPrefix = 'pb.';
 exports.botPrefix = botPrefix;
 
 const discordChannels = {
