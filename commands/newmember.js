@@ -2,9 +2,10 @@ module.exports = {
   name: 'newmember',
   description: "Assigns a new member to a guild and updates their nickname",
   async execute(client, message, args, Discord){
-     function sendNewMemberHelp() {
         var globalVar = require('../global.js');
         var fileUtils = require('../fileHelper.js');
+     function sendNewMemberHelp() {
+        
         let newMemberHelpEmbed = globalVar.phantomBotHelp
         .setTitle("PhantomBot Help")
         .setDescription("**COMMAND: **" + '`' + module.exports.name + '`')
