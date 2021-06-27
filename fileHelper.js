@@ -186,6 +186,8 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
         let { result, error, warning } = await swapi.fetchGuild(payload);
         if(error) {
             console.log('---ERROR: ' + error);
+            message.channel.send('API error... this is **not** the way.');
+            return;
         }
         if(warning) {
             console.log('---WARNING: ' + warning);
