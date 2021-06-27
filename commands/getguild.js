@@ -292,7 +292,7 @@ module.exports = {
                     message.channel.send(guildEmbed);
                     setTimeout(() => {
                         guildEmbed.fields=[] //clear the fields for the next use
-                    }, 5000);
+                    }, 2000);
 
                         //log the event to Discord (jcrAggie server) and the console
                         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
