@@ -16,6 +16,7 @@ module.exports = {
             {name: '`serverstats`', value: 'shows # of members and bots in this server'},
             {name: '`tickets`', value: 'a generic tickets reminder'},
             {name: '`getguild`', value: 'reads the local guild data file'},
+            {name: '`flip`', value: 'heads or tails!'},
             {name: '\u200B', value: '\u200B' }
         )
 
