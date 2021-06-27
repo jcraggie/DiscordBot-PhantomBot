@@ -29,7 +29,29 @@ const rebellionInfo = {
         "allyCode": 135718294,
         "guildID": "G1743793275",
         "guildJSON": "g_01_rebellion.json",
-        "leader": "jwnpanthers"
+        "leader": "jwnpanthers",
+        "dailyTickets": "600",
+        "ticketReset": "5:30pm PST",
+        "hothDS": "45",
+        "hothLS": "45",
+        "geoDS": "29",
+        "watShards": "35",
+        "geoLS": "16",
+        "kamShards": "4",
+        "haat": "simmed",
+        "hpit": "simmed",
+        "hstr": "6pm PST, 24 hr join",
+        "cpit": "clearing",
+        "guildGG": "https://swgoh.gg/g/35906/phantomrebellion/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858561730849275916"
+        
+
+
 };
 exports.rebellionInfo = rebellionInfo
 
@@ -37,7 +59,26 @@ const empireInfo = {
         "allyCode": 418877148,
         "guildID": "G215542000",
         "guildJSON": "g_02_empire.json",
-        "leader": "Catastrophik"
+        "leader": "Catastrophik",
+        "dailyTickets": "600",
+        "ticketReset": "7:30pm CST",
+        "hothDS": "43",
+        "hothLS": "45",
+        "geoDS": "30",
+        "watShards": "39",
+        "geoLS": "15",
+        "kamShards": "7",
+        "haat": "Launch at 6pm PST, 24 hour join",
+        "hpit": "Simmed, 24 hr join",
+        "hstr": "8pm CST, 24 hr join",
+        "cpit": "crushed (at 224m active group)",
+        "guildGG": "https://swgoh.gg/g/51323/phantomempire/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858561759774375977"
 };
 exports.empireInfo = empireInfo
 
@@ -45,7 +86,26 @@ const havocInfo = {
         "allyCode": 924484782,
         "guildID": "G1544326544",
         "guildJSON": "g_03_havoc.json",
-        "leader": "Andosan"
+        "leader": "Andosan",
+        "dailyTickets": "600",
+        "ticketReset": "6:30pm CST",
+        "hothDS": "41",
+        "hothLS": "45",
+        "geoDS": "29",
+        "watShards": "30",
+        "geoLS": "15",
+        "kamShards": "2",
+        "haat": "simmed",
+        "hpit": "simmed",
+        "hstr": "8pm CST",
+        "cpit": "in progress",
+        "guildGG": "https://swgoh.gg/g/29918/phantomhavoc/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858562221877493800"
 };
 exports.havocInfo = havocInfo
 
@@ -53,7 +113,26 @@ const rogueInfo = {
         "allyCode": 618277879,
         "guildID": "G4160520842",
         "guildJSON": "g_04_rogue.json",
-        "leader": "Walon/Kal Skirata"
+        "leader": "Walon/Kal Skirata",
+        "dailyTickets": "400",
+        "ticketReset": "6:30pm PST",
+        "hothDS": "33",
+        "hothLS": "42",
+        "geoDS": "18",
+        "watShards": "7",
+        "geoLS": "7",
+        "kamShards": "0",
+        "haat": "Launch at 6pm PST, 24 hour join",
+        "hpit": "Simmed, 24 hr join",
+        "hstr": "8pm PST, 24 hr join",
+        "cpit": "none",
+        "guildGG": "https://swgoh.gg/g/61585/phantomrogue/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858562304597950496"
 };
 exports.rogueInfo = rogueInfo
 
@@ -61,7 +140,26 @@ const orderInfo = {
         "allyCode": 993689571,
         "guildID": "G1222943911",
         "guildJSON": "g_05_order.json",
-        "leader": "chewbaccababe"
+        "leader": "chewbaccababe",
+        "dailyTickets": "600",
+        "ticketReset": "6:30pm EST",
+        "hothDS": "45",
+        "hothLS": "45",
+        "geoDS": "31",
+        "watShards": "44",
+        "geoLS": "19",
+        "kamShards": "9",
+        "haat": "(sim) launch at 7pm EST, 24 hr join",
+        "hpit": "(sim) launch at 7pm EST, 24 hr join",
+        "hstr": "launch at 7pm EST, 24 hr join",
+        "cpit": "launch at 5pm EST, 24 hr join",
+        "guildGG": "https://swgoh.gg/g/61714/phantomorder/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858562383290826782"
 };
 exports.orderInfo = orderInfo
 
@@ -69,7 +167,26 @@ const uprisingInfo = {
         "allyCode": 582412773,
         "guildID": "G295240225",
         "guildJSON": "g_06_uprising.json",
-        "leader": "vRex"
+        "leader": "vRex",
+        "dailyTickets": "450",
+        "ticketReset": "6:30pm EST",
+        "hothDS": "38",
+        "hothLS": "42",
+        "geoDS": "23",
+        "watShards": "26",
+        "geoLS": "11",
+        "kamShards": "0",
+        "haat": "simmed, 24 hour join",
+        "hpit": "simmed, 24 hr join",
+        "hstr": "launch at 9pm EST, 24 hr join",
+        "cpit": "Ha! Good luck",
+        "guildGG": "https://swgoh.gg/g/63155/phantom-uprising/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858562490106118175"
 };
 exports.uprisingInfo = uprisingInfo
 
@@ -77,7 +194,26 @@ const lotusInfo = {
         "allyCode": 315585918,
         "guildID": "G1625657735",
         "guildJSON": "g_07_lotus.json",
-        "leader": "General Allison Organa"
+        "leader": "General Allison Organa",
+        "dailyTickets": "500",
+        "ticketReset": "2:30pm PST",
+        "hothDS": "31",
+        "hothLS": "42",
+        "geoDS": "15",
+        "watShards": "10",
+        "geoLS": "not running yet",
+        "kamShards": "0",
+        "haat": "5pm or 8am PST - revolves every two weeks for European members, 24 hr join",
+        "hpit": "simmed, 24 hr join",
+        "hstr": "5pm or 8am PST - revolves every two weeks for European members, 24 hr join",
+        "cpit": "not running yet",
+        "guildGG": "https://swgoh.gg/g/28738/phantom-lotus-society/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858562578106941501"
 };
 exports.lotusInfo = lotusInfo
 
@@ -85,7 +221,26 @@ const phoundlingsInfo = {
         "allyCode": 681711581,
         "guildID": "G1428524841",
         "guildJSON": "g_08_phoundlings.json",
-        "leader": "jingle"
+        "leader": "jingle",
+        "dailyTickets": "400",
+        "ticketReset": "6:30pm EST",
+        "hothDS": "13",
+        "hothLS": "12",
+        "geoDS": "not running yet",
+        "watShards": "0",
+        "geoLS": "not running yet",
+        "kamShards": "0",
+        "haat": "launch at 10pm EST, 23 hr join",
+        "hpit": "launch at 9pm EST, 23 hr join",
+        "hstr": "5 star or above, launch at 10pm EST, 23 hr join",
+        "cpit": "not running yet",
+        "guildGG": "https://swgoh.gg/g/83056/phantom-phoundlings/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858562672579444756"
 };
 exports.phoundlingsInfo = phoundlingsInfo
 
@@ -93,7 +248,26 @@ const hopeInfo = {
         "allyCode": 166494741,
         "guildID": "G3204162424",
         "guildJSON": "g_09_hope.json",
-        "leader": "Whitefly425"
+        "leader": "Whitefly425",
+        "dailyTickets": "?",
+        "ticketReset": "7:30pm PST",
+        "hothDS": "34",
+        "hothLS": "32",
+        "geoDS": "11",
+        "watShards": "8",
+        "geoLS": "not running yet",
+        "kamShards": "0",
+        "haat": "simmed",
+        "hpit": "simmed",
+        "hstr": "launch at 5pm PST, 24 hr join",
+        "cpit": "practice mode, currently unachievable",
+        "guildGG": "https://swgoh.gg/g/75710/phantom-hope/",
+        "mainServerChannelID": "485246576751673354",
+        "mainServerMsgID": "",
+        "recruitingServerChannelID": "595255366644924440",
+        "recruitingServerMsgID": "",
+        "jcrServerChannelID": "858495181552353313",
+        "jcrServerMsgID": "858562744189059083"
 };
 exports.hopeInfo = hopeInfo
 
