@@ -55,7 +55,7 @@ const rebellionInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858561730849275916",
+        "jcrServerMsgID": "859851830329868318",
         "mongo_id": "60dc856a0572f4e54c08bf7b"
         
 
