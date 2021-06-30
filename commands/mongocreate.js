@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'createmongodbonline',
+    name: 'mongocreate',
     description: "description of the new command",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');

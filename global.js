@@ -48,7 +48,8 @@ const rebellionInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858561730849275916"
+        "jcrServerMsgID": "858561730849275916",
+        "mongo_id": "60dc856a0572f4e54c08bf7b"
         
 
 
@@ -78,7 +79,8 @@ const empireInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858561759774375977"
+        "jcrServerMsgID": "858561759774375977",
+        "mongo_id": "60dc856a0572f4e54c08bf7c"
 };
 exports.empireInfo = empireInfo
 
@@ -105,7 +107,8 @@ const havocInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562221877493800"
+        "jcrServerMsgID": "858562221877493800",
+        "mongo_id": "60dc856a0572f4e54c08bf7d"
 };
 exports.havocInfo = havocInfo
 
@@ -132,7 +135,8 @@ const rogueInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562304597950496"
+        "jcrServerMsgID": "858562304597950496",
+        "mongo_id": "60dc856a0572f4e54c08bf7e"
 };
 exports.rogueInfo = rogueInfo
 
@@ -159,7 +163,8 @@ const orderInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562383290826782"
+        "jcrServerMsgID": "858562383290826782",
+        "mongo_id": "60dc856a0572f4e54c08bf7f"
 };
 exports.orderInfo = orderInfo
 
@@ -186,7 +191,8 @@ const uprisingInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562490106118175"
+        "jcrServerMsgID": "858562490106118175",
+        "mongo_id": "60dc856a0572f4e54c08bf80"
 };
 exports.uprisingInfo = uprisingInfo
 
@@ -213,7 +219,8 @@ const lotusInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562578106941501"
+        "jcrServerMsgID": "858562578106941501",
+        "mongo_id": "60dc856a0572f4e54c08bf81"
 };
 exports.lotusInfo = lotusInfo
 
@@ -240,7 +247,8 @@ const phoundlingsInfo = {
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562672579444756"
+        "jcrServerMsgID": "858562672579444756",
+        "mongo_id": "60dc856a0572f4e54c08bf82"
 };
 exports.phoundlingsInfo = phoundlingsInfo
 
@@ -265,9 +273,10 @@ const hopeInfo = {
         "mainServerChannelID": "485246576751673354",
         "mainServerMsgID": "",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "859844296299249704",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562744189059083"
+        "jcrServerMsgID": "",
+        "mongo_id": "60dc856a0572f4e54c08bf83"
 };
 exports.hopeInfo = hopeInfo
 
