@@ -1,3 +1,4 @@
 .env
 coding/
 backup/
+node_modules/
