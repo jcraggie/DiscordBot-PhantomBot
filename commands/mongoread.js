@@ -4,7 +4,7 @@ module.exports = {
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
         const GuildData = require('./models/GuildData');
-        mongoose.connect('mongodb+srv://jcraggie:StarATLMONDB202106@cluster0.8s4mn.mongodb.net/GuildData', {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
+        mongoose.connect(process.env.MONGO_GUILDDATA_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
             if (err)
                 console.error(err);
             else
