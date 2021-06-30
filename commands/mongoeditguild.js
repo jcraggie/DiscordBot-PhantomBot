@@ -352,8 +352,9 @@ module.exports = {
                     {name: '\u200B', value: '\u200B' }
                 ) //end .addFields
 
-                client.guilds.cache.get(globalVar.serverIDs.jcrServerID).channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
-                client.guilds.cache.get(globalVar.serverIDs.recruitingServerID).channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
+                client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
+                client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
+                client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
                 message.channel.send(guildEmbed);
                 setTimeout(() => {
                     guildEmbed.fields=[] //clear the fields for the next use

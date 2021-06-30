@@ -51,7 +51,7 @@ const rebellionInfo = {
         "cpit": "clearing",
         "guildGG": "https://swgoh.gg/g/35906/phantomrebellion/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "859855863883628544",
         "recruitingServerChannelID": "595255366644924440",
         "recruitingServerMsgID": "859844296299249704",
         "jcrServerChannelID": "858495181552353313",
