@@ -25,6 +25,13 @@ exports.not_auth_msg = not_auth_msg
 const cmd_being_tested = "Sorry. This command is being tested by jcrAggie.\n**I have spoken.**"
 exports.cmd_being_tested = cmd_being_tested
 
+const serverIDs = {
+        "mainServerID": "483433483109138433",
+        "recruitingServerID": "484508095469584384",
+        "jcrServerID": "116902168698683398"
+};
+exports.serverIDs = serverIDs
+
 const rebellionInfo = {
         "allyCode": 135718294,
         "guildID": "G1743793275",
