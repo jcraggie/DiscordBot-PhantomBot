@@ -56,10 +56,10 @@ module.exports = {
         // const update = {  $set: {leader: "zibby"}  };
         // const options = {upsert: true};
 
-        const gData = await GuildData.findByIdAndUpdate(query, update, options, (error, guilddata) => {
-            console.log(error, guilddata)
-            ;
-        });
+        // const gData = await GuildData.findByIdAndUpdate(query, update, options, (error, guilddata) => {
+        //     console.log(error, guilddata)
+        //     ;
+        // });
 
         const apiGuildData = await getAPIData();
         
