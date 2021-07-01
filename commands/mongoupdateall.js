@@ -68,26 +68,16 @@ module.exports = {
                 "allyCode": gData['allyCode']
             };
             const update = {  
-                $set: {
-                    leader: "zibby",
-                    desc: gData['desc'],
-                    members: gData['members'],
-                    gp: gData['gp'],
-                    updated: gData['updated']
+                "$set": {
+                    "leader": "ZIBBY",
+                    "desc": gData['desc'],
+                    "members": gData['members'],
+                    "gp": gData['gp'],
+                    "updated": gData['updated']
                 }
             }
 
-            
-         
-        
-            // const options = {upsert: true};
-            // // search for api_allycode in mongo
-            // const gData = await GuildData.findOneAndUpdate({
-            //     'allyCode': gData['allyCode']
-            // }, (error, guilddata) => {
-            //     console.log(error, guilddata)
-            //     ;
-            // })
+
             // update fields in mongo
             // next gData
 
