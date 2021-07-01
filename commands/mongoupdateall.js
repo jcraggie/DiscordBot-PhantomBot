@@ -8,7 +8,7 @@
 // const writeguilds = require('./writeguilds.js');
 
 module.exports = {
-    name: 'updateallguilds',
+    name: 'mongoupdateall',
     description: "combines all guild JSON files into 1 JSON file", //allguilds.json
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
 
@@ -225,7 +225,7 @@ module.exports = {
         //     })
         // } // end async function combineData
 
-        
+
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
     }//end async execute
