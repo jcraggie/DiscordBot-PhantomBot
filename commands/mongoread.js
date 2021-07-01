@@ -15,7 +15,12 @@ module.exports = {
         // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
         // _id:60dc739f1af6d175fd69cba8 = Rebellion online MongoDB Atlas
 
-        const gData = await GuildData.findById('60dc739f1af6d175fd69cba8', (error, guilddata) => {
+        const gData = await GuildData.findById('60dc739f1af6d175fd69cba8', {
+            //data updates go here
+            leader: 'zibby bonehead',
+            members: 49
+
+        }, (error, guilddata) => {
             console.log(error, guilddata)
             ;
         })
@@ -24,9 +29,6 @@ module.exports = {
         console.log(gData['name']);
         message.channel.send(`Name: \`${gData['name']}\``);
         message.channel.send(`Leader: \`${gData['leader']}\``);
-        gData['leader'] = 'zibby bonehead';
-        message.channel.send(`Leader changed to: \`${gData['leader']}\``);
-
 
         
         const globalVar = require ('../global.js');
