@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'mongoread',
+    name: 'mongoupdatereb',
     description: "description of the new command",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
@@ -15,16 +15,6 @@ module.exports = {
         // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
         // _id:60dc739f1af6d175fd69cba8 = Rebellion online MongoDB Atlas
 
-        const gData = await GuildData.findById('60dc739f1af6d175fd69cba8', (error, guilddata) => {
-            console.log(error, guilddata)
-            ;
-        })
-
-        console.log('---test');
-        console.log(gData['name']);
-        message.channel.send(`Name: \`${gData['name']}\``);
-        message.channel.send(`Leader: \`${gData['leader']}\``);
-
         const newData = await GuildData.findByIdAndUpdate('60dc739f1af6d175fd69cba8', {
             //data updates go here
             leader: 'zibby bonehead',
@@ -34,6 +24,11 @@ module.exports = {
             console.log(error, guilddata)
             ;
         })
+
+        console.log('---test');
+        console.log(gData['name']);
+        message.channel.send(`Name: \`${gData['name']}\``);
+        message.channel.send(`Leader: \`${gData['leader']}\``);
 
         
         const globalVar = require ('../global.js');
