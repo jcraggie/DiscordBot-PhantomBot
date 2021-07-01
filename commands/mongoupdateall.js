@@ -62,26 +62,32 @@ module.exports = {
         // });
 
         const apiGuildData = await getAPIData();
-        
-        for(const gData in apiGuildData) {
-            const query = {
-                "allyCode": gData['allyCode']
-            };
-            const update = {  
-                "$set": {
-                    "leader": "ZIBBY",
-                    "desc": gData['desc'],
-                    "members": gData['members'],
-                    "gp": gData['gp'],
-                    "updated": gData['updated']
+        const updatedTF = await updateDB(apiGuildData);
+        console.log(updatedTF);
+
+
+        async function updateDB(apiGuildData) {
+            for(const gData in apiGuildData) {
+                const query = {
+                    "allyCode": gData['allyCode']
+                };
+                const update = {  
+                    "$set": {
+                        "leader": "ZIBBY",
+                        "desc": gData['desc'],
+                        "members": gData['members'],
+                        "gp": gData['gp'],
+                        "updated": gData['updated']
+                    }
                 }
-            }
-
-
-            // update fields in mongo
-            // next gData
-
-        }
+    
+    
+                // update fields in mongo
+                // next gData
+    
+            } // end for
+            return(true);
+        } // end async function updateDB
 
         // combineData(apiGuildData);
 
