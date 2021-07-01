@@ -23,6 +23,10 @@ module.exports = {
         console.log('---test');
         console.log(gData['name']);
         message.channel.send(`Name: \`${gData['name']}\``);
+        message.channel.send(`Leader: \`${gData['leader']}\``);
+        gData['leader'] = 'zibby bonehead';
+        message.channel.send(`Leader changed to: \`${gData['leader']}\``);
+
 
         
         const globalVar = require ('../global.js');
