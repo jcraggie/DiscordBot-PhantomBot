@@ -15,7 +15,7 @@ module.exports = {
         // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
         // _id:60dc739f1af6d175fd69cba8 = Rebellion online MongoDB Atlas
 
-        const newData = await GuildData.findByIdAndUpdate('60dc739f1af6d175fd69cba8', {
+        const gData = await GuildData.findByIdAndUpdate('60dc739f1af6d175fd69cba8', {
             //data updates go here
             leader: 'zibby bonehead',
             members: 49
