@@ -14,13 +14,11 @@ module.exports = {
         
         // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
         // _id:60dc739f1af6d175fd69cba8 = Rebellion online MongoDB Atlas
+        const query = '60dc739f1af6d175fd69cba8';
+        const update = {  $set: {leader: 'zibby bonehead'}  };
+        const options = {upsert: true};
 
-        const gData = await GuildData.findByIdAndUpdate('60dc739f1af6d175fd69cba8', {
-            //data updates go here
-            leader: 'zibby bonehead',
-            members: 49
-
-        }, (error, guilddata) => {
+        const gData = await GuildData.findByIdAndUpdate(query, update, options, (error, guilddata) => {
             console.log(error, guilddata)
             ;
         })
