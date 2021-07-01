@@ -21,7 +21,8 @@ module.exports = {
             message.channel.send(getguildHelp);
             getguildHelp.fields=[] //clear the fields for the next use
   
-         } // end function sendNewMemberHelp
+         } // end function sendGetGuildHelp
+         
           if (args[0] == "help"){
               sendGetGuildHelp();
   
