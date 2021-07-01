@@ -7,6 +7,7 @@ const GuildDataSchema = new Schema({
     id: String,
     name: String,
     desc: String,
+    leader: String,
     members: Number,
     status: Number,
     required: Number,
