@@ -79,7 +79,20 @@ module.exports = {
                         "gp": gData['gp'],
                         "updated": gData['updated']
                     }
-                }
+                };
+                const options = {returnNewDocument: true};
+                GuildData.findOneAndUpdate(query, update, options, (error, guilddata) => {
+                        console.log(error, guilddata)
+                        ;
+                    }).then(updatedDocument => {
+                        if(updatedDocument) {
+                            console.log(`Successfully updated document: ${updatedDocument}.`)
+                        } else {
+                            console.log('No document matches the provided query.')
+                        }
+                    })
+                
+
     
     
                 // update fields in mongo
