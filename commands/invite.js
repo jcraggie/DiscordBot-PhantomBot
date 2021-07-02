@@ -43,18 +43,19 @@ module.exports = {
                 unique: true
             };
 
+            //log the event to Discord (jcrAggie server) and the console
+            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
             
             var invite = client.channels.cache.get("483433483109138435").createInvite(inviteOptions).then(function(newInvite){
                 message.channel.send("https://discord.gg/" + newInvite.code);
                 message.channel.send("**Duration: ** " + inviteAge/3600 + " hrs    Uses: " + inviteUses);
 
 
-                //log the event to Discord (jcrAggie server) and the console
-                fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+                
             });
 
 
-        }
+        } // end else
         
 
     }
