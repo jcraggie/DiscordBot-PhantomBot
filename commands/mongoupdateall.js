@@ -71,7 +71,7 @@ module.exports = {
                 console.log('---api epoch: ', gData.updated);
                 console.log('---api time text: ', localDate);
 
-                var fetchDateConvert = new Date(currEpoch); //convert epoch timestamp to date and time
+                var fetchDateConvert = new Date(currEpoch * 1000); //convert epoch timestamp to date and time
                 var fetchLocalDate = fetchDateConvert.toLocaleString("en-US"); //convert date and time to local
                 console.log('---fetch time epoch', currEpoch)
                 console.log('---fetch time text: ', fetchLocalDate);
