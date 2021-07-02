@@ -65,14 +65,17 @@ module.exports = {
                 console.log('-------UPDATING MONGODB FOR: ', gData.name)
                 console.log('---fetch time epoch', currEpoch)
 
-                var fetchDateConvert = new Date(currEpoch - 25200); //convert epoch timestamp to date and time
-                var fetchLocalDate = fetchDateConvert.toLocaleString(); //convert date and time to local
-                console.log('---fetch time text: ', fetchLocalDate);
-
                 var dateConvert = new Date(gData.updated - 25200); //convert epoch timestamp to CST date and time
                 var localDate = dateConvert.toLocaleString(); //convert date and time to local
-                console.log('---api epoch: ', dateConvert);
+                console.log('---api epoch: ', gData.updated);
                 console.log('---api time text: ', localDate);
+
+                var fetchDateConvert = new Date(currEpoch - 25200); //convert epoch timestamp to date and time
+                var fetchLocalDate = fetchDateConvert.toLocaleString(); //convert date and time to local
+                console.log('---fetch time epoch', currEpoch)
+                console.log('---fetch time text: ', fetchLocalDate);
+
+                
                 
 
 
