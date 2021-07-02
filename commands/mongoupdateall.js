@@ -71,7 +71,7 @@ module.exports = {
                 //console.log('---GDATA: \n', gData)
                 console.log('-------GDATA ALLYCODE: \n', gData.allyCode)
                 const query = {
-                    "allyCode": gData.allycode
+                    "guildAllyCode": gData[0].allycode
                 };
                 const update = {  
                     "$set": {
@@ -88,9 +88,9 @@ module.exports = {
                         ;
                     }).then(updatedDocument => {
                         if(updatedDocument) {
-                            console.log(`Successfully updated document: ${updatedDocument}.`)
+                            console.log(`---Successfully updated document: ${updatedDocument}.`)
                         } else {
-                            console.log('No document matches the provided query.')
+                            console.log('---No document matches the provided query.')
                         }
                     })
                 
