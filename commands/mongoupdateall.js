@@ -69,15 +69,21 @@ module.exports = {
         async function updateDB(apiGuildData) {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
-                console.log('-------GDATA NAME: \n', gData.name)
+                console.log('-------UPDATING DATA FOR: \n', gData.name)
                 const query = {
                     "name": gData.name
                 };
                 const update = {  
                     "$set": {
-                        "leader": "ZIBBY",
                         "desc": gData.desc,
                         "members": gData.members,
+                        "status": gData.status,
+                        "required": gData.required,
+                        "bannerColor": gData.bannerColor,
+                        "bannerLogo": gData.bannerLogo,
+                        "message": gData.message,
+                        "raid": gData.raid,
+                        "roster": gData.roster,
                         "gp": gData.gp,
                         "updated": gData.updated
                     }
@@ -88,7 +94,7 @@ module.exports = {
                         ;
                     }).then(updatedDocument => {
                         if(updatedDocument) {
-                            console.log(`---Successfully updated document: ${updatedDocument}.`)
+                            // console.log(`---Successfully updated document: ${updatedDocument}.`)
                         } else {
                             console.log('---No document matches the provided query.')
                         }
@@ -140,7 +146,7 @@ module.exports = {
                 apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes);
 
                 var x = 0;
-                console.log('---APIGUILDDATA\n', apiGuildData);
+                // console.log('---APIGUILDDATA\n', apiGuildData);
                 return apiGuildData;
 
             } // end finally
