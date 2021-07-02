@@ -61,7 +61,7 @@ module.exports = {
         async function updateDB(apiGuildData) {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
-                var currEpoch = Math.floor(new Date().getTime()/1000.0)
+                var currEpoch = Math.floor(new Date().getTime())
                 console.log('-------UPDATING MONGODB FOR: ', gData.name)
                 console.log('---fetch time epoch', currEpoch)
 
@@ -70,7 +70,7 @@ module.exports = {
                 console.log('---api epoch: ', gData.updated);
                 console.log('---api time text: ', localDate);
 
-                var fetchDateConvert = new Date(currEpoch - 1800); //convert epoch timestamp to date and time
+                var fetchDateConvert = new Date(currEpoch); //convert epoch timestamp to date and time
                 var fetchLocalDate = fetchDateConvert.toLocaleString("en-US"); //convert date and time to local
                 console.log('---fetch time epoch', currEpoch)
                 console.log('---fetch time text: ', fetchLocalDate);
