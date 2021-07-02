@@ -73,8 +73,8 @@ module.exports = {
 
                 var fetchDateConvert = new Date(currEpoch * 1000); //convert epoch timestamp to date and time - using UTC right now as I cannot get it to convert to CST
                 var fetchLocalDate = fetchDateConvert.toLocaleString("en-US"); //convert date and time to local
-                console.log('---fetch time epoch', currEpoch)
-                console.log('---fetch time text: ', fetchLocalDate);
+                console.log('---fet epoch', currEpoch)
+                console.log('---fet time text: ', fetchLocalDate);
 
                 
                 
