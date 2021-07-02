@@ -32,9 +32,13 @@ module.exports = {
         } else {
 
             //log the event to Discord (jcrAggie server) and the console
+            console.log('---CLIENT: ', client);
             console.log('---MESSAGE: ', message.content);
             console.log('--- PB.INVITE ARGS: ', args);
-            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+            console.log('---DISCORD: ', Discord);
+            // fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+            //log the event to Discord (jcrAggie server) and the console
+               fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
             //message.channel.send('https://discord.gg/rUUpTRC');
             var inviteAge = args[0] * 3600;
