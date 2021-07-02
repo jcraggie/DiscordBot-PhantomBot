@@ -63,8 +63,8 @@ module.exports = {
                 //console.log('---GDATA: \n', gData)
                 var currEpoch = Math.floor(new Date().getTime()/1000)
                 // currEpoch += -18000;
-                console.log('-------UPDATING MONGODB FOR: ', gData.name)
-                console.log('---fetch time epoch', currEpoch)
+                // console.log('-------UPDATING MONGODB FOR: ', gData.name)
+                // console.log('---fetch time epoch', currEpoch)
 
                 var dateConvert = new Date(gData.updated - (18000 * 1000)); //convert epoch timestamp to CST date and time
                 var localDate = dateConvert.toLocaleString("en-US"); //convert date and time to local
@@ -73,7 +73,7 @@ module.exports = {
 
                 var fetchDateConvert = new Date(currEpoch * 1000); //convert epoch timestamp to date and time - using UTC right now as I cannot get it to convert to CST
                 var fetchLocalDate = fetchDateConvert.toLocaleString("en-US"); //convert date and time to local
-                console.log('---fet epoch', currEpoch)
+                console.log('---fet epoch: ', currEpoch)
                 console.log('---fet time text: ', fetchLocalDate);
 
                 
