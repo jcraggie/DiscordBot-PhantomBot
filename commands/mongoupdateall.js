@@ -69,9 +69,9 @@ module.exports = {
         async function updateDB(apiGuildData) {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
-                console.log('-------GDATA ALLYCODE: \n', gData['allyCode'])
+                console.log('-------GDATA NAME: \n', gData.name)
                 const query = {
-                    "guildAllyCode": gData.allycode
+                    "name": gData.name
                 };
                 const update = {  
                     "$set": {
