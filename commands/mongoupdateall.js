@@ -70,15 +70,15 @@ module.exports = {
             for(const gData of apiGuildData) {
                 console.log('---GDATA: \n', gData)
                 const query = {
-                    "allyCode": gData[0]['allyCode']
+                    "allyCode": gData[0].allycode
                 };
                 const update = {  
                     "$set": {
                         "leader": "ZIBBY",
-                        "desc": gData['desc'],
-                        "members": gData['members'],
-                        "gp": gData['gp'],
-                        "updated": gData['updated']
+                        "desc": gData[0].desc,
+                        "members": gData[0].members,
+                        "gp": gData[0].gp,
+                        "updated": gData[0].updated
                     }
                 };
                 const options = {returnNewDocument: true};
