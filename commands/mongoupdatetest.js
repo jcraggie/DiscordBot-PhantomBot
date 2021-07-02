@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'mongoupdatereb',
+    name: 'mongoupdatetest',
     description: "description of the new command",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
@@ -13,10 +13,20 @@ module.exports = {
         }); // end mongoose connect
         
         // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
-        // _id:60dc739f1af6d175fd69cba8 = Rebellion online MongoDB Atlas
+        // _id:60dc739f1af6d175fd69cba8 = Testing section online MongoDB Atlas
         const query = '60dc739f1af6d175fd69cba8';
-        const update = {  $set: {leader: "zibby"}  };
-        const options = {upsert: true};
+        const update = {  $set: {
+                leader: "ZIBBY BONEHEAD",
+                guildAllycode: "135-718-294 TEST",
+                id: "G01-TEST",
+                name: "PhantømRebellion-TEST",
+
+            }  
+        };
+        const options = {
+            //upsert: true,
+            useFindAndModify: false
+        };
 
         const gData = await GuildData.findByIdAndUpdate(query, update, options, (error, guilddata) => {
             console.log(error, guilddata)
