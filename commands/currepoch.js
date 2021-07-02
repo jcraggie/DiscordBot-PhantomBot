@@ -9,7 +9,7 @@ module.exports = {
         var currEpoch = Math.floor(new Date().getTime()/1000.0)
         console.log('---current time test', currEpoch)
 
-        var fetchDateConvert = new Date(currEpoch + 1000); //convert epoch timestamp to date and time
+        var fetchDateConvert = new Date(currEpoch); //convert epoch timestamp to date and time
         var fetchLocalDate = fetchDateConvert.toLocaleString(); //convert date and time to local
 
         console.log('---current time Text: ', fetchLocalDate);
