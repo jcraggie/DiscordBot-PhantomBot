@@ -29,9 +29,9 @@ module.exports = {
 
 
 
-        var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
+        // var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
         // var allyCodes = [135718294, 418877148, 618277879]; //REBELLION EMPIRE ROGUE for testing
-        // var allyCodes = [135718294]; // REBELLION ONLY for testing
+        var allyCodes = [135718294]; // REBELLION ONLY for testing
 
         console.log('---UPDATING ALL DATA USING ALLYCODES: ', allyCodes);
         const fs = require('fs');
@@ -65,10 +65,10 @@ module.exports = {
                 console.log('-------UPDATING MONGODB FOR: ', gData.name)
                 console.log('---current time test', currEpoch)
 
-                var fetchDateConvert = new Date(currEpoch * 1000); //convert epoch timestamp to date and time
+                var fetchDateConvert = new Date(currEpoch * 1000 - 18000); //convert epoch timestamp to date and time
                 var fetchLocalDate = fetchDateConvert.toLocaleString(); //convert date and time to local
 
-                var dateConvert = new Date(gData.updated * 1000); //convert epoch timestamp to date and time
+                var dateConvert = new Date(gData.updated - 18000); //convert epoch timestamp to CST date and time
                 var localDate = dateConvert.toLocaleString(); //convert date and time to local
                 
 
