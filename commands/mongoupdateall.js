@@ -65,7 +65,7 @@ module.exports = {
                 console.log('-------UPDATING MONGODB FOR: ', gData.name)
                 console.log('---fetch time epoch', currEpoch)
 
-                var dateConvert = new Date(gData.updated - 100000); //convert epoch timestamp to CST date and time
+                var dateConvert = new Date(gData.updated - (18000*1000)); //convert epoch timestamp to CST date and time
                 var localDate = dateConvert.toLocaleString("en-US"); //convert date and time to local
                 console.log('---api epoch: ', gData.updated);
                 console.log('---api time text: ', localDate);
