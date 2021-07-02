@@ -33,7 +33,7 @@ module.exports = {
         var allyCodes = [135718294, 418877148, 618277879]; //REBELLION EMPIRE ROGUE for testing
         // var allyCodes = [135718294]; // REBELLION ONLY for testing
 
-        console.log('---COMBINEUPDATE: Using allycodes: ', allyCodes);
+        console.log('---UPDATING ALL DATA USING ALLYCODES: ', allyCodes);
         const fs = require('fs');
         const fileUtils = require('../fileHelper.js');
         // const {botToken, swgohHelpUser, swgohHelpPW,swgohHelpID, swgohHelpSecret} = require(`../config`); // for local testing only
@@ -69,7 +69,7 @@ module.exports = {
         async function updateDB(apiGuildData) {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
-                console.log('-------UPDATING DATA FOR: \n', gData.name)
+                console.log('-------UPDATING MONGODB FOR: ', gData.name)
                 const query = {
                     "name": gData.name
                 };
@@ -117,7 +117,7 @@ module.exports = {
 
         async function getAPIData() {
             try {
-                console.log('AQCUIRING TOKEN... PLEASE WAIT.');
+                console.log('---ACQUIRING api.swgoh.help TOKEN... PLEASE WAIT.');
                 acquiredToken = await swapi.connect();
 
                 if (!acquiredToken) throw "is null. API might be down.";

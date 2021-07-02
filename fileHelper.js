@@ -169,8 +169,8 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
     var numGuilds = 0;
     var totalGuilds = allyCodes.length;
     var apiGuildData = [];
-    console.log('GETNEWDATA FOR NUMBER OF GUILDS: ', totalGuilds);
-    console.log('ALLYCODES: ', allyCodes);
+    console.log('---GETNEWDATA FOR NUMBER OF GUILDS: ', totalGuilds);
+    console.log('---ALLYCODES: ', allyCodes);
 
 
     for(x; x < totalGuilds;) { // begin for loop
@@ -209,7 +209,7 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
             "updated" : result[0].updated
         };
         message.channel.send('Received data for ' + guildTemp.name);
-        console.log('---RECEIVED NEW DATA FOR ' + guildTemp.name);
+        console.log('------RECEIVED NEW DATA FOR ' + guildTemp.name);
         apiGuildData.push(guildTemp);
         x += 1; // move to next allyCode 
     } // end for loop - all new API data has been stored in apiGuildData
