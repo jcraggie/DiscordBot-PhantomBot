@@ -61,7 +61,20 @@ module.exports = {
         async function updateDB(apiGuildData) {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
+                var currEpoch = Math.floor(new Date().getTime()/1000.0)
                 console.log('-------UPDATING MONGODB FOR: ', gData.name)
+                console.log('---current time test', currEpoch)
+
+                var fetchDateConvert = new Date(currEpoch + 1000); //convert epoch timestamp to date and time
+                var fetchLocalDate = fetchDateConvert.toLocaleString(); //convert date and time to local
+
+                var dateConvert = new Date(gData.updated + 1000); //convert epoch timestamp to date and time
+                var localDate = dateConvert.toLocaleString(); //convert date and time to local
+                
+
+
+
+
                 const query = {
                     "name": gData.name
                 };
@@ -77,7 +90,10 @@ module.exports = {
                         "raid": gData.raid,
                         "roster": gData.roster,
                         "gp": gData.gp,
-                        "updated": gData.updated
+                        "updated": gData.updated,
+                        "updatedText": localDate,
+                        "fetchEpoch": currEpoch,
+                        "fetchText": fetchLocalDate
                     }
                 };
                 const options = {returnNewDocument: true,

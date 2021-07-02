@@ -16,7 +16,9 @@ const GuildDataSchema = new Schema({
     message: String,
     gp: Number,
     updated: Number,
-    updatedText: String
+    updatedText: String,
+    fetchEpoch: Number,
+    fetchText: String
 
 });
 
