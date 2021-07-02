@@ -90,7 +90,7 @@ module.exports = {
                 };
                 const options = {returnNewDocument: true};
                 GuildData.findOneAndUpdate(query, update, options, (error, guilddata) => {
-                        console.log(error, guilddata)
+                        // console.log(error, guilddata)
                         ;
                     }).then(updatedDocument => {
                         if(updatedDocument) {
