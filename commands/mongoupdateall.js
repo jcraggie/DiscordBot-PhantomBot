@@ -67,10 +67,10 @@ module.exports = {
 
 
         async function updateDB(apiGuildData) {
-            for(const gData in apiGuildData) {
+            for(const gData of apiGuildData) {
                 console.log('---GDATA: \n', gData)
                 const query = {
-                    "allyCode": gData['allyCode']
+                    "allyCode": gData[0]['allyCode']
                 };
                 const update = {  
                     "$set": {
