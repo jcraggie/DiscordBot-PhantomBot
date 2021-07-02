@@ -1,5 +1,5 @@
 module.exports = (Discord,client) =>{
-    console.log('PhantomBot is online!');
+    console.log('---PHANTOMBOT IS ONLINE!');
     var onReadyMemberCount = client.guilds.cache.reduce((a, g) => a + g.memberCount, 0);
     console.log('---TOTAL MEMBERS OF ALL SERVERS AT BOOT: ',onReadyMemberCount); // sends # of members
     client.channels.cache.get('605087450573963362').send('PhantomBot is online...' + onReadyMemberCount);
