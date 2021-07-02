@@ -69,9 +69,9 @@ module.exports = {
         async function updateDB(apiGuildData) {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
-                console.log('-------GDATA ALLYCODE: \n', gData.allyCode)
+                console.log('-------GDATA ALLYCODE: \n', gData['allyCode'])
                 const query = {
-                    "guildAllyCode": gData[0].allycode
+                    "guildAllyCode": gData.allycode
                 };
                 const update = {  
                     "$set": {
@@ -140,7 +140,7 @@ module.exports = {
                 apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes);
 
                 var x = 0;
-                //console.log('---APIGUILDDATA\n', apiGuildData);
+                console.log('---APIGUILDDATA\n', apiGuildData);
                 return apiGuildData;
 
             } // end finally
