@@ -132,11 +132,13 @@ module.exports = {
                 var apiGuildData = [];
                 var fileGuildData = [];
                 var newGuildData = [];
+                
                 var done = false;
 
                 apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes);
 
                 var x = 0;
+                console.log('---APIGUILDDATA\n', apiGuildData);
                 return apiGuildData;
 
             } // end finally
