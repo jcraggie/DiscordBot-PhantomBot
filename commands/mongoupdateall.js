@@ -68,6 +68,7 @@ module.exports = {
 
         async function updateDB(apiGuildData) {
             for(const gData in apiGuildData) {
+                console.log('---GDATA: \n', gData)
                 const query = {
                     "allyCode": gData['allyCode']
                 };
@@ -132,7 +133,7 @@ module.exports = {
                 var apiGuildData = [];
                 var fileGuildData = [];
                 var newGuildData = [];
-                
+
                 var done = false;
 
                 apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes);
