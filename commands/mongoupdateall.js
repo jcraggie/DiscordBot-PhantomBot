@@ -29,8 +29,8 @@ module.exports = {
 
 
 
-        // var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
-        var allyCodes = [135718294, 418877148, 618277879]; //REBELLION EMPIRE ROGUE for testing
+        var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
+        // var allyCodes = [135718294, 418877148, 618277879]; //REBELLION EMPIRE ROGUE for testing
         // var allyCodes = [135718294]; // REBELLION ONLY for testing
 
         console.log('---UPDATING ALL DATA USING ALLYCODES: ', allyCodes);
