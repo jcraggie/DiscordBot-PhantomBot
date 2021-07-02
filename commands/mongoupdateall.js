@@ -88,7 +88,10 @@ module.exports = {
                         "updated": gData.updated
                     }
                 };
-                const options = {returnNewDocument: true};
+                const options = {returnNewDocument: true,
+                    useFindAndModify: false // going away in mongoose 6.0?
+                
+                };
                 GuildData.findOneAndUpdate(query, update, options, (error, guilddata) => {
                         // console.log(error, guilddata)
                         ;
