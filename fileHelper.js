@@ -266,7 +266,7 @@ function mergeNewData(apiGuildData, fileGuildData) {
 
 
 function writeGuildFile(guildData) {
-    var dateConvert = new Date(guildData["updated"] + 1000); //convert epoch timestamp to date and time
+    var dateConvert = new Date(guildData["updated"] * 1000); //convert epoch timestamp to date and time
     var localDate = dateConvert.toLocaleString(); //convert date and time to local
     guildData["updatedText"] = localDate;
 
@@ -339,7 +339,7 @@ async function createGuildEmbed(newGuildData) {
     for (index; index < newGuildData.length; index++) {
         console.log('---CREATEGUIDEMBED index: ', index);
 
-        var dateConvert = new Date(newGuildData[index].updated + 1000); //convert epoch timestamp to date and time
+        var dateConvert = new Date(newGuildData[index].updated * 1000); //convert epoch timestamp to date and time
         var localDate = dateConvert.toLocaleString(); //convert date and time to local
         var localGP = newGuildData[index].gp.toLocaleString("en-US"); //add commas to GP
         guildEmbed.addFields(

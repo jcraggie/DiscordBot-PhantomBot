@@ -264,7 +264,7 @@ module.exports = {
                     const guildData = JSON.parse(jsonString); //change JSON file to an object
                     console.log(guildData.name, ': ', guildData.members, '  GP: ', guildData.gp, ' Updated: ',guildData.updated);
 
-                    var dateConvert = new Date(guildData.updated + 1000); //convert epoch timestamp to date and time
+                    var dateConvert = new Date(guildData.updated * 1000); //convert epoch timestamp to date and time
                     var localDate = dateConvert.toLocaleString(); //convert date and time to local
                     var localGP = guildData.gp.toLocaleString("en-US"); //add commas to GP
 
