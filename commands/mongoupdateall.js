@@ -140,7 +140,7 @@ module.exports = {
                 apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes);
 
                 var x = 0;
-                console.log('---APIGUILDDATA\n', apiGuildData);
+                //console.log('---APIGUILDDATA\n', apiGuildData);
                 return apiGuildData;
 
             } // end finally
