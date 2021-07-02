@@ -32,6 +32,7 @@ module.exports = {
         } else {
 
             //log the event to Discord (jcrAggie server) and the console
+            console.log('---MESSAGE: ', message);
             console.log('--- PB.INVITE ARGS: ', args);
             fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
