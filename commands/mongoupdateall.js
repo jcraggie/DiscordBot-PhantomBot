@@ -61,7 +61,7 @@ module.exports = {
         async function updateDB(apiGuildData) {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
-                var currEpoch = Math.floor(new Date().getTime())
+                var currEpoch = Math.floor(new Date().getTime()/1000)
                 currEpoch += -18000;
                 console.log('-------UPDATING MONGODB FOR: ', gData.name)
                 console.log('---fetch time epoch', currEpoch)
