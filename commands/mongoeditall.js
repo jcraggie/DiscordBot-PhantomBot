@@ -365,7 +365,7 @@ module.exports = {
                         {name: '\u200B', value: '\u200B' }
                     ) //end .addFields
 
-                    sendToJCR(guildEmbed).then(clearEmbed(guildEmbed)); // then... then... ?
+                    sendToJCR(guildEmbed);
                     // client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
@@ -385,11 +385,11 @@ module.exports = {
         function clearEmbed(guildEmbed) {
             setTimeout(() => {
                 guildEmbed.fields=[] //clear the fields for the next use
-            }, 500);
+            }, 100);
         };
 
         async function sendToJCR(guildEmbed) {
-            const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID,guildEmbed);
+            const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID,guildEmbed).then(clearEmbed(guildEmbed));
             console.log(result + ' TO JCR SERVER');
             // guildEmbed.fields=[];
 
