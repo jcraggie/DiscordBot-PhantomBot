@@ -328,12 +328,12 @@ module.exports = {
 
 
 
-                    const guildFilePath = './guilds/';
-                    const guildList = [];
+                    // const guildFilePath = './guilds/';
+                    // const guildList = [];
 
-                    const guildToRead = guildFilePath + guildFileName;
+                    // const guildToRead = guildFilePath + guildFileName;
 
-                    const fs = require('fs');
+                    // const fs = require('fs');
                     
 
                     const guildData = gData;
@@ -365,18 +365,54 @@ module.exports = {
                         {name: '\u200B', value: '\u200B' }
                     ) //end .addFields
 
-                    client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
-                    client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
-                    client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
-                    message.channel.send(guildEmbed);
+                    sendToJCR(guildEmbed); // then... then... ?
+                    // client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
+                    // client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
+                    // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
+                    // message.channel.send(guildEmbed);
                     setTimeout(() => {
                         guildEmbed.fields=[] //clear the fields for the next use
                     }, 5000);
 
-                    //log the event to Discord (jcrAggie server) and the console
-                    fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+                    
             } // end for gld of gNames
+
+            //log the event to Discord (jcrAggie server) and the console
+            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+
         } // end else
+
+        async function sendToJCR(guildEmbed) {
+            const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID,guildEmbed);
+            console.log(result + ' TO JCR SERVER');
+
+        };
+
+        async function sendToRecruiting(guildEmbed) {
+            const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID,guildEmbed);
+            console.log(result + ' TO RECRUITING SERVER');
+
+        };
+
+        async function sendToMain(guildEmbed) {
+            const result = await sendEmbed(mainServerChannelID, mainServerMsgID,guildEmbed);
+            console.log(result + ' TO RECRUITING SERVER');
+
+        };
+
+        function sendEmbed(chID,msgID,embd) {
+            return new Promise(resolve => {
+                client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(embd));
+                resolve('---SENT EMBED');
+
+            });
+        }
+
+
+
+
+
+
 
     }//end async execute
 
