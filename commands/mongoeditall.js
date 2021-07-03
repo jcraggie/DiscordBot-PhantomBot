@@ -367,7 +367,7 @@ module.exports = {
 
                         //console.log(guildEmbed);
                     sendToJCROnly(guildEmbed);
-                    message.channel.send(guildEmbed);
+                    // message.channel.send(guildEmbed);
 
 
                     // sendToJCR(guildEmbed);
@@ -391,24 +391,24 @@ module.exports = {
 
 
 
-        async function sendToJCR(guildEmbed) {
+        async function sendToJCR(gEmbed) {
             return new Promise(resolve => {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
-                    const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                    const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, gEmbed)
                     resolve(result + ' TO JCR SERVER')
                 })();
             });
 
         };
 
-        async function sendToJCROnly(guildEmbed) {
+        async function sendToJCROnly(gEmbed) {
             console.log('---SENDING TO JCR');
-            const result1 = await sendToJCR(guildEmbed);
+            const result1 = await sendToJCR(gEmbed);
             console.log(result1);
             
             console.log('---CLEARING EMBED FOR NEXT GUILD');
-            const result4 = await clearEmbed(guildEmbed);
+            const result4 = await clearEmbed(gEmbed);
             console.log(result4);
         };
 
