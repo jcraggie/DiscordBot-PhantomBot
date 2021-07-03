@@ -370,9 +370,9 @@ module.exports = {
                     // client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
                     // message.channel.send(guildEmbed);
-                    setTimeout(() => {
+                    // setTimeout(() => {
                         guildEmbed.fields=[] //clear the fields for the next use
-                    }, 5000);
+                    // }, 5000);
 
                     
             } // end for gld of gNames
