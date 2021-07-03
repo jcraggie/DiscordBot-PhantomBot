@@ -371,7 +371,7 @@ module.exports = {
                     // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
                     // message.channel.send(guildEmbed);
                     // setTimeout(() => {
-                        guildEmbed.fields=[] //clear the fields for the next use
+                        // guildEmbed.fields=[] //clear the fields for the next use
                     // }, 5000);
 
                     
@@ -385,6 +385,7 @@ module.exports = {
         async function sendToJCR(guildEmbed) {
             const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID,guildEmbed);
             console.log(result + ' TO JCR SERVER');
+            guildEmbed.fields=[];
 
         };
 
