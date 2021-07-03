@@ -365,9 +365,9 @@ module.exports = {
                         {name: '\u200B', value: '\u200B' }
                     ) //end .addFields
 
-                    (async() => {
-                        await sendToJCROnly(guildEmbed);
-                    });
+
+                    sendToJCROnly(guildEmbed);
+
 
                     // sendToJCR(guildEmbed);
                     // sendToRecruiting(guildEmbed);
@@ -387,6 +387,14 @@ module.exports = {
             fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
         } // end else
+
+        async function sendToJCR(guildEmbed) {
+            return new Promise(resolve => {
+                const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                resolve(result + ' TO JCR SERVER')
+            });
+
+        };
 
         async function sendToJCROnly(guildEmbed) {
             console.log('---SENDING TO JCR');
