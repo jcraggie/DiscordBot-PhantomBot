@@ -78,6 +78,7 @@ module.exports = {
               fileUtils.logToDiscordAndConsole(client, message, args, Discord);
   
           } else {
+              var gEmbeds = [];
               const gNames = [
                   'rebellion',
                   'empire',
@@ -367,6 +368,8 @@ module.exports = {
                         //console.log(guildEmbed);
                     // let gEmbed = guildEmbed;
                     message.channel.send(guildEmbed);
+                    gEmbeds.push(guildEmbed);
+                    
                     sendToJCROnly(guildEmbed);
                     // (async() => {
                     //     await sendToJCROnly(guildEmbed);
@@ -387,6 +390,8 @@ module.exports = {
 
                     
             } // end for gld of gNames
+
+            console.log(gEmbeds);
 
             //log the event to Discord (jcrAggie server) and the console
             fileUtils.logToDiscordAndConsole(client, message, args, Discord);
