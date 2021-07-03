@@ -404,7 +404,7 @@ module.exports = {
 
             
             } // end if
-            if(counter === totalGuilds) {
+            if(counter == totalGuilds) {
                 console.log(gEmbeds);
 
             //log the event to Discord (jcrAggie server) and the console
@@ -416,12 +416,12 @@ module.exports = {
 
         async function sendToJCR(guildEmbed) {
             return new Promise(resolve => {
-                (async() => {
+                // (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     resolve(result + ' TO JCR SERVER')
-                })();
+                // })();
             });
 
         };
