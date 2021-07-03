@@ -365,7 +365,7 @@ module.exports = {
                         {name: '\u200B', value: '\u200B' }
                     ) //end .addFields
 
-                    sendToJCR(guildEmbed); // then... then... ?
+                    sendToJCR(guildEmbed).then(guildEmbed.fields = []); // then... then... ?
                     // client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
