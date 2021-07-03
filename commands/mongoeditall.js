@@ -421,7 +421,7 @@ module.exports = {
 
         async function sendToJCR(guildEmbed) {
             return new Promise(resolve => {
-                const result = sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed);
+                const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed);
                 resolve(result + ' TO JCR SERVER');
                 // guildEmbed.fields=[];
             });
@@ -440,7 +440,7 @@ module.exports = {
 
         };
 
-        async function sendEmbed(chID,msgID,embd) {
+        function sendEmbed(chID,msgID,embd) {
             return new Promise(resolve => {
                 client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(embd));
                 resolve('---SENT EMBED');
