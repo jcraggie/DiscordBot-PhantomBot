@@ -365,7 +365,9 @@ module.exports = {
                         {name: '\u200B', value: '\u200B' }
                     ) //end .addFields
 
-                    sendToJCROnly(guildEmbed);
+                    (async() => {
+                        await sendToJCROnly(guildEmbed);
+                    });
 
                     // sendToJCR(guildEmbed);
                     // sendToRecruiting(guildEmbed);
