@@ -366,7 +366,7 @@ module.exports = {
                     ) //end .addFields
 
 
-                    sendToJCROnly(guildEmbed);
+                    sendToJCROnly2(guildEmbed);
 
 
                     // sendToJCR(guildEmbed);
@@ -388,7 +388,13 @@ module.exports = {
 
         } // end else
 
-        async function sendToJCR(guildEmbed) {
+        async function sendToJCROnly2() {
+            return new Promise(resolve => {
+                resolve('Hello world');
+            }); // end resolve
+        };
+
+        async function sendToJCR3(guildEmbed) {
             return new Promise(resolve => {
                 const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed);
                 const final = result + ' TO JCR SERVER';
