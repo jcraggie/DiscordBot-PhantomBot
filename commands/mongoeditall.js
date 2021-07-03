@@ -347,21 +347,21 @@ module.exports = {
                     let guildEmbed = globalVar.phantomBotGuilds
                     // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
                     // .setDescription(" ")
-                    .fields[0]=
+                    guildEmbed.fields[0] =
                         {name: guildData['name'], value: 'LEADER: `' + leader + '`\n' + 
                             'MEMBERS `' + guildData['members'] + '/50` \n' +
                             'GP: `'+ localGP + '`\n' + 
                             'Daily Tickets: `' + dailyTickets + '`'}
-                        .fields[1] = {name: 'TERRITORY BATTLES', value: 'HOTH DS: `' + hothDS + '`⭐️\n' +
+                        guildEmbed.fields[1] = {name: 'TERRITORY BATTLES', value: 'HOTH DS: `' + hothDS + '`⭐️\n' +
                             'HOTH LS: `' + hothLS + '`⭐️ \n' +
                             'GEO DS: `' + geoDS + '`⭐️ with `' + watShards + '` <:watshard:709573349579161705>\n' +
                             'GEO LS: `' + geoLS + '`⭐️ with `' + kamShards + '` <:kam:778266623172673536>'}
-                        .fields[2] = {name: 'RAIDS', value: 'HPIT: `' + hpit +'`\n' +
+                        guildEmbed.fields[2] = {name: 'RAIDS', value: 'HPIT: `' + hpit +'`\n' +
                             'HAAT: `' + haat + '`\n' +
                             'HSTR: `' + hstr + '`\n' +
                             'CPIT: `' + cpit + '`'}
-                        .fields[3] = {name: 'SWGOH.GG LINK', value: guildGG}
-                        .fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
+                        guildEmbed.fields[3] = {name: 'SWGOH.GG LINK', value: guildGG}
+                        guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
                         
 
                         //console.log(guildEmbed);
