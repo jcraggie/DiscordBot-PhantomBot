@@ -385,7 +385,7 @@ module.exports = {
         async function sendToJCR(guildEmbed) {
             const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID,guildEmbed);
             console.log(result + ' TO JCR SERVER');
-            guildEmbed.fields=[];
+            // guildEmbed.fields=[];
 
         };
 
