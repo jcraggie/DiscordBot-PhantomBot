@@ -430,11 +430,11 @@ module.exports = {
         function clearEmbed(guildEmbed) {
             return new Promise(resolve => {
 
-                // setTimeout(() => {
+                setTimeout(() => {
 
                     guildEmbed.fields=[] //clear the fields for the next use
                     resolve('---EMBED FIELDS CLEARED')
-                // }, 500);
+                }, 5);
                 
             });
         };
