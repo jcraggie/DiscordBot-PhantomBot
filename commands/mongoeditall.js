@@ -367,10 +367,10 @@ module.exports = {
                         //console.log(guildEmbed);
                     // let gEmbed = guildEmbed;
                     message.channel.send(guildEmbed);
-                    
-                    (async() => {
-                        await sendToJCROnly(guildEmbed);
-                    })();
+                    sendToJCROnly(guildEmbed);
+                    // (async() => {
+                    //     await sendToJCROnly(guildEmbed);
+                    // })();
                     
 
 
