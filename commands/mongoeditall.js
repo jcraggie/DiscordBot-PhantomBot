@@ -413,15 +413,15 @@ module.exports = {
         function clearEmbed(guildEmbed) {
             return new Promise(resolve => {
                 
-                    guildEmbed.fields=[] //clear the fields for the next use
-                    resolve('---EMBED FIELDS CLEARED')
+                guildEmbed.fields=[] //clear the fields for the next use
+                resolve('---EMBED FIELDS CLEARED')
                 
             });
         };
 
         async function sendToJCR(guildEmbed) {
             return new Promise(resolve => {
-                const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID,guildEmbed);
+                const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed);
                 resolve(result + ' TO JCR SERVER');
                 // guildEmbed.fields=[];
             });
@@ -429,18 +429,18 @@ module.exports = {
         };
 
         async function sendToRecruiting(guildEmbed) {
-            const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID,guildEmbed);
+            const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
             console.log(result + ' TO RECRUITING SERVER');
 
         };
 
         async function sendToMain(guildEmbed) {
-            const result = await sendEmbed(mainServerChannelID, mainServerMsgID,guildEmbed);
+            const result = await sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
             console.log(result + ' TO RECRUITING SERVER');
 
         };
 
-        function sendEmbed(chID,msgID,embd) {
+        async function sendEmbed(chID,msgID,embd) {
             return new Promise(resolve => {
                 client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(embd));
                 resolve('---SENT EMBED');
