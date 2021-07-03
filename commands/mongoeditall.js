@@ -434,7 +434,7 @@ module.exports = {
 
                     guildEmbed.fields=[] //clear the fields for the next use
                     resolve('---EMBED FIELDS CLEARED')
-                }, 5);
+                }, 1);
                 
             });
         };
