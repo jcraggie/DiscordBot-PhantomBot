@@ -366,7 +366,8 @@ module.exports = {
                     ) //end .addFields
 
                         //console.log(guildEmbed);
-                    sendToJCROnly(guildEmbed);
+                    let gEmbed = guildEmbed;
+                    sendToJCROnly(gEmbed);
                     // message.channel.send(guildEmbed);
 
 
@@ -433,7 +434,7 @@ module.exports = {
 
                     guildEmbed.fields=[] //clear the fields for the next use
                     resolve('---EMBED FIELDS CLEARED')
-                }, 5000);
+                }, 500);
                 
             });
         };
@@ -458,9 +459,9 @@ module.exports = {
 
         };
 
-        function sendEmbed(chID,msgID,embd) {
+        function sendEmbed(chID, msgID, embd) {
             return new Promise(resolve => {
-                console.log('---SEND EMBED and embed is: \n',embd);
+                //console.log('---SEND EMBED and embed is: \n',embd);
                 client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(embd));
 
                 resolve('---SENT EMBED');
