@@ -16,7 +16,7 @@ module.exports = (Discord,client) =>{
 
     var cronHavoc = new CronJob(havocTime, function() {
 
-        console.log('sending Havoc ticket reminder.');
+        console.log('---SENDING HAVOC TICKET REMINDER');
 
         let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
 
@@ -36,7 +36,7 @@ module.exports = (Discord,client) =>{
                 client.channels.cache.get('605087450573963362').send("Bot issued cronHavoc reminder.");
 
                 //log the event to the console
-                console.log('Bot sent cronHavoc'); 
+                console.log('---SENT CRONHAVOC'); 
 
         }, null, true, pHavTz); // central
         cronHavoc.start();  //end cronHavoc
@@ -50,7 +50,7 @@ module.exports = (Discord,client) =>{
         var pRogTz = 'America/Chicago';
         var cronRogue = new CronJob(rogueTime, function() {
 
-            console.log('sending Rogue ticket reminder.');
+            console.log('---SENDING ROGUE TICKET REMINDER');
             
             let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
             
@@ -70,7 +70,7 @@ module.exports = (Discord,client) =>{
                     client.channels.cache.get('605087450573963362').send("Bot issued cronRogue reminder.");
             
                     //log the event to the console
-                    console.log('Bot sent cronRogue'); 
+                    console.log('---SENT CRONROGUE'); 
             
         }, null, true, pRogTz); // central
     
