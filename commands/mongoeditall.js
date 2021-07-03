@@ -78,6 +78,8 @@ module.exports = {
               fileUtils.logToDiscordAndConsole(client, message, args, Discord);
   
           } else {
+              var counter = 0;
+             
               var gEmbeds = [];
               const gNames = [
                   'rebellion',
@@ -90,6 +92,8 @@ module.exports = {
                   'phoundlings',
                   'hope'
                 ]; // end gNames
+                var totalGuilds = gNames.length;
+                console.log ('---TOTAL GUILDS: ', totalGuilds);
 
               for(gld of gNames) {
 
@@ -371,6 +375,8 @@ module.exports = {
                     gEmbeds.push(guildEmbed);
                     
                     sendToJCROnly(guildEmbed);
+                    console.log('---COUNTER IS AT: ', counter);
+                    counter += 1;
                     // (async() => {
                     //     await sendToJCROnly(guildEmbed);
                     // })();
@@ -391,7 +397,9 @@ module.exports = {
                     
             } // end for gld of gNames
 
-            console.log(gEmbeds);
+            if(counter == totalGuilds) {
+                console.log(gEmbeds);
+            } // end if
 
             //log the event to Discord (jcrAggie server) and the console
             fileUtils.logToDiscordAndConsole(client, message, args, Discord);
