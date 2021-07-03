@@ -78,7 +78,7 @@ module.exports = {
               fileUtils.logToDiscordAndConsole(client, message, args, Discord);
   
           } else {
-              var counter = 0;
+              var counter = 1;
              
               var gEmbeds = [];
               const gNames = [
@@ -98,7 +98,7 @@ module.exports = {
               for(gld of gNames) {
 
                 var guildFileName = false;
-                counter += 1;
+                // counter += 1;
                 console.log('---READING GUILD # ', counter);
 
                     switch(gld) {
