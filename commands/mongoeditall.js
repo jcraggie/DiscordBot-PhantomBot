@@ -98,6 +98,8 @@ module.exports = {
               for(gld of gNames) {
 
                 var guildFileName = false;
+                counter += 1;
+                console.log('---READING GUILD # ', counter);
 
                     switch(gld) {
                         case 'rebellion' :
@@ -374,12 +376,15 @@ module.exports = {
                     message.channel.send(guildEmbed);
                     gEmbeds.push(guildEmbed);
                     
-                    sendToJCROnly(guildEmbed);
-                    console.log('---COUNTER IS AT: ', counter);
-                    counter += 1;
-                    // (async() => {
-                    //     await sendToJCROnly(guildEmbed);
-                    // })();
+                    // sendToJCROnly(guildEmbed);
+                    
+                    // counter += 1;
+
+                    (async() => {
+                        await sendToJCROnly(guildEmbed);
+                        counter += 1;
+
+                    })();
                     
 
 
@@ -397,7 +402,7 @@ module.exports = {
                     
             } // end for gld of gNames
 
-            if(counter == totalGuilds) {
+            if(counter === totalGuilds) {
                 console.log(gEmbeds);
             } // end if
 
