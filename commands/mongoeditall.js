@@ -361,7 +361,7 @@ module.exports = {
                             'HSTR: `' + hstr + '`\n' +
                             'CPIT: `' + cpit + '`'}
                         .field[3] = {name: 'SWGOH.GG LINK', value: guildGG}
-                        .field[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
+                        // .field[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
                         
 
                         //console.log(guildEmbed);
