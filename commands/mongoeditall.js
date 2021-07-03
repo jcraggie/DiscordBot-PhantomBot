@@ -345,8 +345,8 @@ module.exports = {
 
                     // var globalVar = require('../global.js');
                     let guildEmbed = globalVar.phantomBotGuilds
-                    .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
-                    .setDescription(" ")
+                    // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
+                    // .setDescription(" ")
                     .addFields(
                         {name: guildData['name'], value: 'LEADER: `' + leader + '`\n' + 
                             'MEMBERS `' + guildData['members'] + '/50` \n' +
