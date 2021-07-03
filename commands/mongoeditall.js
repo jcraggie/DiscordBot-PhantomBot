@@ -366,6 +366,8 @@ module.exports = {
                     ) //end .addFields
 
                     sendToJCR(guildEmbed);
+                    sendToRecruiting(guildEmbed);
+                    sendToMain(guildEmbed);
                     // client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
@@ -396,13 +398,13 @@ module.exports = {
         };
 
         async function sendToRecruiting(guildEmbed) {
-            const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID,guildEmbed);
+            const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID,guildEmbed).then(clearEmbed(guildEmbed));
             console.log(result + ' TO RECRUITING SERVER');
 
         };
 
         async function sendToMain(guildEmbed) {
-            const result = await sendEmbed(mainServerChannelID, mainServerMsgID,guildEmbed);
+            const result = await sendEmbed(mainServerChannelID, mainServerMsgID,guildEmbed).then(clearEmbed(guildEmbed));
             console.log(result + ' TO RECRUITING SERVER');
 
         };
