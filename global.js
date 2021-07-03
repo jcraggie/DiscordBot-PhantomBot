@@ -82,11 +82,11 @@ const empireInfo = {
         "cpit": "crushed (at 224m active group)",
         "guildGG": "https://swgoh.gg/g/51323/phantomempire/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860759358593826816",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "860759113880698881",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858561759774375977",
+        "jcrServerMsgID": "860761753029312542",
         "mongo_id": "60dc856a0572f4e54c08bf7c"
 };
 exports.empireInfo = empireInfo
@@ -110,11 +110,11 @@ const havocInfo = {
         "cpit": "in progress",
         "guildGG": "https://swgoh.gg/g/29918/phantomhavoc/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860759578946043914",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "860759747556671518",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562221877493800",
+        "jcrServerMsgID": "860761777213014026",
         "mongo_id": "60dc856a0572f4e54c08bf7d"
 };
 exports.havocInfo = havocInfo
@@ -138,11 +138,11 @@ const rogueInfo = {
         "cpit": "none",
         "guildGG": "https://swgoh.gg/g/61585/phantomrogue/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860760055993466890",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "860759919141191701",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562304597950496",
+        "jcrServerMsgID": "860761793747877910",
         "mongo_id": "60dc856a0572f4e54c08bf7e"
 };
 exports.rogueInfo = rogueInfo
@@ -166,11 +166,11 @@ const orderInfo = {
         "cpit": "launch at 5pm EST, 24 hr join",
         "guildGG": "https://swgoh.gg/g/61714/phantomorder/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860760282695467009",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "860760455982219265",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562383290826782",
+        "jcrServerMsgID": "860761808432660510",
         "mongo_id": "60dc856a0572f4e54c08bf7f"
 };
 exports.orderInfo = orderInfo
@@ -194,11 +194,11 @@ const uprisingInfo = {
         "cpit": "Ha! Good luck",
         "guildGG": "https://swgoh.gg/g/63155/phantom-uprising/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860760646902874153",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "860760546579709962",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562490106118175",
+        "jcrServerMsgID": "860761826920890368",
         "mongo_id": "60dc856a0572f4e54c08bf80"
 };
 exports.uprisingInfo = uprisingInfo
@@ -222,11 +222,11 @@ const lotusInfo = {
         "cpit": "not running yet",
         "guildGG": "https://swgoh.gg/g/28738/phantom-lotus-society/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860760781980434442",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "860760869540200448",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562578106941501",
+        "jcrServerMsgID": "860761840785817612",
         "mongo_id": "60dc856a0572f4e54c08bf81"
 };
 exports.lotusInfo = lotusInfo
@@ -250,11 +250,11 @@ const phoundlingsInfo = {
         "cpit": "not running yet",
         "guildGG": "https://swgoh.gg/g/83056/phantom-phoundlings/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860761086734893066",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "",
+        "recruitingServerMsgID": "860761015344300033",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "858562672579444756",
+        "jcrServerMsgID": "860761854195662888",
         "mongo_id": "60dc856a0572f4e54c08bf82"
 };
 exports.phoundlingsInfo = phoundlingsInfo
@@ -278,11 +278,11 @@ const hopeInfo = {
         "cpit": "practice mode, currently unachievable",
         "guildGG": "https://swgoh.gg/g/75710/phantom-hope/",
         "mainServerChannelID": "485246576751673354",
-        "mainServerMsgID": "",
+        "mainServerMsgID": "860761189788418058",
         "recruitingServerChannelID": "595255366644924440",
-        "recruitingServerMsgID": "859844296299249704",
+        "recruitingServerMsgID": "860761422937718784",
         "jcrServerChannelID": "858495181552353313",
-        "jcrServerMsgID": "",
+        "jcrServerMsgID": "860761872180969482",
         "mongo_id": "60dc856a0572f4e54c08bf83"
 };
 exports.hopeInfo = hopeInfo
