@@ -376,15 +376,15 @@ module.exports = {
                     message.channel.send(guildEmbed);
                     gEmbeds.push(guildEmbed);
                     
-                    // sendToJCROnly(guildEmbed);
+                    sendToJCR(guildEmbed);
                     
-                    // counter += 1;
+                    counter += 1;
 
-                    (async() => {
-                        await sendToJCROnly(guildEmbed);
-                        counter += 1;
+                    // (async() => {
+                    //     await sendToJCROnly(guildEmbed);
+                    //     counter += 1;
 
-                    })();
+                    // })();
                     
 
 
