@@ -365,7 +365,7 @@ module.exports = {
                         {name: '\u200B', value: '\u200B' }
                     ) //end .addFields
 
-
+                        console.log(guildEmbed);
                     sendToJCROnly(guildEmbed);
 
 
