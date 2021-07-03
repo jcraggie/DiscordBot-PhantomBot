@@ -320,5 +320,23 @@ const fancyPitImageEmbed = new Discord.MessageEmbed()
 
 exports.fancyPitImageEmbed = fancyPitImageEmbed
 
+const phantomBotGuilds = new Discord.MessageEmbed()
+        .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
+        .setColor(0x580202)
+        .addFields(
+                {name: '0-GUILDINFO', value: 'GUILDDATA'},
+                {name: '1-TERRITORY BATTLES', value: 'TBDATA'},
+                {name: '2-RAIDS', value: 'RAIDDATA'},
+                {name: '3-SWGOH.GG LINK', value: 'GGZLINK'},
+                {name: '4-INFO LAST UPDATED', value: 'DATETIME'},
+                {name: '\u200B', value: '\u200B' }
+            ) //end .addFields
+        .setTimestamp()
+        .setFooter(footer);
+        
+        phantomBotGuilds.fields = [];
+
+exports.phantomBotGuilds = phantomBotGuilds
+
 
 

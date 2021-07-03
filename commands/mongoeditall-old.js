@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'mongoeditall',
+    name: 'mongoeditall-old',
     description: "reads all guilds from MongoDB and updates it in the guild numbers channel(s) specified",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const globalVar = require ('../global.js');
