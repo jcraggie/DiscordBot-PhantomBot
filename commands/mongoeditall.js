@@ -365,13 +365,13 @@ module.exports = {
                         {name: '\u200B', value: '\u200B' }
                     ) //end .addFields
 
-                    sendToJCR(guildEmbed).then(guildEmbed.fields = []); // then... then... ?
+                    sendToJCR(guildEmbed).then(clearEmbed(guildEmbed)); // then... then... ?
                     // client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
                     // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
                     // message.channel.send(guildEmbed);
                     // setTimeout(() => {
-                        // guildEmbed.fields=[] //clear the fields for the next use
+                    //     guildEmbed.fields=[] //clear the fields for the next use
                     // }, 5000);
 
                     
@@ -381,6 +381,12 @@ module.exports = {
             fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
         } // end else
+
+        function clearEmbed(guildEmbed) {
+            setTimeout(() => {
+                guildEmbed.fields=[] //clear the fields for the next use
+            }, 1000);
+        };
 
         async function sendToJCR(guildEmbed) {
             const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID,guildEmbed);
