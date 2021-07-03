@@ -388,7 +388,7 @@ module.exports = {
 
         } // end else
 
-        async function sendToJCR(guildEmbed) {
+        function sendToJCR(guildEmbed) {
             return new Promise(resolve => {
                 const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                 resolve(result + ' TO JCR SERVER')
