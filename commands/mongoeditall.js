@@ -437,13 +437,13 @@ module.exports = {
             });
         };
 
-        async function sendToJCR(guildEmbed) {
-            return new Promise(resolve => {
-                const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                resolve(result + ' TO JCR SERVER')
-            });
+        // async function sendToJCR(guildEmbed) {
+        //     return new Promise(resolve => {
+        //         const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+        //         resolve(result + ' TO JCR SERVER')
+        //     });
 
-        };
+        // };
 
         async function sendToRecruiting(guildEmbed) {
             const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
