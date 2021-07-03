@@ -367,6 +367,7 @@ module.exports = {
 
                         //console.log(guildEmbed);
                     sendToJCROnly(guildEmbed);
+                    message.channel.send(guildEmbed);
 
 
                     // sendToJCR(guildEmbed);
@@ -458,6 +459,7 @@ module.exports = {
             return new Promise(resolve => {
                 console.log('---SEND EMBED and embed is: \n',embd);
                 client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(embd));
+
                 resolve('---SENT EMBED');
 
             });
