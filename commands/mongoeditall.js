@@ -48,8 +48,8 @@ module.exports = {
         // client.channels.cache.get('858495181552353313').messages.fetch('858495427637018634').then(msg => msg.edit(args[0]));
         
         
-        //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+        // //log the event to Discord (jcrAggie server) and the console
+        // fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -318,8 +318,8 @@ module.exports = {
                     }//end switch
 
                     const gData = await GuildData.findById(mongo_id, (error, guilddata) => {
-                        console.log(error, guilddata)
-                        ;
+                        // console.log(error, guilddata);
+                        console.log(error);
                     })
 
 
@@ -385,7 +385,7 @@ module.exports = {
         function clearEmbed(guildEmbed) {
             setTimeout(() => {
                 guildEmbed.fields=[] //clear the fields for the next use
-            }, 1000);
+            }, 500);
         };
 
         async function sendToJCR(guildEmbed) {
