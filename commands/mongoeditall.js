@@ -79,6 +79,8 @@ module.exports = {
   
           } else {
               var counter = 1;
+              var guildUpdateEmbed = {};
+
              
               var gEmbeds = [];
               const gNames = [
@@ -374,6 +376,7 @@ module.exports = {
                         //console.log(guildEmbed);
                     // let gEmbed = guildEmbed;
                     // message.channel.send(guildEmbed);
+                    guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
                     gEmbeds.push(guildEmbed);
                     
                     sendToJCR(guildEmbed);
@@ -408,9 +411,11 @@ module.exports = {
             } // end if
             if(counter == totalGuilds) {
                 console.log(gEmbeds);
+                message.channel.send(guildUpdateEmbed['rogue']);
+                
 
-            //log the event to Discord (jcrAggie server) and the console
-            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+                //log the event to Discord (jcrAggie server) and the console
+                fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
         } // end else
 
