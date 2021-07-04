@@ -328,12 +328,12 @@ module.exports = {
 
                 console.log('---READING GUILD # ', counter, ': ',gld);
 
-                const gData = await GuildData.findById(mongo_id, (error, guilddata) => {
+                var gData = await GuildData.findById(mongo_id, (error, guilddata) => {
                     // console.log(error, guilddata);
                     console.log(error);
                 })
 
-                const guildData = gData;
+                var guildData = gData;
                 
                 var dateConvert = new Date(guildData['updated'] - (18000 * 1000)); //convert epoch timestamp to date and time
                 var localDate = dateConvert.toLocaleString(); //convert date and time to local
@@ -426,7 +426,7 @@ module.exports = {
                 geoLS, kamShards,
                 hpit, haat, hstr, cpit,
                 guildGG, localDate);
-                let guildEmbed = globalVar.phantomBotGuilds
+                var guildEmbed = globalVar.phantomBotGuilds
                     // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
                     // .setDescription(" ")
                     guildEmbed.fields[0] =
