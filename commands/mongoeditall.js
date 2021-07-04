@@ -401,7 +401,8 @@ module.exports = {
 
                 if(counter == totalGuilds) {
                     console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
-                    message.channel.send(guildUpdateEmbed['rogue']);
+                    // message.channel.send(guildUpdateEmbed['rogue']);
+                    message.channel.send('FINISH GUILD LOOP');
     
     
                     //log the event to Discord (jcrAggie server) and the console
