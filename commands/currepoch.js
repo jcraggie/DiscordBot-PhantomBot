@@ -13,8 +13,8 @@ module.exports = {
         var fetchDateConvert = new Date(currEpoch - (18000 * 1000)); //convert epoch timestamp to date and time
         var fetchLocalDate = fetchDateConvert.toLocaleString(); //convert date and time to local
 
-        console.log('---current time Text: ', fetchLocalDate);
-        message.channel.send('CONVERT: '+ fetchLocalDate);
+        console.log('---current time Text: `', fetchLocalDate + '`');
+        message.channel.send('CONVERT: `'+ fetchLocalDate + '`');
         
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
