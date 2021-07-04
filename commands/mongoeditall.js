@@ -395,7 +395,7 @@ module.exports = {
                 if(counter == totalGuilds) {
                     console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
                     // message.channel.send(guildUpdateEmbed['rogue']);
-                    message.channel.send('FINISH GUILD LOOP');
+                    // message.channel.send('FINISH GUILD LOOP');
                     mongoose.connection.close(function () {
                         console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
                         console.log('---FINSHED UPDATING GUILDS');
@@ -455,7 +455,7 @@ module.exports = {
                     // guildGG, localDate);
                     var guildEmbed = globalVar.phantomBotGuilds
                         // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
-                        guildEmbed.description = guildData_name;
+                        guildEmbed.description = '**' + guildData_name + '**';
                         guildEmbed.fields[0] =
                             {name: 'GUILD INFORMATION', value: 'LEADER: `' + leader + '`\n' + 
                                 'MEMBERS `' + guildData_members + '/50` \n' +
