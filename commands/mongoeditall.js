@@ -413,6 +413,7 @@ module.exports = {
                 } // end if
 
                 counter += 1;
+                index += 1;
 
                     
             } // end for gld of gNames
