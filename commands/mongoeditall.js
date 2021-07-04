@@ -366,15 +366,16 @@ module.exports = {
                 // message.channel.send(guildEmbed);
                 console.log('---SAVING EMBED FOR ' + gld);
                 guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
-                message.channel.send(guildUpdateEmbed[gld]);
-                gEmbeds.push(guildEmbed);
+                // message.channel.send(guildUpdateEmbed[gld]);
+                // gEmbeds.push(guildEmbed);
                 
                 // sendToJCR(guildEmbed);
                 // sendToRecruiting(guildEmbed);
                 // sendToMain(guildEmbed);
-                sendToJCR(guildUpdateEmbed[gld]);
-                sendToRecruiting(guildUpdateEmbed[gld]);
-                sendToMain(guildUpdateEmbed[gld]);
+
+                // sendToJCR(guildUpdateEmbed[gld]);
+                // sendToRecruiting(guildUpdateEmbed[gld]);
+                // sendToMain(guildUpdateEmbed[gld]);
                 
                 
 
@@ -403,6 +404,13 @@ module.exports = {
                     console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
                     // message.channel.send(guildUpdateEmbed['rogue']);
                     message.channel.send('FINISH GUILD LOOP');
+                    gld = '';
+                    for(gld of gNames) {
+                        message.channel.send(guildUpdateEmbed[gld]);
+                        sendToJCR(guildUpdateEmbed[gld]);
+                        sendToRecruiting(guildUpdateEmbed[gld]);
+                        sendToMain(guildUpdateEmbed[gld]);
+                    };
     
     
                     //log the event to Discord (jcrAggie server) and the console
