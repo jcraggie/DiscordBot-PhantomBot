@@ -364,6 +364,7 @@ module.exports = {
                         //console.log(guildEmbed);
                     // let gEmbed = guildEmbed;
                     // message.channel.send(guildEmbed);
+                    console.log('---SAVING EMBED FOR ' + gld);
                     guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
                     gEmbeds.push(guildEmbed);
                     
