@@ -418,6 +418,10 @@ module.exports = {
 
                     
             } // end for gld of gNames
+            console.log('===================================================================');
+            console.log('GUILDUPDATEEMBED ARRAY');
+            console.log('===================================================================');
+            console.log(guildUpdateEmbed);
 
             
             // message.channel.send(guildUpdateEmbed['rogue']);
