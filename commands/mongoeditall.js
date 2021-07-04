@@ -378,6 +378,8 @@ module.exports = {
                 console.log('---INDEX : gNAMES[INDEX]: ' + index + ': ', gNames[index] );
                 guildUpdateEmbed[ gNames[index] ] = guildEmbed;
                 await sendToJCR(guildEmbed);
+                await sendToMainServer(guildEmbed);
+                await sendToRecruitingServer(guildEmbed);
                 
                 //guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
 
