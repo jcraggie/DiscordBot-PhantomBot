@@ -366,6 +366,7 @@ module.exports = {
                 // message.channel.send(guildEmbed);
                 console.log('---SAVING EMBED FOR ' + gld);
                 guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
+                message.channel.send(guildUpdateEmbed[gld]);
                 gEmbeds.push(guildEmbed);
                 
                 // sendToJCR(guildEmbed);
@@ -399,7 +400,7 @@ module.exports = {
                 console.log('--counter is at ' + counter);
 
                 if(counter == totalGuilds) {
-                    console.log(gEmbeds);
+                    console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
                     message.channel.send(guildUpdateEmbed['rogue']);
     
     
@@ -419,24 +420,24 @@ module.exports = {
 
 
 
-        async function sendToJCR(guildEmbed) {
+        async function sendToJCR(gldEmb) {
             return new Promise(resolve => {
                 // (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    const result = sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                    const result = sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
                     console.log(result + ' TO JCR SERVER')
                 // })();
             });
 
         };
 
-        async function sendToRecruiting(guildEmbed) {
+        async function sendToRecruiting(gldEmb) {
             return new Promise(resolve => {
                 // (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
+                    const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
                     console.log(result + ' TO RECRUITING SERVER');
                 // })();
             });
@@ -449,12 +450,12 @@ module.exports = {
 
         // };
 
-        async function sendToMain(guildEmbed) {
+        async function sendToMain(gldEmb) {
             return new Promise(resolve => {
                 // (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    const result = sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
+                    const result = sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
                     console.log(result + ' TO MAIN SERVER');
                 // })();
             });
@@ -469,36 +470,36 @@ module.exports = {
 
         // };
 
-        async function sendToJCROnly(guildEmbed) {
+        async function sendToJCROnly(gldEmb) {
             console.log('---SENDING TO JCR');
-            const result1 = await sendToJCR(guildEmbed);
+            const result1 = await sendToJCR(elgemEmb);
             console.log(result1);
             
             console.log('---CLEARING EMBED FOR NEXT GUILD');
-            const result4 = await clearEmbed(guildEmbed);
+            const result4 = await clearEmbed(gldEmb);
             console.log(result4);
         };
 
-        async function sendToAllServers(guildEmbed) {
+        async function sendToAllServers(gldEmb) {
             console.log('---SENDING TO JCR');
-            const result1 = await sendToJCR(guildEmbed);
+            const result1 = await sendToJCR(gldEmb);
             console.log(result1);
             console.log('---SENDING TO RECRUITING');
-            const result2 = await sendToRecruiting(guildEmbed);
+            const result2 = await sendToRecruiting(gldEmb);
             console.log(result2);
-            const result3 = await sendToMain(guildEmbed);
+            const result3 = await sendToMain(gldEmb);
             console.log(result3);
             console.log('---CLEARING EMBED FOR NEXT GUILD');
-            const result4 = await clearEmbed(guildEmbed);
+            const result4 = await clearEmbed(gldEmb);
             console.log(result4);
         };
 
-        function clearEmbed(guildEmbed) {
+        function clearEmbed(gldEmb) {
             return new Promise(resolve => {
 
                 setTimeout(() => {
 
-                    guildEmbed.fields=[] //clear the fields for the next use
+                    gldEmb.fields=[] //clear the fields for the next use
                     resolve('---EMBED FIELDS CLEARED')
                 }, 1);
                 
@@ -507,11 +508,11 @@ module.exports = {
 
         
 
-        function sendEmbed(chID, msgID, embd) {
+        function sendEmbed(chID, msgID, gldEmb) {
             return new Promise(resolve => {
                 //console.log('---SEND EMBED and embed is: \n',embd);
                 // (async() => {
-                    client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(embd));
+                    client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('---SENT EMBED');
                 // })();
 
