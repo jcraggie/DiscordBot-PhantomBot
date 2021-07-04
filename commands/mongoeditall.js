@@ -376,6 +376,7 @@ module.exports = {
                         // message.channel.send(guildUpdateEmbed[gld]);
                         console.log('---SENDING EMBED FOR GUILD: ' + gld);
                         message.channel.send('Sending embed for: `'+ gld + '`');
+                        message.channel.send(guildUpdateEmbed[gld]);
                         sendToJCR(guildUpdateEmbed[gld]);
                         sendToRecruiting(guildUpdateEmbed[gld]);
                         sendToMain(guildUpdateEmbed[gld]);
@@ -434,6 +435,19 @@ module.exports = {
 
         };
 
+        function sendEmbed(chID, msgID, gldEmb) {
+            return new Promise(resolve => {
+
+                (async() => {
+                    await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+                    resolve('---SENT EMBED');
+                })();
+
+                // resolve('---SENT EMBED');
+
+            });
+        }
+
 
         async function sendToJCROnly(gldEmb) {
             console.log('---SENDING TO JCR');
@@ -469,18 +483,7 @@ module.exports = {
 
         
 
-        function sendEmbed(chID, msgID, gldEmb) {
-            return new Promise(resolve => {
-                //console.log('---SEND EMBED and embed is: \n',embd);
-                // (async() => {
-                    client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
-                    resolve('---SENT EMBED');
-                // })();
 
-                // resolve('---SENT EMBED');
-
-            });
-        }
 
 
 
