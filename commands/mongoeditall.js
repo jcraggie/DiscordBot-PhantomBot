@@ -417,7 +417,7 @@ module.exports = {
                 //log the event to Discord (jcrAggie server) and the console
                 fileUtils.logToDiscordAndConsole(client, message, args, Discord);
             } // end if
-            
+            message.channel.send(guildUpdateEmbed['rogue']);
 
         } // end else
 
