@@ -392,7 +392,7 @@ module.exports = {
                         console.log('---SENDING EMBED FOR GUILD: ' + gld);
                         // message.channel.send('Sending embed for: `'+ gld + '`');
                         // message.channel.send(guildUpdateEmbed[gld]);
-                        await sendToJCR(guildUpdateEmbed[gld]);
+                        await sendToJCR(guildUpdateEmbed['rebellion']);
                         await sendToRecruiting(guildUpdateEmbed[gld]);
                         await sendToMain(guildUpdateEmbed[gld]);
                         await message.channel.send('Sending embed for: `'+ gld + '`');
