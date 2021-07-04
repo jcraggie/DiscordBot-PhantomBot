@@ -377,6 +377,7 @@ module.exports = {
                 // console.log('---SAVING EMBED FOR ' + gld);
                 console.log('---INDEX : gNAMES[INDEX]: ' + index + ': ', gNames[index] );
                 guildUpdateEmbed[ gNames[index] ] = guildEmbed;
+                await sendToJCR(guildEmbed);
                 
                 //guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
 
