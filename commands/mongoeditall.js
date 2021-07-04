@@ -11,7 +11,7 @@ module.exports = {
             if (err)
                 console.error(err);
             else
-                console.log("Connected to the mongodb: GuildData"); 
+                console.log("---CONNECTED TO THE MONGODB: GuildData"); 
                 message.channel.send('Connected to the mongoDB GuildData');
         }); // end mongoose connect
         
@@ -82,7 +82,7 @@ module.exports = {
               var guildUpdateEmbed = {};
 
              
-              var gEmbeds = [];
+              var gld = '';
               const gNames = [
                   'rebellion',
                   'empire',
@@ -334,14 +334,15 @@ module.exports = {
                 })
 
                 const guildData = gData;
-                console.log(guildData['name'], ': ', guildData['members'], '  GP: ', guildData['gp'], ' Updated: ',guildData['updated']);
-
+                
                 var dateConvert = new Date(guildData['updated'] - (18000 * 1000)); //convert epoch timestamp to date and time
                 var localDate = dateConvert.toLocaleString(); //convert date and time to local
                 var localGP = guildData.gp.toLocaleString("en-US"); //add commas to GP
+                console.log(guildData['name'], ': ', guildData['members'], '  GP: ', guildData['gp'], ' Updated: ',localDate);
 
                 // var globalVar = require('../global.js');
                 // let guildEmbed = globalVar.phantomBotGuilds
+                
                 var guildEmbed = await updateEmbed(
                     guildData['name'], leader, guildData['members'],
                     localGP, dailyTickets,
@@ -417,6 +418,14 @@ module.exports = {
             geoLS, kamShards,
             hpit, haat, hstr, cpit,
             guildGG, localDate ) {
+                console.log('Data being embeded for ' + guildData_name);
+                console.log(guildData['name'], leader, guildData['members'],
+                localGP, dailyTickets,
+                hothDS, hothLS, 
+                geoDS, watShards,
+                geoLS, kamShards,
+                hpit, haat, hstr, cpit,
+                guildGG, localDate);
                 let guildEmbed = globalVar.phantomBotGuilds
                     // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
                     // .setDescription(" ")
