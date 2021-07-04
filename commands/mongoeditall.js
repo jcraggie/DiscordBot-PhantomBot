@@ -361,44 +361,11 @@ module.exports = {
                     guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
                     
 
-                    //console.log(guildEmbed);
-                // let gEmbed = guildEmbed;
-                // message.channel.send(guildEmbed);
                 console.log('---SAVING EMBED FOR ' + gld);
                 guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
-                // message.channel.send(guildUpdateEmbed[gld]);
-                // gEmbeds.push(guildEmbed);
-                
-                // sendToJCR(guildEmbed);
-                // sendToRecruiting(guildEmbed);
-                // sendToMain(guildEmbed);
 
-                // sendToJCR(guildUpdateEmbed[gld]);
-                // sendToRecruiting(guildUpdateEmbed[gld]);
-                // sendToMain(guildUpdateEmbed[gld]);
                 
-                
-
-                // (async() => {
-                //     await sendToJCROnly(guildEmbed);
-                //     counter += 1;
-
-                // })();
-                
-
-
-                // sendToJCR(guildEmbed);
-                // sendToRecruiting(guildEmbed);
-                // sendToMain(guildEmbed);
-                // client.channels.cache.get(jcrServerChannelID).messages.fetch(jcrServerMsgID).then(msg => msg.edit(guildEmbed));
-                // client.channels.cache.get(recruitingServerChannelID).messages.fetch(recruitingServerMsgID).then(msg => msg.edit(guildEmbed));
-                // client.channels.cache.get(mainServerChannelID).messages.fetch(mainServerMsgID).then(msg => msg.edit(guildEmbed));
-                // message.channel.send(guildEmbed);
-                // setTimeout(() => {
-                //     guildEmbed.fields=[] //clear the fields for the next use
-                // }, 5000);
-                
-                console.log('--counter is at ' + counter);
+                console.log('---counter is at ' + counter);
 
                 if(counter == totalGuilds) {
                     console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
@@ -435,7 +402,7 @@ module.exports = {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
-                    console.log(result + ' TO JCR SERVER')
+                    resolve(result + ' TO JCR SERVER')
                 // })();
             });
 
@@ -447,7 +414,7 @@ module.exports = {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
-                    console.log(result + ' TO RECRUITING SERVER');
+                    resolve(result + ' TO RECRUITING SERVER');
                 // })();
             });
 
@@ -465,7 +432,7 @@ module.exports = {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
-                    console.log(result + ' TO MAIN SERVER');
+                    resolve(result + ' TO MAIN SERVER');
                 // })();
             });
 
