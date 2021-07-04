@@ -368,9 +368,12 @@ module.exports = {
                     guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
                     gEmbeds.push(guildEmbed);
                     
-                    sendToJCR(guildEmbed);
-                    sendToRecruiting(guildEmbed);
-                    sendToMain(guildEmbed);
+                    // sendToJCR(guildEmbed);
+                    // sendToRecruiting(guildEmbed);
+                    // sendToMain(guildEmbed);
+                    sendToJCR(guildUpdateEmbed[gld]);
+                    sendToRecruiting(guildUpdateEmbed[gld]);
+                    sendToMain(guildUpdateEmbed[gld]);
                     
                     counter += 1;
 
