@@ -375,7 +375,7 @@ module.exports = {
 
                 // console.log('---SAVING EMBED FOR ' + gld);
                 guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
-                console.log('---THIS IS guildUpdateEmbed[gld]: \n', guildUpdateEmbed[gld]);
+                // console.log('---THIS IS guildUpdateEmbed[gld]: \n', guildUpdateEmbed[gld]);
                 // console.log('---THIS IS THE SAVED EMBED FOR ' + gld + ':\n',guildUpdateEmbed[gld]);
 
                 
@@ -465,7 +465,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    console.log('---SEND TO JCR gldEmb\n', gldEmb);
+                    // console.log('---SEND TO JCR gldEmb\n', gldEmb);
                     const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
                     resolve(console.log(result + ' TO JCR SERVER'));
                 })();
@@ -478,7 +478,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    console.log('---SEND TO RECRUITING gldEmb\n', gldEmb);
+                    // console.log('---SEND TO RECRUITING gldEmb\n', gldEmb);
                     const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO RECRUITING SERVER'));
                 })();
@@ -491,7 +491,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    console.log('---SEND TO MAIN gldEmb\n', gldEmb);
+                    // console.log('---SEND TO MAIN gldEmb\n', gldEmb);
                     const result = await sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO MAIN SERVER'));
                 })();
@@ -503,7 +503,7 @@ module.exports = {
             return new Promise(resolve => {
 
                 (async() => {
-                    console.log(gldEmb);
+                    // console.log(gldEmb);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('---SENT EMBED');
                 })();
