@@ -12,7 +12,7 @@ module.exports = {
                 console.error(err);
             else
                 console.log("---CONNECTED TO THE MONGODB: GuildData"); 
-                await message.channel.send('Connected to the mongoDB GuildData');
+                message.channel.send('Connected to the mongoDB GuildData');
         }); // end mongoose connect
 
         
