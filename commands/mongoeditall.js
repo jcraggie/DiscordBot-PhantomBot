@@ -12,7 +12,7 @@ module.exports = {
                 console.error(err);
             else
                 console.log("---CONNECTED TO THE MONGODB: GuildData"); 
-                message.channel.send('Connected to the mongoDB GuildData');
+                message.channel.send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
 
         
@@ -83,6 +83,7 @@ module.exports = {
               var counter = 1;
               var index = 0;
               var guildUpdateEmbed = [];
+              message.channel.send('Beginning to update guild data');
 
              
               var gld = '';
@@ -398,11 +399,11 @@ module.exports = {
                     mongoose.connection.close(function () {
                         console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
                         console.log('---FINSHED UPDATING GUILDS');
-                        message.channel.send('FINISHED UPDATING GUILDS\nDisconnected from MongoDB');
+                        message.channel.send('Finished updating guilds\nDisconnected from JCR\'s DB');
                         //log the event to Discord (jcrAggie server) and the console
                         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
                       });
-                    gld = '';
+                    // gld = '';
                     // for(gld of gNames) {
                         // message.channel.send(guildUpdateEmbed[gld]);
                         // console.log('---SENDING EMBED FOR GUILD: ' + gld);
