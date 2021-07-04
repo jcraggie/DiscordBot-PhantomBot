@@ -377,7 +377,7 @@ module.exports = {
 
                 // console.log('---SAVING EMBED FOR ' + gld);
                 // console.log('---INDEX : gNAMES[INDEX]: ' + index + ': ', gNames[index] );
-                guildUpdateEmbed[ gNames[index] ] = guildEmbed;
+                // guildUpdateEmbed[ gNames[index] ] = guildEmbed;
                 await sendToJCR(guildEmbed);
                 await sendToMain(guildEmbed);
                 await sendToRecruiting(guildEmbed);
@@ -399,9 +399,11 @@ module.exports = {
                         console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
                         console.log('---FINSHED UPDATING GUILDS');
                         message.channel.send('FINISHED UPDATING GUILDS\nDisconnected from MongoDB');
+                        //log the event to Discord (jcrAggie server) and the console
+                        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
                       });
                     gld = '';
-                    for(gld of gNames) {
+                    // for(gld of gNames) {
                         // message.channel.send(guildUpdateEmbed[gld]);
                         // console.log('---SENDING EMBED FOR GUILD: ' + gld);
                         // message.channel.send('Sending embed for: `'+ gld + '`');
@@ -412,15 +414,14 @@ module.exports = {
                         // await sendToMain(guildUpdateEmbed[gld]);
                         // await message.channel.send('Sending embed for: `'+ gld + '`');
                         // await message.channel.send(guildUpdateEmbed[gld]);
-                    };
+                    // };
     
     
-                    //log the event to Discord (jcrAggie server) and the console
-                    fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+                    
                 } // end if
 
-                counter += 1;
-                index += 1;
+                // counter += 1;
+                // index += 1;
 
                     
             } // end for gld of gNames
@@ -531,37 +532,37 @@ module.exports = {
         }
 
 
-        async function sendToJCROnly(gldEmb) {
-            console.log('---SENDING TO JCR');
-            const result1 = await sendToJCR(gldEmb);
-            console.log(result1);
-        };
+        // async function sendToJCROnly(gldEmb) {
+        //     console.log('---SENDING TO JCR');
+        //     const result1 = await sendToJCR(gldEmb);
+        //     console.log(result1);
+        // };
 
-        async function sendToAllServers(gldEmb) {
-            console.log('---SENDING TO JCR');
-            const result1 = await sendToJCR(gldEmb);
-            console.log(result1);
-            console.log('---SENDING TO RECRUITING');
-            const result2 = await sendToRecruiting(gldEmb);
-            console.log(result2);
-            console.log('---SENDING TO MAIN');
-            const result3 = await sendToMain(gldEmb);
-            console.log(result3);
+        // async function sendToAllServers(gldEmb) {
+        //     console.log('---SENDING TO JCR');
+        //     const result1 = await sendToJCR(gldEmb);
+        //     console.log(result1);
+        //     console.log('---SENDING TO RECRUITING');
+        //     const result2 = await sendToRecruiting(gldEmb);
+        //     console.log(result2);
+        //     console.log('---SENDING TO MAIN');
+        //     const result3 = await sendToMain(gldEmb);
+        //     console.log(result3);
 
 
-        };
+        // };
 
-        function clearEmbed(gldEmb) {
-            return new Promise(resolve => {
+        // function clearEmbed(gldEmb) {
+        //     return new Promise(resolve => {
 
-                setTimeout(() => {
+        //         setTimeout(() => {
 
-                    gldEmb.fields=[] //clear the fields for the next use
-                    resolve('---EMBED FIELDS CLEARED')
-                }, 1);
+        //             gldEmb.fields=[] //clear the fields for the next use
+        //             resolve('---EMBED FIELDS CLEARED')
+        //         }, 1);
                 
-            });
-        };
+        //     });
+        // };
 
         
 
