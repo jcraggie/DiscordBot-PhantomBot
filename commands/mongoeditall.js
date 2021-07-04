@@ -421,7 +421,7 @@ module.exports = {
                     
                 } // end if
 
-                // counter += 1;
+                counter += 1;
                 // index += 1;
 
                     
