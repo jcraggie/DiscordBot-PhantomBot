@@ -395,8 +395,8 @@ module.exports = {
                         await sendToJCR(guildUpdateEmbed['rebellion']);
                         await sendToRecruiting(guildUpdateEmbed[gld]);
                         await sendToMain(guildUpdateEmbed[gld]);
-                        await message.channel.send('Sending embed for: `'+ gld + '`');
-                        await message.channel.send(guildUpdateEmbed[gld]);
+                        // await message.channel.send('Sending embed for: `'+ gld + '`');
+                        // await message.channel.send(guildUpdateEmbed[gld]);
                     };
     
     
@@ -495,7 +495,7 @@ module.exports = {
             return new Promise(resolve => {
 
                 (async() => {
-                    console.log(gldEmb);
+                    console.log(gldEmb.name);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('---SENT EMBED');
                 })();
