@@ -81,6 +81,7 @@ module.exports = {
   
           } else {
               var counter = 1;
+              var index = 0;
               var guildUpdateEmbed = [];
 
              
@@ -374,7 +375,11 @@ module.exports = {
                     
 
                 // console.log('---SAVING EMBED FOR ' + gld);
-                guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
+
+                guildUpdateEmbed[ gNames[index] ] = guildEmbed;
+                //guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
+
+
                 // console.log('---THIS IS guildUpdateEmbed[gld]: \n', guildUpdateEmbed[gld]);
                 // console.log('---THIS IS THE SAVED EMBED FOR ' + gld + ':\n',guildUpdateEmbed[gld]);
 
