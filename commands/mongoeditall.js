@@ -385,7 +385,7 @@ module.exports = {
                         console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
                       });
                     gld = '';
-                    for(gld of gNames) {
+                    for(gld in gNames) {
                         // message.channel.send(guildUpdateEmbed[gld]);
                         console.log('---SENDING EMBED FOR GUILD: ' + gld);
                         // message.channel.send('Sending embed for: `'+ gld + '`');
