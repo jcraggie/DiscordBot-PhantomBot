@@ -433,9 +433,9 @@ module.exports = {
                     guildGG, localDate);
                     var guildEmbed = globalVar.phantomBotGuilds
                         // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
-                        // .setDescription(" ")
+                        guildEmbed.description = guildData_name;
                         guildEmbed.fields[0] =
-                            {name: guildData_name, value: 'LEADER: `' + leader + '`\n' + 
+                            {name: 'GUILD INFORMATION', value: 'LEADER: `' + leader + '`\n' + 
                                 'MEMBERS `' + guildData_members + '/50` \n' +
                                 'GP: `'+ localGP + '`\n' + 
                                 'Daily Tickets: `' + dailyTickets + '`'}
@@ -449,7 +449,7 @@ module.exports = {
                                 'CPIT: `' + cpit + '`'}
                             guildEmbed.fields[3] = {name: 'SWGOH.GG LINK', value: guildGG}
                             guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
-
+                    console.log('---EMBED DATA FOR ' + guildData_name + ' IS NOW SET');
                     resolve(guildEmbed);
                 });
 
@@ -462,7 +462,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    console.log('---SEND TO JCR gldEmb', gldEmb);
+                    console.log('---SEND TO JCR gldEmb\n', gldEmb);
                     const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
                     resolve(console.log(result + ' TO JCR SERVER'));
                 })();
@@ -475,7 +475,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    console.log('---SEND TO RECRUITING gldEmb', gldEmb);
+                    console.log('---SEND TO RECRUITING gldEmb\n', gldEmb);
                     const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO RECRUITING SERVER'));
                 })();
@@ -488,7 +488,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    console.log('---SEND TO MAIN gldEmb', gldEmb);
+                    console.log('---SEND TO MAIN gldEmb\n', gldEmb);
                     const result = await sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO MAIN SERVER'));
                 })();
