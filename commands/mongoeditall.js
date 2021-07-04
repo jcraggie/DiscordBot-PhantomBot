@@ -378,6 +378,7 @@ module.exports = {
                     
                     sendToJCR(guildEmbed);
                     sendToRecruiting(guildEmbed);
+                    sendToMain(guildEmbed);
                     
                     counter += 1;
 
