@@ -402,7 +402,7 @@ module.exports = {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
-                    resolve(result + ' TO JCR SERVER')
+                    console.log(result + ' TO JCR SERVER')
                 })();
             });
 
@@ -414,7 +414,7 @@ module.exports = {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
-                    resolve(result + ' TO RECRUITING SERVER');
+                    console.log(result + ' TO RECRUITING SERVER');
                 // })();
             });
 
@@ -432,7 +432,7 @@ module.exports = {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
-                    resolve(result + ' TO MAIN SERVER');
+                    console.log(result + ' TO MAIN SERVER');
                 // })();
             });
 
