@@ -330,9 +330,9 @@ module.exports = {
 
                 console.log('---READING GUILD # ', counter, ': ',gld);
 
-                var gData = await GuildData.findById(mongo_id, (error, guilddata) => {
+                var gData = await GuildData.findById(mongo_id, (error) => {
                     // console.log(error, guilddata);
-                    console.log(error);
+                    console.log('---GUILDDATA FIND BY ID ERROR: ',error);
                 })
 
                 var guildData = gData;
