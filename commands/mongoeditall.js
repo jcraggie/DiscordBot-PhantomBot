@@ -373,7 +373,7 @@ module.exports = {
                     message.channel.send('FINISH GUILD LOOP');
                     gld = '';
                     for(gld of gNames) {
-                        message.channel.send(guildUpdateEmbed[gld]);
+                        // message.channel.send(guildUpdateEmbed[gld]);
                         sendToJCR(guildUpdateEmbed[gld]);
                         sendToRecruiting(guildUpdateEmbed[gld]);
                         sendToMain(guildUpdateEmbed[gld]);
@@ -398,12 +398,12 @@ module.exports = {
 
         async function sendToJCR(gldEmb) {
             return new Promise(resolve => {
-                // (async() => {
+                (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    const result = sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
+                    const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
                     resolve(result + ' TO JCR SERVER')
-                // })();
+                })();
             });
 
         };
