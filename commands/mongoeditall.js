@@ -410,50 +410,33 @@ module.exports = {
 
         async function sendToRecruiting(gldEmb) {
             return new Promise(resolve => {
-                // (async() => {
+                (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
+                    const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
                     console.log(result + ' TO RECRUITING SERVER');
-                // })();
+                })();
             });
 
         };
-
-        // async function sendToRecruiting(guildEmbed) {
-        //     const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
-        //     console.log(result + ' TO RECRUITING SERVER');
-
-        // };
 
         async function sendToMain(gldEmb) {
             return new Promise(resolve => {
-                // (async() => {
+                (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    const result = sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
+                    const result = await sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
                     console.log(result + ' TO MAIN SERVER');
-                // })();
+                })();
             });
 
         };
 
-        
-
-        // async function sendToMain(guildEmbed) {
-        //     const result = sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
-        //     console.log(result + ' TO RECRUITING SERVER');
-
-        // };
 
         async function sendToJCROnly(gldEmb) {
             console.log('---SENDING TO JCR');
-            const result1 = await sendToJCR(elgemEmb);
+            const result1 = await sendToJCR(gldEmb);
             console.log(result1);
-            
-            console.log('---CLEARING EMBED FOR NEXT GUILD');
-            const result4 = await clearEmbed(gldEmb);
-            console.log(result4);
         };
 
         async function sendToAllServers(gldEmb) {
@@ -463,11 +446,11 @@ module.exports = {
             console.log('---SENDING TO RECRUITING');
             const result2 = await sendToRecruiting(gldEmb);
             console.log(result2);
+            console.log('---SENDING TO MAIN');
             const result3 = await sendToMain(gldEmb);
             console.log(result3);
-            console.log('---CLEARING EMBED FOR NEXT GUILD');
-            const result4 = await clearEmbed(gldEmb);
-            console.log(result4);
+
+
         };
 
         function clearEmbed(gldEmb) {
