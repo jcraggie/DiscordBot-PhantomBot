@@ -101,7 +101,7 @@ module.exports = {
 
                 // var guildFileName = false;
                 // counter += 1;
-                console.log('---READING GUILD # ', counter);
+                
 
                     switch(gld) {
                         case 'rebellion' :
@@ -326,24 +326,12 @@ module.exports = {
                             return;
                     }//end switch
 
+                    console.log('---READING GUILD # ', counter, ': ',gld);
+
                     const gData = await GuildData.findById(mongo_id, (error, guilddata) => {
                         // console.log(error, guilddata);
                         console.log(error);
                     })
-
-
-
-
-
-
-
-                    // const guildFilePath = './guilds/';
-                    // const guildList = [];
-
-                    // const guildToRead = guildFilePath + guildFileName;
-
-                    // const fs = require('fs');
-                    
 
                     const guildData = gData;
                     console.log(guildData['name'], ': ', guildData['members'], '  GP: ', guildData['gp'], ' Updated: ',guildData['updated']);
@@ -417,7 +405,7 @@ module.exports = {
                 //log the event to Discord (jcrAggie server) and the console
                 fileUtils.logToDiscordAndConsole(client, message, args, Discord);
             } // end if
-            message.channel.send(guildUpdateEmbed['rogue']);
+            // message.channel.send(guildUpdateEmbed['rogue']);
 
         } // end else
 
