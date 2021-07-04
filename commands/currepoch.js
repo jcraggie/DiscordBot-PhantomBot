@@ -6,10 +6,10 @@ module.exports = {
         var fileUtils = require('../fileHelper.js');
         // message.channel.send('currepoch');
 
-        var currEpoch = Math.floor(new Date().getTime()/1000.0)
+        var currEpoch = Math.floor(new Date().getTime())
         console.log('---current time epoch', currEpoch)
 
-        var fetchDateConvert = new Date(currEpoch * 1000); //convert epoch timestamp to date and time
+        var fetchDateConvert = new Date(currEpoch - (18000 * 1000)); //convert epoch timestamp to date and time
         var fetchLocalDate = fetchDateConvert.toLocaleString(); //convert date and time to local
 
         console.log('---current time Text: ', fetchLocalDate);

@@ -377,6 +377,7 @@ module.exports = {
                     gEmbeds.push(guildEmbed);
                     
                     sendToJCR(guildEmbed);
+                    sendToRecruiting(guildEmbed);
                     
                     counter += 1;
 
@@ -426,6 +427,18 @@ module.exports = {
 
         };
 
+        async function sendToRecruiting(guildEmbed) {
+            const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
+            console.log(result + ' TO RECRUITING SERVER');
+
+        };
+
+        async function sendToMain(guildEmbed) {
+            const result = sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
+            console.log(result + ' TO RECRUITING SERVER');
+
+        };
+
         async function sendToJCROnly(guildEmbed) {
             console.log('---SENDING TO JCR');
             const result1 = await sendToJCR(guildEmbed);
@@ -462,17 +475,7 @@ module.exports = {
             });
         };
 
-        async function sendToRecruiting(guildEmbed) {
-            const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
-            console.log(result + ' TO RECRUITING SERVER');
-
-        };
-
-        async function sendToMain(guildEmbed) {
-            const result = await sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
-            console.log(result + ' TO RECRUITING SERVER');
-
-        };
+        
 
         function sendEmbed(chID, msgID, embd) {
             return new Promise(resolve => {
