@@ -422,34 +422,36 @@ module.exports = {
             geoLS, kamShards,
             hpit, haat, hstr, cpit,
             guildGG, localDate ) {
-                console.log('Data being embeded for ' + guildData_name);
-                console.log(guildData_name, leader, guildData_members,
-                localGP, dailyTickets,
-                hothDS, hothLS, 
-                geoDS, watShards,
-                geoLS, kamShards,
-                hpit, haat, hstr, cpit,
-                guildGG, localDate);
-                var guildEmbed = globalVar.phantomBotGuilds
-                    // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
-                    // .setDescription(" ")
-                    guildEmbed.fields[0] =
-                        {name: guildData_name, value: 'LEADER: `' + leader + '`\n' + 
-                            'MEMBERS `' + guildData_members + '/50` \n' +
-                            'GP: `'+ localGP + '`\n' + 
-                            'Daily Tickets: `' + dailyTickets + '`'}
-                        guildEmbed.fields[1] = {name: 'TERRITORY BATTLES', value: 'HOTH DS: `' + hothDS + '`⭐️\n' +
-                            'HOTH LS: `' + hothLS + '`⭐️ \n' +
-                            'GEO DS: `' + geoDS + '`⭐️ with `' + watShards + '` <:watshard:709573349579161705>\n' +
-                            'GEO LS: `' + geoLS + '`⭐️ with `' + kamShards + '` <:kam:778266623172673536>'}
-                        guildEmbed.fields[2] = {name: 'RAIDS', value: 'HPIT: `' + hpit +'`\n' +
-                            'HAAT: `' + haat + '`\n' +
-                            'HSTR: `' + hstr + '`\n' +
-                            'CPIT: `' + cpit + '`'}
-                        guildEmbed.fields[3] = {name: 'SWGOH.GG LINK', value: guildGG}
-                        guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
+                return new Promise(async (resolve, reject) => {
+                    console.log('Data being embeded for ' + guildData_name);
+                    console.log(guildData_name, leader, guildData_members,
+                    localGP, dailyTickets,
+                    hothDS, hothLS, 
+                    geoDS, watShards,
+                    geoLS, kamShards,
+                    hpit, haat, hstr, cpit,
+                    guildGG, localDate);
+                    var guildEmbed = globalVar.phantomBotGuilds
+                        // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
+                        // .setDescription(" ")
+                        guildEmbed.fields[0] =
+                            {name: guildData_name, value: 'LEADER: `' + leader + '`\n' + 
+                                'MEMBERS `' + guildData_members + '/50` \n' +
+                                'GP: `'+ localGP + '`\n' + 
+                                'Daily Tickets: `' + dailyTickets + '`'}
+                            guildEmbed.fields[1] = {name: 'TERRITORY BATTLES', value: 'HOTH DS: `' + hothDS + '`⭐️\n' +
+                                'HOTH LS: `' + hothLS + '`⭐️ \n' +
+                                'GEO DS: `' + geoDS + '`⭐️ with `' + watShards + '` <:watshard:709573349579161705>\n' +
+                                'GEO LS: `' + geoLS + '`⭐️ with `' + kamShards + '` <:kam:778266623172673536>'}
+                            guildEmbed.fields[2] = {name: 'RAIDS', value: 'HPIT: `' + hpit +'`\n' +
+                                'HAAT: `' + haat + '`\n' +
+                                'HSTR: `' + hstr + '`\n' +
+                                'CPIT: `' + cpit + '`'}
+                            guildEmbed.fields[3] = {name: 'SWGOH.GG LINK', value: guildGG}
+                            guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
 
-                return guildEmbed;
+                    resolve(guildEmbed);
+                });
 
         }; // end async function updateEmbed
 
