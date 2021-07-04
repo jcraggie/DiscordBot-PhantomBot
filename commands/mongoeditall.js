@@ -462,6 +462,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                    console.log('---SEND TO JCR gldEmb', gldEmb);
                     const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
                     resolve(console.log(result + ' TO JCR SERVER'));
                 })();
@@ -474,6 +475,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                    console.log('---SEND TO RECRUITING gldEmb', gldEmb);
                     const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO RECRUITING SERVER'));
                 })();
@@ -486,6 +488,7 @@ module.exports = {
                 (async() => {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                    console.log('---SEND TO MAIN gldEmb', gldEmb);
                     const result = await sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO MAIN SERVER'));
                 })();
@@ -497,7 +500,7 @@ module.exports = {
             return new Promise(resolve => {
 
                 (async() => {
-                    console.log(gldEmb['name']);
+                    console.log(gldEmb);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('---SENT EMBED');
                 })();
