@@ -493,6 +493,7 @@ module.exports = {
             return new Promise(resolve => {
 
                 (async() => {
+                    console.log(gldEmb);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('---SENT EMBED');
                 })();
