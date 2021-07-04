@@ -97,7 +97,7 @@ module.exports = {
 
               for(gld of gNames) {
 
-                var guildFileName = false;
+                // var guildFileName = false;
                 // counter += 1;
                 console.log('---READING GUILD # ', counter);
 
