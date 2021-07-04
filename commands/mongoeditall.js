@@ -400,11 +400,11 @@ module.exports = {
                     gld = '';
                     for(gld of gNames) {
                         // message.channel.send(guildUpdateEmbed[gld]);
-                        console.log('---SENDING EMBED FOR GUILD: ' + gld);
+                        // console.log('---SENDING EMBED FOR GUILD: ' + gld);
                         // message.channel.send('Sending embed for: `'+ gld + '`');
                         // message.channel.send(guildUpdateEmbed[gld]);
-                        console.log('---THIS IS THE DESCRIPTION: ' + guildUpdateEmbed[gld].description);    
-                        await sendToJCR(guildUpdateEmbed['rebellion']);
+                        // console.log('---THIS IS THE DESCRIPTION: ' + guildUpdateEmbed[gld].description);    
+                        // await sendToJCR(guildUpdateEmbed['rebellion']);
                         // await sendToRecruiting(guildUpdateEmbed[gld]);
                         // await sendToMain(guildUpdateEmbed[gld]);
                         // await message.channel.send('Sending embed for: `'+ gld + '`');
@@ -421,10 +421,10 @@ module.exports = {
 
                     
             } // end for gld of gNames
-            console.log('===================================================================');
-            console.log('GUILDUPDATEEMBED ARRAY');
-            console.log('===================================================================');
-            console.log(guildUpdateEmbed);
+            // console.log('===================================================================');
+            // console.log('GUILDUPDATEEMBED ARRAY');
+            // console.log('===================================================================');
+            // console.log(guildUpdateEmbed);
 
             
             // message.channel.send(guildUpdateEmbed['rogue']);
@@ -440,14 +440,14 @@ module.exports = {
             hpit, haat, hstr, cpit,
             guildGG, localDate ) {
                 return new Promise(async (resolve, reject) => {
-                    console.log('Data being embeded for ' + guildData_name);
-                    console.log(guildData_name, leader, guildData_members,
-                    localGP, dailyTickets,
-                    hothDS, hothLS, 
-                    geoDS, watShards,
-                    geoLS, kamShards,
-                    hpit, haat, hstr, cpit,
-                    guildGG, localDate);
+                    // console.log('Data being embeded for ' + guildData_name);
+                    // console.log(guildData_name, leader, guildData_members,
+                    // localGP, dailyTickets,
+                    // hothDS, hothLS, 
+                    // geoDS, watShards,
+                    // geoLS, kamShards,
+                    // hpit, haat, hstr, cpit,
+                    // guildGG, localDate);
                     var guildEmbed = globalVar.phantomBotGuilds
                         // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
                         guildEmbed.description = guildData_name;
