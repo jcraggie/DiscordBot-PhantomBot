@@ -380,6 +380,7 @@ module.exports = {
                     console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
                     // message.channel.send(guildUpdateEmbed['rogue']);
                     message.channel.send('FINISH GUILD LOOP');
+                    mongoose.connection.close();
                     gld = '';
                     for(gld of gNames) {
                         // message.channel.send(guildUpdateEmbed[gld]);
