@@ -14,6 +14,8 @@ module.exports = {
                 console.log("---CONNECTED TO THE MONGODB: GuildData"); 
                 message.channel.send('Connected to the mongoDB GuildData');
         }); // end mongoose connect
+
+        
         
         // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
 
@@ -412,7 +414,7 @@ module.exports = {
 
         } // end else
 
-        async function updateEmbed(
+        function updateEmbed(
             guildData_name, leader, guildData_members,
             localGP, dailyTickets,
             hothDS, hothLS,
