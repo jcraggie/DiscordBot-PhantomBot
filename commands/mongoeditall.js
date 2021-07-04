@@ -419,7 +419,7 @@ module.exports = {
             hpit, haat, hstr, cpit,
             guildGG, localDate ) {
                 console.log('Data being embeded for ' + guildData_name);
-                console.log(guildData['name'], leader, guildData['members'],
+                console.log(guildData_name, leader, guildData_members,
                 localGP, dailyTickets,
                 hothDS, hothLS, 
                 geoDS, watShards,
