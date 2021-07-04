@@ -12,7 +12,7 @@ module.exports = {
                 console.error(err);
             else
                 console.log("---CONNECTED TO THE MONGODB: GuildData"); 
-                message.channel.send('Connected to the mongoDB GuildData');
+                await message.channel.send('Connected to the mongoDB GuildData');
         }); // end mongoose connect
 
         
@@ -98,7 +98,7 @@ module.exports = {
                   'hope'
                 ]; // end gNames
                 var totalGuilds = gNames.length;
-                console.log ('---TOTAL GUILDS: ', totalGuilds);
+                console.log ('---TOTAL GUILDS TO BE UPDATED: ', totalGuilds);
 
               for(gld of gNames) {
 
@@ -332,8 +332,9 @@ module.exports = {
                 console.log('---READING GUILD # ', counter, ': ',gld);
 
                 var gData = await GuildData.findById(mongo_id, (error) => {
-                    // console.log(error, guilddata);
-                    console.log('---GUILDDATA FIND BY ID ERROR: ',error);
+                    if(error) {
+                        console.log('---GUILDDATA FIND BY ID ERROR: ', error);
+                    }
                 })
 
                 var guildData = gData;
@@ -341,7 +342,7 @@ module.exports = {
                 var dateConvert = new Date(guildData['updated'] - (18000 * 1000)); //convert epoch timestamp to date and time
                 var localDate = dateConvert.toLocaleString(); //convert date and time to local
                 var localGP = guildData.gp.toLocaleString("en-US"); //add commas to GP
-                console.log(guildData['name'], ': ', guildData['members'], '  GP: ', guildData['gp'], ' Updated: ',localDate);
+                console.log('---DATA SUMMARY: ',guildData['name'], ':', guildData['members'], 'GP:', guildData['gp'], ' Updated: ',localDate);
 
                 // var globalVar = require('../global.js');
                 // let guildEmbed = globalVar.phantomBotGuilds
@@ -375,7 +376,7 @@ module.exports = {
                     
 
                 // console.log('---SAVING EMBED FOR ' + gld);
-                console.log('---INDEX : gNAMES[INDEX]: ' + index + ': ', gNames[index] );
+                // console.log('---INDEX : gNAMES[INDEX]: ' + index + ': ', gNames[index] );
                 guildUpdateEmbed[ gNames[index] ] = guildEmbed;
                 await sendToJCR(guildEmbed);
                 await sendToMain(guildEmbed);
@@ -388,7 +389,7 @@ module.exports = {
                 // console.log('---THIS IS THE SAVED EMBED FOR ' + gld + ':\n',guildUpdateEmbed[gld]);
 
                 
-                console.log('---counter is at ' + counter);
+                // console.log('---counter is at ' + counter);
 
                 if(counter == totalGuilds) {
                     console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
@@ -396,6 +397,8 @@ module.exports = {
                     message.channel.send('FINISH GUILD LOOP');
                     mongoose.connection.close(function () {
                         console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
+                        console.log('---FINSHED UPDATING GUILDS');
+                        message.channel.send('FINISHED UPDATING GUILDS\nDisconnected from MongoDB');
                       });
                     gld = '';
                     for(gld of gNames) {
@@ -519,7 +522,7 @@ module.exports = {
                 (async() => {
                     // console.log(gldEmb);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
-                    resolve('---SENT EMBED');
+                    resolve('------SENT EMBED');
                 })();
 
                 // resolve('---SENT EMBED');
