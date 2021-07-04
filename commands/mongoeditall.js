@@ -373,7 +373,7 @@ module.exports = {
 
                         //console.log(guildEmbed);
                     // let gEmbed = guildEmbed;
-                    message.channel.send(guildEmbed);
+                    // message.channel.send(guildEmbed);
                     gEmbeds.push(guildEmbed);
                     
                     sendToJCR(guildEmbed);
