@@ -374,6 +374,8 @@ module.exports = {
                     gld = '';
                     for(gld of gNames) {
                         // message.channel.send(guildUpdateEmbed[gld]);
+                        console.log('---SENDING EMBED FOR GUILD: ' + gld);
+                        message.channel.send('Sending embed for: `'+ gld + '`');
                         sendToJCR(guildUpdateEmbed[gld]);
                         sendToRecruiting(guildUpdateEmbed[gld]);
                         sendToMain(guildUpdateEmbed[gld]);
