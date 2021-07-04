@@ -422,7 +422,7 @@ module.exports = {
                     // console.log('---embed is: \n',guildEmbed);
                     // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
                     const result = sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    resolve(result + ' TO JCR SERVER')
+                    console.log(result + ' TO JCR SERVER')
                 // })();
             });
 
