@@ -428,16 +428,42 @@ module.exports = {
         };
 
         async function sendToRecruiting(guildEmbed) {
-            const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
-            console.log(result + ' TO RECRUITING SERVER');
+            return new Promise(resolve => {
+                // (async() => {
+                    // console.log('---embed is: \n',guildEmbed);
+                    // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                    const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
+                    console.log(result + ' TO RECRUITING SERVER');
+                // })();
+            });
 
         };
+
+        // async function sendToRecruiting(guildEmbed) {
+        //     const result = sendEmbed(recruitingServerChannelID, recruitingServerMsgID, guildEmbed);
+        //     console.log(result + ' TO RECRUITING SERVER');
+
+        // };
 
         async function sendToMain(guildEmbed) {
-            const result = sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
-            console.log(result + ' TO RECRUITING SERVER');
+            return new Promise(resolve => {
+                // (async() => {
+                    // console.log('---embed is: \n',guildEmbed);
+                    // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
+                    const result = sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
+                    console.log(result + ' TO RECRUITING SERVER');
+                // })();
+            });
 
         };
+
+        
+
+        // async function sendToMain(guildEmbed) {
+        //     const result = sendEmbed(mainServerChannelID, mainServerMsgID, guildEmbed);
+        //     console.log(result + ' TO RECRUITING SERVER');
+
+        // };
 
         async function sendToJCROnly(guildEmbed) {
             console.log('---SENDING TO JCR');
