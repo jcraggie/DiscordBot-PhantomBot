@@ -407,15 +407,17 @@ module.exports = {
                     
             } // end for gld of gNames
 
-            
-            } // end if
+            console.log('--counter is at ' + counter);
+
             if(counter == totalGuilds) {
                 console.log(gEmbeds);
                 message.channel.send(guildUpdateEmbed['rogue']);
-                
+
 
                 //log the event to Discord (jcrAggie server) and the console
                 fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+            } // end if
+            
 
         } // end else
 
