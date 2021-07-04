@@ -12,6 +12,9 @@ module.exports = {
         console.log('value1 = ' + value1);
 
 
+
+
+
         const gNames = [
             'rebellion',
             'empire',

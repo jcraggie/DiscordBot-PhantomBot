@@ -175,7 +175,7 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
 
     for(x; x < totalGuilds;) { // begin for loop
         numGuilds += 1;
-        message.channel.send('Reading guild # `' + numGuilds + '/' + totalGuilds + '` from swgoh.help.');
+        message.channel.send('Reading guild # `' + numGuilds + '/' + totalGuilds + '` from swgoh.help...');
         console.log('---READING GUILD # ' + numGuilds + '/' + totalGuilds + ' from api.swgoh.help');
     
         let payload = {
@@ -208,7 +208,7 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
             "roster" : result[0].roster,
             "updated" : result[0].updated
         };
-        message.channel.send('   Received data for `' + guildTemp.name + '`');
+        message.channel.send('...Received data for `' + guildTemp.name + '`!');
         console.log('------RECEIVED NEW DATA FOR ' + guildTemp.name);
         apiGuildData.push(guildTemp);
         x += 1; // move to next allyCode 

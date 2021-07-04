@@ -1,6 +1,9 @@
+// should only be used by jcrAggie
+
+
 module.exports = {
     name: 'mongocreate',
-    description: "description of the new command",
+    description: "use this to create a new record in the MongoDB",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
         const GuildData = require('./models/GuildData');
