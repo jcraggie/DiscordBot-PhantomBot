@@ -373,9 +373,9 @@ module.exports = {
                 //     guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
                     
 
-                console.log('---SAVING EMBED FOR ' + gld);
+                // console.log('---SAVING EMBED FOR ' + gld);
                 guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
-                console.log('---THIS IS THE SAVED EMBED FOR ' + gld + ':\n',guildUpdateEmbed[gld]);
+                // console.log('---THIS IS THE SAVED EMBED FOR ' + gld + ':\n',guildUpdateEmbed[gld]);
 
                 
                 console.log('---counter is at ' + counter);
@@ -393,9 +393,10 @@ module.exports = {
                         console.log('---SENDING EMBED FOR GUILD: ' + gld);
                         // message.channel.send('Sending embed for: `'+ gld + '`');
                         // message.channel.send(guildUpdateEmbed[gld]);
+                        console.log('---THIS IS THE DESCRIPTION: ' + guildUpdateEmbed[gld].description);    
                         await sendToJCR(guildUpdateEmbed['rebellion']);
-                        await sendToRecruiting(guildUpdateEmbed[gld]);
-                        await sendToMain(guildUpdateEmbed[gld]);
+                        // await sendToRecruiting(guildUpdateEmbed[gld]);
+                        // await sendToMain(guildUpdateEmbed[gld]);
                         // await message.channel.send('Sending embed for: `'+ gld + '`');
                         // await message.channel.send(guildUpdateEmbed[gld]);
                     };
