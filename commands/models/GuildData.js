@@ -18,7 +18,23 @@ const GuildDataSchema = new Schema({
     updated: Number,
     updatedText: String,
     fetchEpoch: Number,
-    fetchText: String
+    fetchText: String,
+    dailyTickets: Number,
+    ticketReset: String,
+    hothDS: Number,
+    hothLS: Number,
+    geoDS: Number,
+    watShards: Number,
+    geoLS: Number,
+    kamShards: Number,
+    haat: String,
+    hpit: String,
+    hstr: String,
+    cpit: String,
+    guildGG: String,
+    mainServerMsgID: String,
+    recruitingServerMsgID: String,
+    jcrServerMsgID: String
 
 });
 
