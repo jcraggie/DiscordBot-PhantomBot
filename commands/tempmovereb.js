@@ -1,9 +1,9 @@
 module.exports = {
     name: 'tempmovereb',
-    description: "description of the new command",
+    description: "temp cmd to move reb globals to mongoDB",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
-        const GuildData = require('./commands/models/GuildData');
+        const GuildData = require('./models/GuildData');
         const globalVar = require ('../../global.js');
 
 
