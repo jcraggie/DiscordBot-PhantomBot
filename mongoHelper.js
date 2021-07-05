@@ -158,7 +158,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp) {
     (async () => {
     
-    const globalVar = require ('global.js');
+    const globalVar = require ('./global');
     var fileUtils = require('./fileHelper');
 
     const mongoose = require('mongoose');
@@ -175,7 +175,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
 
 
     function sendGetGuildHelp() {
-        var globalVar = require('global.js');
+        var globalVar = require('./global');
         // var fileUtils = require('./fileHelper');
         let getguildHelp = globalVar.phantomBotHelp
         .setTitle("PhantomBot Help")
