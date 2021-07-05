@@ -21,9 +21,11 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
         mongoose.connect(process.env.MONGO_GUILDDATA_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
             if (err)
                 console.error(err);
-            else
+            else {
                 console.log("---CONNECTED TO THE MONGODB: GuildData"); 
-                if (!isCron) message.channel.send('Connected to JCR\'s mongoDB: GuildData');
+                // if (!isCron) message.channel.send('Connected to JCR\'s mongoDB: GuildData');
+                client.channels.cache.get(globalVar.discordChannels.log).send('Connected to JCR\'s mongoDB: GuildData');
+            } // end else
         }); // end mongoose connect
         
         var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
@@ -123,7 +125,8 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
             finally {
 
                 console.log('---READING API DATA NOW');
-                if(!isCron) message.channel.send('Reading Guild Data from SWGOH.HELP.\nPlease be patient. This could take a few mins.');        
+                // if(!isCron) message.channel.send('Reading Guild Data from SWGOH.HELP.\nPlease be patient. This could take a few mins.');        
+                client.channels.cache.get(globalVar.discordChannels.log).send('Reading Guild Data from SWGOH.HELP.\nPlease be patient. This could take a few mins.');
 
                 console.log('---ACQUIRED TOKEN: ' , acquiredToken);
                 var now = new Date(); 
@@ -149,7 +152,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 
 
         //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord, isCron);
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
     })();
 }//end async function getGuildUpdates
 
@@ -172,7 +175,8 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             console.error(err);
         else
             console.log("---CONNECTED TO THE MONGODB: GuildData"); 
-            if(!isCron) message.channel.send('Connected to JCR\'s mongoDB: GuildData');
+            // if(!isCron) message.channel.send('Connected to JCR\'s mongoDB: GuildData');
+            client.channels.cache.get(globalVar.discordChannels.log).send('Connected to JCR\'s mongoDB: GuildData');
     }); // end mongoose connect
 
 
@@ -203,7 +207,8 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             var counter = 1;
             var index = 0;
             var guildUpdateEmbed = [];
-            if(!isCron) message.channel.send('Beginning to update guild data');
+            client.channels.cache.get(globalVar.discordChannels.log).send('Beginning to update guild data');
+            // message.channel.send('Beginning to update guild data');
 
             var gld = '';
             const gNames = [
@@ -486,9 +491,10 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
                 mongoose.connection.close(function () {
                     console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
                     console.log('---FINSHED UPDATING GUILDS');
-                    if(!isCron) message.channel.send('Finished updating guilds\nDisconnected from JCR\'s DB');
+                    // if(!isCron) message.channel.send('Finished updating guilds\nDisconnected from JCR\'s DB');
+                    client.channels.cache.get(globalVar.discordChannels.log).send('Finished updating guilds\nDisconnected from JCR\'s DB');
                     //log the event to Discord (jcrAggie server) and the console
-                    fileUtils.logToDiscordAndConsole(client, message, args, Discord, isCron);
+                    fileUtils.logToDiscordAndConsole(client, message, args, Discord);
                     });
                 
             } // end if

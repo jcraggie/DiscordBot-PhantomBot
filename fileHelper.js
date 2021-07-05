@@ -82,15 +82,13 @@ function logToDiscord(client, message, args, Discord) {
 
 } // end logToDiscord
 
-function logToDiscordAndConsole(client, message, args, Discord, isCron) {
-    if(isCron) {
-        return
-    } else {
+function logToDiscordAndConsole(client, message, args, Discord) {
+    
         globalVar = require('./global.js');
         let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-        if(!isCron) client.channels.cache.get(globalVar.discordChannels.log).send(msg);
+        client.channels.cache.get(globalVar.discordChannels.log).send(msg);
         console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
-    }
+    
 
 } // end logToDiscordAndConsole
 
