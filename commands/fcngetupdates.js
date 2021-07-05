@@ -20,9 +20,9 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
                 message.channel.send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
         
-        // var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
+        var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
         // var allyCodes = [135718294, 418877148, 618277879]; //REBELLION EMPIRE ROGUE for testing
-        var allyCodes = [135718294]; // REBELLION ONLY for testing
+        // var allyCodes = [135718294]; // REBELLION ONLY for testing
 
         console.log('---UPDATING ALL DATA USING ALLYCODES: ', allyCodes);
         const fs = require('fs');
