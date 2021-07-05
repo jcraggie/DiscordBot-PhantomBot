@@ -172,7 +172,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             console.error(err);
         else
             console.log("---CONNECTED TO THE MONGODB: GuildData"); 
-            message.channel.send('Connected to JCR\'s mongoDB: GuildData');
+            if(!isCron) message.channel.send('Connected to JCR\'s mongoDB: GuildData');
     }); // end mongoose connect
 
 
