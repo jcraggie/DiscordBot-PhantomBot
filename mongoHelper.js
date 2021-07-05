@@ -569,8 +569,8 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
         return new Promise(resolve => {
 
             (async() => {
-                // await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
-                await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+                await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+                // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                 resolve('------SENT EMBED');
             })();
 
