@@ -203,7 +203,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             var counter = 1;
             var index = 0;
             var guildUpdateEmbed = [];
-            message.channel.send('Beginning to update guild data');
+            if(!isCron) message.channel.send('Beginning to update guild data');
 
             var gld = '';
             const gNames = [
@@ -441,7 +441,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
                     mongo_id = globalVar.hopeInfo.mongo_id;
                     break;
                 default:
-                    message.channel.send('Cannot find that guild.');
+                    if(!isCron) message.channel.send('Cannot find that guild.');
                     return;
             }//end switch
 
@@ -486,9 +486,9 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
                 mongoose.connection.close(function () {
                     console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
                     console.log('---FINSHED UPDATING GUILDS');
-                    message.channel.send('Finished updating guilds\nDisconnected from JCR\'s DB');
+                    if(!isCron) message.channel.send('Finished updating guilds\nDisconnected from JCR\'s DB');
                     //log the event to Discord (jcrAggie server) and the console
-                    fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+                    fileUtils.logToDiscordAndConsole(client, message, args, Discord, isCron);
                     });
                 
             } // end if
