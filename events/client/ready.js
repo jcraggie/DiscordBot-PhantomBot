@@ -9,7 +9,7 @@ module.exports = (Discord,client) =>{
     // 586291147169857556 PhantomHavoc role (members)
 
     var CronJob = require('cron').CronJob;
-
+    cronUtils = require('../../cronJobs');    
 
     var havocTime = '0 30 17 * * *'
     var pHavTz = 'America/Chicago';
@@ -75,6 +75,9 @@ module.exports = (Discord,client) =>{
         }, null, true, pRogTz); // central
     
         cronRogue.start();  //end cronRogue
+
+        cronUtils.startGetUpdatesCron();
+        cronUtils.startSendUpdateEmbedsCron();
 
 } // end module.export
 
