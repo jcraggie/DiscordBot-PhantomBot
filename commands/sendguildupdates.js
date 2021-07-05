@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'mongoeditall',
+    name: 'sendguildupdates',
     description: "reads all guilds from MongoDB and updates it in the guild numbers channel(s) specified",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const globalVar = require ('../global.js');
@@ -15,46 +15,6 @@ module.exports = {
                 message.channel.send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
 
-        
-        
-        // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
-
-        // _id:60dc856a0572f4e54c08bf7b = Rebellion online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf7c = Empire online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf7d = Havoc online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf7e = Rogue online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf7f = Order online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf80 = Uprising online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf81 = Lotus online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf82 = Phoundlings online MongoDB Atlas
-        // _id:60dc856a0572f4e54c08bf83 = Hope online MongoDB Atlas
-
-
-        
-        // message.channel.send('First edit attempt');
-        
-        // jcrAggie server
-        // rebellion message id: 858495427637018634
-        // empire message id: 858553385086484501
-        // phantom-guilds channel id: 858495181552353313
-
-        // phantom alliance server
-        // guild-numbers channel id: 485246576751673354
-        // guild-numbers rebellion msg id: 858547295427756051 (PB3)
-
-        // phantom alliance recruiting server
-        // guild-numbers channel id: 595255366644924440
-        // guild-numbers message id: 859844296299249704 (rebellion stats)
-
-        
-        // client.channels.cache.get('858495181552353313').messages.fetch('858495427637018634').then(msg => msg.edit(args[0]));
-        
-        
-        // //log the event to Discord (jcrAggie server) and the console
-        // fileUtils.logToDiscordAndConsole(client, message, args, Discord);
-
-
-        /////////////////////////////////////////////////////////////////////////////////////////////////
 
         function sendGetGuildHelp() {
             var globalVar = require('../global.js');
@@ -85,7 +45,6 @@ module.exports = {
               var guildUpdateEmbed = [];
               message.channel.send('Beginning to update guild data');
 
-             
               var gld = '';
               const gNames = [
                   'rebellion',
@@ -102,10 +61,6 @@ module.exports = {
                 console.log ('---TOTAL GUILDS TO BE UPDATED: ', totalGuilds);
 
               for(gld of gNames) {
-
-                // var guildFileName = false;
-                // counter += 1;
-                
 
                 switch(gld) {
                     case 'rebellion' :
@@ -336,7 +291,7 @@ module.exports = {
                     if(error) {
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                     }
-                })
+                }) // end await GuildData.findById
 
                 var guildData = gData;
                 
@@ -345,9 +300,6 @@ module.exports = {
                 var localGP = guildData.gp.toLocaleString("en-US"); //add commas to GP
                 console.log('---DATA SUMMARY: ',guildData['name'], ':', guildData['members'], 'GP:', guildData['gp'], ' Updated: ',localDate);
 
-                // var globalVar = require('../global.js');
-                // let guildEmbed = globalVar.phantomBotGuilds
-                
                 var guildEmbed = await updateEmbed(
                     guildData['name'], leader, guildData['members'],
                     localGP, dailyTickets,
@@ -357,45 +309,13 @@ module.exports = {
                     hpit, haat, hstr, cpit,
                     guildGG, localDate);
 
-                // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
-                // .setDescription(" ")
-                // guildEmbed.fields[0] =
-                //     {name: guildData['name'], value: 'LEADER: `' + leader + '`\n' + 
-                //         'MEMBERS `' + guildData['members'] + '/50` \n' +
-                //         'GP: `'+ localGP + '`\n' + 
-                //         'Daily Tickets: `' + dailyTickets + '`'}
-                //     guildEmbed.fields[1] = {name: 'TERRITORY BATTLES', value: 'HOTH DS: `' + hothDS + '`⭐️\n' +
-                //         'HOTH LS: `' + hothLS + '`⭐️ \n' +
-                //         'GEO DS: `' + geoDS + '`⭐️ with `' + watShards + '` <:watshard:709573349579161705>\n' +
-                //         'GEO LS: `' + geoLS + '`⭐️ with `' + kamShards + '` <:kam:778266623172673536>'}
-                //     guildEmbed.fields[2] = {name: 'RAIDS', value: 'HPIT: `' + hpit +'`\n' +
-                //         'HAAT: `' + haat + '`\n' +
-                //         'HSTR: `' + hstr + '`\n' +
-                //         'CPIT: `' + cpit + '`'}
-                //     guildEmbed.fields[3] = {name: 'SWGOH.GG LINK', value: guildGG}
-                //     guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + localDate + '`'}
-                    
-
-                // console.log('---SAVING EMBED FOR ' + gld);
-                // console.log('---INDEX : gNAMES[INDEX]: ' + index + ': ', gNames[index] );
-                // guildUpdateEmbed[ gNames[index] ] = guildEmbed;
                 await sendToJCR(guildEmbed);
                 await sendToMain(guildEmbed);
                 await sendToRecruiting(guildEmbed);
-                
-                //guildUpdateEmbed[gld] = guildEmbed; //dynamic var guildUpdateEmbed[rebellion] etc.
-
-
-                // console.log('---THIS IS guildUpdateEmbed[gld]: \n', guildUpdateEmbed[gld]);
-                // console.log('---THIS IS THE SAVED EMBED FOR ' + gld + ':\n',guildUpdateEmbed[gld]);
-
-                
-                // console.log('---counter is at ' + counter);
 
                 if(counter == totalGuilds) {
                     console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
-                    // message.channel.send(guildUpdateEmbed['rogue']);
-                    // message.channel.send('FINISH GUILD LOOP');
+
                     mongoose.connection.close(function () {
                         console.log('---MONGOOSE CONNECTION IS NOW CLOSED');
                         console.log('---FINSHED UPDATING GUILDS');
@@ -403,56 +323,25 @@ module.exports = {
                         //log the event to Discord (jcrAggie server) and the console
                         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
                       });
-                    // gld = '';
-                    // for(gld of gNames) {
-                        // message.channel.send(guildUpdateEmbed[gld]);
-                        // console.log('---SENDING EMBED FOR GUILD: ' + gld);
-                        // message.channel.send('Sending embed for: `'+ gld + '`');
-                        // message.channel.send(guildUpdateEmbed[gld]);
-                        // console.log('---THIS IS THE DESCRIPTION: ' + guildUpdateEmbed[gld].description);    
-                        // await sendToJCR(guildUpdateEmbed['rebellion']);
-                        // await sendToRecruiting(guildUpdateEmbed[gld]);
-                        // await sendToMain(guildUpdateEmbed[gld]);
-                        // await message.channel.send('Sending embed for: `'+ gld + '`');
-                        // await message.channel.send(guildUpdateEmbed[gld]);
-                    // };
-    
-    
                     
                 } // end if
 
                 counter += 1;
-                // index += 1;
-
-                    
+ 
             } // end for gld of gNames
-            // console.log('===================================================================');
-            // console.log('GUILDUPDATEEMBED ARRAY');
-            // console.log('===================================================================');
-            // console.log(guildUpdateEmbed);
 
-            
-            // message.channel.send(guildUpdateEmbed['rogue']);
 
         } // end else
 
         function updateEmbed(
-            guildData_name, leader, guildData_members,
-            localGP, dailyTickets,
+            guildData_name, leader, guildData_members, localGP, dailyTickets,
             hothDS, hothLS,
             geoDS, watShards,
             geoLS, kamShards,
             hpit, haat, hstr, cpit,
             guildGG, localDate ) {
                 return new Promise(async (resolve, reject) => {
-                    // console.log('Data being embeded for ' + guildData_name);
-                    // console.log(guildData_name, leader, guildData_members,
-                    // localGP, dailyTickets,
-                    // hothDS, hothLS, 
-                    // geoDS, watShards,
-                    // geoLS, kamShards,
-                    // hpit, haat, hstr, cpit,
-                    // guildGG, localDate);
+
                     var guildEmbed = globalVar.phantomBotGuilds
                         // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
                         guildEmbed.description = '**' + guildData_name + '**';
@@ -482,9 +371,6 @@ module.exports = {
         async function sendToJCR(gldEmb) {
             return new Promise(resolve => {
                 (async() => {
-                    // console.log('---embed is: \n',guildEmbed);
-                    // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    // console.log('---SEND TO JCR gldEmb\n', gldEmb);
                     const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, gldEmb)
                     resolve(console.log(result + ' TO JCR SERVER'));
                 })();
@@ -495,9 +381,6 @@ module.exports = {
         async function sendToRecruiting(gldEmb) {
             return new Promise(resolve => {
                 (async() => {
-                    // console.log('---embed is: \n',guildEmbed);
-                    // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    // console.log('---SEND TO RECRUITING gldEmb\n', gldEmb);
                     const result = await sendEmbed(recruitingServerChannelID, recruitingServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO RECRUITING SERVER'));
                 })();
@@ -508,9 +391,6 @@ module.exports = {
         async function sendToMain(gldEmb) {
             return new Promise(resolve => {
                 (async() => {
-                    // console.log('---embed is: \n',guildEmbed);
-                    // const result = await sendEmbed(jcrServerChannelID, jcrServerMsgID, guildEmbed)
-                    // console.log('---SEND TO MAIN gldEmb\n', gldEmb);
                     const result = await sendEmbed(mainServerChannelID, mainServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO MAIN SERVER'));
                 })();
@@ -522,58 +402,12 @@ module.exports = {
             return new Promise(resolve => {
 
                 (async() => {
-                    // console.log(gldEmb);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('------SENT EMBED');
                 })();
 
-                // resolve('---SENT EMBED');
-
             });
         }
-
-
-        // async function sendToJCROnly(gldEmb) {
-        //     console.log('---SENDING TO JCR');
-        //     const result1 = await sendToJCR(gldEmb);
-        //     console.log(result1);
-        // };
-
-        // async function sendToAllServers(gldEmb) {
-        //     console.log('---SENDING TO JCR');
-        //     const result1 = await sendToJCR(gldEmb);
-        //     console.log(result1);
-        //     console.log('---SENDING TO RECRUITING');
-        //     const result2 = await sendToRecruiting(gldEmb);
-        //     console.log(result2);
-        //     console.log('---SENDING TO MAIN');
-        //     const result3 = await sendToMain(gldEmb);
-        //     console.log(result3);
-
-
-        // };
-
-        // function clearEmbed(gldEmb) {
-        //     return new Promise(resolve => {
-
-        //         setTimeout(() => {
-
-        //             gldEmb.fields=[] //clear the fields for the next use
-        //             resolve('---EMBED FIELDS CLEARED')
-        //         }, 1);
-                
-        //     });
-        // };
-
-        
-
-
-
-
-
-
-
-
 
     }//end async execute
 

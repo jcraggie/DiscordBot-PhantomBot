@@ -1,5 +1,5 @@
 // should only be used by jcrAggie
-
+// used to create dummy or testing records only
 
 module.exports = {
     name: 'mongocreate',

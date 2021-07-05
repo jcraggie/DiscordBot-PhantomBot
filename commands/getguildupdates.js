@@ -8,7 +8,7 @@
 // const writeguilds = require('./writeguilds.js');
 
 module.exports = {
-    name: 'mongoupdateall',
+    name: 'getguildupdates',
     description: "combines all guild JSON files into 1 JSON file", //allguilds.json
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
 
@@ -18,17 +18,10 @@ module.exports = {
             if (err)
                 console.error(err);
             else
-                console.log("Connected to the mongodb: GuildData"); 
-                message.channel.send('Connected to the mongoDB GuildData');
+                console.log("---CONNECTED TO THE MONGODB: GuildData"); 
+                message.channel.send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
         
-        // _id:60dbb1c8d9d9a0038a9f3a41 = Rebellion jcr laptop local
-        // _id:60dc739f1af6d175fd69cba8 = test section online MongoDB Atlas
-        
-
-
-
-
         var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
         // var allyCodes = [135718294, 418877148, 618277879]; //REBELLION EMPIRE ROGUE for testing
         // var allyCodes = [135718294]; // REBELLION ONLY for testing
@@ -62,26 +55,12 @@ module.exports = {
             for(const gData of apiGuildData) {
                 //console.log('---GDATA: \n', gData)
                 var currEpoch = Math.floor(new Date().getTime())
-                // currEpoch += -18000;
-                // console.log('-------UPDATING MONGODB FOR: ', gData.name)
-                // console.log('---fetch time epoch', currEpoch)
 
                 var dateConvert = new Date(gData.updated - (18000 * 1000)); //convert epoch timestamp to CST date and time
                 var localDate = dateConvert.toLocaleString("en-US"); //convert date and time to local
                 
                 var fetchDateConvert = new Date(currEpoch - (18000 * 1000)); //convert epoch timestamp to CST date and time
                 var fetchLocalDate = fetchDateConvert.toLocaleString("en-US"); //convert date and time to local
-
-                console.log('---api epoch: ', gData.updated);
-                console.log('---fet epoch: ', currEpoch)
-                console.log('---api time text: ', localDate);
-                console.log('---fet time text: ', fetchLocalDate);
-
-                
-                
-
-
-
 
                 const query = {
                     "name": gData.name
