@@ -30,7 +30,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 
         console.log('---UPDATING ALL DATA USING ALLYCODES: ', allyCodes);
         const fs = require('fs');
-        const fileUtils = require('fileHelper.js');
+        const fileUtils = require('./fileHelper');
         // const {botToken, swgohHelpUser, swgohHelpPW,swgohHelpID, swgohHelpSecret} = require(`../config`); // for local testing only
         let swgohHelpID
         let swgohHelpSecret
@@ -159,7 +159,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
     (async () => {
     
     const globalVar = require ('global.js');
-    var fileUtils = require('fileHelper.js');
+    var fileUtils = require('./fileHelper');
 
     const mongoose = require('mongoose');
     const GuildData = require('./commands/models/GuildData');
@@ -176,7 +176,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
 
     function sendGetGuildHelp() {
         var globalVar = require('global.js');
-        var fileUtils = require('fileHelper.js');
+        // var fileUtils = require('./fileHelper');
         let getguildHelp = globalVar.phantomBotHelp
         .setTitle("PhantomBot Help")
         .setDescription("**COMMAND: **" + '`' + module.exports.name + '`')
