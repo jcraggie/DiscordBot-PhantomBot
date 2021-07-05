@@ -76,8 +76,8 @@ module.exports = (Discord,client) =>{
     
         cronRogue.start();  //end cronRogue
 
-        cronUtils.startGetUpdatesCron();
-        cronUtils.startSendUpdateEmbedsCron();
+        cronUtils.startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp);
+        cronUtils.startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgohHelp);
 
 } // end module.export
 
