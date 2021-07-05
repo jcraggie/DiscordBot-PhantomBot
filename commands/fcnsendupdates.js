@@ -1,5 +1,5 @@
 
-function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp) {
+async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp) {
 
     
     const globalVar = require ('../global.js');
