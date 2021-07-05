@@ -152,7 +152,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 
 
         //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+        // fileUtils.logToDiscordAndConsole(client, message, args, Discord);
     })();
 }//end async function getGuildUpdates
 
@@ -494,7 +494,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
                     // if(!isCron) message.channel.send('Finished updating guilds\nDisconnected from JCR\'s DB');
                     client.channels.cache.get(globalVar.discordChannels.log).send('Finished updating guilds\nDisconnected from JCR\'s DB');
                     //log the event to Discord (jcrAggie server) and the console
-                    fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+                    // fileUtils.logToDiscordAndConsole(client, message, args, Discord);
                     });
                 
             } // end if
