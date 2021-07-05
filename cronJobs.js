@@ -7,7 +7,7 @@ function startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp)
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
 
-    var startTime = '0 30 07 * * *' // every day at 0300am CST 0 00 03 * * *
+    var startTime = '0 36 07 * * *' // every day at 0300am CST 0 00 03 * * *
     var startTz = 'America/Chicago';
 
     var cronGetUpdates = new CronJob(startTime, function() {
@@ -38,7 +38,7 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
 
-    var startTime = '0 35 07 * * *' // every day at 0315am CST 0 15 03 * * *
+    var startTime = '0 40 07 * * *' // every day at 0315am CST 0 15 03 * * *
     var startTz = 'America/Chicago';
 
     var cronGetUpdates = new CronJob(startTime, function() {
