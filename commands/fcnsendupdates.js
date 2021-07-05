@@ -420,4 +420,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
 
 }//end function sendGuildUpdates
 
-// sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp);
+module.exports = {
+    sendGuildUpdates
+
+};
