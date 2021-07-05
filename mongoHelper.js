@@ -14,7 +14,8 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
     (async () => {
 
         const mongoose = require('mongoose');
-        const GuildData = require('../commands/models/GuildData');
+        const GuildData = require('./commands/models/GuildData');
+
         mongoose.connect(process.env.MONGO_GUILDDATA_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
             if (err)
                 console.error(err);
@@ -161,7 +162,8 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
     var fileUtils = require('fileHelper.js');
 
     const mongoose = require('mongoose');
-    const GuildData = require('../commands/models/guildData.js');
+    const GuildData = require('./commands/models/GuildData');
+
 
     mongoose.connect(process.env.MONGO_GUILDDATA_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
         if (err)
