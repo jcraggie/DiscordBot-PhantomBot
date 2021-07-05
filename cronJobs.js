@@ -7,15 +7,16 @@ function startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp)
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
 
-    var startTime = '0 00 03 * * *' // every day at 0300am CST
+    var startTime = '0 30 07 * * *' // every day at 0300am CST 0 00 03 * * *
     var startTz = 'America/Chicago';
 
     var cronGetUpdates = new CronJob(startTime, function() {
+        const isCron = true;
 
         console.log('---STARTING CRON GET UPDATES');
 
         // message.channel.send('testupdatefcn');
-        mongoUtils.getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp);
+        mongoUtils.getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, isCron);
         
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
@@ -37,21 +38,22 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
 
-    var startTime = '0 23 07 * * *' // every day at 0315am CST 0 15 03 * * *
+    var startTime = '0 35 07 * * *' // every day at 0315am CST 0 15 03 * * *
     var startTz = 'America/Chicago';
 
     var cronGetUpdates = new CronJob(startTime, function() {
+        const isCron = true;
 
         console.log('---STARTING CRON GET UPDATES');
 
         // message.channel.send('testupdatefcn');
-        mongoUtils.sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, true);
+        mongoUtils.sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, isCron);
         
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
         //log the event to jcrAggie server #phantom-ready channel
-        client.channels.cache.get('605087450573963362').send("Bot issued cronSendUpdates");
+        // client.channels.cache.get('605087450573963362').send("Bot issued cronSendUpdates");
 
         //log the event to the console
         console.log('---SENT CRON_SEND_UPDATE_EMBEDS'); 
