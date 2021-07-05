@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'testupdatefcn',
+    name: 'updatesendembeds',
     description: "description of the new command",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const globalVar = require ('../global.js');
