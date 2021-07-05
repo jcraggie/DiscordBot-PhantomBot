@@ -157,7 +157,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 
 
 
-async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp) {
+async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, isCron) {
     (async () => {
     
     const globalVar = require ('./global');
@@ -176,30 +176,30 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
     }); // end mongoose connect
 
 
-    function sendGetGuildHelp() {
-        var globalVar = require('./global');
-        // var fileUtils = require('./fileHelper');
-        let getguildHelp = globalVar.phantomBotHelp
-        .setTitle("PhantomBot Help")
-        .setDescription("**COMMAND: **" + '`' + module.exports.name + '`')
-        .addFields(                
-            {name: 'DESCRIPTION', value: module.exports.description},
-            {name: 'USAGE', value: "`pb.getguild guild_name`"},
-            {name: 'EXAMPLE', value: "`pb.getguild rebellion`"},
-            {name: '\u200B', value: '\u200B' }
+    // function sendGetGuildHelp() {
+    //     var globalVar = require('./global');
+    //     // var fileUtils = require('./fileHelper');
+    //     let getguildHelp = globalVar.phantomBotHelp
+    //     .setTitle("PhantomBot Help")
+    //     .setDescription("**COMMAND: **" + '`' + module.exports.name + '`')
+    //     .addFields(                
+    //         {name: 'DESCRIPTION', value: module.exports.description},
+    //         {name: 'USAGE', value: "`pb.getguild guild_name`"},
+    //         {name: 'EXAMPLE', value: "`pb.getguild rebellion`"},
+    //         {name: '\u200B', value: '\u200B' }
             
-        )
-        message.channel.send(getguildHelp);
-        getguildHelp.fields=[] //clear the fields for the next use
+    //     )
+    //     message.channel.send(getguildHelp);
+    //     getguildHelp.fields=[] //clear the fields for the next use
 
-        } // end function sendNewMemberHelp
-        if (args[0] == "help"){
-            sendGetGuildHelp();
+    //     } // end function sendNewMemberHelp
+    //     if (args[0] == "help"){
+    //         sendGetGuildHelp();
 
-            //log the event to Discord (jcrAggie server) and the console
-            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+    //         //log the event to Discord (jcrAggie server) and the console
+    //         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
-        } else {
+    //     } else {
             var counter = 1;
             var index = 0;
             var guildUpdateEmbed = [];
@@ -498,7 +498,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
         } // end for gld of gNames
 
 
-    } // end else
+    // } // end else
 
     function updateEmbed(
         guildData_name, leader, guildData_members, localGP, dailyTickets,
