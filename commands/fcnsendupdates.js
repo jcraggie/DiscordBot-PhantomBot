@@ -300,18 +300,22 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             var localGP = guildData.gp.toLocaleString("en-US"); //add commas to GP
             console.log('---DATA SUMMARY: ',guildData['name'], ':', guildData['members'], 'GP:', guildData['gp'], ' Updated: ',localDate);
 
-            var guildEmbed = await updateEmbed(
-                guildData['name'], leader, guildData['members'],
-                localGP, dailyTickets,
-                hothDS, hothLS, 
-                geoDS, watShards,
-                geoLS, kamShards,
-                hpit, haat, hstr, cpit,
-                guildGG, localDate);
+            (async () => {
+                var guildEmbed = await updateEmbed(
+                    guildData['name'], leader, guildData['members'],
+                    localGP, dailyTickets,
+                    hothDS, hothLS, 
+                    geoDS, watShards,
+                    geoLS, kamShards,
+                    hpit, haat, hstr, cpit,
+                    guildGG, localDate);
+            })();
 
-            await sendToJCR(guildEmbed);
-            // await sendToMain(guildEmbed);
-            // await sendToRecruiting(guildEmbed);
+            (async () => {
+                await sendToJCR(guildEmbed);
+                // await sendToMain(guildEmbed);
+                // await sendToRecruiting(guildEmbed);
+            })();
 
             if(counter == totalGuilds) {
                 console.log('---FINISHED LOOPING THROUGH ALL GUILD NAMES');
