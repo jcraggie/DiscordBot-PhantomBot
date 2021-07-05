@@ -286,10 +286,10 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             }//end switch
 
             console.log('---READING GUILD # ', counter, ': ',gld);
-
+            var gData;
 
             (async () => {
-                var gData = await GuildData.findById(mongo_id, (error) => {
+                gData = await GuildData.findById(mongo_id, (error) => {
                     if(error) {
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                     }
