@@ -161,7 +161,8 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
     var fileUtils = require('fileHelper.js');
 
     const mongoose = require('mongoose');
-    const GuildData = require('../models/GuildData');
+    const GuildData = require('../commands/models/guildData.js');
+
     mongoose.connect(process.env.MONGO_GUILDDATA_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
         if (err)
             console.error(err);
