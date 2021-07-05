@@ -2,7 +2,9 @@
 const { GuildEmoji } = require('discord.js'); // I did not write this line; inserted by VS Code?
 
 
-async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp) {
+async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, isCron) {
+    // isCron is a boolean that is true if the command was run by cron
+
     // guided by code found at https://www.yaoyuyang.com/2017/01/20/nodejs-batch-file-processing.html
     // adapted and edited for PhantomBot on 2021-06-19 by JCR
 
@@ -21,7 +23,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
                 console.error(err);
             else
                 console.log("---CONNECTED TO THE MONGODB: GuildData"); 
-                message.channel.send('Connected to JCR\'s mongoDB: GuildData');
+                if (!isCron) message.channel.send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
         
         var allyCodes = [135718294, 418877148, 924484782, 618277879, 993689571, 582412773, 315585918, 681711581, 166494741];
@@ -121,7 +123,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
             finally {
 
                 console.log('---READING API DATA NOW');
-                message.channel.send('Reading Guild Data from SWGOH.HELP.\nPlease be patient. This could take a few mins.');        
+                if(!isCron) message.channel.send('Reading Guild Data from SWGOH.HELP.\nPlease be patient. This could take a few mins.');        
 
                 console.log('---ACQUIRED TOKEN: ' , acquiredToken);
                 var now = new Date(); 
@@ -136,7 +138,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 
                 var done = false;
 
-                apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes);
+                apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes, isCron);
 
                 var x = 0;
                 // console.log('---APIGUILDDATA\n', apiGuildData);
@@ -147,7 +149,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 
 
         //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord, isCron);
     })();
 }//end async function getGuildUpdates
 

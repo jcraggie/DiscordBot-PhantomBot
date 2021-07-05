@@ -82,10 +82,10 @@ function logToDiscord(client, message, args, Discord) {
 
 } // end logToDiscord
 
-function logToDiscordAndConsole(client, message, args, Discord) {
+function logToDiscordAndConsole(client, message, args, Discord, isCron) {
     globalVar = require('./global.js');
     let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
-    client.channels.cache.get(globalVar.discordChannels.log).send(msg);
+    if(!isCron) client.channels.cache.get(globalVar.discordChannels.log).send(msg);
     console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
 
 } // end logToDiscordAndConsole
@@ -163,7 +163,7 @@ async function writeNewData(newGuildData) {
 
 
 
-async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,allyCodes) {
+async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,allyCodes, isCron) {
     //iterate through loop, getting new data from the api.swgoh.help site and return it as apiGuildData
     x=0;
     var numGuilds = 0;
@@ -175,7 +175,7 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
 
     for(x; x < totalGuilds;) { // begin for loop
         numGuilds += 1;
-        message.channel.send('Reading guild # `' + numGuilds + '/' + totalGuilds + '` from swgoh.help...');
+        if(!isCron) message.channel.send('Reading guild # `' + numGuilds + '/' + totalGuilds + '` from swgoh.help...');
         console.log('---READING GUILD # ' + numGuilds + '/' + totalGuilds + ' from api.swgoh.help');
     
         let payload = {
@@ -185,12 +185,12 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
 
         let { result, error, warning } = await swapi.fetchGuild(payload);
         if(error) {
-            console.log('---ERROR: ' + error);
-            message.channel.send('API error... this is **not** the way.');
+            console.log('---API ERROR: ' + error);
+            if(!isCron) message.channel.send('API error... this is **not** the way.');
             return;
         }
         if(warning) {
-            console.log('---WARNING: ' + warning);
+            console.log('---API WARNING: ' + warning);
         }
 
         let guildTemp = {
@@ -208,7 +208,7 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
             "roster" : result[0].roster,
             "updated" : result[0].updated
         };
-        message.channel.send('...Received data for `' + guildTemp.name + '`!');
+        if(!isCron) message.channel.send('...Received data for `' + guildTemp.name + '`!');
         console.log('------RECEIVED NEW DATA FOR ' + guildTemp.name);
         apiGuildData.push(guildTemp);
         x += 1; // move to next allyCode 

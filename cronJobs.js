@@ -37,7 +37,7 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
 
-    var startTime = '0 15 03 * * *' // every day at 0315am CST
+    var startTime = '0 23 07 * * *' // every day at 0315am CST 0 15 03 * * *
     var startTz = 'America/Chicago';
 
     var cronGetUpdates = new CronJob(startTime, function() {
@@ -45,7 +45,7 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
         console.log('---STARTING CRON GET UPDATES');
 
         // message.channel.send('testupdatefcn');
-        mongoUtils.sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp);
+        mongoUtils.sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, true);
         
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
