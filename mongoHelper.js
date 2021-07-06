@@ -14,7 +14,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
     // const { merge } = require('@hapi/hoek');
     // const writeguilds = require('./writeguilds.js');
     (async () => {
-
+        const globalVar = require ('./global');
         const mongoose = require('mongoose');
         const GuildData = require('./commands/models/GuildData');
 
@@ -163,9 +163,9 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, isCron) {
     (async () => {
     
-    const globalVar = require ('./global');
+    
     var fileUtils = require('./fileHelper');
-
+    const globalVar = require ('./global');    
     const mongoose = require('mongoose');
     const GuildData = require('./commands/models/GuildData');
 
