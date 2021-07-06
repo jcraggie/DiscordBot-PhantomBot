@@ -264,7 +264,7 @@ const hopeInfo = {
         "guildID": "G3204162424",
         "guildJSON": "g_09_hope.json",
         "leader": "Whitefly425",
-        "dailyTickets": "?",
+        "dailyTickets": "0",
         "ticketReset": "7:30pm PST",
         "hothDS": "34",
         "hothLS": "32",
