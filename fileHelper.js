@@ -231,7 +231,7 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
         msgConsole = '------RECEIVED NEW DATA FOR ' + guildTemp.name;
         // log messages to both Discord log channel and Console
         logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
-        
+
         apiGuildData.push(guildTemp);
         x += 1; // move to next allyCode 
     } // end for loop - all new API data has been stored in apiGuildData
@@ -398,6 +398,7 @@ module.exports = {
     writeGuildFile,
     getAllycodeByGuildName,
     logToDiscord,
-    logToDiscordAndConsole
+    logToDiscordAndConsole,
+    logBotToDiscordAndConsole
 
 };
