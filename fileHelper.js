@@ -92,6 +92,16 @@ function logToDiscordAndConsole(client, message, args, Discord) {
 
 } // end logToDiscordAndConsole
 
+function logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole) {
+    
+    globalVar = require('./global.js');
+    // let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
+    client.channels.cache.get(globalVar.discordChannels.log).send(msgDiscord);
+    console.log(msgConsole);
+
+
+} // end logToDiscordAndConsole
+
 
 function getAllycodeByGuildName(guildName) {
     const globalVar = require('./global.js');
@@ -177,8 +187,13 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
 
     for(x; x < totalGuilds;) { // begin for loop
         numGuilds += 1;
-        if(!isCron) message.channel.send('Reading guild # `' + numGuilds + '/' + totalGuilds + '` from swgoh.help...');
-        console.log('---READING GUILD # ' + numGuilds + '/' + totalGuilds + ' from api.swgoh.help');
+        // if(!isCron) message.channel.send('Reading guild # `' + numGuilds + '/' + totalGuilds + '` from swgoh.help...');
+        msgDiscord = 'Reading guild # `' + numGuilds + '/' + totalGuilds + '` from swgoh.help...';
+        msgConsole ='---READING GUILD # ' + numGuilds + '/' + totalGuilds + ' from api.swgoh.help';
+        // log messages to both Discord log channel and Console
+        logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+
+        // console.log('---READING GUILD # ' + numGuilds + '/' + totalGuilds + ' from api.swgoh.help');
     
         let payload = {
             allycode: allyCodes[x],
@@ -187,8 +202,10 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
 
         let { result, error, warning } = await swapi.fetchGuild(payload);
         if(error) {
-            console.log('---API ERROR: ' + error);
-            if(!isCron) message.channel.send('API error... this is **not** the way.');
+            let msgConsole ='---API ERROR: ' + error;
+            let msgDiscord ='API error... this is **not** the way.';
+            // log messages to both Discord log channel and Console
+            logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
             return;
         }
         if(warning) {
@@ -210,8 +227,11 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
             "roster" : result[0].roster,
             "updated" : result[0].updated
         };
-        if(!isCron) message.channel.send('...Received data for `' + guildTemp.name + '`!');
-        console.log('------RECEIVED NEW DATA FOR ' + guildTemp.name);
+        msgDiscord ='...Received data for `' + guildTemp.name + '`!';
+        msgConsole = '------RECEIVED NEW DATA FOR ' + guildTemp.name;
+        // log messages to both Discord log channel and Console
+        logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+        
         apiGuildData.push(guildTemp);
         x += 1; // move to next allyCode 
     } // end for loop - all new API data has been stored in apiGuildData
