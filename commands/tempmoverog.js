@@ -18,7 +18,7 @@ module.exports = {
         }); // end mongoose connect
 
         // rogueInfo
-        const query = '60dc856a0572f4e54c08bf7c';
+        const query = '60dc856a0572f4e54c08bf7e';
         const update = {  $set: {
             dailyTickets: globalVar.rogueInfo.dailyTickets,
             ticketReset: globalVar.rogueInfo.ticketReset,

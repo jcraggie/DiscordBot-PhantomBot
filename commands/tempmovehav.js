@@ -18,7 +18,7 @@ module.exports = {
         }); // end mongoose connect
 
         // havocInfo
-        const query = '60dc856a0572f4e54c08bf7c';
+        const query = '60dc856a0572f4e54c08bf7d';
         const update = {  $set: {
             dailyTickets: globalVar.havocInfo.dailyTickets,
             ticketReset: globalVar.havocInfo.ticketReset,

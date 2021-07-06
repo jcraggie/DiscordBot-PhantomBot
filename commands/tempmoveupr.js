@@ -18,7 +18,7 @@ module.exports = {
         }); // end mongoose connect
 
         // uprisingInfo
-        const query = '60dc856a0572f4e54c08bf7c';
+        const query = '60dc856a0572f4e54c08bf80';
         const update = {  $set: {
             dailyTickets: globalVar.uprisingInfo.dailyTickets,
             ticketReset: globalVar.uprisingInfo.ticketReset,

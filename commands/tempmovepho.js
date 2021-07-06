@@ -18,7 +18,7 @@ module.exports = {
         }); // end mongoose connect
 
         // phoundlingsInfo
-        const query = '60dc856a0572f4e54c08bf7c';
+        const query = '60dc856a0572f4e54c08bf82';
         const update = {  $set: {
             dailyTickets: globalVar.phoundlingsInfo.dailyTickets,
             ticketReset: globalVar.phoundlingsInfo.ticketReset,

@@ -18,7 +18,7 @@ module.exports = {
         }); // end mongoose connect
 
         // orderInfo
-        const query = '60dc856a0572f4e54c08bf7c';
+        const query = '60dc856a0572f4e54c08bf7f';
         const update = {  $set: {
             dailyTickets: globalVar.orderInfo.dailyTickets,
             ticketReset: globalVar.orderInfo.ticketReset,
