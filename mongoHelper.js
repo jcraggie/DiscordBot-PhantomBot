@@ -33,7 +33,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
                 msgDiscord = 'Connected to JCR\'s mongoDB: GuildData';
                 msgConsole = '---CONNECTED TO THE MONGODB: GuildData';
                 // log messages to both Discord log channel and Console
-                logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+                fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
             } // end else
         }); // end mongoose connect
         
@@ -44,7 +44,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
         msgConsole = '---UPDATING ALL DATA USING ALLYCODES: ' + allyCodes;
         msgDiscord = 'Updating all data using allycodes: ' + allyCodes;
         // log messages to both Discord log channel and Console
-        logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+        fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
         const fs = require('fs');
         
         // const {botToken, swgohHelpUser, swgohHelpPW,swgohHelpID, swgohHelpSecret} = require(`../config`); // for local testing only
@@ -141,7 +141,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
                 msgDiscord = 'Reading Guild Data from SWGOH.HELP.\nPlease be patient. This could take a few mins.';
                 msgConsole = '---READING API DATA NOW';
                 // log messages to both Discord log channel and Console
-                logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+                fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
                 console.log('---ACQUIRED TOKEN: ' , acquiredToken);
                 var now = new Date(); 
@@ -197,7 +197,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             msgConsole = '---CONNECTED TO THE MONGODB: GuildData';
             msgDiscord = 'Connected to JCR\'s mongoDB: GuildData';
             // log messages to both Discord log channel and Console
-            logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
             } // end else
     }); // end mongoose connect
 
@@ -233,7 +233,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             msgDiscord = 'Beginning to update guild data';
             msgConsole = '---BEGINNING TO UPDATE GUILD DATA';
             // log messages to both Discord log channel and Console
-            logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
 
             var gld = '';
@@ -253,7 +253,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             msgConsole = '---TOTAL GUILDS TO BE UPDATED: ' + totalGuilds;
             msgDiscord = 'Total Guilds to be updated: ' + totalGuilds;
             // log messages to both Discord log channel and Console
-            logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
             
 
@@ -486,7 +486,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
             msgConsole = '---READING GUILD # ' + counter + ': ' + gld;
             msgDiscord = 'Reading guild # ' + counter + ': ' + gld;
             // log messages to both Discord log channel and Console
-            logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
             var gData;
 
@@ -535,7 +535,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
 
 
                     // log messages to both Discord log channel and Console
-                    logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+                    fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
 
                     });
