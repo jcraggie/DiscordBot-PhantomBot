@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'tempmovepho',
+    name: 'tempmovehop',
     description: "temp cmd to move reb globals to mongoDB",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
