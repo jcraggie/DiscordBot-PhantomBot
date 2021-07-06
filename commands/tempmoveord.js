@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'tempmovehav',
+    name: 'tempmoveord',
     description: "temp cmd to move reb globals to mongoDB",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
@@ -17,25 +17,25 @@ module.exports = {
                 client.channels.cache.get(globalVar.discordChannels.log).send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
 
-        // havocInfo
+        // orderInfo
         const query = '60dc856a0572f4e54c08bf7c';
         const update = {  $set: {
-            dailyTickets: globalVar.havocInfo.dailyTickets,
-            ticketReset: globalVar.havocInfo.ticketReset,
-            hothDS: globalVar.havocInfo.hothDS,
-            hothLS: globalVar.havocInfo.hothLS,
-            geoDS: globalVar.havocInfo.geoDS,
-            watShards: globalVar.havocInfo.watShards,
-            geoLS: globalVar.havocInfo.geoLS,
-            kamShards: globalVar.havocInfo.kamShards,
-            haat: globalVar.havocInfo.haat,
-            hpit: globalVar.havocInfo.hpit,
-            hstr: globalVar.havocInfo.hstr,
-            cpit: globalVar.havocInfo.cpit,
-            guildGG: globalVar.havocInfo.guildGG,
-            mainServerMsgID: globalVar.havocInfo.mainServerMsgID,
-            recruitingServerMsgID: globalVar.havocInfo.recruitingServerMsgID,
-            jcrServerMsgID: globalVar.havocInfo.jcrServerMsgID
+            dailyTickets: globalVar.orderInfo.dailyTickets,
+            ticketReset: globalVar.orderInfo.ticketReset,
+            hothDS: globalVar.orderInfo.hothDS,
+            hothLS: globalVar.orderInfo.hothLS,
+            geoDS: globalVar.orderInfo.geoDS,
+            watShards: globalVar.orderInfo.watShards,
+            geoLS: globalVar.orderInfo.geoLS,
+            kamShards: globalVar.orderInfo.kamShards,
+            haat: globalVar.orderInfo.haat,
+            hpit: globalVar.orderInfo.hpit,
+            hstr: globalVar.orderInfo.hstr,
+            cpit: globalVar.orderInfo.cpit,
+            guildGG: globalVar.orderInfo.guildGG,
+            mainServerMsgID: globalVar.orderInfo.mainServerMsgID,
+            recruitingServerMsgID: globalVar.orderInfo.recruitingServerMsgID,
+            jcrServerMsgID: globalVar.orderInfo.jcrServerMsgID
 
             }  
         };

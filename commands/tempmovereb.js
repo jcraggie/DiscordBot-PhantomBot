@@ -5,6 +5,7 @@ module.exports = {
         const mongoose = require('mongoose');
         const GuildData = require('./models/GuildData');
         const globalVar = require ('../global');
+        const fileUtils = require('../fileHelper');
 
 
         mongoose.connect(process.env.MONGO_GUILDDATA_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {

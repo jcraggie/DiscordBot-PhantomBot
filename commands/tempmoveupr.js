@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'tempmovehav',
+    name: 'tempmoveupr',
     description: "temp cmd to move reb globals to mongoDB",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
@@ -17,25 +17,25 @@ module.exports = {
                 client.channels.cache.get(globalVar.discordChannels.log).send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
 
-        // havocInfo
+        // uprisingInfo
         const query = '60dc856a0572f4e54c08bf7c';
         const update = {  $set: {
-            dailyTickets: globalVar.havocInfo.dailyTickets,
-            ticketReset: globalVar.havocInfo.ticketReset,
-            hothDS: globalVar.havocInfo.hothDS,
-            hothLS: globalVar.havocInfo.hothLS,
-            geoDS: globalVar.havocInfo.geoDS,
-            watShards: globalVar.havocInfo.watShards,
-            geoLS: globalVar.havocInfo.geoLS,
-            kamShards: globalVar.havocInfo.kamShards,
-            haat: globalVar.havocInfo.haat,
-            hpit: globalVar.havocInfo.hpit,
-            hstr: globalVar.havocInfo.hstr,
-            cpit: globalVar.havocInfo.cpit,
-            guildGG: globalVar.havocInfo.guildGG,
-            mainServerMsgID: globalVar.havocInfo.mainServerMsgID,
-            recruitingServerMsgID: globalVar.havocInfo.recruitingServerMsgID,
-            jcrServerMsgID: globalVar.havocInfo.jcrServerMsgID
+            dailyTickets: globalVar.uprisingInfo.dailyTickets,
+            ticketReset: globalVar.uprisingInfo.ticketReset,
+            hothDS: globalVar.uprisingInfo.hothDS,
+            hothLS: globalVar.uprisingInfo.hothLS,
+            geoDS: globalVar.uprisingInfo.geoDS,
+            watShards: globalVar.uprisingInfo.watShards,
+            geoLS: globalVar.uprisingInfo.geoLS,
+            kamShards: globalVar.uprisingInfo.kamShards,
+            haat: globalVar.uprisingInfo.haat,
+            hpit: globalVar.uprisingInfo.hpit,
+            hstr: globalVar.uprisingInfo.hstr,
+            cpit: globalVar.uprisingInfo.cpit,
+            guildGG: globalVar.uprisingInfo.guildGG,
+            mainServerMsgID: globalVar.uprisingInfo.mainServerMsgID,
+            recruitingServerMsgID: globalVar.uprisingInfo.recruitingServerMsgID,
+            jcrServerMsgID: globalVar.uprisingInfo.jcrServerMsgID
 
             }  
         };

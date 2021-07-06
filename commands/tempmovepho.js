@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'tempmovehav',
+    name: 'tempmovepho',
     description: "temp cmd to move reb globals to mongoDB",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const mongoose = require('mongoose');
@@ -17,25 +17,25 @@ module.exports = {
                 client.channels.cache.get(globalVar.discordChannels.log).send('Connected to JCR\'s mongoDB: GuildData');
         }); // end mongoose connect
 
-        // havocInfo
+        // phoundlingsInfo
         const query = '60dc856a0572f4e54c08bf7c';
         const update = {  $set: {
-            dailyTickets: globalVar.havocInfo.dailyTickets,
-            ticketReset: globalVar.havocInfo.ticketReset,
-            hothDS: globalVar.havocInfo.hothDS,
-            hothLS: globalVar.havocInfo.hothLS,
-            geoDS: globalVar.havocInfo.geoDS,
-            watShards: globalVar.havocInfo.watShards,
-            geoLS: globalVar.havocInfo.geoLS,
-            kamShards: globalVar.havocInfo.kamShards,
-            haat: globalVar.havocInfo.haat,
-            hpit: globalVar.havocInfo.hpit,
-            hstr: globalVar.havocInfo.hstr,
-            cpit: globalVar.havocInfo.cpit,
-            guildGG: globalVar.havocInfo.guildGG,
-            mainServerMsgID: globalVar.havocInfo.mainServerMsgID,
-            recruitingServerMsgID: globalVar.havocInfo.recruitingServerMsgID,
-            jcrServerMsgID: globalVar.havocInfo.jcrServerMsgID
+            dailyTickets: globalVar.phoundlingsInfo.dailyTickets,
+            ticketReset: globalVar.phoundlingsInfo.ticketReset,
+            hothDS: globalVar.phoundlingsInfo.hothDS,
+            hothLS: globalVar.phoundlingsInfo.hothLS,
+            geoDS: globalVar.phoundlingsInfo.geoDS,
+            watShards: globalVar.phoundlingsInfo.watShards,
+            geoLS: globalVar.phoundlingsInfo.geoLS,
+            kamShards: globalVar.phoundlingsInfo.kamShards,
+            haat: globalVar.phoundlingsInfo.haat,
+            hpit: globalVar.phoundlingsInfo.hpit,
+            hstr: globalVar.phoundlingsInfo.hstr,
+            cpit: globalVar.phoundlingsInfo.cpit,
+            guildGG: globalVar.phoundlingsInfo.guildGG,
+            mainServerMsgID: globalVar.phoundlingsInfo.mainServerMsgID,
+            recruitingServerMsgID: globalVar.phoundlingsInfo.recruitingServerMsgID,
+            jcrServerMsgID: globalVar.phoundlingsInfo.jcrServerMsgID
 
             }  
         };
