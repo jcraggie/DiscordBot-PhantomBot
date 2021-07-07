@@ -930,7 +930,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             msgConsole = '---CONNECTED TO THE MONGODB: GuildData';
             msgDiscord = 'Connected to JCR\'s mongoDB: GuildData';
             // log messages to both Discord log channel and Console
-            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            await fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
             } // end else
     }); // end mongoose connect
 
@@ -974,6 +974,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             
 
             for(gld of gNames) {
+
                 // form query searching mongoDB GuildData for commonGuildName = gld
                 fieldName = 'commonGuildName';
                 fieldValue = gld;
