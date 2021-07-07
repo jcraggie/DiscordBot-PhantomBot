@@ -930,7 +930,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             msgConsole = '---CONNECTED TO THE MONGODB: GuildData';
             msgDiscord = 'Connected to JCR\'s mongoDB: GuildData';
             // log messages to both Discord log channel and Console
-            await fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
             } // end else
     }); // end mongoose connect
 
@@ -996,7 +996,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                         return;
                     } else {
-                        console.log('---TESTING FOUND GUILD', guildData.name, ' with leader: ', guildData.leader);
+                        console.log('------UPDATING GUILD: ', guildData.name);
                         //console.log(guildData);
                         if(counter == totalGuilds) {
                             // log messages to both Discord log channel and Console
