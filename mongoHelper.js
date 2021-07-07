@@ -782,6 +782,7 @@ async function sendGuildUpdatesNew(client, message, args, Discord,swapi, ApiSwgo
             var localGP = guildData.gp.toLocaleString("en-US"); //add commas to GP
             console.log('---DATA SUMMARY: ',guildData['name'], ':', guildData['members'], 'GP:', guildData['gp'], ' Updated: ',localDate);
 
+
             
                 var guildEmbed = await updateEmbed(
                     guildData['name'], leader, guildData['members'],
@@ -983,7 +984,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
  
             // console.log('---READING GUILD # ', counter, ': ',gld);
             msgConsole = '---READING GUILD # ' + counter + ': ' + gld;
-            msgDiscord = 'Reading guild # ' + counter + ': ' + gld;
+            msgDiscord = 'Reading guild # ' + counter + ': ' + '`' + gld + '`';
             // log messages to both Discord log channel and Console
             fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
@@ -995,7 +996,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                         return;
                     } else {
-                        console.log('---FOUND GUILD', guildData["name"], ' with leader: ', guildData.leader);
+                        console.log('---TESTING FOUND GUILD', guildData.name, ' with leader: ', guildData.leader);
                         //console.log(guildData);
                         counter += 1;
                     }
