@@ -981,7 +981,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             var gData;
 
             
-                gData = await GuildData.find(query, (error,guildData) => {
+                gData = GuildData.find(query, (error,guildData) => {
                     if(error) {
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                         return;
