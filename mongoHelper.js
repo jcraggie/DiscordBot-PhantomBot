@@ -967,7 +967,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
 
             for(gld of gNames) {
 
-                const query = {
+                var query = {
                     "commonGuildName": gld
                 }
                 // write function to get mongo_id from mongoDB
@@ -981,13 +981,18 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             var gData;
 
             
-                gData = await GuildData.find(query, (error) => {
+                gData = await GuildData.find(query, (error,guildData) => {
                     if(error) {
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
+                        break;
+                    } else {
+                        console.log('---FOUND GUILD', guildData['name'], ' with leader: ', guildData['leader']);
+                counter += 1;
                     }
                 }) // end await GuildData.findById
             
-                console.log('---FOUND GUILD', gData['name'], ' with leader: ', gData['leader']);
+                // console.log('---FOUND GUILD', guildData['name'], ' with leader: ', guildData['leader']);
+                // counter += 1;
                 
             } // end for gld of gNames
         })();
