@@ -484,7 +484,7 @@ async function sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHe
 
             // console.log('---READING GUILD # ', counter, ': ',gld);
             msgConsole = '---READING GUILD # ' + counter + ': ' + gld;
-            msgDiscord = 'Reading guild # ' + counter + ': ' + gld;
+            msgDiscord = 'Reading guild # ' + counter + ': ' + '`' + gld + '`';
             // log messages to both Discord log channel and Console
             fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
