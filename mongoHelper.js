@@ -925,6 +925,8 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
         if (err)
             console.error(err);
         else {
+            // log messages to both Discord log channel and Console
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
             msgConsole = '---CONNECTED TO THE MONGODB: GuildData';
             msgDiscord = 'Connected to JCR\'s mongoDB: GuildData';
             // log messages to both Discord log channel and Console
