@@ -999,9 +999,10 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
                             // log messages to both Discord log channel and Console
                             fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
                             return;
-                        } // if counter == totalGuilds
+                        } else {
 
                         counter += 1;
+                        } // end if counter == totalGuilds
                     }
                 }) // end await GuildData.findById
             
