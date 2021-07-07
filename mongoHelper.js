@@ -986,7 +986,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                         return;
                     } else {
-                        console.log('---FOUND GUILD', guildData['name'], ' with leader: ', guildData['leader']);
+                        console.log('---FOUND GUILD', guildData["name"], ' with leader: ', guildData.leader);
                         console.log(guildData);
                         counter += 1;
                     }
