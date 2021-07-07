@@ -963,13 +963,22 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             // log messages to both Discord log channel and Console
             fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
+
+            var fieldName = 'commonGuildName';
+            var fieldValue = '';
+            var query = {};
+
             
 
             for(gld of gNames) {
+                fieldName = 'commonGuildName';
+                fieldValue = gld;
+                query = {}
+                query[fieldName] = fieldValue;
 
-                var query = {
-                    "commonGuildName": gld
-                }
+                // var query = {
+                //     "commonGuildName": gld
+                // }
                 // write function to get mongo_id from mongoDB
  
             // console.log('---READING GUILD # ', counter, ': ',gld);
@@ -981,13 +990,13 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             var gData;
 
             
-                gData = await GuildData.find(query, (error,guildData) => {
+                gData = await GuildData.findOne(query, (error,guildData) => {
                     if(error) {
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                         return;
                     } else {
                         console.log('---FOUND GUILD', guildData["name"], ' with leader: ', guildData.leader);
-                        console.log(guildData);
+                        //console.log(guildData);
                         counter += 1;
                     }
                 }) // end await GuildData.findById
