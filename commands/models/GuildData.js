@@ -34,7 +34,8 @@ const GuildDataSchema = new Schema({
     guildGG: String,
     mainServerMsgID: String,
     recruitingServerMsgID: String,
-    jcrServerMsgID: String
+    jcrServerMsgID: String,
+    commonGuildName: String
 
 });
 
