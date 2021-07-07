@@ -987,8 +987,8 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
                     }
                 }) // end await GuildData.findById
             
-                console.log('---FOUND GUILD', gData.name, ' with leader: ', gData.leader);
-                break;
+                console.log('---FOUND GUILD', gData['name'], ' with leader: ', gData['leader']);
+                
             } // end for gld of gNames
         })();
 }
