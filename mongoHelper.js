@@ -983,7 +983,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             msgConsole = '---READING GUILD # ' + counter + ': ' + gld;
             msgDiscord = 'Reading guild # ' + counter + ': ' + '`' + gld + '`';
             // log messages to both Discord log channel and Console
-            fileUtils.logBotToDiscordAndConsole(client, args, Discord, msgDiscord, msgConsole);
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
             var gData;
 
@@ -997,7 +997,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
                         //console.log(guildData);
                         if(counter == totalGuilds) {
                             // log messages to both Discord log channel and Console
-                            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord);
+                            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
                             return;
                         } // if counter == totalGuilds
 
