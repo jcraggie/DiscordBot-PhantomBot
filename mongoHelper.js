@@ -931,6 +931,8 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             } // end else
     }); // end mongoose connect
 
+    
+
 
             var counter = 1;
             var index = 0;
@@ -964,6 +966,10 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             
 
             for(gld of gNames) {
+
+                const query = {
+                    "commonGuildName": gld
+                }
                 // write function to get mongo_id from mongoDB
  
             // console.log('---READING GUILD # ', counter, ': ',gld);
@@ -975,7 +981,7 @@ async function testUpdate(client, message, args, Discord,swapi, ApiSwgohHelp, is
             var gData;
 
             
-                gData = await GuildData.find(gld, (error) => {
+                gData = await GuildData.find(query, (error) => {
                     if(error) {
                         console.log('---GUILDDATA FIND BY ID ERROR: ', error);
                     }
