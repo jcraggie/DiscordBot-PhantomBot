@@ -70,7 +70,7 @@ const empireInfo = {
         "allyCode": 418877148,
         "guildID": "G215542000",
         "guildJSON": "g_02_empire.json",
-        "leader": "Catastrophik",
+        "leader": "GLOBAL Catastrophik",
         "dailyTickets": "600",
         "ticketReset": "7:30pm CST",
         "hothDS": "43",
