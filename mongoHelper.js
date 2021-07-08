@@ -1100,7 +1100,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                     name: 'INFO LAST UPDATED',
                     value: '`' + updatedText + '`'
                 }
-                console.log('---EMBED DATA FOR ' + guildData_name + ' IS NOW SET');
+                console.log('---EMBED DATA FOR ' + gName + ' IS NOW SET');
                 resolve(guildEmbed);
             });
 
