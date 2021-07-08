@@ -1028,19 +1028,20 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
 
                         localGP = gp.toLocaleString("en-US"); //add commas to GP
                         (async () => {
-                        var guildEmbed = await testUpdateEmbed(
-                            gName, leader, members, localGP, dailyTickets,
-                            hothDS, hothLS,
-                            geoDS, watShards,
-                            geoLS, kamShards,
-                            hpit, haat, hstr, cpit,
-                            guildGG, updatedText)
-
-                        console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
-                            await TESTsendToJCR(guildEmbed);
-                        // await TESTsendToMain(guildEmbed);
-                        // await TESTsendToRecruiting(guildEmbed);
-
+                            var guildEmbed = await testUpdateEmbed(
+                                gName, leader, members, localGP, dailyTickets,
+                                hothDS, hothLS,
+                                geoDS, watShards,
+                                geoLS, kamShards,
+                                hpit, haat, hstr, cpit,
+                                guildGG, updatedText)
+                            }) // end (async ()
+                        (async() => {
+                            console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
+                                await TESTsendToJCR(guildEmbed);
+                            // await TESTsendToMain(guildEmbed);
+                            // await TESTsendToRecruiting(guildEmbed);
+                        }) // end (async ()
 
                         //console.log(guildData);
                         if (counter == totalGuilds) {
@@ -1050,7 +1051,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                         } 
                         counter += 1;
                          // end if counter == totalGuilds
-                    })
+                    
                 }
             }); // end await GuildData.findById
 
