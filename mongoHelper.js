@@ -1001,7 +1001,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                 if (error) {
                     console.log("---GUILDDATA FIND BY ID ERROR: ", error);
                     return;
-                } else {
+                } 
                     
                         console.log("------UPDATING GUILD: ", guildData.name);
                         gName = guildData.name;
@@ -1027,7 +1027,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                         watShards = guildData.watShards;
 
                         localGP = gp.toLocaleString("en-US"); //add commas to GP
-                        (async () => {
+                        // (async () => {
                             var guildEmbed = await testUpdateEmbed(
                                 gName, leader, members, localGP, dailyTickets,
                                 hothDS, hothLS,
@@ -1035,13 +1035,13 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                                 geoLS, kamShards,
                                 hpit, haat, hstr, cpit,
                                 guildGG, updatedText)
-                            }) // end (async ()
-                        (async() => {
+                            // }) // end (async ()
+                        // (async() => {
                             console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
                                 await TESTsendToJCR(guildEmbed);
                             // await TESTsendToMain(guildEmbed);
                             // await TESTsendToRecruiting(guildEmbed);
-                        }) // end (async ()
+                        // }) // end (async ()
 
                         //console.log(guildData);
                         if (counter == totalGuilds) {
@@ -1052,7 +1052,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                         counter += 1;
                          // end if counter == totalGuilds
                     
-                }
+                
             }); // end await GuildData.findById
 
             // console.log('---FOUND GUILD', guildData['name'], ' with leader: ', guildData['leader']);
