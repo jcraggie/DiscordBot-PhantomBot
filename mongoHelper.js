@@ -922,7 +922,7 @@ async function sendGuildUpdatesNew(client, message, args, Discord,swapi, ApiSwgo
 
 
 
-async function testUpdate(client, message, args, Disoord, swapi, ApiSwgohHelp, isCron) {
+async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, isCron) {
 
     (async () => {
         var fileUtils = require("./fileHelper");
