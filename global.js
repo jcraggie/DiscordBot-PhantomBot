@@ -191,7 +191,7 @@ const uprisingInfo = {
         "haat": "simmed, 24 hour join",
         "hpit": "simmed, 24 hr join",
         "hstr": "launch at 9pm EST, 24 hr join",
-        "cpit": "Ha! Good luck",
+        "cpit": "finished Phase 1",
         "guildGG": "https://swgoh.gg/g/63155/phantom-uprising/",
         "mainServerChannelID": "485246576751673354",
         "mainServerMsgID": "860760646902874153",
