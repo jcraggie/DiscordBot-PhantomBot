@@ -1027,6 +1027,7 @@ async function testUpdate(
                     console.log("---GUILDDATA FIND BY ID ERROR: ", error);
                     return;
                 } else {
+                    (async () => {
                     console.log("------UPDATING GUILD: ", guildData.name);
                     gName = guildData.name;
                     leader = guildData.leader;
@@ -1080,6 +1081,7 @@ async function testUpdate(
                     } else {
                         counter += 1;
                     } // end if counter == totalGuilds
+                })
                 }
             }); // end await GuildData.findById
 
