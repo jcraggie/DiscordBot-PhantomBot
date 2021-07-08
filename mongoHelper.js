@@ -901,7 +901,6 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
 module.exports = {
     getGuildUpdates,
     sendGuildUpdates,
-    sendGuildUpdatesNew,
     testUpdate
     
 
