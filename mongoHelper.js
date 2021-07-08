@@ -1039,7 +1039,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                 guildGG, updatedText)
                             // }) // end (async ()
                         // (async() => {
-            console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
+            // console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
             await TESTsendToJCR(guildEmbed);
             // await TESTsendToMain(guildEmbed);
             // await TESTsendToRecruiting(guildEmbed);
