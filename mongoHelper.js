@@ -972,7 +972,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             "hope",
         ]; // end gNames
         var totalGuilds = gNames.length;
-        msgConsole = "---TOTAL GUILDS TO BE UPDATED: " + totalGuilds;
+        msgConsole = "---TEST TOTAL GUILDS TO BE UPDATED: " + totalGuilds;
         msgDiscord = "Total Guilds to be updated: " + totalGuilds;
         // log messages to both Discord log channel and Console
         fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
@@ -990,7 +990,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             query[fieldName] = fieldValue;
             // end query formation
 
-            msgConsole = "---READING GUILD # " + counter + ": " + gld;
+            msgConsole = "---TEST READING GUILD # " + counter + ": " + gld;
             msgDiscord = "Reading guild # " + counter + ": " + "`" + gld + "`";
             // log messages to both Discord log channel and Console
             fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
@@ -1047,9 +1047,9 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                             // log messages to both Discord log channel and Console
                             fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);;
                             return;
-                        } else {
-                            counter += 1;
-                        } // end if counter == totalGuilds
+                        } 
+                        counter += 1;
+                         // end if counter == totalGuilds
                     })
                 }
             }); // end await GuildData.findById
