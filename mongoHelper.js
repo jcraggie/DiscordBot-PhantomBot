@@ -1002,58 +1002,60 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                     console.log("---GUILDDATA FIND BY ID ERROR: ", error);
                     return;
                 } 
+            }); // end await GuildData.findById
+            guildData = gData;
                     
-                        console.log("------UPDATING GUILD: ", guildData.name);
-                        gName = guildData.name;
-                        leader = guildData.leader;
-                        members = guildData.members;
-                        gp = guildData.gp;
-                        updatedText = guildData.updatedText;
-                        cpit = guildData.cpit;
-                        dailyTickets = guildData.dailyTickets;
-                        geoDS = guildData.geoDS;
-                        geoLS = guildData.geoLS;
-                        guildGG = guildData.guildGG;
-                        haat = guildData.haat;
-                        hothDS = guildData.hothDS;
-                        hothLS = guildData.hothLS;
-                        hpit = guildData.hpit;
-                        hstr = guildData.hstr;
-                        jcrServerMsgID = guildData.jcrServerMsgID;
-                        kamShards = guildData.kamShards;
-                        mainServerMsgID = guildData.mainServerMsgID;
-                        recruitingServerMsgID = guildData.recruitingServerMsgID;
-                        ticketReset = guildData.ticketReset;
-                        watShards = guildData.watShards;
+            console.log("------UPDATING GUILD: ", guildData.name);
+            gName = guildData.name;
+            leader = guildData.leader;
+            members = guildData.members;
+            gp = guildData.gp;
+            updatedText = guildData.updatedText;
+            cpit = guildData.cpit;
+            dailyTickets = guildData.dailyTickets;
+            geoDS = guildData.geoDS;
+            geoLS = guildData.geoLS;
+            guildGG = guildData.guildGG;
+            haat = guildData.haat;
+            hothDS = guildData.hothDS;
+            hothLS = guildData.hothLS;
+            hpit = guildData.hpit;
+            hstr = guildData.hstr;
+            jcrServerMsgID = guildData.jcrServerMsgID;
+            kamShards = guildData.kamShards;
+            mainServerMsgID = guildData.mainServerMsgID;
+            recruitingServerMsgID = guildData.recruitingServerMsgID;
+            ticketReset = guildData.ticketReset;
+            watShards = guildData.watShards;
 
-                        localGP = gp.toLocaleString("en-US"); //add commas to GP
+            localGP = gp.toLocaleString("en-US"); //add commas to GP
                         // (async () => {
-                            var guildEmbed = await testUpdateEmbed(
-                                gName, leader, members, localGP, dailyTickets,
-                                hothDS, hothLS,
-                                geoDS, watShards,
-                                geoLS, kamShards,
-                                hpit, haat, hstr, cpit,
-                                guildGG, updatedText)
+            var guildEmbed = await testUpdateEmbed(
+                gName, leader, members, localGP, dailyTickets,
+                hothDS, hothLS,
+                geoDS, watShards,
+                geoLS, kamShards,
+                hpit, haat, hstr, cpit,
+                guildGG, updatedText)
                             // }) // end (async ()
                         // (async() => {
-                            console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
-                                await TESTsendToJCR(guildEmbed);
-                            // await TESTsendToMain(guildEmbed);
-                            // await TESTsendToRecruiting(guildEmbed);
+            console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
+            await TESTsendToJCR(guildEmbed);
+            // await TESTsendToMain(guildEmbed);
+            // await TESTsendToRecruiting(guildEmbed);
                         // }) // end (async ()
 
                         //console.log(guildData);
-                        if (counter == totalGuilds) {
-                            // log messages to both Discord log channel and Console
-                            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);;
-                            return;
-                        } 
-                        counter += 1;
-                         // end if counter == totalGuilds
+            if (counter == totalGuilds) {
+                // log messages to both Discord log channel and Console
+                fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);;
+                return;
+            } 
+            counter += 1;
+                // end if counter == totalGuilds
                     
                 
-            }); // end await GuildData.findById
+            
 
             // console.log('---FOUND GUILD', guildData['name'], ' with leader: ', guildData['leader']);
             // counter += 1;
