@@ -991,7 +991,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             // end query formation
 
             msgConsole = "---TEST READING GUILD # " + counter + ": " + gld;
-            msgDiscord = "Reading guild # " + counter + ": " + "`" + gld + "`";
+            msgDiscord = "Test Reading guild # " + counter + ": " + "`" + gld + "`";
             // log messages to both Discord log channel and Console
             fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
@@ -1002,7 +1002,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                     console.log("---GUILDDATA FIND BY ID ERROR: ", error);
                     return;
                 } else {
-                    (async () => {
+                    
                         console.log("------UPDATING GUILD: ", guildData.name);
                         gName = guildData.name;
                         leader = guildData.leader;
@@ -1027,7 +1027,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                         watShards = guildData.watShards;
 
                         localGP = gp.toLocaleString("en-US"); //add commas to GP
-
+                        (async () => {
                         var guildEmbed = await testUpdateEmbed(
                             gName, leader, members, localGP, dailyTickets,
                             hothDS, hothLS,
