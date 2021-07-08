@@ -1103,6 +1103,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                     value: '`' + updatedText + '`'
                 }
                 console.log('---EMBED DATA FOR ' + gName + ' IS NOW SET');
+                console.log('------SEEING IF THIS GLOB VAR IS SET: ', globalVar.serverIDs.jcrServerID);
                 resolve(guildEmbed);
             });
 
