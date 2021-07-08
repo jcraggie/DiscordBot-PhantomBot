@@ -28,7 +28,10 @@ exports.cmd_being_tested = cmd_being_tested
 const serverIDs = {
         "mainServerID": "483433483109138433",
         "recruitingServerID": "484508095469584384",
-        "jcrServerID": "116902168698683398"
+        "jcrServerID": "116902168698683398",
+        "mainServerChannelID": "485246576751673354",
+        "recruitingServerChannelID": "595255366644924440",
+        "jcrServerChannelID": "858495181552353313",
 };
 exports.serverIDs = serverIDs
 

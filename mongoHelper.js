@@ -1103,7 +1103,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                     value: '`' + updatedText + '`'
                 }
                 console.log('---EMBED DATA FOR ' + gName + ' IS NOW SET');
-                console.log('------SEEING IF THIS GLOB VAR IS SET: ', globalVar.serverIDs.jcrServerID);
+                // console.log('------SEEING IF THIS GLOB VAR IS SET: ', globalVar.serverIDs.jcrServerID);
                 resolve(guildEmbed);
             });
 
@@ -1112,7 +1112,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
         async function TESTsendToJCR(gldEmb) {
             return new Promise(resolve => {
                 (async () => {
-                    const result = await TESTsendEmbed(globalVar.serverIDs.jcrServerID, jcrServerMsgID, gldEmb)
+                    const result = await TESTsendEmbed(globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
                     resolve(console.log(result + ' TO JCR SERVER'));
                 })();
             });
@@ -1122,7 +1122,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
         async function TESTsendToRecruiting(gldEmb) {
             return new Promise(resolve => {
                 (async () => {
-                    const result = await TESTsendEmbed(globalVar.serverIDs.recruitingServerID, recruitingServerMsgID, gldEmb);
+                    const result = await TESTsendEmbed(globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO RECRUITING SERVER'));
                 })();
             });
@@ -1132,7 +1132,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
         async function TESTsendToMain(gldEmb) {
             return new Promise(resolve => {
                 (async () => {
-                    const result = await TESTsendEmbed(globalVar.serverIDs.mainServerID, mainServerMsgID, gldEmb);
+                    const result = await TESTsendEmbed(globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO MAIN SERVER'));
                 })();
             });
@@ -1143,6 +1143,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             return new Promise(resolve => {
 
                 (async () => {
+                    console.log('---chID : msgID', chID, msgID);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('------SENT EMBED');
