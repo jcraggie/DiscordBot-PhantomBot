@@ -909,14 +909,21 @@ async function sendGuildUpdatesNew(client, message, args, Discord,swapi, ApiSwgo
 }//end function sendGuildUpdatesNew
 
 
-async function testUpdate(
-    client,
-    message,
-    args,
-    Discord,
-    swapi,
-    ApiSwgohHelp,
-    isCron) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function testUpdate(client, message, args, Disoord, swapi, ApiSwgohHelp, isCron) {
+
     (async () => {
         var fileUtils = require("./fileHelper");
         const globalVar = require("./global");
@@ -926,31 +933,19 @@ async function testUpdate(
         var msgConsole;
 
         mongoose.connect(
-            process.env.MONGO_GUILDDATA_DB_URL,
-            { useNewUrlParser: true, useUnifiedTopology: true },
+            process.env.MONGO_GUILDDATA_DB_URL, {
+                useNewUrlParser: true,
+                useUnifiedTopology: true
+            },
             (err) => {
                 if (err) console.error(err);
                 else {
                     // log messages to both Discord log channel and Console
-                    fileUtils.logBotToDiscordAndConsole(
-                        client,
-                        message,
-                        args,
-                        Discord,
-                        msgDiscord,
-                        msgConsole
-                    );
+                    fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
                     msgConsole = "---CONNECTED TO THE MONGODB: GuildData";
                     msgDiscord = "Connected to JCR's mongoDB: GuildData";
                     // log messages to both Discord log channel and Console
-                    fileUtils.logBotToDiscordAndConsole(
-                        client,
-                        message,
-                        args,
-                        Discord,
-                        msgDiscord,
-                        msgConsole
-                    );
+                    fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
                 } // end else
             }
         ); // end mongoose connect
@@ -962,14 +957,7 @@ async function testUpdate(
         msgDiscord = "Beginning to update guild data";
         msgConsole = "---BEGINNING TO UPDATE GUILD DATA";
         // log messages to both Discord log channel and Console
-        fileUtils.logBotToDiscordAndConsole(
-            client,
-            message,
-            args,
-            Discord,
-            msgDiscord,
-            msgConsole
-        );
+        fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
         var gld = "";
         const gNames = [
@@ -987,14 +975,8 @@ async function testUpdate(
         msgConsole = "---TOTAL GUILDS TO BE UPDATED: " + totalGuilds;
         msgDiscord = "Total Guilds to be updated: " + totalGuilds;
         // log messages to both Discord log channel and Console
-        fileUtils.logBotToDiscordAndConsole(
-            client,
-            message,
-            args,
-            Discord,
-            msgDiscord,
-            msgConsole
-        );
+        fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+
 
         var fieldName = "commonGuildName";
         var fieldValue = "";
@@ -1011,14 +993,7 @@ async function testUpdate(
             msgConsole = "---READING GUILD # " + counter + ": " + gld;
             msgDiscord = "Reading guild # " + counter + ": " + "`" + gld + "`";
             // log messages to both Discord log channel and Console
-            fileUtils.logBotToDiscordAndConsole(
-                client,
-                message,
-                args,
-                Discord,
-                msgDiscord,
-                msgConsole
-            );
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
 
             var gData;
 
@@ -1028,60 +1003,54 @@ async function testUpdate(
                     return;
                 } else {
                     (async () => {
-                    console.log("------UPDATING GUILD: ", guildData.name);
-                    gName = guildData.name;
-                    leader = guildData.leader;
-                    members = guildData.members;
-                    gp = guildData.gp;
-                    updatedText = guildData.updatedText;
-                    cpit = guildData.cpit;
-                    dailyTickets = guildData.dailyTickets;
-                    geoDS = guildData.geoDS;
-                    geoLS = guildData.geoLS;
-                    guildGG = guildData.guildGG;
-                    haat = guildData.haat;
-                    hothDS = guildData.hothDS;
-                    hothLS = guildData.hothLS;
-                    hpit = guildData.hpit;
-                    hstr = guildData.hstr;
-                    jcrServerMsgID = guildData.jcrServerMsgID;
-                    kamShards = guildData.kamShards;
-                    mainServerMsgID = guildData.mainServerMsgID;
-                    recruitingServerMsgID = guildData.recruitingServerMsgID;
-                    ticketReset = guildData.ticketReset;
-                    watShards = guildData.watShards;
+                        console.log("------UPDATING GUILD: ", guildData.name);
+                        gName = guildData.name;
+                        leader = guildData.leader;
+                        members = guildData.members;
+                        gp = guildData.gp;
+                        updatedText = guildData.updatedText;
+                        cpit = guildData.cpit;
+                        dailyTickets = guildData.dailyTickets;
+                        geoDS = guildData.geoDS;
+                        geoLS = guildData.geoLS;
+                        guildGG = guildData.guildGG;
+                        haat = guildData.haat;
+                        hothDS = guildData.hothDS;
+                        hothLS = guildData.hothLS;
+                        hpit = guildData.hpit;
+                        hstr = guildData.hstr;
+                        jcrServerMsgID = guildData.jcrServerMsgID;
+                        kamShards = guildData.kamShards;
+                        mainServerMsgID = guildData.mainServerMsgID;
+                        recruitingServerMsgID = guildData.recruitingServerMsgID;
+                        ticketReset = guildData.ticketReset;
+                        watShards = guildData.watShards;
 
-                    localGP = gp.toLocaleString("en-US"); //add commas to GP
+                        localGP = gp.toLocaleString("en-US"); //add commas to GP
 
-                    var guildEmbed = await testUpdateEmbed(
-                        gName, leader, members, localGP, dailyTickets,
-                        hothDS, hothLS,
-                        geoDS, watShards,
-                        geoLS, kamShards,
-                        hpit, haat, hstr, cpit,
-                        guildGG, updatedText)
+                        var guildEmbed = await testUpdateEmbed(
+                            gName, leader, members, localGP, dailyTickets,
+                            hothDS, hothLS,
+                            geoDS, watShards,
+                            geoLS, kamShards,
+                            hpit, haat, hstr, cpit,
+                            guildGG, updatedText)
 
-                await TESTsendToJCR(guildEmbed);
-                // await TESTsendToMain(guildEmbed);
-                // await TESTsendToRecruiting(guildEmbed);
+                        console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
+                            await TESTsendToJCR(guildEmbed);
+                        // await TESTsendToMain(guildEmbed);
+                        // await TESTsendToRecruiting(guildEmbed);
 
 
-                    //console.log(guildData);
-                    if (counter == totalGuilds) {
-                        // log messages to both Discord log channel and Console
-                        fileUtils.logBotToDiscordAndConsole(
-                            client,
-                            message,
-                            args,
-                            Discord,
-                            msgDiscord,
-                            msgConsole
-                        );
-                        return;
-                    } else {
-                        counter += 1;
-                    } // end if counter == totalGuilds
-                })
+                        //console.log(guildData);
+                        if (counter == totalGuilds) {
+                            // log messages to both Discord log channel and Console
+                            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);;
+                            return;
+                        } else {
+                            counter += 1;
+                        } // end if counter == totalGuilds
+                    })
                 }
             }); // end await GuildData.findById
 
@@ -1096,71 +1065,85 @@ async function testUpdate(
             geoLS, kamShards,
             hpit, haat, hstr, cpit,
             guildGG, updatedText) {
-                return new Promise(async (resolve, reject) => {
-    
-                    var guildEmbed = globalVar.phantomBotGuilds
-                        // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
-                        guildEmbed.description = '**' + gName + '**';
-                        guildEmbed.fields[0] =
-                            {name: 'GUILD INFORMATION', value: 'LEADER: `' + leader + '`\n' + 
-                                'MEMBERS `' + members + '/50` \n' +
-                                'GP: `'+ localGP + '`\n' + 
-                                'Daily Tickets: `' + dailyTickets + '`'}
-                            guildEmbed.fields[1] = {name: 'TERRITORY BATTLES', value: 'HOTH DS: `' + hothDS + '`⭐️\n' +
-                                'HOTH LS: `' + hothLS + '`⭐️ \n' +
-                                'GEO DS: `' + geoDS + '`⭐️ with `' + watShards + '` <:watshard:709573349579161705>\n' +
-                                'GEO LS: `' + geoLS + '`⭐️ with `' + kamShards + '` <:kam:778266623172673536>'}
-                            guildEmbed.fields[2] = {name: 'RAIDS', value: 'HPIT: `' + hpit +'`\n' +
-                                'HAAT: `' + haat + '`\n' +
-                                'HSTR: `' + hstr + '`\n' +
-                                'CPIT: `' + cpit + '`'}
-                            guildEmbed.fields[3] = {name: 'SWGOH.GG LINK', value: guildGG}
-                            guildEmbed.fields[4] = {name: 'INFO LAST UPDATED', value: '`' + updatedText + '`'}
-                    console.log('---EMBED DATA FOR ' + guildData_name + ' IS NOW SET');
-                    resolve(guildEmbed);
-                });
-    
+            return new Promise(async (resolve, reject) => {
+
+                var guildEmbed = globalVar.phantomBotGuilds
+                // .setTitle("THE PHANTOM ALLIANCE GUILD INFO")
+                guildEmbed.description = '**' + gName + '**';
+                guildEmbed.fields[0] = {
+                    name: 'GUILD INFORMATION',
+                    value: 'LEADER: `' + leader + '`\n' +
+                        'MEMBERS `' + members + '/50` \n' +
+                        'GP: `' + localGP + '`\n' +
+                        'Daily Tickets: `' + dailyTickets + '`'
+                }
+                guildEmbed.fields[1] = {
+                    name: 'TERRITORY BATTLES',
+                    value: 'HOTH DS: `' + hothDS + '`⭐️\n' +
+                        'HOTH LS: `' + hothLS + '`⭐️ \n' +
+                        'GEO DS: `' + geoDS + '`⭐️ with `' + watShards + '` <:watshard:709573349579161705>\n' +
+                        'GEO LS: `' + geoLS + '`⭐️ with `' + kamShards + '` <:kam:778266623172673536>'
+                }
+                guildEmbed.fields[2] = {
+                    name: 'RAIDS',
+                    value: 'HPIT: `' + hpit + '`\n' +
+                        'HAAT: `' + haat + '`\n' +
+                        'HSTR: `' + hstr + '`\n' +
+                        'CPIT: `' + cpit + '`'
+                }
+                guildEmbed.fields[3] = {
+                    name: 'SWGOH.GG LINK',
+                    value: guildGG
+                }
+                guildEmbed.fields[4] = {
+                    name: 'INFO LAST UPDATED',
+                    value: '`' + updatedText + '`'
+                }
+                console.log('---EMBED DATA FOR ' + guildData_name + ' IS NOW SET');
+                resolve(guildEmbed);
+            });
+
         }; // end async function testUpdateEmbed
 
         async function TESTsendToJCR(gldEmb) {
             return new Promise(resolve => {
-                (async() => {
+                (async () => {
                     const result = await TESTsendEmbed(globalVar.serverIDs.jcrServerID, jcrServerMsgID, gldEmb)
                     resolve(console.log(result + ' TO JCR SERVER'));
                 })();
             });
-    
+
         };
-    
+
         async function TESTsendToRecruiting(gldEmb) {
             return new Promise(resolve => {
-                (async() => {
+                (async () => {
                     const result = await TESTsendEmbed(globalVar.serverIDs.recruitingServerID, recruitingServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO RECRUITING SERVER'));
                 })();
             });
-    
+
         };
-    
+
         async function TESTsendToMain(gldEmb) {
             return new Promise(resolve => {
-                (async() => {
+                (async () => {
                     const result = await TESTsendEmbed(globalVar.serverIDs.mainServerID, mainServerMsgID, gldEmb);
                     resolve(console.log(result + ' TO MAIN SERVER'));
                 })();
             });
-    
+
         };
-    
+
         function TESTsendEmbed(chID, msgID, gldEmb) {
             return new Promise(resolve => {
-    
-                (async() => {
+
+                (async () => {
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('------SENT EMBED');
                 })();
-    
+
             });
         }
     })();
