@@ -91,7 +91,7 @@ module.exports = {
                 useFindAndModify: false
             };
 
-            const result = await gData.updateOne(query, update, options, (error, guilddata) => {
+            const result = await GuildData.updateOne(query, update, options, (error, guilddata) => {
                 console.log(error, guilddata);
             })
             return; 
