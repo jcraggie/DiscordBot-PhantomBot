@@ -37,7 +37,7 @@ module.exports = {
                 sendUpdateGuildHelp();
                 return;
             }
-            
+
             var gName = args[0].toLowerCase();
             if (!globalVar.allianceGuildNames.includes(gName)){
                 message.channel.send("That guild does not exist");
@@ -46,7 +46,8 @@ module.exports = {
             }
 
             const mongoose = require('mongoose');
-            const GuildData = require('../models/GuildData');
+            const GuildData = require('./models/GuildData');
+            // const GuildData = require('../models/GuildData');
             mongoose.connect(process.env.MONGO_GUILDDATA_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
                 if (err)
                     console.error(err);
