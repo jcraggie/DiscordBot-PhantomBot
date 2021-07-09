@@ -30,7 +30,14 @@ module.exports = {
                 fileUtils.logToDiscordAndConsole(client, message, args, Discord);
                 return;
 
-            } 
+            }
+
+            if(!args[0]){
+                message.channel.send("Please specify a guild.");
+                sendUpdateGuildHelp();
+                return;
+            }
+            
             var gName = args[0].toLowerCase();
             if (!globalVar.allianceGuildNames.includes(gName)){
                 message.channel.send("That guild does not exist");
