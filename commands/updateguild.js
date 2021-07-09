@@ -92,7 +92,17 @@ module.exports = {
             };
 
             const result = await GuildData.updateOne(query, updateGuild, options, (error, guilddata) => {
-                console.log(error, guilddata);
+                if (error) {
+                    console.error(error);
+                    message.channel.send("There was an error updating the guild. Please try again later.");
+                    return;
+                }
+                if (guilddata.result.ok == 0) {
+                    console.log(' Guild was updated');
+                    message.channel.send('Guild was updated');
+                    return;
+                }
+
             })
             return; 
 
