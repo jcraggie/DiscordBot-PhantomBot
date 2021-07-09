@@ -35,6 +35,19 @@ const serverIDs = {
 };
 exports.serverIDs = serverIDs
 
+const allianceGuildNames = [
+        'rebellion',
+        'empire',
+        'havoc',
+        'rogue',
+        'order',
+        'uprising',
+        'lotus',
+        'phoundlings',
+        'hope'
+        ];
+exports.allianceGuildNames = allianceGuildNames
+
 const rebellionInfo = {
         "allyCode": 135718294,
         "guildID": "G1743793275",
