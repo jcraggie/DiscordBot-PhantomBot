@@ -86,7 +86,7 @@ module.exports = {
             const result = await gData.updateOne(query, update, options, (error, guilddata) => {
                 console.log(error, guilddata);
             })
-            break;
+            return; 
 
             
             
