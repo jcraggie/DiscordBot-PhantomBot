@@ -2,7 +2,7 @@
 const { GuildEmoji } = require('discord.js'); // I did not write this line; inserted by VS Code?
 const fs = require("fs");
 
-//TODO move this to helper folder
+
 
 
 function jsonReader(filePath, callBack) {
