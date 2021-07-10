@@ -29,7 +29,7 @@ function startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp)
 
     }, null, true, startTz); // central
     cronGetUpdates.start(); 
-    console.log('---SETTING UP CRON JOB FOR GETTING UPDATES FROM THE API'); 
+    console.log('---------SETTING UP CRON JOB FOR GETTING UPDATES FROM THE API'); 
 
 }//end startGetUpdatesCron
 
@@ -60,7 +60,7 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
 
     }, null, true, startTz); // central
     cronGetUpdates.start(); 
-    console.log('---SETTING UP CRON JOB FOR SENDING UPDATE EMBEDS TO ALL SERVERS'); 
+    console.log('---------SETTING UP CRON JOB FOR SENDING UPDATE EMBEDS TO ALL SERVERS'); 
 
 }//end startSendUpdateEmbedsCron
 
