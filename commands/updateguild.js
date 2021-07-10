@@ -1,5 +1,6 @@
 module.exports = {
     // pb.updateguild rebellion geoDS 14 
+    //           args    0        1   2 
 
     name: 'updateguild',
     description: "Updates a guild\'s TB/raid numbers",
@@ -106,7 +107,6 @@ module.exports = {
             })
             return; 
 
-            
             
             var serverRoles = [
                 ["member", "418011699698991105", "605084960130334772", "116902168698683398"], // jcrAggie server
