@@ -1,6 +1,7 @@
 //function code
 const { GuildEmoji } = require('discord.js'); // I did not write this line; inserted by VS Code?
 
+//TODO move this to helpers folder
 
 async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, isCron) {
     // isCron is a boolean that is true if the command was run by cron
