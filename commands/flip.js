@@ -5,6 +5,11 @@ module.exports = {
         const globalVar = require ('../global.js');
         var fileUtils = require('../fileHelper.js');
 
+        //log the event to Discord (jcrAggie server) and the console
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord)
+
+        // EVERYONE HAS PERMISSION TO RUN THIS COMMAND
+
         function doRandHT() {
             var rand = ['**HEADS!**','**TAILS!**'];
             
@@ -17,8 +22,7 @@ module.exports = {
             message.channel.send(flipEmbed);
         // message.channel.send('newcommandshell');
         
-        //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+        ;
 
 
     }//end async execute

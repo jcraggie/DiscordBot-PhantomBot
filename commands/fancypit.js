@@ -14,28 +14,6 @@ module.exports = {
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 
-        // Phantøm Rebellion - role name
-
-        // var allowedRoles = [
-            
-        //     'Officer-Rebellion'
-    
-        // ]
-    
-        // var hasRole = false;
-        // allowedRoles.forEach(findrole => {
-        //     if(message.member.roles.cache.some(role =>role.name === findrole)) hasRole = true;
-            
-        // })
-    
-        // if(!hasRole){
-        //     message.reply("Sorry you don't have permissions to use that command.");
-        //     return;
-        // } else {
-        //     //message.reply("You have permission to run this command. Proceed.");
-            
-        // }
-
         // CHECKING PERMISSIONS TO USE THIS COMMAND
         var permUtils = require('../helpers/permissions');
         var allowTheseRoles = [
@@ -50,7 +28,6 @@ module.exports = {
             return;        
         } // end if does not have permission
         // otherwise...
-        // permission is granted.... continue with command
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
 
         // let globalVar = require('../global.js');

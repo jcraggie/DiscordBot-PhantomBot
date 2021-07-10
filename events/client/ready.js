@@ -5,6 +5,7 @@ module.exports = (Discord,client) =>{
     console.log('---------TOTAL MEMBERS OF ALL SERVERS AT BOOT: ',onReadyMemberCount); // sends # of members
     client.channels.cache.get('605087450573963362').send('PhantomBot is online...' + onReadyMemberCount);
 
+    //TODO move cron Havoc to cronJobs.js
     // HAVOC TICKET REMINDER 
     // 586379177331261470 Havoc #lounge  
     // 586291147169857556 PhantomHavoc role (members)
@@ -44,7 +45,7 @@ module.exports = (Discord,client) =>{
 
 
 
-
+        //TODO move cron Rogue to cronJobs.js
         // 581166616872747018 Phantom Rogue role ID (members)
         // 604386931178209310 PhantomRogue #ticket-warnings-ro channel
         var rogueTime = '0 30 19 * * *'; //ticket time is 20:30 CST, so reminder should be 19:30

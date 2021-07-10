@@ -5,6 +5,8 @@ module.exports = {
         const globalVar = require("../global.js");
         var fileUtils = require("../fileHelper.js");
 
+        // EVERYONE HAS PERMISSION TO RUN THIS COMMAND
+
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
 

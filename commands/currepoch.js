@@ -4,7 +4,11 @@ module.exports = {
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const globalVar = require ('../global.js');
         var fileUtils = require('../fileHelper.js');
-        // message.channel.send('currepoch');
+
+        //log the event to Discord (jcrAggie server) and the console
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+
+        // EVERYONE HAS PERMISSION TO RUN THIS COMMAND
 
         var currEpoch = Math.floor(new Date().getTime())
         console.log('---current time epoch', currEpoch)
@@ -16,8 +20,7 @@ module.exports = {
         console.log('---current time Text: ', fetchLocalDate);
         message.channel.send('CONVERT: `'+ fetchLocalDate + '`');
         
-        //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+        
 
 
     }//end async execute

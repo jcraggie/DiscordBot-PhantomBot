@@ -29,6 +29,9 @@ module.exports = {
         message.channel.send('testperms');
 
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
+        
+
+        // return the current time
 
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
