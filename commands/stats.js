@@ -3,7 +3,7 @@ module.exports = {
     description: "Shows stats of the user or server or both",
     async execute(client, message, args, Discord, swapi, ApiSwgohHelp) {
         const globalVar = require("../global.js");
-        var fileUtils = require("../fileHelper.js");
+        var fileUtils = require("../helpers/fileHelper");
 
         // EVERYONE HAS PERMISSION TO RUN THIS COMMAND
 

@@ -3,7 +3,7 @@ module.exports = {
     description: "Assigns a new member to a guild and updates their nickname",
     async execute(client, message, args, Discord){
         var globalVar = require('../global.js');
-        var fileUtils = require('../fileHelper.js');
+        var fileUtils = require('../helpers/fileHelper');
 
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);

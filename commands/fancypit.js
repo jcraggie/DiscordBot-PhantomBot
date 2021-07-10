@@ -9,7 +9,7 @@ module.exports = {
     async execute(client, message, args, Discord){
 
         let globalVar = require('../global.js');
-        var fileUtils = require('../fileHelper.js');
+        var fileUtils = require('../helpers/fileHelper');
 
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
@@ -30,8 +30,6 @@ module.exports = {
         // otherwise...
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
 
-        // let globalVar = require('../global.js');
-        var fileUtils = require('../fileHelper.js');
         let fancyPitTitle = "REBELLION FANCY PIT";
         let fancyPitGuildRole = '<@&483620584861859850>';
         let fancyPitDescription = fancyPitGuildRole + ': The next Fancy Pit phase is open!';

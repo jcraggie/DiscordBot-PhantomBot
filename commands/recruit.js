@@ -4,7 +4,7 @@ module.exports = {
     async execute(client, message, args, Discord){
         if (args[0] == "help"){
             var globalVar = require('../global.js');
-            var fileUtils = require('../fileHelper.js');
+            var fileUtils = require('../helpers/fileHelper');
 
             // EVERYONE HAS PERMISSION TO RUN THIS COMMAND
 

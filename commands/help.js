@@ -3,7 +3,7 @@ module.exports = {
     description: "PhantomBot Commands",
     async execute(client, message, args, Discord) {
         var globalVar = require('../global.js');
-        var fileUtils = require('../fileHelper.js');
+        var fileUtils = require('../helpers/fileHelper');
         let helpEmbed = globalVar.phantomBotHelp
         .setTitle("PhantomBot Help")
         //.setColor(0xac30f1)

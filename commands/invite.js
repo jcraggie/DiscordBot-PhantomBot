@@ -3,7 +3,7 @@ module.exports = {
     description: "Creates a temporary link to the PhantomAlliance main server and pastes it below.",
     async execute(client, message, args, Discord){
         var globalVar = require('../global.js');
-        var fileUtils = require('../fileHelper.js');
+        var fileUtils = require('../helpers/fileHelper');
 
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);

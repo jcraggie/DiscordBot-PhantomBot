@@ -5,7 +5,7 @@ module.exports = {
         if (args[0] == "help"){
 
             var globalVar = require('../global.js');
-            var fileUtils = require('../fileHelper.js');
+            var fileUtils = require('../helpers/fileHelper');
             let ticketsHelpEmbed = globalVar.phantomBotHelp
             .setTitle("PhantomBot Help")
             .setDescription("**COMMAND: **" + this.name)
