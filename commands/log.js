@@ -26,8 +26,9 @@ module.exports = {
         
 
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
-        msgDiscord = args[0];
-        msgConsole = args[0];
+        var fullMsg = args.slice(2).join(' ');
+        msgDiscord = fullMsg;
+        msgConsole = fullMsg;
         // log messages to both Discord log channel and Console
         fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
         
