@@ -1,15 +1,12 @@
 module.exports = {
-    name: 'testperms',
-    description: "description of the new command",
+    name: 'log',
+    description: "log text to console and discord log channel",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
-        
-
         const globalVar = require ('../global.js');
-        var fileUtils = require('../fileHelper.js');        
+        var fileUtils = require('../fileHelper.js');
 
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
-        
 
         // CHECKING PERMISSIONS TO USE THIS COMMAND
         var permUtils = require('../helpers/permissions');
@@ -26,12 +23,15 @@ module.exports = {
         } // end if does not have permission
         // otherwise...
         // permission is granted.... continue with command
-        message.channel.send('testperms');
+        
 
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
-
-        //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+        msgDiscord = args[0];
+        msgConsole = args[0];
+        // log messages to both Discord log channel and Console
+        fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+        
+        
 
 
     }//end async execute
