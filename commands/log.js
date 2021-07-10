@@ -23,9 +23,8 @@ module.exports = {
         } // end if does not have permission
         // otherwise...
         // permission is granted.... continue with command
-        
-
-        // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
+         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
+         
         var fullMsg = args.slice(0).join(' ');
         msgDiscord = '==========================\n' + fullMsg + '\n==========================';
         msgConsole = msgDiscord;

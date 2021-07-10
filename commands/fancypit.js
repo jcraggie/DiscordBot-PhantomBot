@@ -11,27 +11,47 @@ module.exports = {
         let globalVar = require('../global.js');
         var fileUtils = require('../fileHelper.js');
 
+        //log the event to Discord (jcrAggie server) and the console
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+
         // Phantøm Rebellion - role name
 
-        var allowedRoles = [
+        // var allowedRoles = [
             
-            'Officer-Rebellion'
+        //     'Officer-Rebellion'
     
-        ]
+        // ]
     
-        var hasRole = false;
-        allowedRoles.forEach(findrole => {
-            if(message.member.roles.cache.some(role =>role.name === findrole)) hasRole = true;
+        // var hasRole = false;
+        // allowedRoles.forEach(findrole => {
+        //     if(message.member.roles.cache.some(role =>role.name === findrole)) hasRole = true;
             
-        })
+        // })
     
-        if(!hasRole){
-            message.reply("Sorry you don't have permissions to use that command.");
-            return;
-        } else {
-            //message.reply("You have permission to run this command. Proceed.");
+        // if(!hasRole){
+        //     message.reply("Sorry you don't have permissions to use that command.");
+        //     return;
+        // } else {
+        //     //message.reply("You have permission to run this command. Proceed.");
             
-        }
+        // }
+
+        // CHECKING PERMISSIONS TO USE THIS COMMAND
+        var permUtils = require('../helpers/permissions');
+        var allowTheseRoles = [
+            'Officer-Rebellion',
+        ];
+        if(!permUtils.hasPermission(client, message, Discord, allowTheseRoles)){
+            var auth = message.author.username;
+            msgDiscord = auth + ' does not have permission to run that command';
+            msgConsole = msgDiscord;
+            // log messages to both Discord log channel and Console
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            return;        
+        } // end if does not have permission
+        // otherwise...
+        // permission is granted.... continue with command
+        // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
 
         // let globalVar = require('../global.js');
         var fileUtils = require('../fileHelper.js');
@@ -145,8 +165,7 @@ module.exports = {
                 message.channel.send(fancyPitHelpEmbed);
                 fancyPitHelpEmbed.fields=[] //clear the fields for the next use
         
-                //log the event to Discord (jcrAggie server) and the console
-                fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+                
 
             } //end async execute
 

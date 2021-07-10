@@ -10,11 +10,11 @@ const { GuildEmoji } = require('discord.js'); // I did not write this line; inse
 function hasPermission(client, message, Discord, rolesAllowed) {
 
     // 116901947428044809 jcraggie ID
-    // 419494570213244939 NOTjcraggie ID
+    // 419494570213244939 jcrAggieJedi ID
 
-    // only jcraggie and NOTjcraggie can run commands - works
+    // only jcraggie and jcrAggieJedi can run commands - works
     // if(message.author.id !== "116901947428044809" && message.author.id !== "419494570213244939") {
-    //     message.channel.send ("Sorry. You are not jcrAggie or NOTjcraggie. **This is the way.**");
+    //     message.channel.send ("Sorry. You are not jcrAggie or jcrAggieJedi. **This is the way.**");
     //     return;
     // };
 

@@ -5,11 +5,11 @@ module.exports = (Discord, client, message) => {
     if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
 
     // 116901947428044809 jcraggie ID
-    // 419494570213244939 NOTjcraggie ID
+    // 419494570213244939 jcrAggieJedi ID
 
-    // only jcraggie and NOTjcraggie can run commands - works
+    // only jcraggie and jcrAggieJedi can run commands - works
     // if(message.author.id !== "116901947428044809" && message.author.id !== "419494570213244939") {
-    //     message.channel.send ("Sorry. You are not jcrAggie or NOTjcraggie. **This is the way.**");
+    //     message.channel.send ("Sorry. You are not jcrAggie or jcrAggieJedi. **This is the way.**");
     //     return;
     // };
 
@@ -19,20 +19,20 @@ module.exports = (Discord, client, message) => {
     //     return;
     // };
 
+    // REMOVING BELOW TO ALLOW FOR INDIVIDUAL COMMAND PERMISSIONS
+    // var allowedRoles = ["admin", "Admin", "Royal Guards", "Recruiter", "Officer-Rebellion"];
 
-    var allowedRoles = ["admin", "Admin", "Royal Guards", "Recruiter", "Officer-Rebellion"];
+    // var hasRole = false;
+    // allowedRoles.forEach((findrole) => {
+    //     if (message.member.roles.cache.some((role) => role.name === findrole)) hasRole = true;
+    // });
 
-    var hasRole = false;
-    allowedRoles.forEach((findrole) => {
-        if (message.member.roles.cache.some((role) => role.name === findrole)) hasRole = true;
-    });
-
-    if (!hasRole) {
-        message.reply("Sorry you don't have permissions to use that command.");
-        return;
-    } else {
-        //message.reply("You have permission to run this command. Proceed.");
-    }
+    // if (!hasRole) {
+    //     message.reply("Sorry you don't have permissions to use that command.");
+    //     return;
+    // } else {
+    //     //message.reply("You have permission to run this command. Proceed.");
+    // }
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();

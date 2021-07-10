@@ -4,6 +4,10 @@ module.exports = {
     async execute(client, message, args, Discord, swapi, ApiSwgohHelp) {
         const globalVar = require("../global.js");
         var fileUtils = require("../fileHelper.js");
+
+        //log the event to Discord (jcrAggie server) and the console
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+
         function sendStatsHelp() {
             let newMemberHelpEmbed = globalVar.phantomBotHelp
                 .setTitle("PhantomBot Help")
@@ -91,8 +95,7 @@ module.exports = {
                 .setThumbnail(message.author.avatarURL());
             message.channel.send({ embed: userEmbed });
             userEmbed.fields = [];
-            //log the event to Discord (jcrAggie server) and the console
-            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+            
         } // end function userStats
 
         function serverStats(client, message, args, swapi, ApiSwgohHelp) {
@@ -148,8 +151,7 @@ module.exports = {
 
             message.channel.send({ embed: srvrEmbed });
             srvrEmbed.fields = [];
-            //log the event to Discord (jcrAggie server) and the console
-            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+            
         } // end function serverStats
 
         function checkDays(date) {
@@ -159,7 +161,6 @@ module.exports = {
             return days + (days == 1 ? " day" : " days") + " ago";
         }
 
-        //log the event to Discord (jcrAggie server) and the console
-        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+        
     }, //end async execute
 }; //end module.exports

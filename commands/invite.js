@@ -2,11 +2,34 @@ module.exports = {
     name: 'invite',
     description: "Creates a temporary link to the PhantomAlliance main server and pastes it below.",
     async execute(client, message, args, Discord){
+        var globalVar = require('../global.js');
+        var fileUtils = require('../fileHelper.js');
+
+        //log the event to Discord (jcrAggie server) and the console
+        fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+
+        // CHECKING PERMISSIONS TO USE THIS COMMAND
+        var permUtils = require('../helpers/permissions');
+        var allowTheseRoles = [
+            'admin',
+            'Admin',
+            'Royal Guards',
+            'Recruiter'
+        ];
+        if(!permUtils.hasPermission(client, message, Discord, allowTheseRoles)){
+            var auth = message.author.username;
+            msgDiscord = auth + ' does not have permission to run that command';
+            msgConsole = msgDiscord;
+            // log messages to both Discord log channel and Console
+            fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+            return;        
+        } // end if does not have permission
+        // otherwise...
+        // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
         if (args[0] == "help"){
             //message.channel.send('HELP for ` -invite ` is not implemented yet. This is the way.');
 
-            var globalVar = require('../global.js');
-            var fileUtils = require('../fileHelper.js');
+            
             let inviteHelpEmbed = globalVar.phantomBotHelp
             .setTitle("PhantomBot Help")
             .setDescription("**COMMAND: **" + this.name)
@@ -37,8 +60,7 @@ module.exports = {
             console.log('--- PB.INVITE ARGS: ', args);
             console.log('---DISCORD: ', Discord);
             // fileUtils.logToDiscordAndConsole(client, message, args, Discord);
-            //log the event to Discord (jcrAggie server) and the console
-               fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+            
 
             //message.channel.send('https://discord.gg/rUUpTRC');
             var inviteAge = args[0] * 3600;

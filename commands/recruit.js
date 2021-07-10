@@ -5,6 +5,10 @@ module.exports = {
         if (args[0] == "help"){
             var globalVar = require('../global.js');
             var fileUtils = require('../fileHelper.js');
+
+            //log the event to Discord (jcrAggie server) and the console
+            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+
             let recruitHelpEmbed = globalVar.phantomBotHelp
             .setTitle("PhantomBot Help")
             .setDescription("**COMMAND: **" + this.name)
@@ -23,8 +27,7 @@ module.exports = {
         } else {
             message.channel.send('https://discord.gg/rUUpTRC');
             
-            //log the event to Discord (jcrAggie server) and the console
-            fileUtils.logToDiscordAndConsole(client, message, args, Discord);
+            
 
         }
         
