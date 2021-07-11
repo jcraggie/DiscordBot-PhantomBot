@@ -1,9 +1,9 @@
 module.exports = {
-    name: 'log',
-    description: "log text to console and discord log channel",
+    name: 'testdm',
+    description: "description of the new command",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const globalVar = require ('../global.js');
-        var fileUtils = require('../helpers/fileHelper');
+        var fileUtils = require('../fileHelper.js');
 
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
@@ -23,13 +23,7 @@ module.exports = {
         } // end if does not have permission
         // otherwise...
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
-        
-        //TODO also send DM to JCR
-        var fullMsg = args.slice(0).join(' ');
-        msgDiscord = '==========================\n' + fullMsg + '\n==========================';
-        msgConsole = msgDiscord;
-        // log messages to both Discord log channel and Console
-        fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+        client.users.cache.get(glovalVar.discord_jcrAggie).send('Hello world!');
         
         
 
