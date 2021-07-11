@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'updatesendembeds',
+    name: 'updateguildnumbers',
     description: "description of the new command",
     async execute(client, message, args, Discord,swapi, ApiSwgohHelp){
         const globalVar = require ('../global.js');
@@ -22,7 +22,7 @@ module.exports = {
 
         var mongoUtils = require('../helpers/mongoHelper');
         // message.channel.send('testupdatefcn');
-        mongoUtils.sendGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp);
+        mongoUtils.updateGuildEmbeds(client, message, args, Discord,swapi, ApiSwgohHelp);
         
         
 
