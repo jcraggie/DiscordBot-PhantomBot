@@ -118,7 +118,7 @@ module.exports = {
         
         result = await GuildData.findOneAndUpdate(query, updateGuild, options, (error, updatedGuild) => {
             if (error) {
-                console.error(error);
+                console.log('---FIND_ONE_AND_UPDATE ERROR:', error);
                 message.channel.send("There was an error updating the guild. Please try again later.");
                 return;
             } 

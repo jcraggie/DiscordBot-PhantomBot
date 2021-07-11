@@ -8,6 +8,9 @@ module.exports = (Discord,client) =>{
     console.log('---------TOTAL MEMBERS OF ALL SERVERS AT BOOT: ',onReadyMemberCount); // sends # of members
     client.channels.cache.get('605087450573963362').send('PhantomBot is online...' + onReadyMemberCount);
 
+    console.log('---------HEROKU VERSION: ', process.env.HEROKU_RELEASE_VERSION);
+    client.channels.cache.get('605087450573963362').send('PhantomBot is online! : ' + process.env.HEROKU_RELEASE_VERSION);
+
     cronUtils.sendRogueTicketReminder(client, Discord);
     cronUtils.sendHavocTicketReminder(client, Discord);
     cronUtils.wakeUpPhantomBot(client, Discord);
