@@ -92,7 +92,6 @@ function sendHavocTicketReminder(client, message, args, Discord,swapi, ApiSwgohH
     // 586291147169857556 PhantomHavoc role (members)
 
     var CronJob = require('cron').CronJob;
-    // cronUtils = require('../../helpers/cronJobs');    
 
     var havocTime = '0 30 17 * * *'
     var pHavTz = 'America/Chicago';
@@ -129,6 +128,8 @@ function sendHavocTicketReminder(client, message, args, Discord,swapi, ApiSwgohH
 function sendRogueTicketReminder(client, message, args, Discord,swapi, ApiSwgohHelp) {
     // 581166616872747018 Phantom Rogue role ID (members)
     // 604386931178209310 PhantomRogue #ticket-warnings-ro channel
+    var CronJob = require('cron').CronJob;
+
     var rogueTime = '0 30 19 * * *'; //ticket time is 20:30 CST, so reminder should be 19:30
     var pRogTz = 'America/Chicago';
     var cronRogue = new CronJob(rogueTime, function() {
