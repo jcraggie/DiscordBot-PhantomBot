@@ -293,9 +293,9 @@ async function updateGuildEmbeds(client, message, args, Discord, swapi, ApiSwgoh
                 guildGG, updatedText)
 
             // console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
-            await sendToJCR(guildEmbed);
-            await sendToMain(guildEmbed);
-            await sendToRecruiting(guildEmbed);
+            await sendToJCR(client, guildEmbed);
+            await sendToMain(client, guildEmbed);
+            await sendToRecruiting(client, guildEmbed);
                         // }) // end (async ()
 
                         //console.log(guildData);
