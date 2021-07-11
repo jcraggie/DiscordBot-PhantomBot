@@ -784,6 +784,10 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             if (counter == totalGuilds) {
                 // log messages to both Discord log channel and Console
                 // fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+                msgConsole = "---FINISHED SENDING UPDATED EMBEDS TO ALL CHANNELS";
+                msgDiscord = "Finished sending updated embeds to all channels";
+                // log messages to both Discord log channel and Console
+                fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
                 return;
             } 
             counter += 1;
