@@ -522,9 +522,9 @@ async function updateOneEmbed(client, message, args, Discord, guildToUpdate) {
             hpit, haat, hstr, cpit,
             guildGG, updatedText)
 
-        await sendToJCR(guildEmbed);
-        await sendToMain(guildEmbed);
-        await sendToRecruiting(guildEmbed);
+        await sendToJCR(client, guildEmbed);
+        await sendToMain(client, guildEmbed);
+        await sendToRecruiting(client, guildEmbed);
 
         // log messages to both Discord log channel and Console
         msgConsole = "---FINISHED SENDING UPDATED TO ALL CHANNELS";
@@ -675,37 +675,37 @@ function updateEmbed(
 
 }; // end function updateEmbed
 
-async function sendToJCR(gldEmb) {
+async function sendToJCR(client, gldEmb) {
     return new Promise(resolve => {
         (async () => {
-            const result = await sendEmbed(globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
+            const result = await sendEmbed(client, globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
             resolve(console.log(result + ' TO JCR SERVER'));
         })();
     });
 
 };
 
-async function sendToRecruiting(gldEmb) {
+async function sendToRecruiting(client, gldEmb) {
     return new Promise(resolve => {
         (async () => {
-            const result = await sendEmbed(globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
+            const result = await sendEmbed(client, globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
             resolve(console.log(result + ' TO RECRUITING SERVER'));
         })();
     });
 
 };
 
-async function sendToMain(gldEmb) {
+async function sendToMain(client, gldEmb) {
     return new Promise(resolve => {
         (async () => {
-            const result = await sendEmbed(globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
+            const result = await sendEmbed(client, globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
             resolve(console.log(result + ' TO MAIN SERVER'));
         })();
     });
 
 };
 
-function sendEmbed(chID, msgID, gldEmb) {
+function sendEmbed(client, chID, msgID, gldEmb) {
     return new Promise(resolve => {
 
         (async () => {
