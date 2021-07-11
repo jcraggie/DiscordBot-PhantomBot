@@ -7,7 +7,7 @@ function startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp)
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
 
-    var startTime = '0 36 02 * * *' // every day at 0300am CST 0 00 03 * * *
+    var startTime = '0 00 02 * * *' // every day at 0300am CST 0 00 03 * * *
     var startTz = 'America/Chicago';
 
     var cronGetUpdates = new CronJob(startTime, function() {
@@ -64,6 +64,24 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
 
 }//end startSendUpdateEmbedsCron
 
+function wakeUpPhantomBot(client, message, args, Discord,swapi, ApiSwgohHelp) {
+    var CronJob = require('cron').CronJob;
+    var mongoUtils = require('./mongoHelper');
+    var fileUtils = require('./fileHelper');
+
+    // var startTime = '0 */25 * * * *' // every 25 minutes
+    var startTime = '0 50 01 * * *' // every day at 0150am CST 0 00 03 * * *
+    var startTz = 'America/Chicago';
+
+    var cronWakeUp = new CronJob(startTime, function() {
+        const isCron = true;
+        console.log('---I\'M AWAKE!');
+    }, null, true, startTz); // central
+    cronWakeUp.start(); 
+    console.log('---------SETTING UP CRON JOB FOR WAKING UP PHANTOM BOT'); 
+
+}//end wakeUpPhantomBot
+
 
 
 
@@ -73,7 +91,8 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
 //shows these functions to the outside world
 module.exports = {
     startGetUpdatesCron,
-    startSendUpdateEmbedsCron
+    startSendUpdateEmbedsCron,
+    wakeUpPhantomBot
     
 
 };

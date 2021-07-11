@@ -78,6 +78,9 @@ module.exports = (Discord,client) =>{
     
         cronRogue.start();  //end cronRogue
 
+
+
+        cronUtils.wakeUpPhantomBot(client, Discord);
         cronUtils.startGetUpdatesCron(client, Discord);
         cronUtils.startSendUpdateEmbedsCron(client, Discord);
 
