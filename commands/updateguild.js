@@ -86,7 +86,7 @@ module.exports = {
         query[fieldName] = fieldValue;
         // end query formation
 
-        var updateField = args[1];
+        var updateField = args[1].toLowerCase();
 
         fieldName = updateField;
         fieldValue = args[2];
@@ -94,15 +94,15 @@ module.exports = {
 
         switch (updateField){
             case "cpit" : updateGuild = {$set: {cpit: fieldValue}}; break;
-            case "geoDS" : updateGuild = {$set: {geoDS: fieldValue}}; break;
-            case "geoLS" : updateGuild = {$set: {geoLS: fieldValue}}; break;
+            case "geods" : updateGuild = {$set: {geoDS: fieldValue}}; break;
+            case "geols" : updateGuild = {$set: {geoLS: fieldValue}}; break;
             case "haat" : updateGuild = {$set: {haat: fieldValue}}; break;
-            case "hothDS" : updateGuild = {$set: {hothDS: fieldValue}}; break;
-            case "hothLS" : updateGuild = {$set: {hothLS: fieldValue}}; break;
+            case "hothds" : updateGuild = {$set: {hothDS: fieldValue}}; break;
+            case "hothls" : updateGuild = {$set: {hothLS: fieldValue}}; break;
             case "hpit" :  updateGuild = {$set: {hpit: fieldValue}}; break;
             case "hstr" : updateGuild = {$set: {hstr: fieldValue}}; break;
-            case "kamShards" : updateGuild = {$set: {kamShards: fieldValue}}; break;
-            case "watShards" : updateGuild = {$set: {watShards: fieldValue}}; break;
+            case "kamshards" : updateGuild = {$set: {kamShards: fieldValue}}; break;
+            case "watshards" : updateGuild = {$set: {watShards: fieldValue}}; break;
             default : 
                 message.channel.send("That is not a valid field to update");
                 console.log(`${message.author.username} (${message.author.id}) tried to update a field that does not exist.`);
@@ -124,6 +124,7 @@ module.exports = {
                 console.log(' Guild was updated');
                 message.channel.send('Guild was updated');
                 (async () => {
+                    message.channel.send('`#guild-numbers` channels udpated');
                     return await mongoUtils.updateOneEmbed(client, message, args, Discord, gName);
                 })();
 
