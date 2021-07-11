@@ -124,7 +124,7 @@ module.exports = {
             } 
             // updatedGuild = result;
             // if (guilddata.result.ok == 0) {
-                var updatedGuildName = updatedGuild.name;
+                var updatedGuildName = updatedGuild[0].name;
                 console.log('---' +updatedGuildName + ' WAS UPDATED');
                 message.channel.send('`' +updatedGuildName + '` was updated');
 
