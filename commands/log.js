@@ -24,12 +24,14 @@ module.exports = {
         // otherwise...
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
         
-        //TODO also send DM to JCR
+
         var fullMsg = args.slice(0).join(' ');
         msgDiscord = '==========================\n' + fullMsg + '\n==========================';
         msgConsole = msgDiscord;
         // log messages to both Discord log channel and Console
         fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+        // send the log to JCR via DM
+        client.users.cache.get(globalVar.discord_jcrAggie).send(msgDiscord);
         
         
 

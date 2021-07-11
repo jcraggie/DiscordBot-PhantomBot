@@ -26,8 +26,8 @@ function hasPermission(client, message, Discord, rolesAllowed) {
 
     var hasPerm = false;
     var allowedRoles = rolesAllowed;
-    message.channel.send('Allowed roles: ' + allowedRoles);
-    console.log('Allowed roles: ' + allowedRoles);
+    // message.channel.send('Allowed roles: ' + allowedRoles);
+    // console.log('Allowed roles: ' + allowedRoles);
 
 
     var hasRole = false;
