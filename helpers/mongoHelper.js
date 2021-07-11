@@ -677,9 +677,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             },
             (err) => {
                 if (err) console.error(err);
-                else {
-                    // log messages to both Discord log channel and Console
-                    fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
+                else {                    
                     msgConsole = "---CONNECTED TO THE MONGODB: GuildData";
                     msgDiscord = "Connected to JCR's mongoDB: GuildData";
                     // log messages to both Discord log channel and Console
@@ -881,7 +879,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             return new Promise(resolve => {
 
                 (async () => {
-                    console.log('---chID : msgID', chID, msgID);
+                    // console.log('---chID : msgID', chID, msgID);
                     await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
                     resolve('------SENT EMBED');
