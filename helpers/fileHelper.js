@@ -44,7 +44,7 @@ function readGuildList() {
 
 
 function getGuildFileNameByID(guildID) {
-    const globalVar = require('./global.js');
+    const globalVar = require('../global');
     switch (guildID) {
         case globalVar.rebellionInfo.guildID:
             guildFileName = globalVar.rebellionInfo.guildJSON;
@@ -77,7 +77,7 @@ function getGuildFileNameByID(guildID) {
 } // end getGuildFileName
 
 function logToDiscord(client, message, args, Discord) {
-    globalVar = require('./global.js');
+    globalVar = require('../global.js');
     let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
     client.channels.cache.get(globalVar.discordChannels.log).send(msg);
 
@@ -85,7 +85,7 @@ function logToDiscord(client, message, args, Discord) {
 
 function logToDiscordAndConsole(client, message, args, Discord) {
     
-        globalVar = require('./global.js');
+        globalVar = require('../global.js');
         let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
         client.channels.cache.get(globalVar.discordChannels.log).send(msg);
         console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
@@ -95,7 +95,7 @@ function logToDiscordAndConsole(client, message, args, Discord) {
 
 function logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole) {
     
-    globalVar = require('./global.js');
+    globalVar = require('../global.js');
     // let msg = '`' + message.author.username + '` in #`'+ message.channel.name + '` sent: `' + message.content +'`';
     client.channels.cache.get(globalVar.discordChannels.log).send(msgDiscord);
     console.log(msgConsole);
@@ -105,7 +105,7 @@ function logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, m
 
 
 function getAllycodeByGuildName(guildName) {
-    const globalVar = require('./global.js');
+    const globalVar = require('../global.js');
     switch (guildName) {
         case "rebellion":
             guildAlly = globalVar.rebellionInfo.allyCode;
@@ -200,7 +200,8 @@ async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,al
             allycode: allyCodes[x],
             language: 'eng_us'
         };
-
+        
+        // TODO add loop to try 3 times
         let { result, error, warning } = await swapi.fetchGuild(payload);
         if(error) {
             let msgConsole ='---API ERROR: ' + error;
@@ -355,7 +356,7 @@ async function allFilesRead(index, testEnd) {
 async function createGuildEmbed(newGuildData) {
     let done = false;
     let index = 0;
-    var globalVar = require('../global.js');
+    var globalVar = require('.../global.js');
     let guildEmbed = globalVar.phantomBotHelp
         .setTitle('PHANTOM ALLIANCE GUILDS')
         .setDescription(" ")
