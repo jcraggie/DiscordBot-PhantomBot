@@ -7,6 +7,7 @@ module.exports = {
     async execute(client, message, args, Discord){
         var globalVar = require('../global.js');
         var fileUtils = require('../helpers/fileHelper');
+        var mongoUtils = require('../helpers/mongoHelper');
 
         //log the event to Discord (jcrAggie server) and the console
         fileUtils.logToDiscordAndConsole(client, message, args, Discord);
