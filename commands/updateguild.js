@@ -119,7 +119,7 @@ module.exports = {
                 message.channel.send("There was an error updating the guild. Please try again later.");
                 return;
             }
-            if (guilddata.result.ok == 0) {
+            // if (guilddata.result.ok == 0) {
                 console.log(' Guild was updated');
                 message.channel.send('Guild was updated');
                 (async () => {
@@ -127,7 +127,7 @@ module.exports = {
                 })();
 
                 // return;
-            }
+            // }
 
         })
         // return; 
