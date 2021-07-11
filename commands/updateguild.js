@@ -116,13 +116,13 @@ module.exports = {
 
         var result;
         
-        result = await GuildData.updateOne(query, updateGuild, options, (error, updatedGuild) => {
+        await GuildData.updateOne(query, updateGuild, options, (error, updatedGuild) => {
             if (error) {
                 console.error(error);
                 message.channel.send("There was an error updating the guild. Please try again later.");
                 return;
-            } else {
-            updatedGuild = result;
+            } 
+            // updatedGuild = result;
             // if (guilddata.result.ok == 0) {
                 var updatedGuildName = updatedGuild.name;
                 console.log('---' +updatedGuildName + ' WAS UPDATED');
@@ -134,7 +134,7 @@ module.exports = {
                 })();
 
                 // return;
-            } // end else
+            // } // end else
 
         })
         // return; 
