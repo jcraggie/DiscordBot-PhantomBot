@@ -366,48 +366,48 @@ async function updateGuildEmbeds(client, message, args, Discord, swapi, ApiSwgoh
 
         // }; // end async function updateEmbed
 
-        async function sendToJCR(gldEmb) {
-            return new Promise(resolve => {
-                (async () => {
-                    const result = await sendEmbed(globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
-                    resolve(console.log(result + ' TO JCR SERVER'));
-                })();
-            });
+        // async function sendToJCR(gldEmb) {
+        //     return new Promise(resolve => {
+        //         (async () => {
+        //             const result = await sendEmbed(globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
+        //             resolve(console.log(result + ' TO JCR SERVER'));
+        //         })();
+        //     });
 
-        };
+        // };
 
-        async function sendToRecruiting(gldEmb) {
-            return new Promise(resolve => {
-                (async () => {
-                    const result = await sendEmbed(globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
-                    resolve(console.log(result + ' TO RECRUITING SERVER'));
-                })();
-            });
+        // async function sendToRecruiting(gldEmb) {
+        //     return new Promise(resolve => {
+        //         (async () => {
+        //             const result = await sendEmbed(globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
+        //             resolve(console.log(result + ' TO RECRUITING SERVER'));
+        //         })();
+        //     });
 
-        };
+        // };
 
-        async function sendToMain(gldEmb) {
-            return new Promise(resolve => {
-                (async () => {
-                    const result = await sendEmbed(globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
-                    resolve(console.log(result + ' TO MAIN SERVER'));
-                })();
-            });
+        // async function sendToMain(gldEmb) {
+        //     return new Promise(resolve => {
+        //         (async () => {
+        //             const result = await sendEmbed(globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
+        //             resolve(console.log(result + ' TO MAIN SERVER'));
+        //         })();
+        //     });
 
-        };
+        // };
 
-        function sendEmbed(chID, msgID, gldEmb) {
-            return new Promise(resolve => {
+        // function sendEmbed(chID, msgID, gldEmb) {
+        //     return new Promise(resolve => {
 
-                (async () => {
-                    // console.log('---chID : msgID', chID, msgID);
-                    await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
-                    // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
-                    resolve('------SENT EMBED');
-                })();
+        //         (async () => {
+        //             // console.log('---chID : msgID', chID, msgID);
+        //             await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+        //             // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+        //             resolve('------SENT EMBED');
+        //         })();
 
-            });
-        }
+        //     });
+        // }
     })();
 } // end updateGuildEmbeds()
 
@@ -582,48 +582,48 @@ async function updateOneEmbed(client, message, args, Discord, guildToUpdate) {
 
         // }; // end async function updateEmbed
 
-        async function sendToJCR(gldEmb) {
-            return new Promise(resolve => {
-                (async () => {
-                    const result = await sendEmbed(globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
-                    resolve(console.log(result + ' TO JCR SERVER'));
-                })();
-            });
+        // async function sendToJCR(gldEmb) {
+        //     return new Promise(resolve => {
+        //         (async () => {
+        //             const result = await sendEmbed(globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
+        //             resolve(console.log(result + ' TO JCR SERVER'));
+        //         })();
+        //     });
 
-        };
+        // };
 
-        async function sendToRecruiting(gldEmb) {
-            return new Promise(resolve => {
-                (async () => {
-                    const result = await sendEmbed(globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
-                    resolve(console.log(result + ' TO RECRUITING SERVER'));
-                })();
-            });
+        // async function sendToRecruiting(gldEmb) {
+        //     return new Promise(resolve => {
+        //         (async () => {
+        //             const result = await sendEmbed(globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
+        //             resolve(console.log(result + ' TO RECRUITING SERVER'));
+        //         })();
+        //     });
 
-        };
+        // };
 
-        async function sendToMain(gldEmb) {
-            return new Promise(resolve => {
-                (async () => {
-                    const result = await sendEmbed(globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
-                    resolve(console.log(result + ' TO MAIN SERVER'));
-                })();
-            });
+        // async function sendToMain(gldEmb) {
+        //     return new Promise(resolve => {
+        //         (async () => {
+        //             const result = await sendEmbed(globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
+        //             resolve(console.log(result + ' TO MAIN SERVER'));
+        //         })();
+        //     });
 
-        };
+        // };
 
-        function sendEmbed(chID, msgID, gldEmb) {
-            return new Promise(resolve => {
+        // function sendEmbed(chID, msgID, gldEmb) {
+        //     return new Promise(resolve => {
 
-                (async () => {
-                    // console.log('---chID : msgID', chID, msgID);
-                    await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
-                    // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
-                    resolve('------SENT EMBED');
-                })();
+        //         (async () => {
+        //             // console.log('---chID : msgID', chID, msgID);
+        //             await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+        //             // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+        //             resolve('------SENT EMBED');
+        //         })();
 
-            });
-        }
+        //     });
+        // }
     })();
 } // end updateOneEmbed()
 
@@ -674,6 +674,49 @@ function updateEmbed(
     });
 
 }; // end function updateEmbed
+
+async function sendToJCR(gldEmb) {
+    return new Promise(resolve => {
+        (async () => {
+            const result = await sendEmbed(globalVar.serverIDs.jcrServerChannelID, jcrServerMsgID, gldEmb)
+            resolve(console.log(result + ' TO JCR SERVER'));
+        })();
+    });
+
+};
+
+async function sendToRecruiting(gldEmb) {
+    return new Promise(resolve => {
+        (async () => {
+            const result = await sendEmbed(globalVar.serverIDs.recruitingServerChannelID, recruitingServerMsgID, gldEmb);
+            resolve(console.log(result + ' TO RECRUITING SERVER'));
+        })();
+    });
+
+};
+
+async function sendToMain(gldEmb) {
+    return new Promise(resolve => {
+        (async () => {
+            const result = await sendEmbed(globalVar.serverIDs.mainServerChannelID, mainServerMsgID, gldEmb);
+            resolve(console.log(result + ' TO MAIN SERVER'));
+        })();
+    });
+
+};
+
+function sendEmbed(chID, msgID, gldEmb) {
+    return new Promise(resolve => {
+
+        (async () => {
+            // console.log('---chID : msgID', chID, msgID);
+            await client.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+            // await guild.channels.cache.get(chID).messages.fetch(msgID).then(msg => msg.edit(gldEmb));
+            resolve('------SENT EMBED');
+        })();
+
+    });
+}
 
 
 
