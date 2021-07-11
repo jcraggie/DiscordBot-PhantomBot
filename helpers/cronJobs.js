@@ -70,7 +70,7 @@ function wakeUpPhantomBot(client, message, args, Discord,swapi, ApiSwgohHelp) {
     var fileUtils = require('./fileHelper');
 
     // var startTime = '0 */25 * * * *' // every 25 minutes
-    var startTime = '0 50 01 * * *' // every day at 0150am CST 0 00 03 * * *
+    var startTime = '0 50 01 * * *' // every day at 0150am CST
     var startTz = 'America/Chicago';
 
     var cronWakeUp = new CronJob(startTime, function() {
@@ -83,7 +83,83 @@ function wakeUpPhantomBot(client, message, args, Discord,swapi, ApiSwgohHelp) {
 }//end wakeUpPhantomBot
 
 
+function sendHavocTicketReminder(client, message, args, Discord,swapi, ApiSwgohHelp) {
+    var CronJob = require('cron').CronJob;
+    var mongoUtils = require('./mongoHelper');
+    var fileUtils = require('./fileHelper');
+    // HAVOC TICKET REMINDER 
+    // 586379177331261470 Havoc #lounge  
+    // 586291147169857556 PhantomHavoc role (members)
 
+    var CronJob = require('cron').CronJob;
+    // cronUtils = require('../../helpers/cronJobs');    
+
+    var havocTime = '0 30 17 * * *'
+    var pHavTz = 'America/Chicago';
+
+    var cronHavoc = new CronJob(havocTime, function() {
+
+        console.log('---SENDING HAVOC TICKET REMINDER');
+
+        let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
+
+        var globalVar = require('../../global.js');
+        let havocTicketReminder = globalVar.ticketEmbedTemp01
+
+            .setTitle('phantomHAVOC 600 TICKET REMINDER!')
+            .attachFiles(ticketImage)
+            .setImage('attachment://TicketReminder01.png')
+            .setDescription("<@&586291147169857556> Tickets are due in 1 hour!")
+
+        //send message to Havoc lounge
+        client.channels.cache.get('586379177331261470').send(havocTicketReminder);
+
+        //log the event to jcrAggie server #phantom-ready channel
+        client.channels.cache.get('605087450573963362').send("Bot issued cronHavoc reminder.");
+
+        //log the event to the console
+        console.log('---SENT CRONHAVOC'); 
+
+    }, null, true, pHavTz); // central
+    cronHavoc.start(); 
+    console.log('---------SETTING UP CRON JOB FOR HAVOC TICKET REMINDER');
+} // end sendHavocTicketReminder
+
+
+function sendRogueTicketReminder(client, message, args, Discord,swapi, ApiSwgohHelp) {
+    // 581166616872747018 Phantom Rogue role ID (members)
+    // 604386931178209310 PhantomRogue #ticket-warnings-ro channel
+    var rogueTime = '0 30 19 * * *'; //ticket time is 20:30 CST, so reminder should be 19:30
+    var pRogTz = 'America/Chicago';
+    var cronRogue = new CronJob(rogueTime, function() {
+
+        console.log('---SENDING ROGUE TICKET REMINDER');
+        
+        let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
+        
+        var globalVar = require('../../global.js');
+        let rogueTicketReminder = globalVar.ticketEmbedTemp01
+        
+            .setTitle('phantomROGUE 600 TICKET REMINDER!')
+            .attachFiles(ticketImage)
+            .setImage('attachment://TicketReminder01.png')
+            .setDescription("<@&581166616872747018> Tickets are due in 1 hour!")
+        
+        //send message to Havoc lounge
+        client.channels.cache.get('604386931178209310').send(rogueTicketReminder);
+
+
+        //log the event to jcrAggie server #phantom-ready channel
+        client.channels.cache.get('605087450573963362').send("Bot issued cronRogue reminder.");
+
+        //log the event to the console
+        console.log('---SENT CRONROGUE'); 
+        
+    }, null, true, pRogTz); // central
+    
+    cronRogue.start();  
+    console.log('---------SETTING UP CRON JOB FOR ROGUE TICKET REMINDER');
+} // end sendRogueTicketReminder
 
 
 
@@ -92,7 +168,9 @@ function wakeUpPhantomBot(client, message, args, Discord,swapi, ApiSwgohHelp) {
 module.exports = {
     startGetUpdatesCron,
     startSendUpdateEmbedsCron,
-    wakeUpPhantomBot
+    wakeUpPhantomBot,
+    sendHavocTicketReminder,
+    sendRogueTicketReminder
     
 
 };
