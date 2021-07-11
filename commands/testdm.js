@@ -23,7 +23,7 @@ module.exports = {
         } // end if does not have permission
         // otherwise...
         // END OF PERMISSION CHECK - CONTINUE WITH COMMAND
-        client.users.cache.get(glovalVar.discord_jcrAggie).send('Hello world!');
+        client.users.cache.get(globalVar.discord_jcrAggie).send('Hello world!');
         
         
 
