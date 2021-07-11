@@ -121,8 +121,10 @@ module.exports = {
                 return;
             }
             // if (guilddata.result.ok == 0) {
-                console.log(' Guild was updated');
-                message.channel.send('Guild was updated');
+                var updatedGuildName = result.value.name;
+                console.log('---' +updatedGuildName + ' WAS UPDATED');
+                message.channel.send('`' +updatedGuildName + '` was updated');
+
                 (async () => {
                     message.channel.send('`#guild-numbers` channels udpated');
                     return await mongoUtils.updateOneEmbed(client, message, args, Discord, gName);
