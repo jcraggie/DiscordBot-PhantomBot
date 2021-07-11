@@ -122,9 +122,9 @@ module.exports = {
                 message.channel.send("There was an error updating the guild. Please try again later.");
                 return;
             }
-        updatedGuild = result;
+            updatedGuild = result;
             // if (guilddata.result.ok == 0) {
-                var updatedGuildName = result.name;
+                var updatedGuildName = updatedGuild.name;
                 console.log('---' +updatedGuildName + ' WAS UPDATED');
                 message.channel.send('`' +updatedGuildName + '` was updated');
 
