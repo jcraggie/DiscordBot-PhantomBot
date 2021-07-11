@@ -100,9 +100,9 @@ function sendHavocTicketReminder(client, message, args, Discord,swapi, ApiSwgohH
 
         console.log('---SENDING HAVOC TICKET REMINDER');
 
-        let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
+        let ticketImage = new Discord.MessageAttachment('../graphics/TicketReminder01.png');
 
-        var globalVar = require('../../global.js');
+        var globalVar = require('../global.js');
         let havocTicketReminder = globalVar.ticketEmbedTemp01
 
             .setTitle('phantomHAVOC 600 TICKET REMINDER!')
@@ -135,10 +135,10 @@ function sendRogueTicketReminder(client, message, args, Discord,swapi, ApiSwgohH
     var cronRogue = new CronJob(rogueTime, function() {
 
         console.log('---SENDING ROGUE TICKET REMINDER');
+
+        let ticketImage = new Discord.MessageAttachment('../graphics/TicketReminder01.png');
         
-        let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
-        
-        var globalVar = require('../../global.js');
+        var globalVar = require('../global.js');
         let rogueTicketReminder = globalVar.ticketEmbedTemp01
         
             .setTitle('phantomROGUE 600 TICKET REMINDER!')
