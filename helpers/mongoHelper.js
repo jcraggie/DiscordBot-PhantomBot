@@ -689,7 +689,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
         var counter = 1;
         var index = 0;
         var guildUpdateEmbed = [];
-        // client.channels.cache.get(globalVar.discordChannels.log).send('Beginning to update guild data');
+
         msgDiscord = "Beginning to update guild data";
         msgConsole = "---BEGINNING TO UPDATE GUILD DATA";
         // log messages to both Discord log channel and Console
@@ -738,7 +738,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                     console.log("---GUILDDATA FIND BY ID ERROR: ", error);
                     return;
                 } 
-            }); // end await GuildData.findById
+            }); // end await GuildData.fineOne
             guildData = gData;
                     
             console.log("------UPDATING GUILD: ", guildData.name);
@@ -765,7 +765,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
             watShards = guildData.watShards;
 
             localGP = gp.toLocaleString("en-US"); //add commas to GP
-                        // (async () => {
+
             var guildEmbed = await testUpdateEmbed(
                 gName, leader, members, localGP, dailyTickets,
                 hothDS, hothLS,
@@ -773,8 +773,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                 geoLS, kamShards,
                 hpit, haat, hstr, cpit,
                 guildGG, updatedText)
-                            // }) // end (async ()
-                        // (async() => {
+
             // console.log('---GUILD EMBED BEFORE GOING TO JCR: \n', guildEmbed);
             await TESTsendToJCR(guildEmbed);
             await TESTsendToMain(guildEmbed);
@@ -784,7 +783,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                         //console.log(guildData);
             if (counter == totalGuilds) {
                 // log messages to both Discord log channel and Console
-                fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);;
+                // fileUtils.logBotToDiscordAndConsole(client, message, args, Discord, msgDiscord, msgConsole);
                 return;
             } 
             counter += 1;
@@ -838,7 +837,7 @@ async function testUpdate(client, message, args, Discord, swapi, ApiSwgohHelp, i
                     name: 'INFO LAST UPDATED',
                     value: '`' + updatedText + '`'
                 }
-                console.log('---EMBED DATA FOR ' + gName + ' IS NOW SET');
+                console.log('------EMBED DATA FOR ' + gName + ' IS NOW SET');
                 // console.log('------SEEING IF THIS GLOB VAR IS SET: ', globalVar.serverIDs.jcrServerID);
                 resolve(guildEmbed);
             });
