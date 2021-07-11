@@ -114,19 +114,22 @@ module.exports = {
             useFindAndModify: false
         };
 
-        const result = await GuildData.updateOne(query, updateGuild, options, (error, guilddata) => {
+        var result;
+        
+        result = await GuildData.updateOne(query, updateGuild, options, (error, guilddata) => {
             if (error) {
                 console.error(error);
                 message.channel.send("There was an error updating the guild. Please try again later.");
                 return;
             }
+        updatedGuild = result;
             // if (guilddata.result.ok == 0) {
-                var updatedGuildName = result.value.name;
+                var updatedGuildName = result.name;
                 console.log('---' +updatedGuildName + ' WAS UPDATED');
                 message.channel.send('`' +updatedGuildName + '` was updated');
 
                 (async () => {
-                    message.channel.send('`#guild-numbers` channels udpated');
+                    message.channel.send('`#guild-numbers` channels updated');
                     return await mongoUtils.updateOneEmbed(client, message, args, Discord, gName);
                 })();
 
