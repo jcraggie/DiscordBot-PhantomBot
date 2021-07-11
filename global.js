@@ -1,13 +1,17 @@
 const botPrefix = 'pb.';
 exports.botPrefix = botPrefix;
 
+const hVer = process.env.HEROKU_RELEASE_VERSION;
+exports.hVer = hVer;
+
 const discordChannels = {
         "log": '605087450573963362' //jcrAggie phantombot channel
 }
 exports.discordChannels = discordChannels
 
 
-var footer = 'PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.1 beta';
+
+var footer = 'PhantomBot made by jcrAggie for the PhantomAlliance. \nThis is the way.   Ver 3.2.' + hVer;
 exports.footer = footer
 
 const discord_jcrAggie = "116901947428044809";
