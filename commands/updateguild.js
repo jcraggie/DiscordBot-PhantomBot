@@ -122,11 +122,15 @@ module.exports = {
             if (guilddata.result.ok == 0) {
                 console.log(' Guild was updated');
                 message.channel.send('Guild was updated');
-                return;
+                (async () => {
+                    return await mongoUtils.updateOneEmbed(client, message, args, Discord, gName);
+                })();
+
+                // return;
             }
 
         })
-        return; 
+        // return; 
 
     }
 
