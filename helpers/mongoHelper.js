@@ -432,7 +432,7 @@ async function updateGuildEmbeds(client, message, args, Discord, swapi, ApiSwgoh
 
 
 
-async function updateOneEmbed(client, message, args, Discord, swapi, ApiSwgohHelp, guildToUpdate) {
+async function updateOneEmbed(client, message, args, Discord, guildToUpdate) {
 
     (async () => {
         var fileUtils = require("./fileHelper");
