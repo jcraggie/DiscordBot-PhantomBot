@@ -93,7 +93,7 @@ function sendHavocTicketReminder(client, Discord) {
 
     var CronJob = require('cron').CronJob;
 
-    var havocTime = '0 30 17 * * *'
+    var havocTime = '0 16 10 * * *' // should be 0 30 17 * * *
     var pHavTz = 'America/Chicago';
 
     var cronHavoc = new CronJob(havocTime, function() {
@@ -111,7 +111,8 @@ function sendHavocTicketReminder(client, Discord) {
             .setDescription("<@&586291147169857556> Tickets are due in 1 hour!")
 
         //send message to Havoc lounge
-        client.channels.cache.get('586379177331261470').send(havocTicketReminder);
+        // client.channels.cache.get('586379177331261470').send(havocTicketReminder);
+        client.channels.cache.get(globalVar.serverIDs.jcrTestingChannelID).send(havocTicketReminder);
 
         //log the event to jcrAggie server #phantom-ready channel
         client.channels.cache.get('605087450573963362').send("Bot issued cronHavoc reminder.");

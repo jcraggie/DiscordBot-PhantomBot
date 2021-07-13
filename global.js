@@ -36,6 +36,7 @@ const serverIDs = {
         "mainServerChannelID": "485246576751673354",
         "recruitingServerChannelID": "595255366644924440",
         "jcrServerChannelID": "858495181552353313",
+        "jcrTestingChannelID": "603591430887440395"
 };
 exports.serverIDs = serverIDs
 
