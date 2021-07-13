@@ -176,7 +176,7 @@ async function writeNewData(newGuildData) {
 
 
 
-async function getNewData (client, message, args, Discord,swapi, ApiSwgohHelp,allyCodes, isCron) {
+async function getNewData (client, message, args, Discord, swapi, ApiSwgohHelp, allyCodes, isCron) {
     //iterate through loop, getting new data from the api.swgoh.help site and return it as apiGuildData
     x=0;
     var numGuilds = 0;

@@ -157,7 +157,7 @@ async function getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHel
 
                 var done = false;
 
-                apiGuildData = await fileUtils.getNewData(client, message, args, Discord,swapi, ApiSwgohHelp, allyCodes, isCron);
+                apiGuildData = await fileUtils.getNewData(client, message, args, Discord, swapi, ApiSwgohHelp, allyCodes, isCron);
 
                 var x = 0;
                 // console.log('---APIGUILDDATA\n', apiGuildData);
