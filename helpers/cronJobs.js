@@ -93,14 +93,14 @@ function sendHavocTicketReminder(client, Discord) {
 
     var CronJob = require('cron').CronJob;
 
-    var havocTime = '0 16 10 * * *' // should be 0 30 17 * * *
+    var havocTime = '0 18 10 * * *' // should be 0 30 17 * * *
     var pHavTz = 'America/Chicago';
 
     var cronHavoc = new CronJob(havocTime, function() {
 
         console.log('---SENDING HAVOC TICKET REMINDER');
 
-        let ticketImage = new Discord.MessageAttachment('../graphics/TicketReminder01.png');
+        let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
 
         var globalVar = require('../global.js');
         let havocTicketReminder = globalVar.ticketEmbedTemp01
