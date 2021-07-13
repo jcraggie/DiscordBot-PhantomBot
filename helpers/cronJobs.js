@@ -93,7 +93,7 @@ function sendHavocTicketReminder(client, Discord) {
 
     var CronJob = require('cron').CronJob;
 
-    var havocTime = '0 18 10 * * *' // should be 0 30 17 * * *
+    var havocTime = '0 30 17 * * *' // should be 0 30 17 * * *
     var pHavTz = 'America/Chicago';
 
     var cronHavoc = new CronJob(havocTime, function() {
@@ -137,7 +137,7 @@ function sendRogueTicketReminder(client, Discord) {
 
         console.log('---SENDING ROGUE TICKET REMINDER');
 
-        let ticketImage = new Discord.MessageAttachment('../graphics/TicketReminder01.png');
+        let ticketImage = new Discord.MessageAttachment('./graphics/TicketReminder01.png');
         
         var globalVar = require('../global.js');
         let rogueTicketReminder = globalVar.ticketEmbedTemp01
