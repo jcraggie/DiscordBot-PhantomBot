@@ -1,4 +1,4 @@
-module.exports = (Discord,client) =>{
+module.exports = (Discord, client) =>{
 
     const cronUtils = require('../../helpers/cronJobs'); 
     
@@ -13,7 +13,7 @@ module.exports = (Discord,client) =>{
 
     cronUtils.sendRogueTicketReminder(client, Discord);
     cronUtils.sendHavocTicketReminder(client, Discord);
-    cronUtils.wakeUpPhantomBot(client, Discord);
+    cronUtils.wakeUpPhantomBot();
     cronUtils.startGetUpdatesCron(client, Discord);
     cronUtils.startSendUpdateEmbedsCron(client, Discord);
 

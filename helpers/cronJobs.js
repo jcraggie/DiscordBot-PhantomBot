@@ -2,7 +2,7 @@
 const { GuildEmoji } = require('discord.js'); // I did not write this line; inserted by VS Code?
 
 
-function startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp) {
+function startGetUpdatesCron(client, message, args, Discord, swapi, ApiSwgohHelp) {
     var CronJob = require('cron').CronJob;
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
@@ -16,7 +16,7 @@ function startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp)
         console.log('---STARTING CRON GET UPDATES');
 
         // message.channel.send('testupdatefcn');
-        mongoUtils.getGuildUpdates(client, message, args, Discord,swapi, ApiSwgohHelp, isCron);
+        mongoUtils.getGuildUpdates(client, message, args, Discord, swapi, ApiSwgohHelp, isCron);
         
         //log the event to Discord (jcrAggie server) and the console
         // fileUtils.logToDiscordAndConsole(client, message, args, Discord, isCron);
@@ -33,7 +33,7 @@ function startGetUpdatesCron(client, message, args, Discord,swapi, ApiSwgohHelp)
 
 }//end startGetUpdatesCron
 
-function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgohHelp) {
+function startSendUpdateEmbedsCron(client, message, args, Discord, swapi, ApiSwgohHelp) {
     var CronJob = require('cron').CronJob;
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
@@ -47,7 +47,7 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
         console.log('---STARTING CRON GET UPDATES');
 
         // message.channel.send('testupdatefcn');
-        mongoUtils.updateGuildEmbeds(client, message, args, Discord,swapi, ApiSwgohHelp, isCron);
+        mongoUtils.updateGuildEmbeds(client, message, args, Discord, swapi, ApiSwgohHelp, isCron);
         
         //log the event to Discord (jcrAggie server) and the console
         // fileUtils.logToDiscordAndConsole(client, message, args, Discord);
@@ -64,7 +64,7 @@ function startSendUpdateEmbedsCron(client, message, args, Discord,swapi, ApiSwgo
 
 }//end startSendUpdateEmbedsCron
 
-function wakeUpPhantomBot(client, message, args, Discord,swapi, ApiSwgohHelp) {
+function wakeUpPhantomBot() {
     var CronJob = require('cron').CronJob;
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
@@ -83,7 +83,7 @@ function wakeUpPhantomBot(client, message, args, Discord,swapi, ApiSwgohHelp) {
 }//end wakeUpPhantomBot
 
 
-function sendHavocTicketReminder(client, message, args, Discord,swapi, ApiSwgohHelp) {
+function sendHavocTicketReminder(client, Discord) {
     var CronJob = require('cron').CronJob;
     var mongoUtils = require('./mongoHelper');
     var fileUtils = require('./fileHelper');
@@ -125,7 +125,7 @@ function sendHavocTicketReminder(client, message, args, Discord,swapi, ApiSwgohH
 } // end sendHavocTicketReminder
 
 
-function sendRogueTicketReminder(client, message, args, Discord,swapi, ApiSwgohHelp) {
+function sendRogueTicketReminder(client, Discord) {
     // 581166616872747018 Phantom Rogue role ID (members)
     // 604386931178209310 PhantomRogue #ticket-warnings-ro channel
     var CronJob = require('cron').CronJob;
